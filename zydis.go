@@ -4452,7 +4452,198 @@ type FormatterRegisterFunc = unsafe.Pointer
 // - `ZYDIS_FORMATTER_FUNC_PRINT_DECORATOR`
 type FormatterDecoratorFunc = unsafe.Pointer
 
-var __imp_ZydisCategoryGetString = GengoLibrary.Import("ZydisCategoryGetString")
+var __imp_ZydisCategoryGetString gengort.PreloadProc
+
+//  Gengo init function.
+func init() {
+	__imp_ZydisCategoryGetString = GengoLibrary.ImportNow("ZydisCategoryGetString")
+	__imp_ZydisISASetGetString = GengoLibrary.ImportNow("ZydisISASetGetString")
+	__imp_ZydisISAExtGetString = GengoLibrary.ImportNow("ZydisISAExtGetString")
+	__imp_ZydisMnemonicGetString = GengoLibrary.ImportNow("ZydisMnemonicGetString")
+	__imp_ZydisMnemonicGetStringWrapped = GengoLibrary.ImportNow("ZydisMnemonicGetStringWrapped")
+	__imp_ZydisRegisterEncode = GengoLibrary.ImportNow("ZydisRegisterEncode")
+	__imp_ZydisRegisterGetId = GengoLibrary.ImportNow("ZydisRegisterGetId")
+	__imp_ZydisRegisterGetClass = GengoLibrary.ImportNow("ZydisRegisterGetClass")
+	__imp_ZydisRegisterGetWidth = GengoLibrary.ImportNow("ZydisRegisterGetWidth")
+	__imp_ZydisRegisterGetLargestEnclosing = GengoLibrary.ImportNow("ZydisRegisterGetLargestEnclosing")
+	__imp_ZydisRegisterGetString = GengoLibrary.ImportNow("ZydisRegisterGetString")
+	__imp_ZydisRegisterGetStringWrapped = GengoLibrary.ImportNow("ZydisRegisterGetStringWrapped")
+	__imp_ZydisRegisterClassGetWidth = GengoLibrary.ImportNow("ZydisRegisterClassGetWidth")
+	__imp_ZydisDecoderInit = GengoLibrary.ImportNow("ZydisDecoderInit")
+	__imp_ZydisDecoderEnableMode = GengoLibrary.ImportNow("ZydisDecoderEnableMode")
+	__imp_ZydisDecoderDecodeFull = GengoLibrary.ImportNow("ZydisDecoderDecodeFull")
+	__imp_ZydisDecoderDecodeInstruction = GengoLibrary.ImportNow("ZydisDecoderDecodeInstruction")
+	__imp_ZydisDecoderDecodeOperands = GengoLibrary.ImportNow("ZydisDecoderDecodeOperands")
+	__imp_ZydisEncoderEncodeInstruction = GengoLibrary.ImportNow("ZydisEncoderEncodeInstruction")
+	__imp_ZydisEncoderEncodeInstructionAbsolute = GengoLibrary.ImportNow("ZydisEncoderEncodeInstructionAbsolute")
+	__imp_ZydisEncoderDecodedInstructionToEncoderRequest = GengoLibrary.ImportNow("ZydisEncoderDecodedInstructionToEncoderRequest")
+	__imp_ZydisEncoderNopFill = GengoLibrary.ImportNow("ZydisEncoderNopFill")
+	__imp_ZyanAllocatorInit = GengoLibrary.ImportNow("ZyanAllocatorInit")
+	__imp_ZyanEqualsPointer = GengoLibrary.ImportNow("ZyanEqualsPointer")
+	__imp_ZyanEqualsBool = GengoLibrary.ImportNow("ZyanEqualsBool")
+	__imp_ZyanEqualsNumeric8 = GengoLibrary.ImportNow("ZyanEqualsNumeric8")
+	__imp_ZyanEqualsNumeric16 = GengoLibrary.ImportNow("ZyanEqualsNumeric16")
+	__imp_ZyanEqualsNumeric32 = GengoLibrary.ImportNow("ZyanEqualsNumeric32")
+	__imp_ZyanEqualsNumeric64 = GengoLibrary.ImportNow("ZyanEqualsNumeric64")
+	__imp_ZyanComparePointer = GengoLibrary.ImportNow("ZyanComparePointer")
+	__imp_ZyanCompareBool = GengoLibrary.ImportNow("ZyanCompareBool")
+	__imp_ZyanCompareNumeric8 = GengoLibrary.ImportNow("ZyanCompareNumeric8")
+	__imp_ZyanCompareNumeric16 = GengoLibrary.ImportNow("ZyanCompareNumeric16")
+	__imp_ZyanCompareNumeric32 = GengoLibrary.ImportNow("ZyanCompareNumeric32")
+	__imp_ZyanCompareNumeric64 = GengoLibrary.ImportNow("ZyanCompareNumeric64")
+	__imp_ZyanVectorInitEx = GengoLibrary.ImportNow("ZyanVectorInitEx")
+	__imp_ZyanVectorInitCustomBuffer = GengoLibrary.ImportNow("ZyanVectorInitCustomBuffer")
+	__imp_ZyanVectorDestroy = GengoLibrary.ImportNow("ZyanVectorDestroy")
+	__imp_ZyanVectorDuplicateEx = GengoLibrary.ImportNow("ZyanVectorDuplicateEx")
+	__imp_ZyanVectorDuplicateCustomBuffer = GengoLibrary.ImportNow("ZyanVectorDuplicateCustomBuffer")
+	__imp_ZyanVectorGet = GengoLibrary.ImportNow("ZyanVectorGet")
+	__imp_ZyanVectorGetMutable = GengoLibrary.ImportNow("ZyanVectorGetMutable")
+	__imp_ZyanVectorGetPointer = GengoLibrary.ImportNow("ZyanVectorGetPointer")
+	__imp_ZyanVectorGetPointerMutable = GengoLibrary.ImportNow("ZyanVectorGetPointerMutable")
+	__imp_ZyanVectorSet = GengoLibrary.ImportNow("ZyanVectorSet")
+	__imp_ZyanVectorPushBack = GengoLibrary.ImportNow("ZyanVectorPushBack")
+	__imp_ZyanVectorInsert = GengoLibrary.ImportNow("ZyanVectorInsert")
+	__imp_ZyanVectorInsertRange = GengoLibrary.ImportNow("ZyanVectorInsertRange")
+	__imp_ZyanVectorEmplace = GengoLibrary.ImportNow("ZyanVectorEmplace")
+	__imp_ZyanVectorEmplaceEx = GengoLibrary.ImportNow("ZyanVectorEmplaceEx")
+	__imp_ZyanVectorSwapElements = GengoLibrary.ImportNow("ZyanVectorSwapElements")
+	__imp_ZyanVectorDelete = GengoLibrary.ImportNow("ZyanVectorDelete")
+	__imp_ZyanVectorDeleteRange = GengoLibrary.ImportNow("ZyanVectorDeleteRange")
+	__imp_ZyanVectorPopBack = GengoLibrary.ImportNow("ZyanVectorPopBack")
+	__imp_ZyanVectorClear = GengoLibrary.ImportNow("ZyanVectorClear")
+	__imp_ZyanVectorFind = GengoLibrary.ImportNow("ZyanVectorFind")
+	__imp_ZyanVectorFindEx = GengoLibrary.ImportNow("ZyanVectorFindEx")
+	__imp_ZyanVectorBinarySearch = GengoLibrary.ImportNow("ZyanVectorBinarySearch")
+	__imp_ZyanVectorBinarySearchEx = GengoLibrary.ImportNow("ZyanVectorBinarySearchEx")
+	__imp_ZyanVectorResize = GengoLibrary.ImportNow("ZyanVectorResize")
+	__imp_ZyanVectorResizeEx = GengoLibrary.ImportNow("ZyanVectorResizeEx")
+	__imp_ZyanVectorReserve = GengoLibrary.ImportNow("ZyanVectorReserve")
+	__imp_ZyanVectorShrinkToFit = GengoLibrary.ImportNow("ZyanVectorShrinkToFit")
+	__imp_ZyanVectorGetCapacity = GengoLibrary.ImportNow("ZyanVectorGetCapacity")
+	__imp_ZyanVectorGetSize = GengoLibrary.ImportNow("ZyanVectorGetSize")
+	__imp_ZyanStringInitEx = GengoLibrary.ImportNow("ZyanStringInitEx")
+	__imp_ZyanStringInitCustomBuffer = GengoLibrary.ImportNow("ZyanStringInitCustomBuffer")
+	__imp_ZyanStringDestroy = GengoLibrary.ImportNow("ZyanStringDestroy")
+	__imp_ZyanStringDuplicateEx = GengoLibrary.ImportNow("ZyanStringDuplicateEx")
+	__imp_ZyanStringDuplicateCustomBuffer = GengoLibrary.ImportNow("ZyanStringDuplicateCustomBuffer")
+	__imp_ZyanStringConcatEx = GengoLibrary.ImportNow("ZyanStringConcatEx")
+	__imp_ZyanStringConcatCustomBuffer = GengoLibrary.ImportNow("ZyanStringConcatCustomBuffer")
+	__imp_ZyanStringViewInsideView = GengoLibrary.ImportNow("ZyanStringViewInsideView")
+	__imp_ZyanStringViewInsideViewEx = GengoLibrary.ImportNow("ZyanStringViewInsideViewEx")
+	__imp_ZyanStringViewInsideBuffer = GengoLibrary.ImportNow("ZyanStringViewInsideBuffer")
+	__imp_ZyanStringViewInsideBufferEx = GengoLibrary.ImportNow("ZyanStringViewInsideBufferEx")
+	__imp_ZyanStringViewGetSize = GengoLibrary.ImportNow("ZyanStringViewGetSize")
+	__imp_ZyanStringViewGetData = GengoLibrary.ImportNow("ZyanStringViewGetData")
+	__imp_ZyanStringGetChar = GengoLibrary.ImportNow("ZyanStringGetChar")
+	__imp_ZyanStringGetCharMutable = GengoLibrary.ImportNow("ZyanStringGetCharMutable")
+	__imp_ZyanStringSetChar = GengoLibrary.ImportNow("ZyanStringSetChar")
+	__imp_ZyanStringInsert = GengoLibrary.ImportNow("ZyanStringInsert")
+	__imp_ZyanStringInsertEx = GengoLibrary.ImportNow("ZyanStringInsertEx")
+	__imp_ZyanStringAppend = GengoLibrary.ImportNow("ZyanStringAppend")
+	__imp_ZyanStringAppendEx = GengoLibrary.ImportNow("ZyanStringAppendEx")
+	__imp_ZyanStringDelete = GengoLibrary.ImportNow("ZyanStringDelete")
+	__imp_ZyanStringTruncate = GengoLibrary.ImportNow("ZyanStringTruncate")
+	__imp_ZyanStringClear = GengoLibrary.ImportNow("ZyanStringClear")
+	__imp_ZyanStringLPos = GengoLibrary.ImportNow("ZyanStringLPos")
+	__imp_ZyanStringLPosEx = GengoLibrary.ImportNow("ZyanStringLPosEx")
+	__imp_ZyanStringLPosI = GengoLibrary.ImportNow("ZyanStringLPosI")
+	__imp_ZyanStringLPosIEx = GengoLibrary.ImportNow("ZyanStringLPosIEx")
+	__imp_ZyanStringRPos = GengoLibrary.ImportNow("ZyanStringRPos")
+	__imp_ZyanStringRPosEx = GengoLibrary.ImportNow("ZyanStringRPosEx")
+	__imp_ZyanStringRPosI = GengoLibrary.ImportNow("ZyanStringRPosI")
+	__imp_ZyanStringRPosIEx = GengoLibrary.ImportNow("ZyanStringRPosIEx")
+	__imp_ZyanStringCompare = GengoLibrary.ImportNow("ZyanStringCompare")
+	__imp_ZyanStringCompareI = GengoLibrary.ImportNow("ZyanStringCompareI")
+	__imp_ZyanStringToLowerCase = GengoLibrary.ImportNow("ZyanStringToLowerCase")
+	__imp_ZyanStringToLowerCaseEx = GengoLibrary.ImportNow("ZyanStringToLowerCaseEx")
+	__imp_ZyanStringToUpperCase = GengoLibrary.ImportNow("ZyanStringToUpperCase")
+	__imp_ZyanStringToUpperCaseEx = GengoLibrary.ImportNow("ZyanStringToUpperCaseEx")
+	__imp_ZyanStringResize = GengoLibrary.ImportNow("ZyanStringResize")
+	__imp_ZyanStringReserve = GengoLibrary.ImportNow("ZyanStringReserve")
+	__imp_ZyanStringShrinkToFit = GengoLibrary.ImportNow("ZyanStringShrinkToFit")
+	__imp_ZyanStringGetCapacity = GengoLibrary.ImportNow("ZyanStringGetCapacity")
+	__imp_ZyanStringGetSize = GengoLibrary.ImportNow("ZyanStringGetSize")
+	__imp_ZyanStringGetData = GengoLibrary.ImportNow("ZyanStringGetData")
+	__imp_ZydisFormatterTokenGetValue = GengoLibrary.ImportNow("ZydisFormatterTokenGetValue")
+	__imp_ZydisFormatterTokenNext = GengoLibrary.ImportNow("ZydisFormatterTokenNext")
+	__imp_ZydisFormatterBufferGetToken = GengoLibrary.ImportNow("ZydisFormatterBufferGetToken")
+	__imp_ZydisFormatterBufferGetString = GengoLibrary.ImportNow("ZydisFormatterBufferGetString")
+	__imp_ZydisFormatterBufferAppend = GengoLibrary.ImportNow("ZydisFormatterBufferAppend")
+	__imp_ZydisFormatterBufferRemember = GengoLibrary.ImportNow("ZydisFormatterBufferRemember")
+	__imp_ZydisFormatterBufferRestore = GengoLibrary.ImportNow("ZydisFormatterBufferRestore")
+	__imp_ZydisFormatterInit = GengoLibrary.ImportNow("ZydisFormatterInit")
+	__imp_ZydisFormatterSetProperty = GengoLibrary.ImportNow("ZydisFormatterSetProperty")
+	__imp_ZydisFormatterSetHook = GengoLibrary.ImportNow("ZydisFormatterSetHook")
+	__imp_ZydisFormatterFormatInstruction = GengoLibrary.ImportNow("ZydisFormatterFormatInstruction")
+	__imp_ZydisFormatterFormatOperand = GengoLibrary.ImportNow("ZydisFormatterFormatOperand")
+	__imp_ZydisFormatterTokenizeInstruction = GengoLibrary.ImportNow("ZydisFormatterTokenizeInstruction")
+	__imp_ZydisFormatterTokenizeOperand = GengoLibrary.ImportNow("ZydisFormatterTokenizeOperand")
+	__imp_ZydisGetInstructionSegments = GengoLibrary.ImportNow("ZydisGetInstructionSegments")
+	__imp_ZydisDisassembleIntel = GengoLibrary.ImportNow("ZydisDisassembleIntel")
+	__imp_ZydisDisassembleATT = GengoLibrary.ImportNow("ZydisDisassembleATT")
+	__imp_ZydisCalcAbsoluteAddress = GengoLibrary.ImportNow("ZydisCalcAbsoluteAddress")
+	__imp_ZydisCalcAbsoluteAddressEx = GengoLibrary.ImportNow("ZydisCalcAbsoluteAddressEx")
+	__imp_ZydisGetVersion = GengoLibrary.ImportNow("ZydisGetVersion")
+	__imp_ZydisIsFeatureEnabled = GengoLibrary.ImportNow("ZydisIsFeatureEnabled")
+	gengort.Validate[ShortString](0x9, 0x1)
+	gengort.Validate[RegisterContext](0x850, 0x8, "Values", 0x0)
+	gengort.Validate[DecodedOperandReg](0x4, 0x4, "Value", 0x0)
+	gengort.Validate[DecodedOperandMem](0x28, 0x8, "Type", 0x0, "Segment", 0x4, "Base", 0x8, "Index", 0xc, "Scale", 0x10, "Disp", 0x18)
+	gengort.Validate[DecodedOperandMemDisp_](0x10, 0x8, "HasDisplacement", 0x0, "Value", 0x8)
+	gengort.Validate[DecodedOperandPtr](0x8, 0x4, "Segment", 0x0, "Offset", 0x4)
+	gengort.Validate[DecodedOperandImm](0x10, 0x8, "IsSigned", 0x0, "IsRelative", 0x1, "Value", 0x8)
+	gengort.Validate[DecodedOperandImmValue_](0x8, 0x8)
+	gengort.Validate[DecodedOperand](0x50, 0x8, "Id", 0x0, "Visibility", 0x4, "Actions", 0x8, "Encoding", 0xc, "Size", 0x10, "ElementType", 0x14, "ElementSize", 0x18, "ElementCount", 0x1a, "Attributes", 0x1c, "Type", 0x20)
+	gengort.Validate[Anon53065](0x28, 0x8)
+	gengort.Validate[AccessedFlags](0x14, 0x4, "Tested", 0x0, "Modified", 0x4, "Set0", 0x8, "Set1", 0xc, "Undefined", 0x10)
+	gengort.Validate[DecodedInstructionRawRex](0x5, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "Offset", 0x4)
+	gengort.Validate[DecodedInstructionRawXop](0x9, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "MMmmm", 0x3, "W", 0x4, "Vvvv", 0x5, "L", 0x6, "Pp", 0x7, "Offset", 0x8)
+	gengort.Validate[DecodedInstructionRawVex](0xa, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "MMmmm", 0x3, "W", 0x4, "Vvvv", 0x5, "L", 0x6, "Pp", 0x7, "Offset", 0x8, "Size", 0x9)
+	gengort.Validate[DecodedInstructionRawEvex](0xf, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "R2", 0x3, "Mmm", 0x4, "W", 0x5, "Vvvv", 0x6, "Pp", 0x7, "Z", 0x8, "L2", 0x9, "L", 0xa, "Br", 0xb, "V2", 0xc, "Aaa", 0xd, "Offset", 0xe)
+	gengort.Validate[DecodedInstructionRawMvex](0xd, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "R2", 0x3, "Mmmm", 0x4, "W", 0x5, "Vvvv", 0x6, "Pp", 0x7, "E", 0x8, "Sss", 0x9, "V2", 0xa, "Kkk", 0xb, "Offset", 0xc)
+	gengort.Validate[DecodedInstructionAvx](0x24, 0x4, "VectorLength", 0x0, "Mask", 0x4, "Broadcast", 0xc, "Rounding", 0x14, "Swizzle", 0x18, "Conversion", 0x1c, "HasSae", 0x20, "HasEvictionHint", 0x21)
+	gengort.Validate[DecodedInstructionAvxMask_](0x8, 0x4, "Mode", 0x0, "Reg", 0x4)
+	gengort.Validate[DecodedInstructionAvxBroadcast_](0x8, 0x4, "IsStatic", 0x0, "Mode", 0x4)
+	gengort.Validate[DecodedInstructionAvxRounding_](0x4, 0x4, "Mode", 0x0)
+	gengort.Validate[DecodedInstructionAvxSwizzle_](0x4, 0x4, "Mode", 0x0)
+	gengort.Validate[DecodedInstructionAvxConversion_](0x4, 0x4, "Mode", 0x0)
+	gengort.Validate[DecodedInstructionMeta](0x14, 0x4, "Category", 0x0, "IsaSet", 0x4, "IsaExt", 0x8, "BranchType", 0xc, "ExceptionClass", 0x10)
+	gengort.Validate[DecodedInstructionRaw](0xd8, 0x8, "PrefixCount", 0x0, "Prefixes", 0x4, "Encoding2", 0x7c, "Modrm", 0x8f, "Sib", 0x93, "Disp", 0x98, "Imm", 0xa8)
+	gengort.Validate[DecodedInstructionRawPrefixes_](0x8, 0x4, "Type", 0x0, "Value", 0x4)
+	gengort.Validate[Anon61855](0xf, 0x1)
+	gengort.Validate[DecodedInstructionModRm_](0x4, 0x1, "Mod", 0x0, "Reg", 0x1, "Rm", 0x2, "Offset", 0x3)
+	gengort.Validate[DecodedInstructionRawSib_](0x4, 0x1, "Scale", 0x0, "Index", 0x1, "Base", 0x2, "Offset", 0x3)
+	gengort.Validate[DecodedInstructionRawDisp_](0x10, 0x8, "Value", 0x0, "Size", 0x8, "Offset", 0x9)
+	gengort.Validate[DecodedInstructionRawImm_](0x18, 0x8, "IsSigned", 0x0, "IsRelative", 0x1, "Value", 0x8, "Size", 0x10, "Offset", 0x11)
+	gengort.Validate[DecodedInstructionRawImmValue_](0x8, 0x8)
+	gengort.Validate[DecodedInstruction](0x148, 0x8, "MachineMode", 0x0, "Mnemonic", 0x4, "Length", 0x8, "Encoding", 0xc, "OpcodeMap", 0x10, "Opcode", 0x14, "StackWidth", 0x15, "OperandWidth", 0x16, "AddressWidth", 0x17, "OperandCount", 0x18, "OperandCountVisible", 0x19, "Attributes", 0x20, "CpuFlags", 0x28, "FpuFlags", 0x30, "Avx", 0x38, "Meta", 0x5c, "Raw", 0x70)
+	gengort.Validate[DecoderContext](0x20, 0x8, "Definition", 0x0, "EoszIndex", 0x8, "EaszIndex", 0x9, "VectorUnified", 0xa, "RegInfo", 0x14, "Evex", 0x1a, "Mvex", 0x1c, "Cd8Scale", 0x1d)
+	gengort.Validate[Anon64195](0xa, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "L", 0x4, "Ll", 0x5, "R2", 0x6, "V2", 0x7, "Vvvv", 0x8, "Mask", 0x9)
+	gengort.Validate[Anon64355](0x6, 0x1, "IsModReg", 0x0, "IdReg", 0x1, "IdRm", 0x2, "IdNdsndd", 0x3, "IdBase", 0x4, "IdIndex", 0x5)
+	gengort.Validate[Anon64725](0x2, 0x1, "TupleType", 0x0, "ElementSize", 0x1)
+	gengort.Validate[Anon64865](0x1, 0x1, "Functionality", 0x0)
+	gengort.Validate[Decoder](0x14, 0x4, "MachineMode", 0x0, "StackWidth", 0x4, "DecoderMode", 0x8)
+	gengort.Validate[EncoderOperand](0x40, 0x8, "Type", 0x0, "Reg", 0x4, "Mem", 0x10, "Ptr", 0x30, "Imm", 0x38)
+	gengort.Validate[EncoderOperandReg_](0x8, 0x4, "Value", 0x0, "Is4", 0x4)
+	gengort.Validate[EncoderOperandMem_](0x20, 0x8, "Base", 0x0, "Index", 0x4, "Scale", 0x8, "Displacement", 0x10, "Size", 0x18)
+	gengort.Validate[EncoderOperandPtr_](0x8, 0x4, "Segment", 0x0, "Offset", 0x4)
+	gengort.Validate[EncoderOperandImm_](0x8, 0x8)
+	gengort.Validate[EncoderRequest](0x190, 0x8, "MachineMode", 0x0, "AllowedEncodings", 0x4, "Mnemonic", 0x8, "Prefixes", 0x10, "BranchType", 0x18, "BranchWidth", 0x1c, "AddressSizeHint", 0x20, "OperandSizeHint", 0x24, "OperandCount", 0x28, "Operands", 0x30, "Evex", 0x170, "Mvex", 0x17c)
+	gengort.Validate[EncoderRequestEvexFeatures_](0xc, 0x4, "Broadcast", 0x0, "Rounding", 0x4, "Sae", 0x8, "ZeroingMask", 0x9)
+	gengort.Validate[EncoderRequestMvexFeatures_](0x14, 0x4, "Broadcast", 0x0, "Conversion", 0x4, "Rounding", 0x8, "Swizzle", 0xc, "Sae", 0x10, "EvictionHint", 0x11)
+	gengort.Validate[Allocator](0x18, 0x8, "Allocate", 0x0, "Reallocate", 0x8, "Deallocate", 0x10)
+	gengort.Validate[Vector](0x38, 0x8, "Allocator", 0x0, "GrowthFactor", 0x8, "ShrinkThreshold", 0x9, "Size", 0x10, "Capacity", 0x18, "ElementSize", 0x20, "Destructor", 0x28, "Data", 0x30)
+	gengort.Validate[String](0x40, 0x8, "Flags", 0x0, "Vector", 0x8)
+	gengort.Validate[StringView](0x40, 0x8, "String", 0x0)
+	gengort.Validate[FormatterToken](0x2, 0x1, "Type", 0x0, "Next", 0x1)
+	gengort.Validate[FormatterBuffer](0x50, 0x8, "IsTokenList", 0x0, "Capacity", 0x8, "String", 0x10)
+	gengort.Validate[FormatterContext](0x28, 0x8, "Instruction", 0x0, "Operands", 0x8, "Operand", 0x10, "RuntimeAddress", 0x18, "UserData", 0x20)
+	gengort.Validate[Formatter](0x248, 0x8, "Style", 0x0, "ForceMemorySize", 0x4, "ForceMemorySegment", 0x5, "ForceMemoryScale", 0x6, "ForceRelativeBranches", 0x7, "ForceRelativeRiprel", 0x8, "PrintBranchSize", 0x9, "DetailedPrefixes", 0xa, "AddrBase", 0xc, "AddrSignedness", 0x10, "AddrPaddingAbsolute", 0x14, "AddrPaddingRelative", 0x18, "DispBase", 0x1c, "DispSignedness", 0x20, "DispPadding", 0x24, "ImmBase", 0x28, "ImmSignedness", 0x2c, "ImmPadding", 0x30, "CasePrefixes", 0x34, "CaseMnemonic", 0x38, "CaseRegisters", 0x3c, "CaseTypecasts", 0x40, "CaseDecorators", 0x44, "HexUppercase", 0x48, "HexForceLeadingNumber", 0x49, "NumberFormat", 0x50, "FuncPreInstruction", 0x1b0, "FuncPostInstruction", 0x1b8, "FuncFormatInstruction", 0x1c0, "FuncPreOperand", 0x1c8, "FuncPostOperand", 0x1d0, "FuncFormatOperandReg", 0x1d8, "FuncFormatOperandMem", 0x1e0, "FuncFormatOperandPtr", 0x1e8, "FuncFormatOperandImm", 0x1f0, "FuncPrintMnemonic", 0x1f8, "FuncPrintRegister", 0x200, "FuncPrintAddressAbs", 0x208, "FuncPrintAddressRel", 0x210, "FuncPrintDisp", 0x218, "FuncPrintImm", 0x220, "FuncPrintTypecast", 0x228, "FuncPrintSegment", 0x230, "FuncPrintPrefixes", 0x238, "FuncPrintDecorator", 0x240)
+	gengort.Validate[Anon112225](0x58, 0x8, "String", 0x0, "StringData", 0x8, "Buffer", 0x48)
+	gengort.Validate[InstructionSegments](0x4c, 0x4, "Count", 0x0, "Segments", 0x4)
+	gengort.Validate[Anon116335](0x8, 0x4, "Type", 0x0, "Offset", 0x4, "Size", 0x5)
+	gengort.Validate[DisassembledInstruction](0x4d0, 0x8, "RuntimeAddress", 0x0, "Info", 0x8, "Operands", 0x150, "Text", 0x470)
+}
 
 // Returns the specified instruction category string.
 //
@@ -4460,11 +4651,11 @@ var __imp_ZydisCategoryGetString = GengoLibrary.Import("ZydisCategoryGetString")
 //
 // @return The instruction category string or `ZYAN_NULL`, if an invalid category was passed.
 func (category InstructionCategory) GetString() *byte {
-	__res := __imp_ZydisCategoryGetString.Call1(gengort.MarshallSyscall(category))
+	__res := gengort.CCall1(__imp_ZydisCategoryGetString.Addr(), gengort.MarshallSyscall(category))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
 
-var __imp_ZydisISASetGetString = GengoLibrary.Import("ZydisISASetGetString")
+var __imp_ZydisISASetGetString gengort.PreloadProc
 
 // Returns the specified isa-set string.
 //
@@ -4472,11 +4663,11 @@ var __imp_ZydisISASetGetString = GengoLibrary.Import("ZydisISASetGetString")
 //
 // @return The isa-set string or `ZYAN_NULL`, if an invalid isa-set was passed.
 func (isa_set Isaset) GetString() *byte {
-	__res := __imp_ZydisISASetGetString.Call1(gengort.MarshallSyscall(isa_set))
+	__res := gengort.CCall1(__imp_ZydisISASetGetString.Addr(), gengort.MarshallSyscall(isa_set))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
 
-var __imp_ZydisISAExtGetString = GengoLibrary.Import("ZydisISAExtGetString")
+var __imp_ZydisISAExtGetString gengort.PreloadProc
 
 // Returns the specified isa-extension string.
 //
@@ -4484,11 +4675,11 @@ var __imp_ZydisISAExtGetString = GengoLibrary.Import("ZydisISAExtGetString")
 //
 // @return The isa-extension string or `ZYAN_NULL`, if an invalid isa-extension was passed.
 func (isa_ext Isaext) GetString() *byte {
-	__res := __imp_ZydisISAExtGetString.Call1(gengort.MarshallSyscall(isa_ext))
+	__res := gengort.CCall1(__imp_ZydisISAExtGetString.Addr(), gengort.MarshallSyscall(isa_ext))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
 
-var __imp_ZydisMnemonicGetString = GengoLibrary.Import("ZydisMnemonicGetString")
+var __imp_ZydisMnemonicGetString gengort.PreloadProc
 
 // Returns the specified instruction mnemonic string.
 //
@@ -4496,11 +4687,11 @@ var __imp_ZydisMnemonicGetString = GengoLibrary.Import("ZydisMnemonicGetString")
 //
 // @return The instruction mnemonic string or `ZYAN_NULL`, if an invalid mnemonic was passed.
 func (mnemonic Mnemonic) GetString() *byte {
-	__res := __imp_ZydisMnemonicGetString.Call1(gengort.MarshallSyscall(mnemonic))
+	__res := gengort.CCall1(__imp_ZydisMnemonicGetString.Addr(), gengort.MarshallSyscall(mnemonic))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
 
-var __imp_ZydisMnemonicGetStringWrapped = GengoLibrary.Import("ZydisMnemonicGetStringWrapped")
+var __imp_ZydisMnemonicGetStringWrapped gengort.PreloadProc
 
 // Returns the specified instruction mnemonic as `ZydisShortString`.
 //
@@ -4509,11 +4700,11 @@ var __imp_ZydisMnemonicGetStringWrapped = GengoLibrary.Import("ZydisMnemonicGetS
 // @return The instruction mnemonic string or `ZYAN_NULL`, if an invalid mnemonic was passed.
 // The `buffer` of the returned struct is guaranteed to be zero-terminated in this special case.
 func (mnemonic Mnemonic) GetStringWrapped() *ShortString {
-	__res := __imp_ZydisMnemonicGetStringWrapped.Call1(gengort.MarshallSyscall(mnemonic))
+	__res := gengort.CCall1(__imp_ZydisMnemonicGetStringWrapped.Addr(), gengort.MarshallSyscall(mnemonic))
 	return gengort.UnmarshallSyscall[*ShortString](__res)
 }
 
-var __imp_ZydisRegisterEncode = GengoLibrary.Import("ZydisRegisterEncode")
+var __imp_ZydisRegisterEncode gengort.PreloadProc
 
 // Returns the register specified by the `register_class` and `id` tuple.
 //
@@ -4524,11 +4715,11 @@ var __imp_ZydisRegisterEncode = GengoLibrary.Import("ZydisRegisterEncode")
 // @return The register specified by the `register_class` and `id` tuple or `ZYDIS_REGISTER_NONE`,
 // if an invalid parameter was passed.
 func (register_class RegisterClass) Encode(id U8) Register {
-	__res := __imp_ZydisRegisterEncode.Call2(gengort.MarshallSyscall(register_class), gengort.MarshallSyscall(id))
+	__res := gengort.CCall2(__imp_ZydisRegisterEncode.Addr(), gengort.MarshallSyscall(register_class), gengort.MarshallSyscall(id))
 	return gengort.UnmarshallSyscall[Register](__res)
 }
 
-var __imp_ZydisRegisterGetId = GengoLibrary.Import("ZydisRegisterGetId")
+var __imp_ZydisRegisterGetId gengort.PreloadProc
 
 // Returns the id of the specified register.
 //
@@ -4536,11 +4727,11 @@ var __imp_ZydisRegisterGetId = GengoLibrary.Import("ZydisRegisterGetId")
 //
 // @return The id of the specified register, or -1 if an invalid parameter was passed.
 func (reg Register) GetId() I8 {
-	__res := __imp_ZydisRegisterGetId.Call1(gengort.MarshallSyscall(reg))
+	__res := gengort.CCall1(__imp_ZydisRegisterGetId.Addr(), gengort.MarshallSyscall(reg))
 	return gengort.UnmarshallSyscall[I8](__res)
 }
 
-var __imp_ZydisRegisterGetClass = GengoLibrary.Import("ZydisRegisterGetClass")
+var __imp_ZydisRegisterGetClass gengort.PreloadProc
 
 // Returns the register-class of the specified register.
 //
@@ -4548,11 +4739,11 @@ var __imp_ZydisRegisterGetClass = GengoLibrary.Import("ZydisRegisterGetClass")
 //
 // @return The register-class of the specified register.
 func (reg Register) GetClass() RegisterClass {
-	__res := __imp_ZydisRegisterGetClass.Call1(gengort.MarshallSyscall(reg))
+	__res := gengort.CCall1(__imp_ZydisRegisterGetClass.Addr(), gengort.MarshallSyscall(reg))
 	return gengort.UnmarshallSyscall[RegisterClass](__res)
 }
 
-var __imp_ZydisRegisterGetWidth = GengoLibrary.Import("ZydisRegisterGetWidth")
+var __imp_ZydisRegisterGetWidth gengort.PreloadProc
 
 // Returns the width of the specified register.
 //
@@ -4563,11 +4754,11 @@ var __imp_ZydisRegisterGetWidth = GengoLibrary.Import("ZydisRegisterGetWidth")
 // @return The width of the specified register, or `ZYDIS_REGISTER_NONE` if the register is
 // invalid for the active machine-mode.
 func (reg Register) GetWidth(mode MachineMode) RegisterWidth {
-	__res := __imp_ZydisRegisterGetWidth.Call2(gengort.MarshallSyscall(mode), gengort.MarshallSyscall(reg))
+	__res := gengort.CCall2(__imp_ZydisRegisterGetWidth.Addr(), gengort.MarshallSyscall(mode), gengort.MarshallSyscall(reg))
 	return gengort.UnmarshallSyscall[RegisterWidth](__res)
 }
 
-var __imp_ZydisRegisterGetLargestEnclosing = GengoLibrary.Import("ZydisRegisterGetLargestEnclosing")
+var __imp_ZydisRegisterGetLargestEnclosing gengort.PreloadProc
 
 // Returns the largest enclosing register of the given register.
 //
@@ -4578,11 +4769,11 @@ var __imp_ZydisRegisterGetLargestEnclosing = GengoLibrary.Import("ZydisRegisterG
 // @return The largest enclosing register of the given register, or `ZYDIS_REGISTER_NONE` if the
 // register is invalid for the active machine-mode or does not have an enclosing-register.
 func (reg Register) GetLargestEnclosing(mode MachineMode) Register {
-	__res := __imp_ZydisRegisterGetLargestEnclosing.Call2(gengort.MarshallSyscall(mode), gengort.MarshallSyscall(reg))
+	__res := gengort.CCall2(__imp_ZydisRegisterGetLargestEnclosing.Addr(), gengort.MarshallSyscall(mode), gengort.MarshallSyscall(reg))
 	return gengort.UnmarshallSyscall[Register](__res)
 }
 
-var __imp_ZydisRegisterGetString = GengoLibrary.Import("ZydisRegisterGetString")
+var __imp_ZydisRegisterGetString gengort.PreloadProc
 
 // Returns the specified register string.
 //
@@ -4590,11 +4781,11 @@ var __imp_ZydisRegisterGetString = GengoLibrary.Import("ZydisRegisterGetString")
 //
 // @return The register string or `ZYAN_NULL`, if an invalid register was passed.
 func (reg Register) GetString() *byte {
-	__res := __imp_ZydisRegisterGetString.Call1(gengort.MarshallSyscall(reg))
+	__res := gengort.CCall1(__imp_ZydisRegisterGetString.Addr(), gengort.MarshallSyscall(reg))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
 
-var __imp_ZydisRegisterGetStringWrapped = GengoLibrary.Import("ZydisRegisterGetStringWrapped")
+var __imp_ZydisRegisterGetStringWrapped gengort.PreloadProc
 
 // Returns the specified register string as `ZydisShortString`.
 //
@@ -4603,11 +4794,11 @@ var __imp_ZydisRegisterGetStringWrapped = GengoLibrary.Import("ZydisRegisterGetS
 // @return The register string or `ZYAN_NULL`, if an invalid register was passed.
 // The `buffer` of the returned struct is guaranteed to be zero-terminated in this special case.
 func (reg Register) GetStringWrapped() *ShortString {
-	__res := __imp_ZydisRegisterGetStringWrapped.Call1(gengort.MarshallSyscall(reg))
+	__res := gengort.CCall1(__imp_ZydisRegisterGetStringWrapped.Addr(), gengort.MarshallSyscall(reg))
 	return gengort.UnmarshallSyscall[*ShortString](__res)
 }
 
-var __imp_ZydisRegisterClassGetWidth = GengoLibrary.Import("ZydisRegisterClassGetWidth")
+var __imp_ZydisRegisterClassGetWidth gengort.PreloadProc
 
 // Returns the width of the specified register-class.
 //
@@ -4617,11 +4808,11 @@ var __imp_ZydisRegisterClassGetWidth = GengoLibrary.Import("ZydisRegisterClassGe
 //
 // @return The width of the specified register.
 func (register_class RegisterClass) ClassGetWidth(mode MachineMode) RegisterWidth {
-	__res := __imp_ZydisRegisterClassGetWidth.Call2(gengort.MarshallSyscall(mode), gengort.MarshallSyscall(register_class))
+	__res := gengort.CCall2(__imp_ZydisRegisterClassGetWidth.Addr(), gengort.MarshallSyscall(mode), gengort.MarshallSyscall(register_class))
 	return gengort.UnmarshallSyscall[RegisterWidth](__res)
 }
 
-var __imp_ZydisDecoderInit = GengoLibrary.Import("ZydisDecoderInit")
+var __imp_ZydisDecoderInit gengort.PreloadProc
 
 // Initializes the given `ZydisDecoder` instance.
 //
@@ -4633,11 +4824,11 @@ var __imp_ZydisDecoderInit = GengoLibrary.Import("ZydisDecoderInit")
 //
 // @return A zyan status code.
 func (decoder *Decoder) Init(machine_mode MachineMode, stack_width StackWidth) Status {
-	__res := __imp_ZydisDecoderInit.Call3(gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(stack_width))
+	__res := gengort.CCall3(__imp_ZydisDecoderInit.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(stack_width))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisDecoderEnableMode = GengoLibrary.Import("ZydisDecoderEnableMode")
+var __imp_ZydisDecoderEnableMode gengort.PreloadProc
 
 // Enables or disables the specified decoder-mode.
 //
@@ -4649,11 +4840,11 @@ var __imp_ZydisDecoderEnableMode = GengoLibrary.Import("ZydisDecoderEnableMode")
 //
 // @return A zyan status code.
 func (decoder *Decoder) EnableMode(mode DecoderMode, enabled Bool) Status {
-	__res := __imp_ZydisDecoderEnableMode.Call3(gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(mode), gengort.MarshallSyscall(enabled))
+	__res := gengort.CCall3(__imp_ZydisDecoderEnableMode.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(mode), gengort.MarshallSyscall(enabled))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisDecoderDecodeFull = GengoLibrary.Import("ZydisDecoderDecodeFull")
+var __imp_ZydisDecoderDecodeFull gengort.PreloadProc
 
 // Decodes the instruction in the given input `buffer` and returns all details (e.g. operands).
 //
@@ -4682,11 +4873,11 @@ var __imp_ZydisDecoderDecodeFull = GengoLibrary.Import("ZydisDecoderDecodeFull")
 //
 // @return A zyan status code.
 func (decoder *Decoder) DecodeFull(buffer unsafe.Pointer, length Usize, instruction *DecodedInstruction, operands *DecodedOperand) Status {
-	__res := __imp_ZydisDecoderDecodeFull.Call5(gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands))
+	__res := gengort.CCall5(__imp_ZydisDecoderDecodeFull.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisDecoderDecodeInstruction = GengoLibrary.Import("ZydisDecoderDecodeInstruction")
+var __imp_ZydisDecoderDecodeInstruction gengort.PreloadProc
 
 // Decodes the instruction in the given input `buffer`.
 //
@@ -4708,11 +4899,11 @@ var __imp_ZydisDecoderDecodeInstruction = GengoLibrary.Import("ZydisDecoderDecod
 //
 // @return A zyan status code.
 func (decoder *Decoder) DecodeInstruction(context *DecoderContext, buffer unsafe.Pointer, length Usize, instruction *DecodedInstruction) Status {
-	__res := __imp_ZydisDecoderDecodeInstruction.Call5(gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(context), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
+	__res := gengort.CCall5(__imp_ZydisDecoderDecodeInstruction.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(context), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisDecoderDecodeOperands = GengoLibrary.Import("ZydisDecoderDecodeOperands")
+var __imp_ZydisDecoderDecodeOperands gengort.PreloadProc
 
 // Decodes the instruction operands.
 //
@@ -4741,11 +4932,11 @@ var __imp_ZydisDecoderDecodeOperands = GengoLibrary.Import("ZydisDecoderDecodeOp
 //
 // @return A zyan status code.
 func (decoder *Decoder) DecodeOperands(context *DecoderContext, instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8) Status {
-	__res := __imp_ZydisDecoderDecodeOperands.Call5(gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(context), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count))
+	__res := gengort.CCall5(__imp_ZydisDecoderDecodeOperands.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(context), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisEncoderEncodeInstruction = GengoLibrary.Import("ZydisEncoderEncodeInstruction")
+var __imp_ZydisEncoderEncodeInstruction gengort.PreloadProc
 
 // Encodes instruction with semantics specified in encoder request structure.
 //
@@ -4758,11 +4949,11 @@ var __imp_ZydisEncoderEncodeInstruction = GengoLibrary.Import("ZydisEncoderEncod
 //
 // @return A zyan status code.
 func (request *EncoderRequest) EncodeInstruction(buffer unsafe.Pointer, length *Usize) Status {
-	__res := __imp_ZydisEncoderEncodeInstruction.Call3(gengort.MarshallSyscall(request), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
+	__res := gengort.CCall3(__imp_ZydisEncoderEncodeInstruction.Addr(), gengort.MarshallSyscall(request), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisEncoderEncodeInstructionAbsolute = GengoLibrary.Import("ZydisEncoderEncodeInstructionAbsolute")
+var __imp_ZydisEncoderEncodeInstructionAbsolute gengort.PreloadProc
 
 // Encodes instruction with semantics specified in encoder request structure. This function expects
 // absolute addresses inside encoder request instead of `EIP`/`RIP`-relative values. Function
@@ -4781,11 +4972,11 @@ var __imp_ZydisEncoderEncodeInstructionAbsolute = GengoLibrary.Import("ZydisEnco
 //
 // @return A zyan status code.
 func (request *EncoderRequest) EncodeInstructionAbsolute(buffer unsafe.Pointer, length *Usize, runtime_address U64) Status {
-	__res := __imp_ZydisEncoderEncodeInstructionAbsolute.Call4(gengort.MarshallSyscall(request), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address))
+	__res := gengort.CCall4(__imp_ZydisEncoderEncodeInstructionAbsolute.Addr(), gengort.MarshallSyscall(request), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisEncoderDecodedInstructionToEncoderRequest = GengoLibrary.Import("ZydisEncoderDecodedInstructionToEncoderRequest")
+var __imp_ZydisEncoderDecodedInstructionToEncoderRequest gengort.PreloadProc
 
 // Converts decoded instruction to encoder request that can be passed to
 // `ZydisEncoderEncodeInstruction`.
@@ -4805,11 +4996,11 @@ var __imp_ZydisEncoderDecodedInstructionToEncoderRequest = GengoLibrary.Import("
 //
 // @return A zyan status code.
 func (request *EncoderRequest) DecodedInstructionToEncoderRequest(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8) Status {
-	__res := __imp_ZydisEncoderDecodedInstructionToEncoderRequest.Call4(gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(request))
+	__res := gengort.CCall4(__imp_ZydisEncoderDecodedInstructionToEncoderRequest.Addr(), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(request))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisEncoderNopFill = GengoLibrary.Import("ZydisEncoderNopFill")
+var __imp_ZydisEncoderNopFill gengort.PreloadProc
 
 // Fills provided buffer with `NOP` instructions using longest possible multi-byte instructions.
 //
@@ -4819,11 +5010,11 @@ var __imp_ZydisEncoderNopFill = GengoLibrary.Import("ZydisEncoderNopFill")
 //
 // @return A zyan status code.
 func EncoderNopFill(buffer unsafe.Pointer, length Usize) Status {
-	__res := __imp_ZydisEncoderNopFill.Call2(gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
+	__res := gengort.CCall2(__imp_ZydisEncoderNopFill.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanAllocatorInit = GengoLibrary.Import("ZyanAllocatorInit")
+var __imp_ZyanAllocatorInit gengort.PreloadProc
 
 // Initializes the given `ZyanAllocator` instance.
 //
@@ -4837,95 +5028,95 @@ var __imp_ZyanAllocatorInit = GengoLibrary.Import("ZyanAllocatorInit")
 //
 // @return A zyan status code.
 func AllocatorInit(allocator *Allocator, allocate AllocatorAllocate, reallocate AllocatorAllocate, deallocate AllocatorDeallocate) Status {
-	__res := __imp_ZyanAllocatorInit.Call4(gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(allocate), gengort.MarshallSyscall(reallocate), gengort.MarshallSyscall(deallocate))
+	__res := gengort.CCall4(__imp_ZyanAllocatorInit.Addr(), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(allocate), gengort.MarshallSyscall(reallocate), gengort.MarshallSyscall(deallocate))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanEqualsPointer = GengoLibrary.Import("ZyanEqualsPointer")
+var __imp_ZyanEqualsPointer gengort.PreloadProc
 
 func EqualsPointer(left *unsafe.Pointer, right *unsafe.Pointer) Bool {
-	__res := __imp_ZyanEqualsPointer.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanEqualsPointer.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
 }
 
-var __imp_ZyanEqualsBool = GengoLibrary.Import("ZyanEqualsBool")
+var __imp_ZyanEqualsBool gengort.PreloadProc
 
 func EqualsBool(left *Bool, right *Bool) Bool {
-	__res := __imp_ZyanEqualsBool.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanEqualsBool.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
 }
 
-var __imp_ZyanEqualsNumeric8 = GengoLibrary.Import("ZyanEqualsNumeric8")
+var __imp_ZyanEqualsNumeric8 gengort.PreloadProc
 
 func EqualsNumeric8(left *U8, right *U8) Bool {
-	__res := __imp_ZyanEqualsNumeric8.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanEqualsNumeric8.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
 }
 
-var __imp_ZyanEqualsNumeric16 = GengoLibrary.Import("ZyanEqualsNumeric16")
+var __imp_ZyanEqualsNumeric16 gengort.PreloadProc
 
 func EqualsNumeric16(left *U16, right *U16) Bool {
-	__res := __imp_ZyanEqualsNumeric16.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanEqualsNumeric16.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
 }
 
-var __imp_ZyanEqualsNumeric32 = GengoLibrary.Import("ZyanEqualsNumeric32")
+var __imp_ZyanEqualsNumeric32 gengort.PreloadProc
 
 func EqualsNumeric32(left *U32, right *U32) Bool {
-	__res := __imp_ZyanEqualsNumeric32.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanEqualsNumeric32.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
 }
 
-var __imp_ZyanEqualsNumeric64 = GengoLibrary.Import("ZyanEqualsNumeric64")
+var __imp_ZyanEqualsNumeric64 gengort.PreloadProc
 
 func EqualsNumeric64(left *U64, right *U64) Bool {
-	__res := __imp_ZyanEqualsNumeric64.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanEqualsNumeric64.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
 }
 
-var __imp_ZyanComparePointer = GengoLibrary.Import("ZyanComparePointer")
+var __imp_ZyanComparePointer gengort.PreloadProc
 
 func ComparePointer(left *unsafe.Pointer, right *unsafe.Pointer) I32 {
-	__res := __imp_ZyanComparePointer.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanComparePointer.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
 }
 
-var __imp_ZyanCompareBool = GengoLibrary.Import("ZyanCompareBool")
+var __imp_ZyanCompareBool gengort.PreloadProc
 
 func CompareBool(left *Bool, right *Bool) I32 {
-	__res := __imp_ZyanCompareBool.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanCompareBool.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
 }
 
-var __imp_ZyanCompareNumeric8 = GengoLibrary.Import("ZyanCompareNumeric8")
+var __imp_ZyanCompareNumeric8 gengort.PreloadProc
 
 func CompareNumeric8(left *U8, right *U8) I32 {
-	__res := __imp_ZyanCompareNumeric8.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanCompareNumeric8.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
 }
 
-var __imp_ZyanCompareNumeric16 = GengoLibrary.Import("ZyanCompareNumeric16")
+var __imp_ZyanCompareNumeric16 gengort.PreloadProc
 
 func CompareNumeric16(left *U16, right *U16) I32 {
-	__res := __imp_ZyanCompareNumeric16.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanCompareNumeric16.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
 }
 
-var __imp_ZyanCompareNumeric32 = GengoLibrary.Import("ZyanCompareNumeric32")
+var __imp_ZyanCompareNumeric32 gengort.PreloadProc
 
 func CompareNumeric32(left *U32, right *U32) I32 {
-	__res := __imp_ZyanCompareNumeric32.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanCompareNumeric32.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
 }
 
-var __imp_ZyanCompareNumeric64 = GengoLibrary.Import("ZyanCompareNumeric64")
+var __imp_ZyanCompareNumeric64 gengort.PreloadProc
 
 func CompareNumeric64(left *U64, right *U64) I32 {
-	__res := __imp_ZyanCompareNumeric64.Call2(gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
+	__res := gengort.CCall2(__imp_ZyanCompareNumeric64.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
 }
 
-var __imp_ZyanVectorInitEx = GengoLibrary.Import("ZyanVectorInitEx")
+var __imp_ZyanVectorInitEx gengort.PreloadProc
 
 // Initializes the given `ZyanVector` instance and sets a custom `allocator` and memory
 // allocation/deallocation parameters.
@@ -4950,11 +5141,11 @@ var __imp_ZyanVectorInitEx = GengoLibrary.Import("ZyanVectorInitEx")
 // dynamic shrinking.
 // Finalization with `ZyanVectorDestroy` is required for all instances created by this function.
 func (vector *Vector) InitEx(element_size Usize, capacity Usize, destructor MemberProcedure, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
-	__res := __imp_ZyanVectorInitEx.Call7(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element_size), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(destructor), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
+	__res := gengort.CCall7(__imp_ZyanVectorInitEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element_size), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(destructor), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorInitCustomBuffer = GengoLibrary.Import("ZyanVectorInitCustomBuffer")
+var __imp_ZyanVectorInitCustomBuffer gengort.PreloadProc
 
 // Initializes the given `ZyanVector` instance and configures it to use a custom user
 // defined buffer with a fixed size.
@@ -4973,11 +5164,11 @@ var __imp_ZyanVectorInitCustomBuffer = GengoLibrary.Import("ZyanVectorInitCustom
 // @return A zyan status code.
 // Finalization is not required for instances created by this function.
 func (vector *Vector) InitCustomBuffer(element_size Usize, buffer unsafe.Pointer, capacity Usize, destructor MemberProcedure) Status {
-	__res := __imp_ZyanVectorInitCustomBuffer.Call5(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element_size), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(destructor))
+	__res := gengort.CCall5(__imp_ZyanVectorInitCustomBuffer.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element_size), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(destructor))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorDestroy = GengoLibrary.Import("ZyanVectorDestroy")
+var __imp_ZyanVectorDestroy gengort.PreloadProc
 
 // Destroys the given `ZyanVector` instance.
 //
@@ -4985,11 +5176,11 @@ var __imp_ZyanVectorDestroy = GengoLibrary.Import("ZyanVectorDestroy")
 //
 // @return A zyan status code.
 func (vector *Vector) Destroy() Status {
-	__res := __imp_ZyanVectorDestroy.Call1(gengort.MarshallSyscall(vector))
+	__res := gengort.CCall1(__imp_ZyanVectorDestroy.Addr(), gengort.MarshallSyscall(vector))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorDuplicateEx = GengoLibrary.Import("ZyanVectorDuplicateEx")
+var __imp_ZyanVectorDuplicateEx gengort.PreloadProc
 
 // Initializes a new `ZyanVector` instance by duplicating an existing vector and sets a
 // custom `allocator` and memory allocation/deallocation parameters.
@@ -5013,11 +5204,11 @@ var __imp_ZyanVectorDuplicateEx = GengoLibrary.Import("ZyanVectorDuplicateEx")
 // dynamic shrinking.
 // Finalization with `ZyanVectorDestroy` is required for all instances created by this function.
 func (destination *Vector) DuplicateEx(source *Vector, capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
-	__res := __imp_ZyanVectorDuplicateEx.Call6(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
+	__res := gengort.CCall6(__imp_ZyanVectorDuplicateEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorDuplicateCustomBuffer = GengoLibrary.Import("ZyanVectorDuplicateCustomBuffer")
+var __imp_ZyanVectorDuplicateCustomBuffer gengort.PreloadProc
 
 // Initializes a new `ZyanVector` instance by duplicating an existing vector and
 // configures it to use a custom user defined buffer with a fixed size.
@@ -5035,11 +5226,11 @@ var __imp_ZyanVectorDuplicateCustomBuffer = GengoLibrary.Import("ZyanVectorDupli
 // @return A zyan status code.
 // Finalization is not required for instances created by this function.
 func (destination *Vector) DuplicateCustomBuffer(source *Vector, buffer unsafe.Pointer, capacity Usize) Status {
-	__res := __imp_ZyanVectorDuplicateCustomBuffer.Call4(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall4(__imp_ZyanVectorDuplicateCustomBuffer.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorGet = GengoLibrary.Import("ZyanVectorGet")
+var __imp_ZyanVectorGet gengort.PreloadProc
 
 // Returns a constant pointer to the element at the given `index`.
 //
@@ -5054,11 +5245,11 @@ var __imp_ZyanVectorGet = GengoLibrary.Import("ZyanVectorGet")
 // Take a look at `ZyanVectorGetPointer` instead, if you need a function that returns a zyan status
 // code.
 func (vector *Vector) Get(index Usize) unsafe.Pointer {
-	__res := __imp_ZyanVectorGet.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
+	__res := gengort.CCall2(__imp_ZyanVectorGet.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[unsafe.Pointer](__res)
 }
 
-var __imp_ZyanVectorGetMutable = GengoLibrary.Import("ZyanVectorGetMutable")
+var __imp_ZyanVectorGetMutable gengort.PreloadProc
 
 // Returns a mutable pointer to the element at the given `index`.
 //
@@ -5073,11 +5264,11 @@ var __imp_ZyanVectorGetMutable = GengoLibrary.Import("ZyanVectorGetMutable")
 // Take a look at `ZyanVectorGetPointerMutable` instead, if you need a function that returns a
 // zyan status code.
 func (vector *Vector) GetMutable(index Usize) unsafe.Pointer {
-	__res := __imp_ZyanVectorGetMutable.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
+	__res := gengort.CCall2(__imp_ZyanVectorGetMutable.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[unsafe.Pointer](__res)
 }
 
-var __imp_ZyanVectorGetPointer = GengoLibrary.Import("ZyanVectorGetPointer")
+var __imp_ZyanVectorGetPointer gengort.PreloadProc
 
 // Returns a constant pointer to the element at the given `index`.
 //
@@ -5091,11 +5282,11 @@ var __imp_ZyanVectorGetPointer = GengoLibrary.Import("ZyanVectorGetPointer")
 //
 // @return A zyan status code.
 func (vector *Vector) GetPointer(index Usize, value *unsafe.Pointer) Status {
-	__res := __imp_ZyanVectorGetPointer.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZyanVectorGetPointer.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorGetPointerMutable = GengoLibrary.Import("ZyanVectorGetPointerMutable")
+var __imp_ZyanVectorGetPointerMutable gengort.PreloadProc
 
 // Returns a mutable pointer to the element at the given `index`.
 //
@@ -5109,11 +5300,11 @@ var __imp_ZyanVectorGetPointerMutable = GengoLibrary.Import("ZyanVectorGetPointe
 //
 // @return A zyan status code.
 func (vector *Vector) GetPointerMutable(index Usize, value *unsafe.Pointer) Status {
-	__res := __imp_ZyanVectorGetPointerMutable.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZyanVectorGetPointerMutable.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorSet = GengoLibrary.Import("ZyanVectorSet")
+var __imp_ZyanVectorSet gengort.PreloadProc
 
 // Assigns a new value to the element at the given `index`.
 //
@@ -5125,11 +5316,11 @@ var __imp_ZyanVectorSet = GengoLibrary.Import("ZyanVectorSet")
 //
 // @return A zyan status code.
 func (vector *Vector) Set(index Usize, value unsafe.Pointer) Status {
-	__res := __imp_ZyanVectorSet.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZyanVectorSet.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorPushBack = GengoLibrary.Import("ZyanVectorPushBack")
+var __imp_ZyanVectorPushBack gengort.PreloadProc
 
 // Adds a new `element` to the end of the vector.
 //
@@ -5139,11 +5330,11 @@ var __imp_ZyanVectorPushBack = GengoLibrary.Import("ZyanVectorPushBack")
 //
 // @return A zyan status code.
 func (vector *Vector) PushBack(element unsafe.Pointer) Status {
-	__res := __imp_ZyanVectorPushBack.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element))
+	__res := gengort.CCall2(__imp_ZyanVectorPushBack.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorInsert = GengoLibrary.Import("ZyanVectorInsert")
+var __imp_ZyanVectorInsert gengort.PreloadProc
 
 // Inserts an `element` at the given `index` of the vector.
 //
@@ -5155,11 +5346,11 @@ var __imp_ZyanVectorInsert = GengoLibrary.Import("ZyanVectorInsert")
 //
 // @return A zyan status code.
 func (vector *Vector) Insert(index Usize, element unsafe.Pointer) Status {
-	__res := __imp_ZyanVectorInsert.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(element))
+	__res := gengort.CCall3(__imp_ZyanVectorInsert.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(element))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorInsertRange = GengoLibrary.Import("ZyanVectorInsertRange")
+var __imp_ZyanVectorInsertRange gengort.PreloadProc
 
 // Inserts multiple `elements` at the given `index` of the vector.
 //
@@ -5173,11 +5364,11 @@ var __imp_ZyanVectorInsertRange = GengoLibrary.Import("ZyanVectorInsertRange")
 //
 // @return A zyan status code.
 func (vector *Vector) InsertRange(index Usize, elements unsafe.Pointer, count Usize) Status {
-	__res := __imp_ZyanVectorInsertRange.Call4(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(elements), gengort.MarshallSyscall(count))
+	__res := gengort.CCall4(__imp_ZyanVectorInsertRange.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(elements), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorEmplace = GengoLibrary.Import("ZyanVectorEmplace")
+var __imp_ZyanVectorEmplace gengort.PreloadProc
 
 // Constructs an `element` in-place at the end of the vector.
 //
@@ -5190,11 +5381,11 @@ var __imp_ZyanVectorEmplace = GengoLibrary.Import("ZyanVectorEmplace")
 //
 // @return A zyan status code.
 func (vector *Vector) Emplace(element *unsafe.Pointer, constructor MemberFunction) Status {
-	__res := __imp_ZyanVectorEmplace.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(constructor))
+	__res := gengort.CCall3(__imp_ZyanVectorEmplace.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(constructor))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorEmplaceEx = GengoLibrary.Import("ZyanVectorEmplaceEx")
+var __imp_ZyanVectorEmplaceEx gengort.PreloadProc
 
 // Constructs an `element` in-place and inserts it at the given `index` of the vector.
 //
@@ -5209,11 +5400,11 @@ var __imp_ZyanVectorEmplaceEx = GengoLibrary.Import("ZyanVectorEmplaceEx")
 //
 // @return A zyan status code.
 func (vector *Vector) EmplaceEx(index Usize, element *unsafe.Pointer, constructor MemberFunction) Status {
-	__res := __imp_ZyanVectorEmplaceEx.Call4(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(element), gengort.MarshallSyscall(constructor))
+	__res := gengort.CCall4(__imp_ZyanVectorEmplaceEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(element), gengort.MarshallSyscall(constructor))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorSwapElements = GengoLibrary.Import("ZyanVectorSwapElements")
+var __imp_ZyanVectorSwapElements gengort.PreloadProc
 
 // Swaps the element at `index_first` with the element at `index_second`.
 //
@@ -5227,11 +5418,11 @@ var __imp_ZyanVectorSwapElements = GengoLibrary.Import("ZyanVectorSwapElements")
 // This function requires the vector to have spare capacity for one temporary element. Call
 // `ZyanVectorReserve` before this function to increase capacity, if needed.
 func (vector *Vector) SwapElements(index_first Usize, index_second Usize) Status {
-	__res := __imp_ZyanVectorSwapElements.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index_first), gengort.MarshallSyscall(index_second))
+	__res := gengort.CCall3(__imp_ZyanVectorSwapElements.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index_first), gengort.MarshallSyscall(index_second))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorDelete = GengoLibrary.Import("ZyanVectorDelete")
+var __imp_ZyanVectorDelete gengort.PreloadProc
 
 // Deletes the element at the given `index` of the vector.
 //
@@ -5241,11 +5432,11 @@ var __imp_ZyanVectorDelete = GengoLibrary.Import("ZyanVectorDelete")
 //
 // @return A zyan status code.
 func (vector *Vector) Delete(index Usize) Status {
-	__res := __imp_ZyanVectorDelete.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
+	__res := gengort.CCall2(__imp_ZyanVectorDelete.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorDeleteRange = GengoLibrary.Import("ZyanVectorDeleteRange")
+var __imp_ZyanVectorDeleteRange gengort.PreloadProc
 
 // Deletes multiple elements from the given vector, starting at `index`.
 //
@@ -5257,11 +5448,11 @@ var __imp_ZyanVectorDeleteRange = GengoLibrary.Import("ZyanVectorDeleteRange")
 //
 // @return A zyan status code.
 func (vector *Vector) DeleteRange(index Usize, count Usize) Status {
-	__res := __imp_ZyanVectorDeleteRange.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall3(__imp_ZyanVectorDeleteRange.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorPopBack = GengoLibrary.Import("ZyanVectorPopBack")
+var __imp_ZyanVectorPopBack gengort.PreloadProc
 
 // Removes the last element of the vector.
 //
@@ -5269,11 +5460,11 @@ var __imp_ZyanVectorPopBack = GengoLibrary.Import("ZyanVectorPopBack")
 //
 // @return A zyan status code.
 func (vector *Vector) PopBack() Status {
-	__res := __imp_ZyanVectorPopBack.Call1(gengort.MarshallSyscall(vector))
+	__res := gengort.CCall1(__imp_ZyanVectorPopBack.Addr(), gengort.MarshallSyscall(vector))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorClear = GengoLibrary.Import("ZyanVectorClear")
+var __imp_ZyanVectorClear gengort.PreloadProc
 
 // Erases all elements of the given vector.
 //
@@ -5281,11 +5472,11 @@ var __imp_ZyanVectorClear = GengoLibrary.Import("ZyanVectorClear")
 //
 // @return A zyan status code.
 func (vector *Vector) Clear() Status {
-	__res := __imp_ZyanVectorClear.Call1(gengort.MarshallSyscall(vector))
+	__res := gengort.CCall1(__imp_ZyanVectorClear.Addr(), gengort.MarshallSyscall(vector))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorFind = GengoLibrary.Import("ZyanVectorFind")
+var __imp_ZyanVectorFind gengort.PreloadProc
 
 // Sequentially searches for the first occurrence of `element` in the given vector.
 //
@@ -5301,11 +5492,11 @@ var __imp_ZyanVectorFind = GengoLibrary.Import("ZyanVectorFind")
 // zyan status code if an error occurred.
 // The `found_index` is set to `-1`, if the element was not found.
 func (vector *Vector) Find(element unsafe.Pointer, found_index *Isize, comparison EqualityComparison) Status {
-	__res := __imp_ZyanVectorFind.Call4(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison))
+	__res := gengort.CCall4(__imp_ZyanVectorFind.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorFindEx = GengoLibrary.Import("ZyanVectorFindEx")
+var __imp_ZyanVectorFindEx gengort.PreloadProc
 
 // Sequentially searches for the first occurrence of `element` in the given vector.
 //
@@ -5325,11 +5516,11 @@ var __imp_ZyanVectorFindEx = GengoLibrary.Import("ZyanVectorFindEx")
 // zyan status code if an error occurred.
 // The `found_index` is set to `-1`, if the element was not found.
 func (vector *Vector) FindEx(element unsafe.Pointer, found_index *Isize, comparison EqualityComparison, index Usize, count Usize) Status {
-	__res := __imp_ZyanVectorFindEx.Call6(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall6(__imp_ZyanVectorFindEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorBinarySearch = GengoLibrary.Import("ZyanVectorBinarySearch")
+var __imp_ZyanVectorBinarySearch gengort.PreloadProc
 
 // Searches for the first occurrence of `element` in the given vector using a binary-
 // search algorithm.
@@ -5348,11 +5539,11 @@ var __imp_ZyanVectorBinarySearch = GengoLibrary.Import("ZyanVectorBinarySearch")
 // contains the index of the first entry larger than `element`.
 // This function requires all elements in the vector to be strictly ordered (sorted).
 func (vector *Vector) BinarySearch(element unsafe.Pointer, found_index *Usize, comparison Comparison) Status {
-	__res := __imp_ZyanVectorBinarySearch.Call4(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison))
+	__res := gengort.CCall4(__imp_ZyanVectorBinarySearch.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorBinarySearchEx = GengoLibrary.Import("ZyanVectorBinarySearchEx")
+var __imp_ZyanVectorBinarySearchEx gengort.PreloadProc
 
 // Searches for the first occurrence of `element` in the given vector using a binary-
 // search algorithm.
@@ -5375,11 +5566,11 @@ var __imp_ZyanVectorBinarySearchEx = GengoLibrary.Import("ZyanVectorBinarySearch
 // contains the index of the first entry larger than `element`.
 // This function requires all elements in the vector to be strictly ordered (sorted).
 func (vector *Vector) BinarySearchEx(element unsafe.Pointer, found_index *Usize, comparison Comparison, index Usize, count Usize) Status {
-	__res := __imp_ZyanVectorBinarySearchEx.Call6(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall6(__imp_ZyanVectorBinarySearchEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorResize = GengoLibrary.Import("ZyanVectorResize")
+var __imp_ZyanVectorResize gengort.PreloadProc
 
 // Resizes the given `ZyanVector` instance.
 //
@@ -5389,11 +5580,11 @@ var __imp_ZyanVectorResize = GengoLibrary.Import("ZyanVectorResize")
 //
 // @return A zyan status code.
 func (vector *Vector) Resize(size Usize) Status {
-	__res := __imp_ZyanVectorResize.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size))
+	__res := gengort.CCall2(__imp_ZyanVectorResize.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorResizeEx = GengoLibrary.Import("ZyanVectorResizeEx")
+var __imp_ZyanVectorResizeEx gengort.PreloadProc
 
 // Resizes the given `ZyanVector` instance.
 //
@@ -5405,11 +5596,11 @@ var __imp_ZyanVectorResizeEx = GengoLibrary.Import("ZyanVectorResizeEx")
 //
 // @return A zyan status code.
 func (vector *Vector) ResizeEx(size Usize, initializer unsafe.Pointer) Status {
-	__res := __imp_ZyanVectorResizeEx.Call3(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size), gengort.MarshallSyscall(initializer))
+	__res := gengort.CCall3(__imp_ZyanVectorResizeEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size), gengort.MarshallSyscall(initializer))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorReserve = GengoLibrary.Import("ZyanVectorReserve")
+var __imp_ZyanVectorReserve gengort.PreloadProc
 
 // Changes the capacity of the given `ZyanVector` instance.
 //
@@ -5419,11 +5610,11 @@ var __imp_ZyanVectorReserve = GengoLibrary.Import("ZyanVectorReserve")
 //
 // @return A zyan status code.
 func (vector *Vector) Reserve(capacity Usize) Status {
-	__res := __imp_ZyanVectorReserve.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall2(__imp_ZyanVectorReserve.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorShrinkToFit = GengoLibrary.Import("ZyanVectorShrinkToFit")
+var __imp_ZyanVectorShrinkToFit gengort.PreloadProc
 
 // Shrinks the capacity of the given vector to match it's size.
 //
@@ -5431,11 +5622,11 @@ var __imp_ZyanVectorShrinkToFit = GengoLibrary.Import("ZyanVectorShrinkToFit")
 //
 // @return A zyan status code.
 func (vector *Vector) ShrinkToFit() Status {
-	__res := __imp_ZyanVectorShrinkToFit.Call1(gengort.MarshallSyscall(vector))
+	__res := gengort.CCall1(__imp_ZyanVectorShrinkToFit.Addr(), gengort.MarshallSyscall(vector))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorGetCapacity = GengoLibrary.Import("ZyanVectorGetCapacity")
+var __imp_ZyanVectorGetCapacity gengort.PreloadProc
 
 // Returns the current capacity of the vector.
 //
@@ -5445,11 +5636,11 @@ var __imp_ZyanVectorGetCapacity = GengoLibrary.Import("ZyanVectorGetCapacity")
 //
 // @return A zyan status code.
 func (vector *Vector) GetCapacity(capacity *Usize) Status {
-	__res := __imp_ZyanVectorGetCapacity.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall2(__imp_ZyanVectorGetCapacity.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanVectorGetSize = GengoLibrary.Import("ZyanVectorGetSize")
+var __imp_ZyanVectorGetSize gengort.PreloadProc
 
 // Returns the current size of the vector.
 //
@@ -5459,11 +5650,11 @@ var __imp_ZyanVectorGetSize = GengoLibrary.Import("ZyanVectorGetSize")
 //
 // @return A zyan status code.
 func (vector *Vector) GetSize(size *Usize) Status {
-	__res := __imp_ZyanVectorGetSize.Call2(gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size))
+	__res := gengort.CCall2(__imp_ZyanVectorGetSize.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringInitEx = GengoLibrary.Import("ZyanStringInitEx")
+var __imp_ZyanStringInitEx gengort.PreloadProc
 
 // Initializes the given `ZyanString` instance and sets a custom `allocator` and memory
 // allocation/deallocation parameters.
@@ -5487,11 +5678,11 @@ var __imp_ZyanStringInitEx = GengoLibrary.Import("ZyanStringInitEx")
 // 0'.
 // Finalization with `ZyanStringDestroy` is required for all strings created by this function.
 func (_string *String) InitEx(capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
-	__res := __imp_ZyanStringInitEx.Call5(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
+	__res := gengort.CCall5(__imp_ZyanStringInitEx.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringInitCustomBuffer = GengoLibrary.Import("ZyanStringInitCustomBuffer")
+var __imp_ZyanStringInitCustomBuffer gengort.PreloadProc
 
 // Initializes the given `ZyanString` instance and configures it to use a custom user
 // defined buffer with a fixed size.
@@ -5508,11 +5699,11 @@ var __imp_ZyanStringInitCustomBuffer = GengoLibrary.Import("ZyanStringInitCustom
 // @return A zyan status code.
 // Finalization is not required for strings created by this function.
 func (_string *String) InitCustomBuffer(buffer *byte, capacity Usize) Status {
-	__res := __imp_ZyanStringInitCustomBuffer.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall3(__imp_ZyanStringInitCustomBuffer.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringDestroy = GengoLibrary.Import("ZyanStringDestroy")
+var __imp_ZyanStringDestroy gengort.PreloadProc
 
 // Destroys the given `ZyanString` instance.
 //
@@ -5520,11 +5711,11 @@ var __imp_ZyanStringDestroy = GengoLibrary.Import("ZyanStringDestroy")
 //
 // @return A zyan status code.
 func (_string *String) Destroy() Status {
-	__res := __imp_ZyanStringDestroy.Call1(gengort.MarshallSyscall(_string))
+	__res := gengort.CCall1(__imp_ZyanStringDestroy.Addr(), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringDuplicateEx = GengoLibrary.Import("ZyanStringDuplicateEx")
+var __imp_ZyanStringDuplicateEx gengort.PreloadProc
 
 // Initializes a new `ZyanString` instance by duplicating an existing string and sets a
 // custom `allocator` and memory allocation/deallocation parameters.
@@ -5554,11 +5745,11 @@ var __imp_ZyanStringDuplicateEx = GengoLibrary.Import("ZyanStringDuplicateEx")
 // 0'.
 // Finalization with `ZyanStringDestroy` is required for all strings created by this function.
 func (destination *String) DuplicateEx(source *StringView, capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
-	__res := __imp_ZyanStringDuplicateEx.Call6(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
+	__res := gengort.CCall6(__imp_ZyanStringDuplicateEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringDuplicateCustomBuffer = GengoLibrary.Import("ZyanStringDuplicateCustomBuffer")
+var __imp_ZyanStringDuplicateCustomBuffer gengort.PreloadProc
 
 // Initializes a new `ZyanString` instance by duplicating an existing string and
 // configures it to use a custom user defined buffer with a fixed size.
@@ -5581,11 +5772,11 @@ var __imp_ZyanStringDuplicateCustomBuffer = GengoLibrary.Import("ZyanStringDupli
 // string or `destination` points to an already initialized `ZyanString` instance.
 // Finalization is not required for strings created by this function.
 func (destination *String) DuplicateCustomBuffer(source *StringView, buffer *byte, capacity Usize) Status {
-	__res := __imp_ZyanStringDuplicateCustomBuffer.Call4(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall4(__imp_ZyanStringDuplicateCustomBuffer.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringConcatEx = GengoLibrary.Import("ZyanStringConcatEx")
+var __imp_ZyanStringConcatEx gengort.PreloadProc
 
 // Initializes a new `ZyanString` instance by concatenating two existing strings and sets
 // a custom `allocator` and memory allocation/deallocation parameters.
@@ -5619,11 +5810,11 @@ var __imp_ZyanStringConcatEx = GengoLibrary.Import("ZyanStringConcatEx")
 // 0'.
 // Finalization with `ZyanStringDestroy` is required for all strings created by this function.
 func (destination *String) ConcatEx(s1 *StringView, s2 *StringView, capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
-	__res := __imp_ZyanStringConcatEx.Call7(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
+	__res := gengort.CCall7(__imp_ZyanStringConcatEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringConcatCustomBuffer = GengoLibrary.Import("ZyanStringConcatCustomBuffer")
+var __imp_ZyanStringConcatCustomBuffer gengort.PreloadProc
 
 // Initializes a new `ZyanString` instance by concatenating two existing strings and
 // configures it to use a custom user defined buffer with a fixed size.
@@ -5647,11 +5838,11 @@ var __imp_ZyanStringConcatCustomBuffer = GengoLibrary.Import("ZyanStringConcatCu
 // string or `destination` points to an already initialized `ZyanString` instance.
 // Finalization is not required for strings created by this function.
 func (destination *String) ConcatCustomBuffer(s1 *StringView, s2 *StringView, buffer *byte, capacity Usize) Status {
-	__res := __imp_ZyanStringConcatCustomBuffer.Call5(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall5(__imp_ZyanStringConcatCustomBuffer.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringViewInsideView = GengoLibrary.Import("ZyanStringViewInsideView")
+var __imp_ZyanStringViewInsideView gengort.PreloadProc
 
 // Returns a view inside an existing view/string.
 //
@@ -5663,11 +5854,11 @@ var __imp_ZyanStringViewInsideView = GengoLibrary.Import("ZyanStringViewInsideVi
 // The `ZYAN_STRING_TO_VEW` macro can be used to pass any `ZyanString` instance as value for the
 // `source` string.
 func (view *StringView) InsideView(source *StringView) Status {
-	__res := __imp_ZyanStringViewInsideView.Call2(gengort.MarshallSyscall(view), gengort.MarshallSyscall(source))
+	__res := gengort.CCall2(__imp_ZyanStringViewInsideView.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(source))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringViewInsideViewEx = GengoLibrary.Import("ZyanStringViewInsideViewEx")
+var __imp_ZyanStringViewInsideViewEx gengort.PreloadProc
 
 // Returns a view inside an existing view/string starting from the given `index`.
 //
@@ -5683,11 +5874,11 @@ var __imp_ZyanStringViewInsideViewEx = GengoLibrary.Import("ZyanStringViewInside
 // The `ZYAN_STRING_TO_VEW` macro can be used to pass any `ZyanString` instance as value for the
 // `source` string.
 func (view *StringView) InsideViewEx(source *StringView, index Usize, count Usize) Status {
-	__res := __imp_ZyanStringViewInsideViewEx.Call4(gengort.MarshallSyscall(view), gengort.MarshallSyscall(source), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall4(__imp_ZyanStringViewInsideViewEx.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(source), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringViewInsideBuffer = GengoLibrary.Import("ZyanStringViewInsideBuffer")
+var __imp_ZyanStringViewInsideBuffer gengort.PreloadProc
 
 // Returns a view inside a null-terminated C-style string.
 //
@@ -5697,11 +5888,11 @@ var __imp_ZyanStringViewInsideBuffer = GengoLibrary.Import("ZyanStringViewInside
 //
 // @return A zyan status code.
 func (view *StringView) InsideBuffer(_string *byte) Status {
-	__res := __imp_ZyanStringViewInsideBuffer.Call2(gengort.MarshallSyscall(view), gengort.MarshallSyscall(_string))
+	__res := gengort.CCall2(__imp_ZyanStringViewInsideBuffer.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringViewInsideBufferEx = GengoLibrary.Import("ZyanStringViewInsideBufferEx")
+var __imp_ZyanStringViewInsideBufferEx gengort.PreloadProc
 
 // Returns a view inside a character buffer with custom length.
 //
@@ -5713,11 +5904,11 @@ var __imp_ZyanStringViewInsideBufferEx = GengoLibrary.Import("ZyanStringViewInsi
 //
 // @return A zyan status code.
 func (view *StringView) InsideBufferEx(buffer *byte, length Usize) Status {
-	__res := __imp_ZyanStringViewInsideBufferEx.Call3(gengort.MarshallSyscall(view), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
+	__res := gengort.CCall3(__imp_ZyanStringViewInsideBufferEx.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringViewGetSize = GengoLibrary.Import("ZyanStringViewGetSize")
+var __imp_ZyanStringViewGetSize gengort.PreloadProc
 
 // Returns the size (number of characters) of the view.
 //
@@ -5727,11 +5918,11 @@ var __imp_ZyanStringViewGetSize = GengoLibrary.Import("ZyanStringViewGetSize")
 //
 // @return A zyan status code.
 func (view *StringView) GetSize(size *Usize) Status {
-	__res := __imp_ZyanStringViewGetSize.Call2(gengort.MarshallSyscall(view), gengort.MarshallSyscall(size))
+	__res := gengort.CCall2(__imp_ZyanStringViewGetSize.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringViewGetData = GengoLibrary.Import("ZyanStringViewGetData")
+var __imp_ZyanStringViewGetData gengort.PreloadProc
 
 // Returns the C-style string of the given `ZyanString` instance.
 //
@@ -5743,11 +5934,11 @@ var __imp_ZyanStringViewGetData = GengoLibrary.Import("ZyanStringViewGetData")
 //
 // @return A zyan status code.
 func (view *StringView) GetData(buffer **byte) Status {
-	__res := __imp_ZyanStringViewGetData.Call2(gengort.MarshallSyscall(view), gengort.MarshallSyscall(buffer))
+	__res := gengort.CCall2(__imp_ZyanStringViewGetData.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(buffer))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringGetChar = GengoLibrary.Import("ZyanStringGetChar")
+var __imp_ZyanStringGetChar gengort.PreloadProc
 
 // Returns the character at the given `index`.
 //
@@ -5759,11 +5950,11 @@ var __imp_ZyanStringGetChar = GengoLibrary.Import("ZyanStringGetChar")
 //
 // @return A zyan status code.
 func (_string *StringView) GetChar(index Usize, value *byte) Status {
-	__res := __imp_ZyanStringGetChar.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZyanStringGetChar.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringGetCharMutable = GengoLibrary.Import("ZyanStringGetCharMutable")
+var __imp_ZyanStringGetCharMutable gengort.PreloadProc
 
 // Returns a pointer to the character at the given `index`.
 //
@@ -5775,11 +5966,11 @@ var __imp_ZyanStringGetCharMutable = GengoLibrary.Import("ZyanStringGetCharMutab
 //
 // @return A zyan status code.
 func (_string *String) GetCharMutable(index Usize, value **byte) Status {
-	__res := __imp_ZyanStringGetCharMutable.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZyanStringGetCharMutable.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringSetChar = GengoLibrary.Import("ZyanStringSetChar")
+var __imp_ZyanStringSetChar gengort.PreloadProc
 
 // Assigns a new value to the character at the given `index`.
 //
@@ -5791,11 +5982,11 @@ var __imp_ZyanStringSetChar = GengoLibrary.Import("ZyanStringSetChar")
 //
 // @return A zyan status code.
 func (_string *String) SetChar(index Usize, value byte) Status {
-	__res := __imp_ZyanStringSetChar.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZyanStringSetChar.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringInsert = GengoLibrary.Import("ZyanStringInsert")
+var __imp_ZyanStringInsert gengort.PreloadProc
 
 // Inserts the content of the source string in the destination string at the given `index`.
 //
@@ -5807,11 +5998,11 @@ var __imp_ZyanStringInsert = GengoLibrary.Import("ZyanStringInsert")
 //
 // @return A zyan status code.
 func (destination *String) Insert(index Usize, source *StringView) Status {
-	__res := __imp_ZyanStringInsert.Call3(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(index), gengort.MarshallSyscall(source))
+	__res := gengort.CCall3(__imp_ZyanStringInsert.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(index), gengort.MarshallSyscall(source))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringInsertEx = GengoLibrary.Import("ZyanStringInsertEx")
+var __imp_ZyanStringInsertEx gengort.PreloadProc
 
 // Inserts `count` characters of the source string in the destination string at the given
 // `index`.
@@ -5829,11 +6020,11 @@ var __imp_ZyanStringInsertEx = GengoLibrary.Import("ZyanStringInsertEx")
 //
 // @return A zyan status code.
 func (destination *String) InsertEx(destination_index Usize, source *StringView, source_index Usize, count Usize) Status {
-	__res := __imp_ZyanStringInsertEx.Call5(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(destination_index), gengort.MarshallSyscall(source), gengort.MarshallSyscall(source_index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall5(__imp_ZyanStringInsertEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(destination_index), gengort.MarshallSyscall(source), gengort.MarshallSyscall(source_index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringAppend = GengoLibrary.Import("ZyanStringAppend")
+var __imp_ZyanStringAppend gengort.PreloadProc
 
 // Appends the content of the source string to the end of the destination string.
 //
@@ -5843,11 +6034,11 @@ var __imp_ZyanStringAppend = GengoLibrary.Import("ZyanStringAppend")
 //
 // @return A zyan status code.
 func (destination *String) Append(source *StringView) Status {
-	__res := __imp_ZyanStringAppend.Call2(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source))
+	__res := gengort.CCall2(__imp_ZyanStringAppend.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringAppendEx = GengoLibrary.Import("ZyanStringAppendEx")
+var __imp_ZyanStringAppendEx gengort.PreloadProc
 
 // Appends `count` characters of the source string to the end of the destination string.
 //
@@ -5861,11 +6052,11 @@ var __imp_ZyanStringAppendEx = GengoLibrary.Import("ZyanStringAppendEx")
 //
 // @return A zyan status code.
 func (destination *String) AppendEx(source *StringView, source_index Usize, count Usize) Status {
-	__res := __imp_ZyanStringAppendEx.Call4(gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(source_index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall4(__imp_ZyanStringAppendEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(source_index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringDelete = GengoLibrary.Import("ZyanStringDelete")
+var __imp_ZyanStringDelete gengort.PreloadProc
 
 // Deletes characters from the given string, starting at `index`.
 //
@@ -5877,11 +6068,11 @@ var __imp_ZyanStringDelete = GengoLibrary.Import("ZyanStringDelete")
 //
 // @return A zyan status code.
 func (_string *String) Delete(index Usize, count Usize) Status {
-	__res := __imp_ZyanStringDelete.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall3(__imp_ZyanStringDelete.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringTruncate = GengoLibrary.Import("ZyanStringTruncate")
+var __imp_ZyanStringTruncate gengort.PreloadProc
 
 // Deletes all remaining characters from the given string, starting at `index`.
 //
@@ -5891,11 +6082,11 @@ var __imp_ZyanStringTruncate = GengoLibrary.Import("ZyanStringTruncate")
 //
 // @return A zyan status code.
 func (_string *String) Truncate(index Usize) Status {
-	__res := __imp_ZyanStringTruncate.Call2(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index))
+	__res := gengort.CCall2(__imp_ZyanStringTruncate.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringClear = GengoLibrary.Import("ZyanStringClear")
+var __imp_ZyanStringClear gengort.PreloadProc
 
 // Erases the given string.
 //
@@ -5903,11 +6094,11 @@ var __imp_ZyanStringClear = GengoLibrary.Import("ZyanStringClear")
 //
 // @return A zyan status code.
 func (_string *String) Clear() Status {
-	__res := __imp_ZyanStringClear.Call1(gengort.MarshallSyscall(_string))
+	__res := gengort.CCall1(__imp_ZyanStringClear.Addr(), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringLPos = GengoLibrary.Import("ZyanStringLPos")
+var __imp_ZyanStringLPos gengort.PreloadProc
 
 // Searches for the first occurrence of `needle` in the given `haystack` starting from the
 // left.
@@ -5923,11 +6114,11 @@ var __imp_ZyanStringLPos = GengoLibrary.Import("ZyanStringLPos")
 // zyan status code, if an error occured.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) Lpos(needle *StringView, found_index *Isize) Status {
-	__res := __imp_ZyanStringLPos.Call3(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
+	__res := gengort.CCall3(__imp_ZyanStringLPos.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringLPosEx = GengoLibrary.Import("ZyanStringLPosEx")
+var __imp_ZyanStringLPosEx gengort.PreloadProc
 
 // Searches for the first occurrence of `needle` in the given `haystack` starting from the
 // left.
@@ -5948,11 +6139,11 @@ var __imp_ZyanStringLPosEx = GengoLibrary.Import("ZyanStringLPosEx")
 // zyan status code, if an error occured.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) LposEx(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
-	__res := __imp_ZyanStringLPosEx.Call5(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall5(__imp_ZyanStringLPosEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringLPosI = GengoLibrary.Import("ZyanStringLPosI")
+var __imp_ZyanStringLPosI gengort.PreloadProc
 
 // Performs a case-insensitive search for the first occurrence of `needle` in the given
 // `haystack` starting from the left.
@@ -5968,11 +6159,11 @@ var __imp_ZyanStringLPosI = GengoLibrary.Import("ZyanStringLPosI")
 // zyan status code, if an error occured.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) LposI(needle *StringView, found_index *Isize) Status {
-	__res := __imp_ZyanStringLPosI.Call3(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
+	__res := gengort.CCall3(__imp_ZyanStringLPosI.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringLPosIEx = GengoLibrary.Import("ZyanStringLPosIEx")
+var __imp_ZyanStringLPosIEx gengort.PreloadProc
 
 // Performs a case-insensitive search for the first occurrence of `needle` in the given
 // `haystack` starting from the left.
@@ -5993,11 +6184,11 @@ var __imp_ZyanStringLPosIEx = GengoLibrary.Import("ZyanStringLPosIEx")
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) LposIex(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
-	__res := __imp_ZyanStringLPosIEx.Call5(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall5(__imp_ZyanStringLPosIEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringRPos = GengoLibrary.Import("ZyanStringRPos")
+var __imp_ZyanStringRPos gengort.PreloadProc
 
 // Searches for the first occurrence of `needle` in the given `haystack` starting from the
 // right.
@@ -6013,11 +6204,11 @@ var __imp_ZyanStringRPos = GengoLibrary.Import("ZyanStringRPos")
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) Rpos(needle *StringView, found_index *Isize) Status {
-	__res := __imp_ZyanStringRPos.Call3(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
+	__res := gengort.CCall3(__imp_ZyanStringRPos.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringRPosEx = GengoLibrary.Import("ZyanStringRPosEx")
+var __imp_ZyanStringRPosEx gengort.PreloadProc
 
 // Searches for the first occurrence of `needle` in the given `haystack` starting from the
 // right.
@@ -6038,11 +6229,11 @@ var __imp_ZyanStringRPosEx = GengoLibrary.Import("ZyanStringRPosEx")
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) RposEx(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
-	__res := __imp_ZyanStringRPosEx.Call5(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall5(__imp_ZyanStringRPosEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringRPosI = GengoLibrary.Import("ZyanStringRPosI")
+var __imp_ZyanStringRPosI gengort.PreloadProc
 
 // Performs a case-insensitive search for the first occurrence of `needle` in the given
 // `haystack` starting from the right.
@@ -6058,11 +6249,11 @@ var __imp_ZyanStringRPosI = GengoLibrary.Import("ZyanStringRPosI")
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) RposI(needle *StringView, found_index *Isize) Status {
-	__res := __imp_ZyanStringRPosI.Call3(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
+	__res := gengort.CCall3(__imp_ZyanStringRPosI.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringRPosIEx = GengoLibrary.Import("ZyanStringRPosIEx")
+var __imp_ZyanStringRPosIEx gengort.PreloadProc
 
 // Performs a case-insensitive search for the first occurrence of `needle` in the given
 // `haystack` starting from the right.
@@ -6083,11 +6274,11 @@ var __imp_ZyanStringRPosIEx = GengoLibrary.Import("ZyanStringRPosIEx")
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
 func (haystack *StringView) RposIex(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
-	__res := __imp_ZyanStringRPosIEx.Call5(gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall5(__imp_ZyanStringRPosIEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringCompare = GengoLibrary.Import("ZyanStringCompare")
+var __imp_ZyanStringCompare gengort.PreloadProc
 
 // Compares two strings.
 //
@@ -6108,11 +6299,11 @@ var __imp_ZyanStringCompare = GengoLibrary.Import("ZyanStringCompare")
 // @return `ZYAN_STATUS_TRUE`, if the strings are equal, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 func (s1 *StringView) Compare(s2 *StringView, result *I32) Status {
-	__res := __imp_ZyanStringCompare.Call3(gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(result))
+	__res := gengort.CCall3(__imp_ZyanStringCompare.Addr(), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(result))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringCompareI = GengoLibrary.Import("ZyanStringCompareI")
+var __imp_ZyanStringCompareI gengort.PreloadProc
 
 // Performs a case-insensitive comparison of two strings.
 //
@@ -6133,11 +6324,11 @@ var __imp_ZyanStringCompareI = GengoLibrary.Import("ZyanStringCompareI")
 // @return `ZYAN_STATUS_TRUE`, if the strings are equal, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 func (s1 *StringView) CompareI(s2 *StringView, result *I32) Status {
-	__res := __imp_ZyanStringCompareI.Call3(gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(result))
+	__res := gengort.CCall3(__imp_ZyanStringCompareI.Addr(), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(result))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringToLowerCase = GengoLibrary.Import("ZyanStringToLowerCase")
+var __imp_ZyanStringToLowerCase gengort.PreloadProc
 
 // Converts the given string to lowercase letters.
 //
@@ -6147,11 +6338,11 @@ var __imp_ZyanStringToLowerCase = GengoLibrary.Import("ZyanStringToLowerCase")
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) ToLowerCase() Status {
-	__res := __imp_ZyanStringToLowerCase.Call1(gengort.MarshallSyscall(_string))
+	__res := gengort.CCall1(__imp_ZyanStringToLowerCase.Addr(), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringToLowerCaseEx = GengoLibrary.Import("ZyanStringToLowerCaseEx")
+var __imp_ZyanStringToLowerCaseEx gengort.PreloadProc
 
 // Converts `count` characters of the given string to lowercase letters.
 //
@@ -6165,11 +6356,11 @@ var __imp_ZyanStringToLowerCaseEx = GengoLibrary.Import("ZyanStringToLowerCaseEx
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) ToLowerCaseEx(index Usize, count Usize) Status {
-	__res := __imp_ZyanStringToLowerCaseEx.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall3(__imp_ZyanStringToLowerCaseEx.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringToUpperCase = GengoLibrary.Import("ZyanStringToUpperCase")
+var __imp_ZyanStringToUpperCase gengort.PreloadProc
 
 // Converts the given string to uppercase letters.
 //
@@ -6179,11 +6370,11 @@ var __imp_ZyanStringToUpperCase = GengoLibrary.Import("ZyanStringToUpperCase")
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) ToUpperCase() Status {
-	__res := __imp_ZyanStringToUpperCase.Call1(gengort.MarshallSyscall(_string))
+	__res := gengort.CCall1(__imp_ZyanStringToUpperCase.Addr(), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringToUpperCaseEx = GengoLibrary.Import("ZyanStringToUpperCaseEx")
+var __imp_ZyanStringToUpperCaseEx gengort.PreloadProc
 
 // Converts `count` characters of the given string to uppercase letters.
 //
@@ -6197,11 +6388,11 @@ var __imp_ZyanStringToUpperCaseEx = GengoLibrary.Import("ZyanStringToUpperCaseEx
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) ToUpperCaseEx(index Usize, count Usize) Status {
-	__res := __imp_ZyanStringToUpperCaseEx.Call3(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
+	__res := gengort.CCall3(__imp_ZyanStringToUpperCaseEx.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringResize = GengoLibrary.Import("ZyanStringResize")
+var __imp_ZyanStringResize gengort.PreloadProc
 
 // Resizes the given `ZyanString` instance.
 //
@@ -6213,11 +6404,11 @@ var __imp_ZyanStringResize = GengoLibrary.Import("ZyanStringResize")
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) Resize(size Usize) Status {
-	__res := __imp_ZyanStringResize.Call2(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(size))
+	__res := gengort.CCall2(__imp_ZyanStringResize.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringReserve = GengoLibrary.Import("ZyanStringReserve")
+var __imp_ZyanStringReserve gengort.PreloadProc
 
 // Changes the capacity of the given `ZyanString` instance.
 //
@@ -6229,11 +6420,11 @@ var __imp_ZyanStringReserve = GengoLibrary.Import("ZyanStringReserve")
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) Reserve(capacity Usize) Status {
-	__res := __imp_ZyanStringReserve.Call2(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall2(__imp_ZyanStringReserve.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringShrinkToFit = GengoLibrary.Import("ZyanStringShrinkToFit")
+var __imp_ZyanStringShrinkToFit gengort.PreloadProc
 
 // Shrinks the capacity of the given string to match it's size.
 //
@@ -6243,11 +6434,11 @@ var __imp_ZyanStringShrinkToFit = GengoLibrary.Import("ZyanStringShrinkToFit")
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
 func (_string *String) ShrinkToFit() Status {
-	__res := __imp_ZyanStringShrinkToFit.Call1(gengort.MarshallSyscall(_string))
+	__res := gengort.CCall1(__imp_ZyanStringShrinkToFit.Addr(), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringGetCapacity = GengoLibrary.Import("ZyanStringGetCapacity")
+var __imp_ZyanStringGetCapacity gengort.PreloadProc
 
 // Returns the current capacity of the string.
 //
@@ -6257,11 +6448,11 @@ var __imp_ZyanStringGetCapacity = GengoLibrary.Import("ZyanStringGetCapacity")
 //
 // @return A zyan status code.
 func (_string *String) GetCapacity(capacity *Usize) Status {
-	__res := __imp_ZyanStringGetCapacity.Call2(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity))
+	__res := gengort.CCall2(__imp_ZyanStringGetCapacity.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringGetSize = GengoLibrary.Import("ZyanStringGetSize")
+var __imp_ZyanStringGetSize gengort.PreloadProc
 
 // Returns the current size (number of characters) of the string (excluding the
 // terminating zero character).
@@ -6272,11 +6463,11 @@ var __imp_ZyanStringGetSize = GengoLibrary.Import("ZyanStringGetSize")
 //
 // @return A zyan status code.
 func (_string *String) GetSize(size *Usize) Status {
-	__res := __imp_ZyanStringGetSize.Call2(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(size))
+	__res := gengort.CCall2(__imp_ZyanStringGetSize.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZyanStringGetData = GengoLibrary.Import("ZyanStringGetData")
+var __imp_ZyanStringGetData gengort.PreloadProc
 
 // Returns the C-style string of the given `ZyanString` instance.
 //
@@ -6286,11 +6477,11 @@ var __imp_ZyanStringGetData = GengoLibrary.Import("ZyanStringGetData")
 //
 // @return A zyan status code.
 func (_string *String) GetData(value **byte) Status {
-	__res := __imp_ZyanStringGetData.Call2(gengort.MarshallSyscall(_string), gengort.MarshallSyscall(value))
+	__res := gengort.CCall2(__imp_ZyanStringGetData.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterTokenGetValue = GengoLibrary.Import("ZydisFormatterTokenGetValue")
+var __imp_ZydisFormatterTokenGetValue gengort.PreloadProc
 
 // Returns the `type` and the string `value` of the given `token`.
 //
@@ -6302,11 +6493,11 @@ var __imp_ZydisFormatterTokenGetValue = GengoLibrary.Import("ZydisFormatterToken
 //
 // @return A zyan status code.
 func FormatterTokenGetValue(token *FormatterToken, _type *TokenType, value *ConstCharPointer) Status {
-	__res := __imp_ZydisFormatterTokenGetValue.Call3(gengort.MarshallSyscall(token), gengort.MarshallSyscall(_type), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZydisFormatterTokenGetValue.Addr(), gengort.MarshallSyscall(token), gengort.MarshallSyscall(_type), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterTokenNext = GengoLibrary.Import("ZydisFormatterTokenNext")
+var __imp_ZydisFormatterTokenNext gengort.PreloadProc
 
 // Obtains the next `token` linked to the passed one.
 //
@@ -6315,11 +6506,11 @@ var __imp_ZydisFormatterTokenNext = GengoLibrary.Import("ZydisFormatterTokenNext
 //
 // @return A zyan status code.
 func FormatterTokenNext(token **FormatterTokenConst) Status {
-	__res := __imp_ZydisFormatterTokenNext.Call1(gengort.MarshallSyscall(token))
+	__res := gengort.CCall1(__imp_ZydisFormatterTokenNext.Addr(), gengort.MarshallSyscall(token))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterBufferGetToken = GengoLibrary.Import("ZydisFormatterBufferGetToken")
+var __imp_ZydisFormatterBufferGetToken gengort.PreloadProc
 
 // Returns the current (most recently added) token.
 //
@@ -6331,11 +6522,11 @@ var __imp_ZydisFormatterBufferGetToken = GengoLibrary.Import("ZydisFormatterBuff
 // This function returns `ZYAN_STATUS_INVALID_OPERATION`, if the buffer does not contain at least
 // one token.
 func (buffer *FormatterBuffer) GetToken(token **FormatterTokenConst) Status {
-	__res := __imp_ZydisFormatterBufferGetToken.Call2(gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(token))
+	__res := gengort.CCall2(__imp_ZydisFormatterBufferGetToken.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(token))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterBufferGetString = GengoLibrary.Import("ZydisFormatterBufferGetString")
+var __imp_ZydisFormatterBufferGetString gengort.PreloadProc
 
 // Returns the `ZyanString` instance associated with the given buffer.
 //
@@ -6350,11 +6541,11 @@ var __imp_ZydisFormatterBufferGetString = GengoLibrary.Import("ZydisFormatterBuf
 // The returned string always refers to the literal value of the current (most recently added)
 // token and will remain valid until the buffer is destroyed.
 func (buffer *FormatterBuffer) GetString(_string **String) Status {
-	__res := __imp_ZydisFormatterBufferGetString.Call2(gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(_string))
+	__res := gengort.CCall2(__imp_ZydisFormatterBufferGetString.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(_string))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterBufferAppend = GengoLibrary.Import("ZydisFormatterBufferAppend")
+var __imp_ZydisFormatterBufferAppend gengort.PreloadProc
 
 // Appends a new token to the `buffer`.
 //
@@ -6366,11 +6557,11 @@ var __imp_ZydisFormatterBufferAppend = GengoLibrary.Import("ZydisFormatterBuffer
 // Note that the `ZyanString` instance returned by `ZydisFormatterBufferGetString` will
 // automatically be updated by calling this function.
 func (buffer *FormatterBuffer) Append(_type TokenType) Status {
-	__res := __imp_ZydisFormatterBufferAppend.Call2(gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(_type))
+	__res := gengort.CCall2(__imp_ZydisFormatterBufferAppend.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(_type))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterBufferRemember = GengoLibrary.Import("ZydisFormatterBufferRemember")
+var __imp_ZydisFormatterBufferRemember gengort.PreloadProc
 
 // Returns a snapshot of the buffer-state.
 //
@@ -6382,11 +6573,11 @@ var __imp_ZydisFormatterBufferRemember = GengoLibrary.Import("ZydisFormatterBuff
 // Note that the buffer-state is saved inside the buffer itself and thus becomes invalid as soon
 // as the buffer gets overwritten or destroyed.
 func (buffer *FormatterBuffer) Remember(state *Upointer) Status {
-	__res := __imp_ZydisFormatterBufferRemember.Call2(gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(state))
+	__res := gengort.CCall2(__imp_ZydisFormatterBufferRemember.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(state))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterBufferRestore = GengoLibrary.Import("ZydisFormatterBufferRestore")
+var __imp_ZydisFormatterBufferRestore gengort.PreloadProc
 
 // Restores a previously saved buffer-state.
 //
@@ -6400,11 +6591,11 @@ var __imp_ZydisFormatterBufferRestore = GengoLibrary.Import("ZydisFormatterBuffe
 // Note that the `ZyanString` instance returned by `ZydisFormatterBufferGetString` will
 // automatically be updated by calling this function.
 func (buffer *FormatterBuffer) Restore(state Upointer) Status {
-	__res := __imp_ZydisFormatterBufferRestore.Call2(gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(state))
+	__res := gengort.CCall2(__imp_ZydisFormatterBufferRestore.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(state))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterInit = GengoLibrary.Import("ZydisFormatterInit")
+var __imp_ZydisFormatterInit gengort.PreloadProc
 
 // Initializes the given `ZydisFormatter` instance.
 //
@@ -6416,11 +6607,11 @@ var __imp_ZydisFormatterInit = GengoLibrary.Import("ZydisFormatterInit")
 //
 // @return A zyan status code.
 func (formatter *Formatter) Init(style FormatterStyle) Status {
-	__res := __imp_ZydisFormatterInit.Call2(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(style))
+	__res := gengort.CCall2(__imp_ZydisFormatterInit.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(style))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterSetProperty = GengoLibrary.Import("ZydisFormatterSetProperty")
+var __imp_ZydisFormatterSetProperty gengort.PreloadProc
 
 // Changes the value of the specified formatter `property`.
 //
@@ -6434,11 +6625,11 @@ var __imp_ZydisFormatterSetProperty = GengoLibrary.Import("ZydisFormatterSetProp
 // This function returns `ZYAN_STATUS_INVALID_OPERATION` if a property can't be changed for the
 // current formatter-style.
 func (formatter *Formatter) SetProperty(property FormatterProperty, value Upointer) Status {
-	__res := __imp_ZydisFormatterSetProperty.Call3(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(property), gengort.MarshallSyscall(value))
+	__res := gengort.CCall3(__imp_ZydisFormatterSetProperty.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(property), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterSetHook = GengoLibrary.Import("ZydisFormatterSetHook")
+var __imp_ZydisFormatterSetHook gengort.PreloadProc
 
 // Replaces a formatter function with a custom callback and/or retrieves the currently
 // used function.
@@ -6456,11 +6647,11 @@ var __imp_ZydisFormatterSetHook = GengoLibrary.Import("ZydisFormatterSetHook")
 // This function returns `ZYAN_STATUS_INVALID_OPERATION` if a function can't be replaced for the
 // current formatter-style.
 func (formatter *Formatter) SetHook(_type FormatterFunction, callback *unsafe.Pointer) Status {
-	__res := __imp_ZydisFormatterSetHook.Call3(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(_type), gengort.MarshallSyscall(callback))
+	__res := gengort.CCall3(__imp_ZydisFormatterSetHook.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(_type), gengort.MarshallSyscall(callback))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterFormatInstruction = GengoLibrary.Import("ZydisFormatterFormatInstruction")
+var __imp_ZydisFormatterFormatInstruction gengort.PreloadProc
 
 // Formats the given instruction and writes it into the output buffer.
 //
@@ -6485,11 +6676,11 @@ var __imp_ZydisFormatterFormatInstruction = GengoLibrary.Import("ZydisFormatterF
 //
 // @return A zyan status code.
 func (formatter *Formatter) FormatInstruction(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8, buffer *byte, length Usize, runtime_address U64, user_data unsafe.Pointer) Status {
-	__res := __imp_ZydisFormatterFormatInstruction.Call8(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(user_data))
+	__res := gengort.CCall8(__imp_ZydisFormatterFormatInstruction.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterFormatOperand = GengoLibrary.Import("ZydisFormatterFormatOperand")
+var __imp_ZydisFormatterFormatOperand gengort.PreloadProc
 
 // Formats the given operand and writes it into the output buffer.
 //
@@ -6513,11 +6704,11 @@ var __imp_ZydisFormatterFormatOperand = GengoLibrary.Import("ZydisFormatterForma
 // Use `ZydisFormatterFormatInstruction` or `ZydisFormatterFormatInstructionEx` to format a
 // complete instruction.
 func (formatter *Formatter) FormatOperand(instruction *DecodedInstruction, operand *DecodedOperand, buffer *byte, length Usize, runtime_address U64, user_data unsafe.Pointer) Status {
-	__res := __imp_ZydisFormatterFormatOperand.Call7(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(user_data))
+	__res := gengort.CCall7(__imp_ZydisFormatterFormatOperand.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterTokenizeInstruction = GengoLibrary.Import("ZydisFormatterTokenizeInstruction")
+var __imp_ZydisFormatterTokenizeInstruction gengort.PreloadProc
 
 // Tokenizes the given instruction and writes it into the output buffer.
 //
@@ -6544,11 +6735,11 @@ var __imp_ZydisFormatterTokenizeInstruction = GengoLibrary.Import("ZydisFormatte
 //
 // @return A zyan status code.
 func (formatter *Formatter) TokenizeInstruction(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8, buffer unsafe.Pointer, length Usize, runtime_address U64, token **FormatterTokenConst, user_data unsafe.Pointer) Status {
-	__res := __imp_ZydisFormatterTokenizeInstruction.Call9(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(token), gengort.MarshallSyscall(user_data))
+	__res := gengort.CCall9(__imp_ZydisFormatterTokenizeInstruction.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(token), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisFormatterTokenizeOperand = GengoLibrary.Import("ZydisFormatterTokenizeOperand")
+var __imp_ZydisFormatterTokenizeOperand gengort.PreloadProc
 
 // Tokenizes the given operand and writes it into the output buffer.
 //
@@ -6573,11 +6764,11 @@ var __imp_ZydisFormatterTokenizeOperand = GengoLibrary.Import("ZydisFormatterTok
 // @return A zyan status code.
 // Use `ZydisFormatterTokenizeInstruction` to tokenize a complete instruction.
 func (formatter *Formatter) TokenizeOperand(instruction *DecodedInstruction, operand *DecodedOperand, buffer unsafe.Pointer, length Usize, runtime_address U64, token **FormatterTokenConst, user_data unsafe.Pointer) Status {
-	__res := __imp_ZydisFormatterTokenizeOperand.Call8(gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(token), gengort.MarshallSyscall(user_data))
+	__res := gengort.CCall8(__imp_ZydisFormatterTokenizeOperand.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(token), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisGetInstructionSegments = GengoLibrary.Import("ZydisGetInstructionSegments")
+var __imp_ZydisGetInstructionSegments gengort.PreloadProc
 
 // Returns offsets and sizes of all logical instruction segments (e.g. `OPCODE`,
 // `MODRM`, ...).
@@ -6588,11 +6779,11 @@ var __imp_ZydisGetInstructionSegments = GengoLibrary.Import("ZydisGetInstruction
 //
 // @return A zyan status code.
 func GetInstructionSegments(instruction *DecodedInstruction, segments *InstructionSegments) Status {
-	__res := __imp_ZydisGetInstructionSegments.Call2(gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(segments))
+	__res := gengort.CCall2(__imp_ZydisGetInstructionSegments.Addr(), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(segments))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisDisassembleIntel = GengoLibrary.Import("ZydisDisassembleIntel")
+var __imp_ZydisDisassembleIntel gengort.PreloadProc
 
 // Disassemble an instruction and format it to human-readable text in a single step (Intel syntax).
 //
@@ -6627,11 +6818,11 @@ var __imp_ZydisDisassembleIntel = GengoLibrary.Import("ZydisDisassembleIntel")
 //
 // @return A zyan status code.
 func DisassembleIntel(machine_mode MachineMode, runtime_address U64, buffer unsafe.Pointer, length Usize, instruction *DisassembledInstruction) Status {
-	__res := __imp_ZydisDisassembleIntel.Call5(gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
+	__res := gengort.CCall5(__imp_ZydisDisassembleIntel.Addr(), gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisDisassembleATT = GengoLibrary.Import("ZydisDisassembleATT")
+var __imp_ZydisDisassembleATT gengort.PreloadProc
 
 // Disassemble an instruction and format it to human-readable text in a single step (AT
 // &T
@@ -6639,11 +6830,11 @@ var __imp_ZydisDisassembleATT = GengoLibrary.Import("ZydisDisassembleATT")
 //
 // @copydetails ZydisDisassembleIntel
 func DisassembleAtt(machine_mode MachineMode, runtime_address U64, buffer unsafe.Pointer, length Usize, instruction *DisassembledInstruction) Status {
-	__res := __imp_ZydisDisassembleATT.Call5(gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
+	__res := gengort.CCall5(__imp_ZydisDisassembleATT.Addr(), gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisCalcAbsoluteAddress = GengoLibrary.Import("ZydisCalcAbsoluteAddress")
+var __imp_ZydisCalcAbsoluteAddress gengort.PreloadProc
 
 // Calculates the absolute address value for the given instruction operand.
 //
@@ -6662,11 +6853,11 @@ var __imp_ZydisCalcAbsoluteAddress = GengoLibrary.Import("ZydisCalcAbsoluteAddre
 // - `MEM` operands with absolute address (e.g. `MOV RAX, [0x12345678]`)
 // - The displacement needs to get truncated and zero extended
 func CalcAbsoluteAddress(instruction *DecodedInstruction, operand *DecodedOperand, runtime_address U64, result_address *U64) Status {
-	__res := __imp_ZydisCalcAbsoluteAddress.Call4(gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(result_address))
+	__res := gengort.CCall4(__imp_ZydisCalcAbsoluteAddress.Addr(), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(result_address))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisCalcAbsoluteAddressEx = GengoLibrary.Import("ZydisCalcAbsoluteAddressEx")
+var __imp_ZydisCalcAbsoluteAddressEx gengort.PreloadProc
 
 // Calculates the absolute address value for the given instruction operand.
 //
@@ -6686,11 +6877,11 @@ var __imp_ZydisCalcAbsoluteAddressEx = GengoLibrary.Import("ZydisCalcAbsoluteAdd
 // Note that `IP/EIP/RIP` from the register-context will be ignored in favor of the passed
 // runtime-address.
 func CalcAbsoluteAddressEx(instruction *DecodedInstruction, operand *DecodedOperand, runtime_address U64, register_context *RegisterContext, result_address *U64) Status {
-	__res := __imp_ZydisCalcAbsoluteAddressEx.Call5(gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(register_context), gengort.MarshallSyscall(result_address))
+	__res := gengort.CCall5(__imp_ZydisCalcAbsoluteAddressEx.Addr(), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(register_context), gengort.MarshallSyscall(result_address))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
-var __imp_ZydisGetVersion = GengoLibrary.Import("ZydisGetVersion")
+var __imp_ZydisGetVersion gengort.PreloadProc
 
 // Returns the zydis version.
 //
@@ -6698,11 +6889,11 @@ var __imp_ZydisGetVersion = GengoLibrary.Import("ZydisGetVersion")
 // Use the macros provided in this file to extract the major, minor, patch and build part from the
 // returned version value.
 func GetVersion() U64 {
-	__res := __imp_ZydisGetVersion.Call0()
+	__res := gengort.CCall0(__imp_ZydisGetVersion.Addr())
 	return gengort.UnmarshallSyscall[U64](__res)
 }
 
-var __imp_ZydisIsFeatureEnabled = GengoLibrary.Import("ZydisIsFeatureEnabled")
+var __imp_ZydisIsFeatureEnabled gengort.PreloadProc
 
 // Checks, if the specified feature is enabled in the current zydis library instance.
 //
@@ -6711,7 +6902,7 @@ var __imp_ZydisIsFeatureEnabled = GengoLibrary.Import("ZydisIsFeatureEnabled")
 // @return `ZYAN_STATUS_TRUE` if the feature is enabled, `ZYAN_STATUS_FALSE` if not. Another
 // zyan status code, if an error occured.
 func IsFeatureEnabled(feature Feature) Status {
-	__res := __imp_ZydisIsFeatureEnabled.Call1(gengort.MarshallSyscall(feature))
+	__res := gengort.CCall1(__imp_ZydisIsFeatureEnabled.Addr(), gengort.MarshallSyscall(feature))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
 
@@ -6831,68 +7022,4 @@ func (s EncoderOperandImm_) S() I64 {
 // The signed immediate value.
 func (s *EncoderOperandImm_) SetS(v I64) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
-}
-
-//
-// Validates the ABI of the generated code against the current runtime.
-//
-func init() {
-	gengort.Validate[ShortString](0x9, 0x1)
-	gengort.Validate[RegisterContext](0x850, 0x8, "Values", 0x0)
-	gengort.Validate[DecodedOperandReg](0x4, 0x4, "Value", 0x0)
-	gengort.Validate[DecodedOperandMem](0x28, 0x8, "Type", 0x0, "Segment", 0x4, "Base", 0x8, "Index", 0xc, "Scale", 0x10, "Disp", 0x18)
-	gengort.Validate[DecodedOperandMemDisp_](0x10, 0x8, "HasDisplacement", 0x0, "Value", 0x8)
-	gengort.Validate[DecodedOperandPtr](0x8, 0x4, "Segment", 0x0, "Offset", 0x4)
-	gengort.Validate[DecodedOperandImm](0x10, 0x8, "IsSigned", 0x0, "IsRelative", 0x1, "Value", 0x8)
-	gengort.Validate[DecodedOperandImmValue_](0x8, 0x8)
-	gengort.Validate[DecodedOperand](0x50, 0x8, "Id", 0x0, "Visibility", 0x4, "Actions", 0x8, "Encoding", 0xc, "Size", 0x10, "ElementType", 0x14, "ElementSize", 0x18, "ElementCount", 0x1a, "Attributes", 0x1c, "Type", 0x20)
-	gengort.Validate[Anon53065](0x28, 0x8)
-	gengort.Validate[AccessedFlags](0x14, 0x4, "Tested", 0x0, "Modified", 0x4, "Set0", 0x8, "Set1", 0xc, "Undefined", 0x10)
-	gengort.Validate[DecodedInstructionRawRex](0x5, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "Offset", 0x4)
-	gengort.Validate[DecodedInstructionRawXop](0x9, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "MMmmm", 0x3, "W", 0x4, "Vvvv", 0x5, "L", 0x6, "Pp", 0x7, "Offset", 0x8)
-	gengort.Validate[DecodedInstructionRawVex](0xa, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "MMmmm", 0x3, "W", 0x4, "Vvvv", 0x5, "L", 0x6, "Pp", 0x7, "Offset", 0x8, "Size", 0x9)
-	gengort.Validate[DecodedInstructionRawEvex](0xf, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "R2", 0x3, "Mmm", 0x4, "W", 0x5, "Vvvv", 0x6, "Pp", 0x7, "Z", 0x8, "L2", 0x9, "L", 0xa, "Br", 0xb, "V2", 0xc, "Aaa", 0xd, "Offset", 0xe)
-	gengort.Validate[DecodedInstructionRawMvex](0xd, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "R2", 0x3, "Mmmm", 0x4, "W", 0x5, "Vvvv", 0x6, "Pp", 0x7, "E", 0x8, "Sss", 0x9, "V2", 0xa, "Kkk", 0xb, "Offset", 0xc)
-	gengort.Validate[DecodedInstructionAvx](0x24, 0x4, "VectorLength", 0x0, "Mask", 0x4, "Broadcast", 0xc, "Rounding", 0x14, "Swizzle", 0x18, "Conversion", 0x1c, "HasSae", 0x20, "HasEvictionHint", 0x21)
-	gengort.Validate[DecodedInstructionAvxMask_](0x8, 0x4, "Mode", 0x0, "Reg", 0x4)
-	gengort.Validate[DecodedInstructionAvxBroadcast_](0x8, 0x4, "IsStatic", 0x0, "Mode", 0x4)
-	gengort.Validate[DecodedInstructionAvxRounding_](0x4, 0x4, "Mode", 0x0)
-	gengort.Validate[DecodedInstructionAvxSwizzle_](0x4, 0x4, "Mode", 0x0)
-	gengort.Validate[DecodedInstructionAvxConversion_](0x4, 0x4, "Mode", 0x0)
-	gengort.Validate[DecodedInstructionMeta](0x14, 0x4, "Category", 0x0, "IsaSet", 0x4, "IsaExt", 0x8, "BranchType", 0xc, "ExceptionClass", 0x10)
-	gengort.Validate[DecodedInstructionRaw](0xd8, 0x8, "PrefixCount", 0x0, "Prefixes", 0x4, "Encoding2", 0x7c, "Modrm", 0x8f, "Sib", 0x93, "Disp", 0x98, "Imm", 0xa8)
-	gengort.Validate[DecodedInstructionRawPrefixes_](0x8, 0x4, "Type", 0x0, "Value", 0x4)
-	gengort.Validate[Anon61855](0xf, 0x1)
-	gengort.Validate[DecodedInstructionModRm_](0x4, 0x1, "Mod", 0x0, "Reg", 0x1, "Rm", 0x2, "Offset", 0x3)
-	gengort.Validate[DecodedInstructionRawSib_](0x4, 0x1, "Scale", 0x0, "Index", 0x1, "Base", 0x2, "Offset", 0x3)
-	gengort.Validate[DecodedInstructionRawDisp_](0x10, 0x8, "Value", 0x0, "Size", 0x8, "Offset", 0x9)
-	gengort.Validate[DecodedInstructionRawImm_](0x18, 0x8, "IsSigned", 0x0, "IsRelative", 0x1, "Value", 0x8, "Size", 0x10, "Offset", 0x11)
-	gengort.Validate[DecodedInstructionRawImmValue_](0x8, 0x8)
-	gengort.Validate[DecodedInstruction](0x148, 0x8, "MachineMode", 0x0, "Mnemonic", 0x4, "Length", 0x8, "Encoding", 0xc, "OpcodeMap", 0x10, "Opcode", 0x14, "StackWidth", 0x15, "OperandWidth", 0x16, "AddressWidth", 0x17, "OperandCount", 0x18, "OperandCountVisible", 0x19, "Attributes", 0x20, "CpuFlags", 0x28, "FpuFlags", 0x30, "Avx", 0x38, "Meta", 0x5c, "Raw", 0x70)
-	gengort.Validate[DecoderContext](0x20, 0x8, "Definition", 0x0, "EoszIndex", 0x8, "EaszIndex", 0x9, "VectorUnified", 0xa, "RegInfo", 0x14, "Evex", 0x1a, "Mvex", 0x1c, "Cd8Scale", 0x1d)
-	gengort.Validate[Anon64195](0xa, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "L", 0x4, "Ll", 0x5, "R2", 0x6, "V2", 0x7, "Vvvv", 0x8, "Mask", 0x9)
-	gengort.Validate[Anon64355](0x6, 0x1, "IsModReg", 0x0, "IdReg", 0x1, "IdRm", 0x2, "IdNdsndd", 0x3, "IdBase", 0x4, "IdIndex", 0x5)
-	gengort.Validate[Anon64725](0x2, 0x1, "TupleType", 0x0, "ElementSize", 0x1)
-	gengort.Validate[Anon64865](0x1, 0x1, "Functionality", 0x0)
-	gengort.Validate[Decoder](0x14, 0x4, "MachineMode", 0x0, "StackWidth", 0x4, "DecoderMode", 0x8)
-	gengort.Validate[EncoderOperand](0x40, 0x8, "Type", 0x0, "Reg", 0x4, "Mem", 0x10, "Ptr", 0x30, "Imm", 0x38)
-	gengort.Validate[EncoderOperandReg_](0x8, 0x4, "Value", 0x0, "Is4", 0x4)
-	gengort.Validate[EncoderOperandMem_](0x20, 0x8, "Base", 0x0, "Index", 0x4, "Scale", 0x8, "Displacement", 0x10, "Size", 0x18)
-	gengort.Validate[EncoderOperandPtr_](0x8, 0x4, "Segment", 0x0, "Offset", 0x4)
-	gengort.Validate[EncoderOperandImm_](0x8, 0x8)
-	gengort.Validate[EncoderRequest](0x190, 0x8, "MachineMode", 0x0, "AllowedEncodings", 0x4, "Mnemonic", 0x8, "Prefixes", 0x10, "BranchType", 0x18, "BranchWidth", 0x1c, "AddressSizeHint", 0x20, "OperandSizeHint", 0x24, "OperandCount", 0x28, "Operands", 0x30, "Evex", 0x170, "Mvex", 0x17c)
-	gengort.Validate[EncoderRequestEvexFeatures_](0xc, 0x4, "Broadcast", 0x0, "Rounding", 0x4, "Sae", 0x8, "ZeroingMask", 0x9)
-	gengort.Validate[EncoderRequestMvexFeatures_](0x14, 0x4, "Broadcast", 0x0, "Conversion", 0x4, "Rounding", 0x8, "Swizzle", 0xc, "Sae", 0x10, "EvictionHint", 0x11)
-	gengort.Validate[Allocator](0x18, 0x8, "Allocate", 0x0, "Reallocate", 0x8, "Deallocate", 0x10)
-	gengort.Validate[Vector](0x38, 0x8, "Allocator", 0x0, "GrowthFactor", 0x8, "ShrinkThreshold", 0x9, "Size", 0x10, "Capacity", 0x18, "ElementSize", 0x20, "Destructor", 0x28, "Data", 0x30)
-	gengort.Validate[String](0x40, 0x8, "Flags", 0x0, "Vector", 0x8)
-	gengort.Validate[StringView](0x40, 0x8, "String", 0x0)
-	gengort.Validate[FormatterToken](0x2, 0x1, "Type", 0x0, "Next", 0x1)
-	gengort.Validate[FormatterBuffer](0x50, 0x8, "IsTokenList", 0x0, "Capacity", 0x8, "String", 0x10)
-	gengort.Validate[FormatterContext](0x28, 0x8, "Instruction", 0x0, "Operands", 0x8, "Operand", 0x10, "RuntimeAddress", 0x18, "UserData", 0x20)
-	gengort.Validate[Formatter](0x248, 0x8, "Style", 0x0, "ForceMemorySize", 0x4, "ForceMemorySegment", 0x5, "ForceMemoryScale", 0x6, "ForceRelativeBranches", 0x7, "ForceRelativeRiprel", 0x8, "PrintBranchSize", 0x9, "DetailedPrefixes", 0xa, "AddrBase", 0xc, "AddrSignedness", 0x10, "AddrPaddingAbsolute", 0x14, "AddrPaddingRelative", 0x18, "DispBase", 0x1c, "DispSignedness", 0x20, "DispPadding", 0x24, "ImmBase", 0x28, "ImmSignedness", 0x2c, "ImmPadding", 0x30, "CasePrefixes", 0x34, "CaseMnemonic", 0x38, "CaseRegisters", 0x3c, "CaseTypecasts", 0x40, "CaseDecorators", 0x44, "HexUppercase", 0x48, "HexForceLeadingNumber", 0x49, "NumberFormat", 0x50, "FuncPreInstruction", 0x1b0, "FuncPostInstruction", 0x1b8, "FuncFormatInstruction", 0x1c0, "FuncPreOperand", 0x1c8, "FuncPostOperand", 0x1d0, "FuncFormatOperandReg", 0x1d8, "FuncFormatOperandMem", 0x1e0, "FuncFormatOperandPtr", 0x1e8, "FuncFormatOperandImm", 0x1f0, "FuncPrintMnemonic", 0x1f8, "FuncPrintRegister", 0x200, "FuncPrintAddressAbs", 0x208, "FuncPrintAddressRel", 0x210, "FuncPrintDisp", 0x218, "FuncPrintImm", 0x220, "FuncPrintTypecast", 0x228, "FuncPrintSegment", 0x230, "FuncPrintPrefixes", 0x238, "FuncPrintDecorator", 0x240)
-	gengort.Validate[Anon112225](0x58, 0x8, "String", 0x0, "StringData", 0x8, "Buffer", 0x48)
-	gengort.Validate[InstructionSegments](0x4c, 0x4, "Count", 0x0, "Segments", 0x4)
-	gengort.Validate[Anon116335](0x8, 0x4, "Type", 0x0, "Offset", 0x4, "Size", 0x5)
-	gengort.Validate[DisassembledInstruction](0x4d0, 0x8, "RuntimeAddress", 0x0, "Info", 0x8, "Operands", 0x150, "Text", 0x470)
 }

@@ -19,49 +19,60 @@ func (s ShortString) String() string {
 	return unsafe.String((*byte)(unsafe.Pointer(s.Data())), s.Size())
 }
 
-func Ok(status uint32) bool {
-	return status&0x80000000 == 0
-}
-func Failed(status uint32) bool {
-	return status&0x80000000 != 0
-}
-func MakeStatus(err uint32, module uint32, code uint32) uint32 {
-	return (err & 0x01 << 31) | (module & 0x7FF << 20) | (code & 0xFFFFF)
-}
-func StatusModule(status uint32) uint32 {
-	return (status >> 20) & 0x7FF
-}
-func StatusCode(status uint32) uint32 {
-	return status & 0xFFFFF
-}
-
-const ZYAN_TRUE = 1
-const ZYAN_FALSE = 0
-
 const (
-	MODULE_ZYCORE   = 0x001
-	MODULE_ARGPARSE = 0x003
-	MODULE_USER     = 0x3FF
+	TRUE  Bool = 1
+	FALSE Bool = 0
 )
 
-var (
-	STATUS_SUCCESS                  = MakeStatus(0, MODULE_ZYCORE, 0x00)
-	STATUS_FAILED                   = MakeStatus(1, MODULE_ZYCORE, 0x01)
-	STATUS_TRUE                     = MakeStatus(0, MODULE_ZYCORE, 0x02)
-	STATUS_FALSE                    = MakeStatus(0, MODULE_ZYCORE, 0x03)
-	STATUS_INVALID_ARGUMENT         = MakeStatus(1, MODULE_ZYCORE, 0x04)
-	STATUS_INVALID_OPERATION        = MakeStatus(1, MODULE_ZYCORE, 0x05)
-	STATUS_ACCESS_DENIED            = MakeStatus(1, MODULE_ZYCORE, 0x06)
-	STATUS_NOT_FOUND                = MakeStatus(1, MODULE_ZYCORE, 0x07)
-	STATUS_OUT_OF_RANGE             = MakeStatus(1, MODULE_ZYCORE, 0x08)
-	STATUS_INSUFFICIENT_BUFFER_SIZE = MakeStatus(1, MODULE_ZYCORE, 0x09)
-	STATUS_NOT_ENOUGH_MEMORY        = MakeStatus(1, MODULE_ZYCORE, 0x0A)
-	STATUS_BAD_SYSTEMCALL           = MakeStatus(1, MODULE_ZYCORE, 0x0B)
-	STATUS_OUT_OF_RESOURCES         = MakeStatus(1, MODULE_ZYCORE, 0x0C)
-	STATUS_MISSING_DEPENDENCY       = MakeStatus(1, MODULE_ZYCORE, 0x0D)
-	STATUS_ARG_NOT_UNDERSTOOD       = MakeStatus(1, MODULE_ARGPARSE, 0x00)
-	STATUS_TOO_FEW_ARGS             = MakeStatus(1, MODULE_ARGPARSE, 0x01)
-	STATUS_TOO_MANY_ARGS            = MakeStatus(1, MODULE_ARGPARSE, 0x02)
-	STATUS_ARG_MISSES_VALUE         = MakeStatus(1, MODULE_ARGPARSE, 0x03)
-	STATUS_REQUIRED_ARG_MISSING     = MakeStatus(1, MODULE_ARGPARSE, 0x04)
+const (
+	CODE_OKAY       Status = 0x00000000
+	CODE_FAIL       Status = 0x80000000
+	CODE_MASK       Status = 0x80000000
+	MODULE_ZYCORE   Status = (0x001) << 20
+	MODULE_ZYDIS    Status = (0x002) << 20
+	MODULE_ARGPARSE Status = (0x003) << 20
+	MODULE_USER     Status = (0x3FF) << 20
+	MODULE_MASK     Status = (0x7FF) << 20
+)
+
+func Ok(status uint32) bool {
+	return int32(status) >= 0
+}
+func Failed(status Status) bool {
+	return int32(status) < 0
+}
+
+const (
+	STATUS_SUCCESS                  Status = 0x00 | CODE_OKAY | MODULE_ZYCORE
+	STATUS_FAILED                   Status = 0x01 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_TRUE                     Status = 0x02 | CODE_OKAY | MODULE_ZYCORE
+	STATUS_FALSE                    Status = 0x03 | CODE_OKAY | MODULE_ZYCORE
+	STATUS_INVALID_ARGUMENT         Status = 0x04 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_INVALID_OPERATION        Status = 0x05 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_ACCESS_DENIED            Status = 0x06 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_NOT_FOUND                Status = 0x07 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_OUT_OF_RANGE             Status = 0x08 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_INSUFFICIENT_BUFFER_SIZE Status = 0x09 | CODE_FAIL | MODULE_ZYCORE
+	STATUS_NOT_ENOUGH_MEMORY        Status = 0x0A | CODE_FAIL | MODULE_ZYCORE
+	STATUS_BAD_SYSTEMCALL           Status = 0x0B | CODE_FAIL | MODULE_ZYCORE
+	STATUS_OUT_OF_RESOURCES         Status = 0x0C | CODE_FAIL | MODULE_ZYCORE
+	STATUS_MISSING_DEPENDENCY       Status = 0x0D | CODE_FAIL | MODULE_ZYCORE
+	STATUS_ARG_NOT_UNDERSTOOD       Status = 0x00 | CODE_FAIL | MODULE_ARGPARSE
+	STATUS_TOO_FEW_ARGS             Status = 0x01 | CODE_FAIL | MODULE_ARGPARSE
+	STATUS_TOO_MANY_ARGS            Status = 0x02 | CODE_FAIL | MODULE_ARGPARSE
+	STATUS_ARG_MISSES_VALUE         Status = 0x03 | CODE_FAIL | MODULE_ARGPARSE
+	STATUS_REQUIRED_ARG_MISSING     Status = 0x04 | CODE_FAIL | MODULE_ARGPARSE
+	STATUS_NO_MORE_DATA             Status = 0x00 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_DECODING_ERROR           Status = 0x01 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_INSTRUCTION_TOO_LONG     Status = 0x02 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_BAD_REGISTER             Status = 0x03 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_ILLEGAL_LOCK             Status = 0x04 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_ILLEGAL_LEGACY_PFX       Status = 0x05 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_ILLEGAL_REX              Status = 0x06 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_INVALID_MAP              Status = 0x07 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_MALFORMED_EVEX           Status = 0x08 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_MALFORMED_MVEX           Status = 0x09 | CODE_FAIL | MODULE_ZYDIS
+	STATUS_INVALID_MASK             Status = 0x0A | CODE_FAIL | MODULE_ZYDIS
+	STATUS_SKIP_TOKEN               Status = 0x0B | CODE_OKAY | MODULE_ZYDIS
+	STATUS_IMPOSSIBLE_INSTRUCTION   Status = 0x0C | CODE_FAIL | MODULE_ZYDIS
 )
