@@ -11,8 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
-  <a href="https://github.com/zyantific/zydis/actions"><img src="https://github.com/zyantific/zydis/workflows/CI/badge.svg" alt="GitHub Actions"></a>
-  <a href="https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:zydis"><img src="https://oss-fuzz-build-logs.storage.googleapis.com/badges/zydis.svg" alt="Fuzzing Status"></a>
+  <a href="https://github.com/can1357/zydis-go/actions"><img src="https://github.com/can1357/zydis-go/actions/workflows/build.yml/badge.svg" alt="GitHub Actions"></a>
   <a href="https://gitter.im/zyantific/zydis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/zyantific/zyan-disassembler-engine.svg" alt="Gitter"></a>
   <a href="https://discord.zyantific.com/"><img src="https://img.shields.io/discord/390136917779415060.svg?logo=discord&label=Discord" alt="Discord"></a>
 </p>
@@ -33,7 +32,7 @@
 
 The following example program uses Zydis to disassemble a given memory buffer and prints the output to the console.
 
-https://github.com/can1357/zydis-go/blob/master/examples/disasm-simple/main.go#L12-L42
+https://github.com/can1357/zydis-go/blob/229b8bb7bf0f346f253337eede5962f799111bd3/examples/disasm-simple/main.go#L12-L42
 
 The above example program generates the following output:
 
@@ -50,7 +49,7 @@ The above example program generates the following output:
 
 ### Encoder
 
-https://github.com/can1357/zydis-go/blob/master/examples/encode-simple/main.go#L11-L32
+https://github.com/can1357/zydis-go/blob/229b8bb7bf0f346f253337eede5962f799111bd3/examples/encode-simple/main.go#L11-L32
 
 The above example program generates the following output:
 
