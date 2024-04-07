@@ -2,3 +2,5 @@
 xul.dll
 
 build/
+
+go.sum
