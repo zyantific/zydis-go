@@ -14,119 +14,119 @@ var GengoLibrary = gengort.NewLibrary(GengoLibraryName)
 type InstructionCategory int32
 
 const (
-	CATEGORY_INVALID                InstructionCategory = 0
-	CATEGORY_ADOX_ADCX              InstructionCategory = 1
-	CATEGORY_AES                    InstructionCategory = 2
-	CATEGORY_AMD_3_DNOW             InstructionCategory = 3
-	CATEGORY_AMX_TILE               InstructionCategory = 4
-	CATEGORY_AVX                    InstructionCategory = 5
-	CATEGORY_AVX_2                  InstructionCategory = 6
-	CATEGORY_AVX_2_GATHER           InstructionCategory = 7
-	CATEGORY_AVX_512                InstructionCategory = 8
-	CATEGORY_AVX_512_4_FMAPS        InstructionCategory = 9
-	CATEGORY_AVX_512_4_VNNIW        InstructionCategory = 10
-	CATEGORY_AVX_512_BITALG         InstructionCategory = 11
-	CATEGORY_AVX_512_VBMI           InstructionCategory = 12
-	CATEGORY_AVX_512_VP_2_INTERSECT InstructionCategory = 13
-	CATEGORY_AVX_IFMA               InstructionCategory = 14
-	CATEGORY_BINARY                 InstructionCategory = 15
-	CATEGORY_BITBYTE                InstructionCategory = 16
-	CATEGORY_BLEND                  InstructionCategory = 17
-	CATEGORY_BMI_1                  InstructionCategory = 18
-	CATEGORY_BMI_2                  InstructionCategory = 19
-	CATEGORY_BROADCAST              InstructionCategory = 20
-	CATEGORY_CALL                   InstructionCategory = 21
-	CATEGORY_CET                    InstructionCategory = 22
-	CATEGORY_CLDEMOTE               InstructionCategory = 23
-	CATEGORY_CLFLUSHOPT             InstructionCategory = 24
-	CATEGORY_CLWB                   InstructionCategory = 25
-	CATEGORY_CLZERO                 InstructionCategory = 26
-	CATEGORY_CMOV                   InstructionCategory = 27
-	CATEGORY_COMPRESS               InstructionCategory = 28
-	CATEGORY_COND_BR                InstructionCategory = 29
-	CATEGORY_CONFLICT               InstructionCategory = 30
-	CATEGORY_CONVERT                InstructionCategory = 31
-	CATEGORY_DATAXFER               InstructionCategory = 32
-	CATEGORY_DECIMAL                InstructionCategory = 33
-	CATEGORY_ENQCMD                 InstructionCategory = 34
-	CATEGORY_EXPAND                 InstructionCategory = 35
-	CATEGORY_FCMOV                  InstructionCategory = 36
-	CATEGORY_FLAGOP                 InstructionCategory = 37
-	CATEGORY_FMA_4                  InstructionCategory = 38
-	CATEGORY_FP_16                  InstructionCategory = 39
-	CATEGORY_GATHER                 InstructionCategory = 40
-	CATEGORY_GFNI                   InstructionCategory = 41
-	CATEGORY_HRESET                 InstructionCategory = 42
-	CATEGORY_IFMA                   InstructionCategory = 43
-	CATEGORY_INTERRUPT              InstructionCategory = 44
-	CATEGORY_IO                     InstructionCategory = 45
-	CATEGORY_IOSTRINGOP             InstructionCategory = 46
-	CATEGORY_KEYLOCKER              InstructionCategory = 47
-	CATEGORY_KEYLOCKER_WIDE         InstructionCategory = 48
-	CATEGORY_KMASK                  InstructionCategory = 49
-	CATEGORY_KNC                    InstructionCategory = 50
-	CATEGORY_KNCMASK                InstructionCategory = 51
-	CATEGORY_KNCSCALAR              InstructionCategory = 52
-	CATEGORY_LEGACY                 InstructionCategory = 53
-	CATEGORY_LOGICAL                InstructionCategory = 54
-	CATEGORY_LOGICAL_FP             InstructionCategory = 55
-	CATEGORY_LZCNT                  InstructionCategory = 56
-	CATEGORY_MISC                   InstructionCategory = 57
-	CATEGORY_MMX                    InstructionCategory = 58
-	CATEGORY_MOVDIR                 InstructionCategory = 59
-	CATEGORY_MPX                    InstructionCategory = 60
-	CATEGORY_MSRLIST                InstructionCategory = 61
-	CATEGORY_NOP                    InstructionCategory = 62
-	CATEGORY_PADLOCK                InstructionCategory = 63
-	CATEGORY_PCLMULQDQ              InstructionCategory = 64
-	CATEGORY_PCOMMIT                InstructionCategory = 65
-	CATEGORY_PCONFIG                InstructionCategory = 66
-	CATEGORY_PKU                    InstructionCategory = 67
-	CATEGORY_POP                    InstructionCategory = 68
-	CATEGORY_PREFETCH               InstructionCategory = 69
-	CATEGORY_PREFETCHWT_1           InstructionCategory = 70
-	CATEGORY_PT                     InstructionCategory = 71
-	CATEGORY_PUSH                   InstructionCategory = 72
-	CATEGORY_RDPID                  InstructionCategory = 73
-	CATEGORY_RDPRU                  InstructionCategory = 74
-	CATEGORY_RDRAND                 InstructionCategory = 75
-	CATEGORY_RDSEED                 InstructionCategory = 76
-	CATEGORY_RDWRFSGS               InstructionCategory = 77
-	CATEGORY_RET                    InstructionCategory = 78
-	CATEGORY_ROTATE                 InstructionCategory = 79
-	CATEGORY_SCATTER                InstructionCategory = 80
-	CATEGORY_SEGOP                  InstructionCategory = 81
-	CATEGORY_SEMAPHORE              InstructionCategory = 82
-	CATEGORY_SERIALIZE              InstructionCategory = 83
-	CATEGORY_SETCC                  InstructionCategory = 84
-	CATEGORY_SGX                    InstructionCategory = 85
-	CATEGORY_SHA                    InstructionCategory = 86
-	CATEGORY_SHIFT                  InstructionCategory = 87
-	CATEGORY_SMAP                   InstructionCategory = 88
-	CATEGORY_SSE                    InstructionCategory = 89
-	CATEGORY_STRINGOP               InstructionCategory = 90
-	CATEGORY_STTNI                  InstructionCategory = 91
-	CATEGORY_SYSCALL                InstructionCategory = 92
-	CATEGORY_SYSRET                 InstructionCategory = 93
-	CATEGORY_SYSTEM                 InstructionCategory = 94
-	CATEGORY_TBM                    InstructionCategory = 95
-	CATEGORY_TSX_LDTRK              InstructionCategory = 96
-	CATEGORY_UFMA                   InstructionCategory = 97
-	CATEGORY_UINTR                  InstructionCategory = 98
-	CATEGORY_UNCOND_BR              InstructionCategory = 99
-	CATEGORY_VAES                   InstructionCategory = 100
-	CATEGORY_VBMI_2                 InstructionCategory = 101
-	CATEGORY_VEX                    InstructionCategory = 102
-	CATEGORY_VFMA                   InstructionCategory = 103
-	CATEGORY_VPCLMULQDQ             InstructionCategory = 104
-	CATEGORY_VTX                    InstructionCategory = 105
-	CATEGORY_WAITPKG                InstructionCategory = 106
-	CATEGORY_WIDENOP                InstructionCategory = 107
-	CATEGORY_WRMSRNS                InstructionCategory = 108
-	CATEGORY_X_87_ALU               InstructionCategory = 109
-	CATEGORY_XOP                    InstructionCategory = 110
-	CATEGORY_XSAVE                  InstructionCategory = 111
-	CATEGORY_XSAVEOPT               InstructionCategory = 112
+	CATEGORY_INVALID             InstructionCategory = 0
+	CATEGORY_ADOX_ADCX           InstructionCategory = 1
+	CATEGORY_AES                 InstructionCategory = 2
+	CATEGORY_AMD3DNOW            InstructionCategory = 3
+	CATEGORY_AMX_TILE            InstructionCategory = 4
+	CATEGORY_AVX                 InstructionCategory = 5
+	CATEGORY_AVX2                InstructionCategory = 6
+	CATEGORY_AVX2GATHER          InstructionCategory = 7
+	CATEGORY_AVX512              InstructionCategory = 8
+	CATEGORY_AVX512_4FMAPS       InstructionCategory = 9
+	CATEGORY_AVX512_4VNNIW       InstructionCategory = 10
+	CATEGORY_AVX512_BITALG       InstructionCategory = 11
+	CATEGORY_AVX512_VBMI         InstructionCategory = 12
+	CATEGORY_AVX512_VP2INTERSECT InstructionCategory = 13
+	CATEGORY_AVX_IFMA            InstructionCategory = 14
+	CATEGORY_BINARY              InstructionCategory = 15
+	CATEGORY_BITBYTE             InstructionCategory = 16
+	CATEGORY_BLEND               InstructionCategory = 17
+	CATEGORY_BMI1                InstructionCategory = 18
+	CATEGORY_BMI2                InstructionCategory = 19
+	CATEGORY_BROADCAST           InstructionCategory = 20
+	CATEGORY_CALL                InstructionCategory = 21
+	CATEGORY_CET                 InstructionCategory = 22
+	CATEGORY_CLDEMOTE            InstructionCategory = 23
+	CATEGORY_CLFLUSHOPT          InstructionCategory = 24
+	CATEGORY_CLWB                InstructionCategory = 25
+	CATEGORY_CLZERO              InstructionCategory = 26
+	CATEGORY_CMOV                InstructionCategory = 27
+	CATEGORY_COMPRESS            InstructionCategory = 28
+	CATEGORY_COND_BR             InstructionCategory = 29
+	CATEGORY_CONFLICT            InstructionCategory = 30
+	CATEGORY_CONVERT             InstructionCategory = 31
+	CATEGORY_DATAXFER            InstructionCategory = 32
+	CATEGORY_DECIMAL             InstructionCategory = 33
+	CATEGORY_ENQCMD              InstructionCategory = 34
+	CATEGORY_EXPAND              InstructionCategory = 35
+	CATEGORY_FCMOV               InstructionCategory = 36
+	CATEGORY_FLAGOP              InstructionCategory = 37
+	CATEGORY_FMA4                InstructionCategory = 38
+	CATEGORY_FP16                InstructionCategory = 39
+	CATEGORY_GATHER              InstructionCategory = 40
+	CATEGORY_GFNI                InstructionCategory = 41
+	CATEGORY_HRESET              InstructionCategory = 42
+	CATEGORY_IFMA                InstructionCategory = 43
+	CATEGORY_INTERRUPT           InstructionCategory = 44
+	CATEGORY_IO                  InstructionCategory = 45
+	CATEGORY_IOSTRINGOP          InstructionCategory = 46
+	CATEGORY_KEYLOCKER           InstructionCategory = 47
+	CATEGORY_KEYLOCKER_WIDE      InstructionCategory = 48
+	CATEGORY_KMASK               InstructionCategory = 49
+	CATEGORY_KNC                 InstructionCategory = 50
+	CATEGORY_KNCMASK             InstructionCategory = 51
+	CATEGORY_KNCSCALAR           InstructionCategory = 52
+	CATEGORY_LEGACY              InstructionCategory = 53
+	CATEGORY_LOGICAL             InstructionCategory = 54
+	CATEGORY_LOGICAL_FP          InstructionCategory = 55
+	CATEGORY_LZCNT               InstructionCategory = 56
+	CATEGORY_MISC                InstructionCategory = 57
+	CATEGORY_MMX                 InstructionCategory = 58
+	CATEGORY_MOVDIR              InstructionCategory = 59
+	CATEGORY_MPX                 InstructionCategory = 60
+	CATEGORY_MSRLIST             InstructionCategory = 61
+	CATEGORY_NOP                 InstructionCategory = 62
+	CATEGORY_PADLOCK             InstructionCategory = 63
+	CATEGORY_PCLMULQDQ           InstructionCategory = 64
+	CATEGORY_PCOMMIT             InstructionCategory = 65
+	CATEGORY_PCONFIG             InstructionCategory = 66
+	CATEGORY_PKU                 InstructionCategory = 67
+	CATEGORY_POP                 InstructionCategory = 68
+	CATEGORY_PREFETCH            InstructionCategory = 69
+	CATEGORY_PREFETCHWT1         InstructionCategory = 70
+	CATEGORY_PT                  InstructionCategory = 71
+	CATEGORY_PUSH                InstructionCategory = 72
+	CATEGORY_RDPID               InstructionCategory = 73
+	CATEGORY_RDPRU               InstructionCategory = 74
+	CATEGORY_RDRAND              InstructionCategory = 75
+	CATEGORY_RDSEED              InstructionCategory = 76
+	CATEGORY_RDWRFSGS            InstructionCategory = 77
+	CATEGORY_RET                 InstructionCategory = 78
+	CATEGORY_ROTATE              InstructionCategory = 79
+	CATEGORY_SCATTER             InstructionCategory = 80
+	CATEGORY_SEGOP               InstructionCategory = 81
+	CATEGORY_SEMAPHORE           InstructionCategory = 82
+	CATEGORY_SERIALIZE           InstructionCategory = 83
+	CATEGORY_SETCC               InstructionCategory = 84
+	CATEGORY_SGX                 InstructionCategory = 85
+	CATEGORY_SHA                 InstructionCategory = 86
+	CATEGORY_SHIFT               InstructionCategory = 87
+	CATEGORY_SMAP                InstructionCategory = 88
+	CATEGORY_SSE                 InstructionCategory = 89
+	CATEGORY_STRINGOP            InstructionCategory = 90
+	CATEGORY_STTNI               InstructionCategory = 91
+	CATEGORY_SYSCALL             InstructionCategory = 92
+	CATEGORY_SYSRET              InstructionCategory = 93
+	CATEGORY_SYSTEM              InstructionCategory = 94
+	CATEGORY_TBM                 InstructionCategory = 95
+	CATEGORY_TSX_LDTRK           InstructionCategory = 96
+	CATEGORY_UFMA                InstructionCategory = 97
+	CATEGORY_UINTR               InstructionCategory = 98
+	CATEGORY_UNCOND_BR           InstructionCategory = 99
+	CATEGORY_VAES                InstructionCategory = 100
+	CATEGORY_VBMI2               InstructionCategory = 101
+	CATEGORY_VEX                 InstructionCategory = 102
+	CATEGORY_VFMA                InstructionCategory = 103
+	CATEGORY_VPCLMULQDQ          InstructionCategory = 104
+	CATEGORY_VTX                 InstructionCategory = 105
+	CATEGORY_WAITPKG             InstructionCategory = 106
+	CATEGORY_WIDENOP             InstructionCategory = 107
+	CATEGORY_WRMSRNS             InstructionCategory = 108
+	CATEGORY_X87_ALU             InstructionCategory = 109
+	CATEGORY_XOP                 InstructionCategory = 110
+	CATEGORY_XSAVE               InstructionCategory = 111
+	CATEGORY_XSAVEOPT            InstructionCategory = 112
 	// Maximum value of this enum.
 	CATEGORY_MAX_VALUE InstructionCategory = 112
 	// The minimum number of bits required to represent all values of this enum.
@@ -134,2098 +134,2098 @@ const (
 )
 
 // Defines the `ZydisISASet` enum.
-type Isaset int32
+type ISASet int32
 
 const (
-	ISA_SET_INVALID                    Isaset = 0
-	ISA_SET_ADOX_ADCX                  Isaset = 1
-	ISA_SET_AES                        Isaset = 2
-	ISA_SET_AMD                        Isaset = 3
-	ISA_SET_AMD_3_DNOW                 Isaset = 4
-	ISA_SET_AMD_INVLPGB                Isaset = 5
-	ISA_SET_AMX_BF_16                  Isaset = 6
-	ISA_SET_AMX_FP_16                  Isaset = 7
-	ISA_SET_AMX_INT_8                  Isaset = 8
-	ISA_SET_AMX_TILE                   Isaset = 9
-	ISA_SET_AVX                        Isaset = 10
-	ISA_SET_AVX_2                      Isaset = 11
-	ISA_SET_AVX_2_GATHER               Isaset = 12
-	ISA_SET_AVX_512_BW_128             Isaset = 13
-	ISA_SET_AVX_512_BW_128_N           Isaset = 14
-	ISA_SET_AVX_512_BW_256             Isaset = 15
-	ISA_SET_AVX_512_BW_512             Isaset = 16
-	ISA_SET_AVX_512_BW_KOP             Isaset = 17
-	ISA_SET_AVX_512_CD_128             Isaset = 18
-	ISA_SET_AVX_512_CD_256             Isaset = 19
-	ISA_SET_AVX_512_CD_512             Isaset = 20
-	ISA_SET_AVX_512_DQ_128             Isaset = 21
-	ISA_SET_AVX_512_DQ_128_N           Isaset = 22
-	ISA_SET_AVX_512_DQ_256             Isaset = 23
-	ISA_SET_AVX_512_DQ_512             Isaset = 24
-	ISA_SET_AVX_512_DQ_KOP             Isaset = 25
-	ISA_SET_AVX_512_DQ_SCALAR          Isaset = 26
-	ISA_SET_AVX_512_ER_512             Isaset = 27
-	ISA_SET_AVX_512_ER_SCALAR          Isaset = 28
-	ISA_SET_AVX_512_F_128              Isaset = 29
-	ISA_SET_AVX_512_F_128_N            Isaset = 30
-	ISA_SET_AVX_512_F_256              Isaset = 31
-	ISA_SET_AVX_512_F_512              Isaset = 32
-	ISA_SET_AVX_512_F_KOP              Isaset = 33
-	ISA_SET_AVX_512_F_SCALAR           Isaset = 34
-	ISA_SET_AVX_512_PF_512             Isaset = 35
-	ISA_SET_AVX_512_4_FMAPS_512        Isaset = 36
-	ISA_SET_AVX_512_4_FMAPS_SCALAR     Isaset = 37
-	ISA_SET_AVX_512_4_VNNIW_512        Isaset = 38
-	ISA_SET_AVX_512_BF_16_128          Isaset = 39
-	ISA_SET_AVX_512_BF_16_256          Isaset = 40
-	ISA_SET_AVX_512_BF_16_512          Isaset = 41
-	ISA_SET_AVX_512_BITALG_128         Isaset = 42
-	ISA_SET_AVX_512_BITALG_256         Isaset = 43
-	ISA_SET_AVX_512_BITALG_512         Isaset = 44
-	ISA_SET_AVX_512_FP_16_128          Isaset = 45
-	ISA_SET_AVX_512_FP_16_128_N        Isaset = 46
-	ISA_SET_AVX_512_FP_16_256          Isaset = 47
-	ISA_SET_AVX_512_FP_16_512          Isaset = 48
-	ISA_SET_AVX_512_FP_16_SCALAR       Isaset = 49
-	ISA_SET_AVX_512_GFNI_128           Isaset = 50
-	ISA_SET_AVX_512_GFNI_256           Isaset = 51
-	ISA_SET_AVX_512_GFNI_512           Isaset = 52
-	ISA_SET_AVX_512_IFMA_128           Isaset = 53
-	ISA_SET_AVX_512_IFMA_256           Isaset = 54
-	ISA_SET_AVX_512_IFMA_512           Isaset = 55
-	ISA_SET_AVX_512_VAES_128           Isaset = 56
-	ISA_SET_AVX_512_VAES_256           Isaset = 57
-	ISA_SET_AVX_512_VAES_512           Isaset = 58
-	ISA_SET_AVX_512_VBMI_2_128         Isaset = 59
-	ISA_SET_AVX_512_VBMI_2_256         Isaset = 60
-	ISA_SET_AVX_512_VBMI_2_512         Isaset = 61
-	ISA_SET_AVX_512_VBMI_128           Isaset = 62
-	ISA_SET_AVX_512_VBMI_256           Isaset = 63
-	ISA_SET_AVX_512_VBMI_512           Isaset = 64
-	ISA_SET_AVX_512_VNNI_128           Isaset = 65
-	ISA_SET_AVX_512_VNNI_256           Isaset = 66
-	ISA_SET_AVX_512_VNNI_512           Isaset = 67
-	ISA_SET_AVX_512_VP_2_INTERSECT_128 Isaset = 68
-	ISA_SET_AVX_512_VP_2_INTERSECT_256 Isaset = 69
-	ISA_SET_AVX_512_VP_2_INTERSECT_512 Isaset = 70
-	ISA_SET_AVX_512_VPCLMULQDQ_128     Isaset = 71
-	ISA_SET_AVX_512_VPCLMULQDQ_256     Isaset = 72
-	ISA_SET_AVX_512_VPCLMULQDQ_512     Isaset = 73
-	ISA_SET_AVX_512_VPOPCNTDQ_128      Isaset = 74
-	ISA_SET_AVX_512_VPOPCNTDQ_256      Isaset = 75
-	ISA_SET_AVX_512_VPOPCNTDQ_512      Isaset = 76
-	ISA_SET_AVXAES                     Isaset = 77
-	ISA_SET_AVX_GFNI                   Isaset = 78
-	ISA_SET_AVX_IFMA                   Isaset = 79
-	ISA_SET_AVX_NE_CONVERT             Isaset = 80
-	ISA_SET_AVX_VNNI                   Isaset = 81
-	ISA_SET_AVX_VNNI_INT_8             Isaset = 82
-	ISA_SET_BMI_1                      Isaset = 83
-	ISA_SET_BMI_2                      Isaset = 84
-	ISA_SET_CET                        Isaset = 85
-	ISA_SET_CLDEMOTE                   Isaset = 86
-	ISA_SET_CLFLUSHOPT                 Isaset = 87
-	ISA_SET_CLFSH                      Isaset = 88
-	ISA_SET_CLWB                       Isaset = 89
-	ISA_SET_CLZERO                     Isaset = 90
-	ISA_SET_CMOV                       Isaset = 91
-	ISA_SET_CMPXCHG_16_B               Isaset = 92
-	ISA_SET_ENQCMD                     Isaset = 93
-	ISA_SET_F_16_C                     Isaset = 94
-	ISA_SET_FAT_NOP                    Isaset = 95
-	ISA_SET_FCMOV                      Isaset = 96
-	ISA_SET_FCOMI                      Isaset = 97
-	ISA_SET_FMA                        Isaset = 98
-	ISA_SET_FMA_4                      Isaset = 99
-	ISA_SET_FXSAVE                     Isaset = 100
-	ISA_SET_FXSAVE_64                  Isaset = 101
-	ISA_SET_GFNI                       Isaset = 102
-	ISA_SET_HRESET                     Isaset = 103
-	ISA_SET_I_186                      Isaset = 104
-	ISA_SET_I_286_PROTECTED            Isaset = 105
-	ISA_SET_I_286_REAL                 Isaset = 106
-	ISA_SET_I_386                      Isaset = 107
-	ISA_SET_I_486                      Isaset = 108
-	ISA_SET_I_486_REAL                 Isaset = 109
-	ISA_SET_I_86                       Isaset = 110
-	ISA_SET_ICACHE_PREFETCH            Isaset = 111
-	ISA_SET_INVPCID                    Isaset = 112
-	ISA_SET_KEYLOCKER                  Isaset = 113
-	ISA_SET_KEYLOCKER_WIDE             Isaset = 114
-	ISA_SET_KNCE                       Isaset = 115
-	ISA_SET_KNCJKBR                    Isaset = 116
-	ISA_SET_KNCSTREAM                  Isaset = 117
-	ISA_SET_KNCV                       Isaset = 118
-	ISA_SET_KNC_MISC                   Isaset = 119
-	ISA_SET_KNC_PF_HINT                Isaset = 120
-	ISA_SET_LAHF                       Isaset = 121
-	ISA_SET_LONGMODE                   Isaset = 122
-	ISA_SET_LWP                        Isaset = 123
-	ISA_SET_LZCNT                      Isaset = 124
-	ISA_SET_MCOMMIT                    Isaset = 125
-	ISA_SET_MONITOR                    Isaset = 126
-	ISA_SET_MONITORX                   Isaset = 127
-	ISA_SET_MOVBE                      Isaset = 128
-	ISA_SET_MOVDIR                     Isaset = 129
-	ISA_SET_MPX                        Isaset = 130
-	ISA_SET_MSRLIST                    Isaset = 131
-	ISA_SET_PADLOCK_ACE                Isaset = 132
-	ISA_SET_PADLOCK_PHE                Isaset = 133
-	ISA_SET_PADLOCK_PMM                Isaset = 134
-	ISA_SET_PADLOCK_RNG                Isaset = 135
-	ISA_SET_PAUSE                      Isaset = 136
-	ISA_SET_PCLMULQDQ                  Isaset = 137
-	ISA_SET_PCOMMIT                    Isaset = 138
-	ISA_SET_PCONFIG                    Isaset = 139
-	ISA_SET_PENTIUMMMX                 Isaset = 140
-	ISA_SET_PENTIUMREAL                Isaset = 141
-	ISA_SET_PKU                        Isaset = 142
-	ISA_SET_POPCNT                     Isaset = 143
-	ISA_SET_PPRO                       Isaset = 144
-	ISA_SET_PREFETCHWT_1               Isaset = 145
-	ISA_SET_PREFETCH_NOP               Isaset = 146
-	ISA_SET_PT                         Isaset = 147
-	ISA_SET_RAO_INT                    Isaset = 148
-	ISA_SET_RDPID                      Isaset = 149
-	ISA_SET_RDPMC                      Isaset = 150
-	ISA_SET_RDPRU                      Isaset = 151
-	ISA_SET_RDRAND                     Isaset = 152
-	ISA_SET_RDSEED                     Isaset = 153
-	ISA_SET_RDTSCP                     Isaset = 154
-	ISA_SET_RDWRFSGS                   Isaset = 155
-	ISA_SET_RTM                        Isaset = 156
-	ISA_SET_SERIALIZE                  Isaset = 157
-	ISA_SET_SGX                        Isaset = 158
-	ISA_SET_SGX_ENCLV                  Isaset = 159
-	ISA_SET_SHA                        Isaset = 160
-	ISA_SET_SMAP                       Isaset = 161
-	ISA_SET_SMX                        Isaset = 162
-	ISA_SET_SNP                        Isaset = 163
-	ISA_SET_SSE                        Isaset = 164
-	ISA_SET_SSE_2                      Isaset = 165
-	ISA_SET_SSE_2_MMX                  Isaset = 166
-	ISA_SET_SSE_3                      Isaset = 167
-	ISA_SET_SSE_3_X_87                 Isaset = 168
-	ISA_SET_SSE_4                      Isaset = 169
-	ISA_SET_SSE_42                     Isaset = 170
-	ISA_SET_SSE_4_A                    Isaset = 171
-	ISA_SET_SSEMXCSR                   Isaset = 172
-	ISA_SET_SSE_PREFETCH               Isaset = 173
-	ISA_SET_SSSE_3                     Isaset = 174
-	ISA_SET_SSSE_3_MMX                 Isaset = 175
-	ISA_SET_SVM                        Isaset = 176
-	ISA_SET_TBM                        Isaset = 177
-	ISA_SET_TDX                        Isaset = 178
-	ISA_SET_TSX_LDTRK                  Isaset = 179
-	ISA_SET_UINTR                      Isaset = 180
-	ISA_SET_VAES                       Isaset = 181
-	ISA_SET_VMFUNC                     Isaset = 182
-	ISA_SET_VPCLMULQDQ                 Isaset = 183
-	ISA_SET_VTX                        Isaset = 184
-	ISA_SET_WAITPKG                    Isaset = 185
-	ISA_SET_WRMSRNS                    Isaset = 186
-	ISA_SET_X_87                       Isaset = 187
-	ISA_SET_XOP                        Isaset = 188
-	ISA_SET_XSAVE                      Isaset = 189
-	ISA_SET_XSAVEC                     Isaset = 190
-	ISA_SET_XSAVEOPT                   Isaset = 191
-	ISA_SET_XSAVES                     Isaset = 192
+	ISA_SET_INVALID                 ISASet = 0
+	ISA_SET_ADOX_ADCX               ISASet = 1
+	ISA_SET_AES                     ISASet = 2
+	ISA_SET_AMD                     ISASet = 3
+	ISA_SET_AMD3DNOW                ISASet = 4
+	ISA_SET_AMD_INVLPGB             ISASet = 5
+	ISA_SET_AMX_BF16                ISASet = 6
+	ISA_SET_AMX_FP16                ISASet = 7
+	ISA_SET_AMX_INT8                ISASet = 8
+	ISA_SET_AMX_TILE                ISASet = 9
+	ISA_SET_AVX                     ISASet = 10
+	ISA_SET_AVX2                    ISASet = 11
+	ISA_SET_AVX2GATHER              ISASet = 12
+	ISA_SET_AVX512BW_128            ISASet = 13
+	ISA_SET_AVX512BW_128N           ISASet = 14
+	ISA_SET_AVX512BW_256            ISASet = 15
+	ISA_SET_AVX512BW_512            ISASet = 16
+	ISA_SET_AVX512BW_KOP            ISASet = 17
+	ISA_SET_AVX512CD_128            ISASet = 18
+	ISA_SET_AVX512CD_256            ISASet = 19
+	ISA_SET_AVX512CD_512            ISASet = 20
+	ISA_SET_AVX512DQ_128            ISASet = 21
+	ISA_SET_AVX512DQ_128N           ISASet = 22
+	ISA_SET_AVX512DQ_256            ISASet = 23
+	ISA_SET_AVX512DQ_512            ISASet = 24
+	ISA_SET_AVX512DQ_KOP            ISASet = 25
+	ISA_SET_AVX512DQ_SCALAR         ISASet = 26
+	ISA_SET_AVX512ER_512            ISASet = 27
+	ISA_SET_AVX512ER_SCALAR         ISASet = 28
+	ISA_SET_AVX512F_128             ISASet = 29
+	ISA_SET_AVX512F_128N            ISASet = 30
+	ISA_SET_AVX512F_256             ISASet = 31
+	ISA_SET_AVX512F_512             ISASet = 32
+	ISA_SET_AVX512F_KOP             ISASet = 33
+	ISA_SET_AVX512F_SCALAR          ISASet = 34
+	ISA_SET_AVX512PF_512            ISASet = 35
+	ISA_SET_AVX512_4FMAPS_512       ISASet = 36
+	ISA_SET_AVX512_4FMAPS_SCALAR    ISASet = 37
+	ISA_SET_AVX512_4VNNIW_512       ISASet = 38
+	ISA_SET_AVX512_BF16_128         ISASet = 39
+	ISA_SET_AVX512_BF16_256         ISASet = 40
+	ISA_SET_AVX512_BF16_512         ISASet = 41
+	ISA_SET_AVX512_BITALG_128       ISASet = 42
+	ISA_SET_AVX512_BITALG_256       ISASet = 43
+	ISA_SET_AVX512_BITALG_512       ISASet = 44
+	ISA_SET_AVX512_FP16_128         ISASet = 45
+	ISA_SET_AVX512_FP16_128N        ISASet = 46
+	ISA_SET_AVX512_FP16_256         ISASet = 47
+	ISA_SET_AVX512_FP16_512         ISASet = 48
+	ISA_SET_AVX512_FP16_SCALAR      ISASet = 49
+	ISA_SET_AVX512_GFNI_128         ISASet = 50
+	ISA_SET_AVX512_GFNI_256         ISASet = 51
+	ISA_SET_AVX512_GFNI_512         ISASet = 52
+	ISA_SET_AVX512_IFMA_128         ISASet = 53
+	ISA_SET_AVX512_IFMA_256         ISASet = 54
+	ISA_SET_AVX512_IFMA_512         ISASet = 55
+	ISA_SET_AVX512_VAES_128         ISASet = 56
+	ISA_SET_AVX512_VAES_256         ISASet = 57
+	ISA_SET_AVX512_VAES_512         ISASet = 58
+	ISA_SET_AVX512_VBMI2_128        ISASet = 59
+	ISA_SET_AVX512_VBMI2_256        ISASet = 60
+	ISA_SET_AVX512_VBMI2_512        ISASet = 61
+	ISA_SET_AVX512_VBMI_128         ISASet = 62
+	ISA_SET_AVX512_VBMI_256         ISASet = 63
+	ISA_SET_AVX512_VBMI_512         ISASet = 64
+	ISA_SET_AVX512_VNNI_128         ISASet = 65
+	ISA_SET_AVX512_VNNI_256         ISASet = 66
+	ISA_SET_AVX512_VNNI_512         ISASet = 67
+	ISA_SET_AVX512_VP2INTERSECT_128 ISASet = 68
+	ISA_SET_AVX512_VP2INTERSECT_256 ISASet = 69
+	ISA_SET_AVX512_VP2INTERSECT_512 ISASet = 70
+	ISA_SET_AVX512_VPCLMULQDQ_128   ISASet = 71
+	ISA_SET_AVX512_VPCLMULQDQ_256   ISASet = 72
+	ISA_SET_AVX512_VPCLMULQDQ_512   ISASet = 73
+	ISA_SET_AVX512_VPOPCNTDQ_128    ISASet = 74
+	ISA_SET_AVX512_VPOPCNTDQ_256    ISASet = 75
+	ISA_SET_AVX512_VPOPCNTDQ_512    ISASet = 76
+	ISA_SET_AVXAES                  ISASet = 77
+	ISA_SET_AVX_GFNI                ISASet = 78
+	ISA_SET_AVX_IFMA                ISASet = 79
+	ISA_SET_AVX_NE_CONVERT          ISASet = 80
+	ISA_SET_AVX_VNNI                ISASet = 81
+	ISA_SET_AVX_VNNI_INT8           ISASet = 82
+	ISA_SET_BMI1                    ISASet = 83
+	ISA_SET_BMI2                    ISASet = 84
+	ISA_SET_CET                     ISASet = 85
+	ISA_SET_CLDEMOTE                ISASet = 86
+	ISA_SET_CLFLUSHOPT              ISASet = 87
+	ISA_SET_CLFSH                   ISASet = 88
+	ISA_SET_CLWB                    ISASet = 89
+	ISA_SET_CLZERO                  ISASet = 90
+	ISA_SET_CMOV                    ISASet = 91
+	ISA_SET_CMPXCHG16B              ISASet = 92
+	ISA_SET_ENQCMD                  ISASet = 93
+	ISA_SET_F16C                    ISASet = 94
+	ISA_SET_FAT_NOP                 ISASet = 95
+	ISA_SET_FCMOV                   ISASet = 96
+	ISA_SET_FCOMI                   ISASet = 97
+	ISA_SET_FMA                     ISASet = 98
+	ISA_SET_FMA4                    ISASet = 99
+	ISA_SET_FXSAVE                  ISASet = 100
+	ISA_SET_FXSAVE64                ISASet = 101
+	ISA_SET_GFNI                    ISASet = 102
+	ISA_SET_HRESET                  ISASet = 103
+	ISA_SET_I186                    ISASet = 104
+	ISA_SET_I286PROTECTED           ISASet = 105
+	ISA_SET_I286REAL                ISASet = 106
+	ISA_SET_I386                    ISASet = 107
+	ISA_SET_I486                    ISASet = 108
+	ISA_SET_I486REAL                ISASet = 109
+	ISA_SET_I86                     ISASet = 110
+	ISA_SET_ICACHE_PREFETCH         ISASet = 111
+	ISA_SET_INVPCID                 ISASet = 112
+	ISA_SET_KEYLOCKER               ISASet = 113
+	ISA_SET_KEYLOCKER_WIDE          ISASet = 114
+	ISA_SET_KNCE                    ISASet = 115
+	ISA_SET_KNCJKBR                 ISASet = 116
+	ISA_SET_KNCSTREAM               ISASet = 117
+	ISA_SET_KNCV                    ISASet = 118
+	ISA_SET_KNC_MISC                ISASet = 119
+	ISA_SET_KNC_PF_HINT             ISASet = 120
+	ISA_SET_LAHF                    ISASet = 121
+	ISA_SET_LONGMODE                ISASet = 122
+	ISA_SET_LWP                     ISASet = 123
+	ISA_SET_LZCNT                   ISASet = 124
+	ISA_SET_MCOMMIT                 ISASet = 125
+	ISA_SET_MONITOR                 ISASet = 126
+	ISA_SET_MONITORX                ISASet = 127
+	ISA_SET_MOVBE                   ISASet = 128
+	ISA_SET_MOVDIR                  ISASet = 129
+	ISA_SET_MPX                     ISASet = 130
+	ISA_SET_MSRLIST                 ISASet = 131
+	ISA_SET_PADLOCK_ACE             ISASet = 132
+	ISA_SET_PADLOCK_PHE             ISASet = 133
+	ISA_SET_PADLOCK_PMM             ISASet = 134
+	ISA_SET_PADLOCK_RNG             ISASet = 135
+	ISA_SET_PAUSE                   ISASet = 136
+	ISA_SET_PCLMULQDQ               ISASet = 137
+	ISA_SET_PCOMMIT                 ISASet = 138
+	ISA_SET_PCONFIG                 ISASet = 139
+	ISA_SET_PENTIUMMMX              ISASet = 140
+	ISA_SET_PENTIUMREAL             ISASet = 141
+	ISA_SET_PKU                     ISASet = 142
+	ISA_SET_POPCNT                  ISASet = 143
+	ISA_SET_PPRO                    ISASet = 144
+	ISA_SET_PREFETCHWT1             ISASet = 145
+	ISA_SET_PREFETCH_NOP            ISASet = 146
+	ISA_SET_PT                      ISASet = 147
+	ISA_SET_RAO_INT                 ISASet = 148
+	ISA_SET_RDPID                   ISASet = 149
+	ISA_SET_RDPMC                   ISASet = 150
+	ISA_SET_RDPRU                   ISASet = 151
+	ISA_SET_RDRAND                  ISASet = 152
+	ISA_SET_RDSEED                  ISASet = 153
+	ISA_SET_RDTSCP                  ISASet = 154
+	ISA_SET_RDWRFSGS                ISASet = 155
+	ISA_SET_RTM                     ISASet = 156
+	ISA_SET_SERIALIZE               ISASet = 157
+	ISA_SET_SGX                     ISASet = 158
+	ISA_SET_SGX_ENCLV               ISASet = 159
+	ISA_SET_SHA                     ISASet = 160
+	ISA_SET_SMAP                    ISASet = 161
+	ISA_SET_SMX                     ISASet = 162
+	ISA_SET_SNP                     ISASet = 163
+	ISA_SET_SSE                     ISASet = 164
+	ISA_SET_SSE2                    ISASet = 165
+	ISA_SET_SSE2MMX                 ISASet = 166
+	ISA_SET_SSE3                    ISASet = 167
+	ISA_SET_SSE3X87                 ISASet = 168
+	ISA_SET_SSE4                    ISASet = 169
+	ISA_SET_SSE42                   ISASet = 170
+	ISA_SET_SSE4A                   ISASet = 171
+	ISA_SET_SSEMXCSR                ISASet = 172
+	ISA_SET_SSE_PREFETCH            ISASet = 173
+	ISA_SET_SSSE3                   ISASet = 174
+	ISA_SET_SSSE3MMX                ISASet = 175
+	ISA_SET_SVM                     ISASet = 176
+	ISA_SET_TBM                     ISASet = 177
+	ISA_SET_TDX                     ISASet = 178
+	ISA_SET_TSX_LDTRK               ISASet = 179
+	ISA_SET_UINTR                   ISASet = 180
+	ISA_SET_VAES                    ISASet = 181
+	ISA_SET_VMFUNC                  ISASet = 182
+	ISA_SET_VPCLMULQDQ              ISASet = 183
+	ISA_SET_VTX                     ISASet = 184
+	ISA_SET_WAITPKG                 ISASet = 185
+	ISA_SET_WRMSRNS                 ISASet = 186
+	ISA_SET_X87                     ISASet = 187
+	ISA_SET_XOP                     ISASet = 188
+	ISA_SET_XSAVE                   ISASet = 189
+	ISA_SET_XSAVEC                  ISASet = 190
+	ISA_SET_XSAVEOPT                ISASet = 191
+	ISA_SET_XSAVES                  ISASet = 192
 	// Maximum value of this enum.
-	ISA_SET_MAX_VALUE Isaset = 192
+	ISA_SET_MAX_VALUE ISASet = 192
 	// The minimum number of bits required to represent all values of this enum.
-	ISA_SET_REQUIRED_BITS Isaset = 8
+	ISA_SET_REQUIRED_BITS ISASet = 8
 )
 
 // Defines the `ZydisISAExt` enum.
-type Isaext int32
+type ISAExt int32
 
 const (
-	ISA_EXT_INVALID             Isaext = 0
-	ISA_EXT_ADOX_ADCX           Isaext = 1
-	ISA_EXT_AES                 Isaext = 2
-	ISA_EXT_AMD_3_DNOW          Isaext = 3
-	ISA_EXT_AMD_3_DNOW_PREFETCH Isaext = 4
-	ISA_EXT_AMD_INVLPGB         Isaext = 5
-	ISA_EXT_AMX_BF_16           Isaext = 6
-	ISA_EXT_AMX_FP_16           Isaext = 7
-	ISA_EXT_AMX_INT_8           Isaext = 8
-	ISA_EXT_AMX_TILE            Isaext = 9
-	ISA_EXT_AVX                 Isaext = 10
-	ISA_EXT_AVX_2               Isaext = 11
-	ISA_EXT_AVX_2_GATHER        Isaext = 12
-	ISA_EXT_AVX_512_EVEX        Isaext = 13
-	ISA_EXT_AVX_512_VEX         Isaext = 14
-	ISA_EXT_AVXAES              Isaext = 15
-	ISA_EXT_AVX_IFMA            Isaext = 16
-	ISA_EXT_AVX_NE_CONVERT      Isaext = 17
-	ISA_EXT_AVX_VNNI            Isaext = 18
-	ISA_EXT_AVX_VNNI_INT_8      Isaext = 19
-	ISA_EXT_BASE                Isaext = 20
-	ISA_EXT_BMI_1               Isaext = 21
-	ISA_EXT_BMI_2               Isaext = 22
-	ISA_EXT_CET                 Isaext = 23
-	ISA_EXT_CLDEMOTE            Isaext = 24
-	ISA_EXT_CLFLUSHOPT          Isaext = 25
-	ISA_EXT_CLFSH               Isaext = 26
-	ISA_EXT_CLWB                Isaext = 27
-	ISA_EXT_CLZERO              Isaext = 28
-	ISA_EXT_ENQCMD              Isaext = 29
-	ISA_EXT_F_16_C              Isaext = 30
-	ISA_EXT_FMA                 Isaext = 31
-	ISA_EXT_FMA_4               Isaext = 32
-	ISA_EXT_GFNI                Isaext = 33
-	ISA_EXT_HRESET              Isaext = 34
-	ISA_EXT_ICACHE_PREFETCH     Isaext = 35
-	ISA_EXT_INVPCID             Isaext = 36
-	ISA_EXT_KEYLOCKER           Isaext = 37
-	ISA_EXT_KEYLOCKER_WIDE      Isaext = 38
-	ISA_EXT_KNC                 Isaext = 39
-	ISA_EXT_KNCE                Isaext = 40
-	ISA_EXT_KNCV                Isaext = 41
-	ISA_EXT_LONGMODE            Isaext = 42
-	ISA_EXT_LZCNT               Isaext = 43
-	ISA_EXT_MCOMMIT             Isaext = 44
-	ISA_EXT_MMX                 Isaext = 45
-	ISA_EXT_MONITOR             Isaext = 46
-	ISA_EXT_MONITORX            Isaext = 47
-	ISA_EXT_MOVBE               Isaext = 48
-	ISA_EXT_MOVDIR              Isaext = 49
-	ISA_EXT_MPX                 Isaext = 50
-	ISA_EXT_MSRLIST             Isaext = 51
-	ISA_EXT_PADLOCK             Isaext = 52
-	ISA_EXT_PAUSE               Isaext = 53
-	ISA_EXT_PCLMULQDQ           Isaext = 54
-	ISA_EXT_PCOMMIT             Isaext = 55
-	ISA_EXT_PCONFIG             Isaext = 56
-	ISA_EXT_PKU                 Isaext = 57
-	ISA_EXT_PREFETCHWT_1        Isaext = 58
-	ISA_EXT_PT                  Isaext = 59
-	ISA_EXT_RAO_INT             Isaext = 60
-	ISA_EXT_RDPID               Isaext = 61
-	ISA_EXT_RDPRU               Isaext = 62
-	ISA_EXT_RDRAND              Isaext = 63
-	ISA_EXT_RDSEED              Isaext = 64
-	ISA_EXT_RDTSCP              Isaext = 65
-	ISA_EXT_RDWRFSGS            Isaext = 66
-	ISA_EXT_RTM                 Isaext = 67
-	ISA_EXT_SERIALIZE           Isaext = 68
-	ISA_EXT_SGX                 Isaext = 69
-	ISA_EXT_SGX_ENCLV           Isaext = 70
-	ISA_EXT_SHA                 Isaext = 71
-	ISA_EXT_SMAP                Isaext = 72
-	ISA_EXT_SMX                 Isaext = 73
-	ISA_EXT_SNP                 Isaext = 74
-	ISA_EXT_SSE                 Isaext = 75
-	ISA_EXT_SSE_2               Isaext = 76
-	ISA_EXT_SSE_3               Isaext = 77
-	ISA_EXT_SSE_4               Isaext = 78
-	ISA_EXT_SSE_4_A             Isaext = 79
-	ISA_EXT_SSSE_3              Isaext = 80
-	ISA_EXT_SVM                 Isaext = 81
-	ISA_EXT_TBM                 Isaext = 82
-	ISA_EXT_TDX                 Isaext = 83
-	ISA_EXT_TSX_LDTRK           Isaext = 84
-	ISA_EXT_UINTR               Isaext = 85
-	ISA_EXT_VAES                Isaext = 86
-	ISA_EXT_VMFUNC              Isaext = 87
-	ISA_EXT_VPCLMULQDQ          Isaext = 88
-	ISA_EXT_VTX                 Isaext = 89
-	ISA_EXT_WAITPKG             Isaext = 90
-	ISA_EXT_WRMSRNS             Isaext = 91
-	ISA_EXT_X_87                Isaext = 92
-	ISA_EXT_XOP                 Isaext = 93
-	ISA_EXT_XSAVE               Isaext = 94
-	ISA_EXT_XSAVEC              Isaext = 95
-	ISA_EXT_XSAVEOPT            Isaext = 96
-	ISA_EXT_XSAVES              Isaext = 97
+	ISA_EXT_INVALID           ISAExt = 0
+	ISA_EXT_ADOX_ADCX         ISAExt = 1
+	ISA_EXT_AES               ISAExt = 2
+	ISA_EXT_AMD3DNOW          ISAExt = 3
+	ISA_EXT_AMD3DNOW_PREFETCH ISAExt = 4
+	ISA_EXT_AMD_INVLPGB       ISAExt = 5
+	ISA_EXT_AMX_BF16          ISAExt = 6
+	ISA_EXT_AMX_FP16          ISAExt = 7
+	ISA_EXT_AMX_INT8          ISAExt = 8
+	ISA_EXT_AMX_TILE          ISAExt = 9
+	ISA_EXT_AVX               ISAExt = 10
+	ISA_EXT_AVX2              ISAExt = 11
+	ISA_EXT_AVX2GATHER        ISAExt = 12
+	ISA_EXT_AVX512EVEX        ISAExt = 13
+	ISA_EXT_AVX512VEX         ISAExt = 14
+	ISA_EXT_AVXAES            ISAExt = 15
+	ISA_EXT_AVX_IFMA          ISAExt = 16
+	ISA_EXT_AVX_NE_CONVERT    ISAExt = 17
+	ISA_EXT_AVX_VNNI          ISAExt = 18
+	ISA_EXT_AVX_VNNI_INT8     ISAExt = 19
+	ISA_EXT_BASE              ISAExt = 20
+	ISA_EXT_BMI1              ISAExt = 21
+	ISA_EXT_BMI2              ISAExt = 22
+	ISA_EXT_CET               ISAExt = 23
+	ISA_EXT_CLDEMOTE          ISAExt = 24
+	ISA_EXT_CLFLUSHOPT        ISAExt = 25
+	ISA_EXT_CLFSH             ISAExt = 26
+	ISA_EXT_CLWB              ISAExt = 27
+	ISA_EXT_CLZERO            ISAExt = 28
+	ISA_EXT_ENQCMD            ISAExt = 29
+	ISA_EXT_F16C              ISAExt = 30
+	ISA_EXT_FMA               ISAExt = 31
+	ISA_EXT_FMA4              ISAExt = 32
+	ISA_EXT_GFNI              ISAExt = 33
+	ISA_EXT_HRESET            ISAExt = 34
+	ISA_EXT_ICACHE_PREFETCH   ISAExt = 35
+	ISA_EXT_INVPCID           ISAExt = 36
+	ISA_EXT_KEYLOCKER         ISAExt = 37
+	ISA_EXT_KEYLOCKER_WIDE    ISAExt = 38
+	ISA_EXT_KNC               ISAExt = 39
+	ISA_EXT_KNCE              ISAExt = 40
+	ISA_EXT_KNCV              ISAExt = 41
+	ISA_EXT_LONGMODE          ISAExt = 42
+	ISA_EXT_LZCNT             ISAExt = 43
+	ISA_EXT_MCOMMIT           ISAExt = 44
+	ISA_EXT_MMX               ISAExt = 45
+	ISA_EXT_MONITOR           ISAExt = 46
+	ISA_EXT_MONITORX          ISAExt = 47
+	ISA_EXT_MOVBE             ISAExt = 48
+	ISA_EXT_MOVDIR            ISAExt = 49
+	ISA_EXT_MPX               ISAExt = 50
+	ISA_EXT_MSRLIST           ISAExt = 51
+	ISA_EXT_PADLOCK           ISAExt = 52
+	ISA_EXT_PAUSE             ISAExt = 53
+	ISA_EXT_PCLMULQDQ         ISAExt = 54
+	ISA_EXT_PCOMMIT           ISAExt = 55
+	ISA_EXT_PCONFIG           ISAExt = 56
+	ISA_EXT_PKU               ISAExt = 57
+	ISA_EXT_PREFETCHWT1       ISAExt = 58
+	ISA_EXT_PT                ISAExt = 59
+	ISA_EXT_RAO_INT           ISAExt = 60
+	ISA_EXT_RDPID             ISAExt = 61
+	ISA_EXT_RDPRU             ISAExt = 62
+	ISA_EXT_RDRAND            ISAExt = 63
+	ISA_EXT_RDSEED            ISAExt = 64
+	ISA_EXT_RDTSCP            ISAExt = 65
+	ISA_EXT_RDWRFSGS          ISAExt = 66
+	ISA_EXT_RTM               ISAExt = 67
+	ISA_EXT_SERIALIZE         ISAExt = 68
+	ISA_EXT_SGX               ISAExt = 69
+	ISA_EXT_SGX_ENCLV         ISAExt = 70
+	ISA_EXT_SHA               ISAExt = 71
+	ISA_EXT_SMAP              ISAExt = 72
+	ISA_EXT_SMX               ISAExt = 73
+	ISA_EXT_SNP               ISAExt = 74
+	ISA_EXT_SSE               ISAExt = 75
+	ISA_EXT_SSE2              ISAExt = 76
+	ISA_EXT_SSE3              ISAExt = 77
+	ISA_EXT_SSE4              ISAExt = 78
+	ISA_EXT_SSE4A             ISAExt = 79
+	ISA_EXT_SSSE3             ISAExt = 80
+	ISA_EXT_SVM               ISAExt = 81
+	ISA_EXT_TBM               ISAExt = 82
+	ISA_EXT_TDX               ISAExt = 83
+	ISA_EXT_TSX_LDTRK         ISAExt = 84
+	ISA_EXT_UINTR             ISAExt = 85
+	ISA_EXT_VAES              ISAExt = 86
+	ISA_EXT_VMFUNC            ISAExt = 87
+	ISA_EXT_VPCLMULQDQ        ISAExt = 88
+	ISA_EXT_VTX               ISAExt = 89
+	ISA_EXT_WAITPKG           ISAExt = 90
+	ISA_EXT_WRMSRNS           ISAExt = 91
+	ISA_EXT_X87               ISAExt = 92
+	ISA_EXT_XOP               ISAExt = 93
+	ISA_EXT_XSAVE             ISAExt = 94
+	ISA_EXT_XSAVEC            ISAExt = 95
+	ISA_EXT_XSAVEOPT          ISAExt = 96
+	ISA_EXT_XSAVES            ISAExt = 97
 	// Maximum value of this enum.
-	ISA_EXT_MAX_VALUE Isaext = 97
+	ISA_EXT_MAX_VALUE ISAExt = 97
 	// The minimum number of bits required to represent all values of this enum.
-	ISA_EXT_REQUIRED_BITS Isaext = 7
+	ISA_EXT_REQUIRED_BITS ISAExt = 7
 )
 
 // Defines the `ZydisMnemonic` enum.
 type Mnemonic int32
 
 const (
-	MNEMONIC_INVALID               Mnemonic = 0
-	MNEMONIC_AAA                   Mnemonic = 1
-	MNEMONIC_AAD                   Mnemonic = 2
-	MNEMONIC_AADD                  Mnemonic = 3
-	MNEMONIC_AAM                   Mnemonic = 4
-	MNEMONIC_AAND                  Mnemonic = 5
-	MNEMONIC_AAS                   Mnemonic = 6
-	MNEMONIC_ADC                   Mnemonic = 7
-	MNEMONIC_ADCX                  Mnemonic = 8
-	MNEMONIC_ADD                   Mnemonic = 9
-	MNEMONIC_ADDPD                 Mnemonic = 10
-	MNEMONIC_ADDPS                 Mnemonic = 11
-	MNEMONIC_ADDSD                 Mnemonic = 12
-	MNEMONIC_ADDSS                 Mnemonic = 13
-	MNEMONIC_ADDSUBPD              Mnemonic = 14
-	MNEMONIC_ADDSUBPS              Mnemonic = 15
-	MNEMONIC_ADOX                  Mnemonic = 16
-	MNEMONIC_AESDEC                Mnemonic = 17
-	MNEMONIC_AESDEC_128_KL         Mnemonic = 18
-	MNEMONIC_AESDEC_256_KL         Mnemonic = 19
-	MNEMONIC_AESDECLAST            Mnemonic = 20
-	MNEMONIC_AESDECWIDE_128_KL     Mnemonic = 21
-	MNEMONIC_AESDECWIDE_256_KL     Mnemonic = 22
-	MNEMONIC_AESENC                Mnemonic = 23
-	MNEMONIC_AESENC_128_KL         Mnemonic = 24
-	MNEMONIC_AESENC_256_KL         Mnemonic = 25
-	MNEMONIC_AESENCLAST            Mnemonic = 26
-	MNEMONIC_AESENCWIDE_128_KL     Mnemonic = 27
-	MNEMONIC_AESENCWIDE_256_KL     Mnemonic = 28
-	MNEMONIC_AESIMC                Mnemonic = 29
-	MNEMONIC_AESKEYGENASSIST       Mnemonic = 30
-	MNEMONIC_AND                   Mnemonic = 31
-	MNEMONIC_ANDN                  Mnemonic = 32
-	MNEMONIC_ANDNPD                Mnemonic = 33
-	MNEMONIC_ANDNPS                Mnemonic = 34
-	MNEMONIC_ANDPD                 Mnemonic = 35
-	MNEMONIC_ANDPS                 Mnemonic = 36
-	MNEMONIC_AOR                   Mnemonic = 37
-	MNEMONIC_ARPL                  Mnemonic = 38
-	MNEMONIC_AXOR                  Mnemonic = 39
-	MNEMONIC_BEXTR                 Mnemonic = 40
-	MNEMONIC_BLCFILL               Mnemonic = 41
-	MNEMONIC_BLCI                  Mnemonic = 42
-	MNEMONIC_BLCIC                 Mnemonic = 43
-	MNEMONIC_BLCMSK                Mnemonic = 44
-	MNEMONIC_BLCS                  Mnemonic = 45
-	MNEMONIC_BLENDPD               Mnemonic = 46
-	MNEMONIC_BLENDPS               Mnemonic = 47
-	MNEMONIC_BLENDVPD              Mnemonic = 48
-	MNEMONIC_BLENDVPS              Mnemonic = 49
-	MNEMONIC_BLSFILL               Mnemonic = 50
-	MNEMONIC_BLSI                  Mnemonic = 51
-	MNEMONIC_BLSIC                 Mnemonic = 52
-	MNEMONIC_BLSMSK                Mnemonic = 53
-	MNEMONIC_BLSR                  Mnemonic = 54
-	MNEMONIC_BNDCL                 Mnemonic = 55
-	MNEMONIC_BNDCN                 Mnemonic = 56
-	MNEMONIC_BNDCU                 Mnemonic = 57
-	MNEMONIC_BNDLDX                Mnemonic = 58
-	MNEMONIC_BNDMK                 Mnemonic = 59
-	MNEMONIC_BNDMOV                Mnemonic = 60
-	MNEMONIC_BNDSTX                Mnemonic = 61
-	MNEMONIC_BOUND                 Mnemonic = 62
-	MNEMONIC_BSF                   Mnemonic = 63
-	MNEMONIC_BSR                   Mnemonic = 64
-	MNEMONIC_BSWAP                 Mnemonic = 65
-	MNEMONIC_BT                    Mnemonic = 66
-	MNEMONIC_BTC                   Mnemonic = 67
-	MNEMONIC_BTR                   Mnemonic = 68
-	MNEMONIC_BTS                   Mnemonic = 69
-	MNEMONIC_BZHI                  Mnemonic = 70
-	MNEMONIC_CALL                  Mnemonic = 71
-	MNEMONIC_CBW                   Mnemonic = 72
-	MNEMONIC_CDQ                   Mnemonic = 73
-	MNEMONIC_CDQE                  Mnemonic = 74
-	MNEMONIC_CLAC                  Mnemonic = 75
-	MNEMONIC_CLC                   Mnemonic = 76
-	MNEMONIC_CLD                   Mnemonic = 77
-	MNEMONIC_CLDEMOTE              Mnemonic = 78
-	MNEMONIC_CLEVICT_0             Mnemonic = 79
-	MNEMONIC_CLEVICT_1             Mnemonic = 80
-	MNEMONIC_CLFLUSH               Mnemonic = 81
-	MNEMONIC_CLFLUSHOPT            Mnemonic = 82
-	MNEMONIC_CLGI                  Mnemonic = 83
-	MNEMONIC_CLI                   Mnemonic = 84
-	MNEMONIC_CLRSSBSY              Mnemonic = 85
-	MNEMONIC_CLTS                  Mnemonic = 86
-	MNEMONIC_CLUI                  Mnemonic = 87
-	MNEMONIC_CLWB                  Mnemonic = 88
-	MNEMONIC_CLZERO                Mnemonic = 89
-	MNEMONIC_CMC                   Mnemonic = 90
-	MNEMONIC_CMOVB                 Mnemonic = 91
-	MNEMONIC_CMOVBE                Mnemonic = 92
-	MNEMONIC_CMOVL                 Mnemonic = 93
-	MNEMONIC_CMOVLE                Mnemonic = 94
-	MNEMONIC_CMOVNB                Mnemonic = 95
-	MNEMONIC_CMOVNBE               Mnemonic = 96
-	MNEMONIC_CMOVNL                Mnemonic = 97
-	MNEMONIC_CMOVNLE               Mnemonic = 98
-	MNEMONIC_CMOVNO                Mnemonic = 99
-	MNEMONIC_CMOVNP                Mnemonic = 100
-	MNEMONIC_CMOVNS                Mnemonic = 101
-	MNEMONIC_CMOVNZ                Mnemonic = 102
-	MNEMONIC_CMOVO                 Mnemonic = 103
-	MNEMONIC_CMOVP                 Mnemonic = 104
-	MNEMONIC_CMOVS                 Mnemonic = 105
-	MNEMONIC_CMOVZ                 Mnemonic = 106
-	MNEMONIC_CMP                   Mnemonic = 107
-	MNEMONIC_CMPPD                 Mnemonic = 108
-	MNEMONIC_CMPPS                 Mnemonic = 109
-	MNEMONIC_CMPSB                 Mnemonic = 110
-	MNEMONIC_CMPSD                 Mnemonic = 111
-	MNEMONIC_CMPSQ                 Mnemonic = 112
-	MNEMONIC_CMPSS                 Mnemonic = 113
-	MNEMONIC_CMPSW                 Mnemonic = 114
-	MNEMONIC_CMPXCHG               Mnemonic = 115
-	MNEMONIC_CMPXCHG_16_B          Mnemonic = 116
-	MNEMONIC_CMPXCHG_8_B           Mnemonic = 117
-	MNEMONIC_COMISD                Mnemonic = 118
-	MNEMONIC_COMISS                Mnemonic = 119
-	MNEMONIC_CPUID                 Mnemonic = 120
-	MNEMONIC_CQO                   Mnemonic = 121
-	MNEMONIC_CRC_32                Mnemonic = 122
-	MNEMONIC_CVTDQ_2_PD            Mnemonic = 123
-	MNEMONIC_CVTDQ_2_PS            Mnemonic = 124
-	MNEMONIC_CVTPD_2_DQ            Mnemonic = 125
-	MNEMONIC_CVTPD_2_PI            Mnemonic = 126
-	MNEMONIC_CVTPD_2_PS            Mnemonic = 127
-	MNEMONIC_CVTPI_2_PD            Mnemonic = 128
-	MNEMONIC_CVTPI_2_PS            Mnemonic = 129
-	MNEMONIC_CVTPS_2_DQ            Mnemonic = 130
-	MNEMONIC_CVTPS_2_PD            Mnemonic = 131
-	MNEMONIC_CVTPS_2_PI            Mnemonic = 132
-	MNEMONIC_CVTSD_2_SI            Mnemonic = 133
-	MNEMONIC_CVTSD_2_SS            Mnemonic = 134
-	MNEMONIC_CVTSI_2_SD            Mnemonic = 135
-	MNEMONIC_CVTSI_2_SS            Mnemonic = 136
-	MNEMONIC_CVTSS_2_SD            Mnemonic = 137
-	MNEMONIC_CVTSS_2_SI            Mnemonic = 138
-	MNEMONIC_CVTTPD_2_DQ           Mnemonic = 139
-	MNEMONIC_CVTTPD_2_PI           Mnemonic = 140
-	MNEMONIC_CVTTPS_2_DQ           Mnemonic = 141
-	MNEMONIC_CVTTPS_2_PI           Mnemonic = 142
-	MNEMONIC_CVTTSD_2_SI           Mnemonic = 143
-	MNEMONIC_CVTTSS_2_SI           Mnemonic = 144
-	MNEMONIC_CWD                   Mnemonic = 145
-	MNEMONIC_CWDE                  Mnemonic = 146
-	MNEMONIC_DAA                   Mnemonic = 147
-	MNEMONIC_DAS                   Mnemonic = 148
-	MNEMONIC_DEC                   Mnemonic = 149
-	MNEMONIC_DELAY                 Mnemonic = 150
-	MNEMONIC_DIV                   Mnemonic = 151
-	MNEMONIC_DIVPD                 Mnemonic = 152
-	MNEMONIC_DIVPS                 Mnemonic = 153
-	MNEMONIC_DIVSD                 Mnemonic = 154
-	MNEMONIC_DIVSS                 Mnemonic = 155
-	MNEMONIC_DPPD                  Mnemonic = 156
-	MNEMONIC_DPPS                  Mnemonic = 157
-	MNEMONIC_EMMS                  Mnemonic = 158
-	MNEMONIC_ENCLS                 Mnemonic = 159
-	MNEMONIC_ENCLU                 Mnemonic = 160
-	MNEMONIC_ENCLV                 Mnemonic = 161
-	MNEMONIC_ENCODEKEY_128         Mnemonic = 162
-	MNEMONIC_ENCODEKEY_256         Mnemonic = 163
-	MNEMONIC_ENDBR_32              Mnemonic = 164
-	MNEMONIC_ENDBR_64              Mnemonic = 165
-	MNEMONIC_ENQCMD                Mnemonic = 166
-	MNEMONIC_ENQCMDS               Mnemonic = 167
-	MNEMONIC_ENTER                 Mnemonic = 168
-	MNEMONIC_EXTRACTPS             Mnemonic = 169
-	MNEMONIC_EXTRQ                 Mnemonic = 170
-	MNEMONIC_F_2_XM_1              Mnemonic = 171
-	MNEMONIC_FABS                  Mnemonic = 172
-	MNEMONIC_FADD                  Mnemonic = 173
-	MNEMONIC_FADDP                 Mnemonic = 174
-	MNEMONIC_FBLD                  Mnemonic = 175
-	MNEMONIC_FBSTP                 Mnemonic = 176
-	MNEMONIC_FCHS                  Mnemonic = 177
-	MNEMONIC_FCMOVB                Mnemonic = 178
-	MNEMONIC_FCMOVBE               Mnemonic = 179
-	MNEMONIC_FCMOVE                Mnemonic = 180
-	MNEMONIC_FCMOVNB               Mnemonic = 181
-	MNEMONIC_FCMOVNBE              Mnemonic = 182
-	MNEMONIC_FCMOVNE               Mnemonic = 183
-	MNEMONIC_FCMOVNU               Mnemonic = 184
-	MNEMONIC_FCMOVU                Mnemonic = 185
-	MNEMONIC_FCOM                  Mnemonic = 186
-	MNEMONIC_FCOMI                 Mnemonic = 187
-	MNEMONIC_FCOMIP                Mnemonic = 188
-	MNEMONIC_FCOMP                 Mnemonic = 189
-	MNEMONIC_FCOMPP                Mnemonic = 190
-	MNEMONIC_FCOS                  Mnemonic = 191
-	MNEMONIC_FDECSTP               Mnemonic = 192
-	MNEMONIC_FDISI_8087_NOP        Mnemonic = 193
-	MNEMONIC_FDIV                  Mnemonic = 194
-	MNEMONIC_FDIVP                 Mnemonic = 195
-	MNEMONIC_FDIVR                 Mnemonic = 196
-	MNEMONIC_FDIVRP                Mnemonic = 197
-	MNEMONIC_FEMMS                 Mnemonic = 198
-	MNEMONIC_FENI_8087_NOP         Mnemonic = 199
-	MNEMONIC_FFREE                 Mnemonic = 200
-	MNEMONIC_FFREEP                Mnemonic = 201
-	MNEMONIC_FIADD                 Mnemonic = 202
-	MNEMONIC_FICOM                 Mnemonic = 203
-	MNEMONIC_FICOMP                Mnemonic = 204
-	MNEMONIC_FIDIV                 Mnemonic = 205
-	MNEMONIC_FIDIVR                Mnemonic = 206
-	MNEMONIC_FILD                  Mnemonic = 207
-	MNEMONIC_FIMUL                 Mnemonic = 208
-	MNEMONIC_FINCSTP               Mnemonic = 209
-	MNEMONIC_FIST                  Mnemonic = 210
-	MNEMONIC_FISTP                 Mnemonic = 211
-	MNEMONIC_FISTTP                Mnemonic = 212
-	MNEMONIC_FISUB                 Mnemonic = 213
-	MNEMONIC_FISUBR                Mnemonic = 214
-	MNEMONIC_FLD                   Mnemonic = 215
-	MNEMONIC_FLD_1                 Mnemonic = 216
-	MNEMONIC_FLDCW                 Mnemonic = 217
-	MNEMONIC_FLDENV                Mnemonic = 218
-	MNEMONIC_FLDL_2_E              Mnemonic = 219
-	MNEMONIC_FLDL_2_T              Mnemonic = 220
-	MNEMONIC_FLDLG_2               Mnemonic = 221
-	MNEMONIC_FLDLN_2               Mnemonic = 222
-	MNEMONIC_FLDPI                 Mnemonic = 223
-	MNEMONIC_FLDZ                  Mnemonic = 224
-	MNEMONIC_FMUL                  Mnemonic = 225
-	MNEMONIC_FMULP                 Mnemonic = 226
-	MNEMONIC_FNCLEX                Mnemonic = 227
-	MNEMONIC_FNINIT                Mnemonic = 228
-	MNEMONIC_FNOP                  Mnemonic = 229
-	MNEMONIC_FNSAVE                Mnemonic = 230
-	MNEMONIC_FNSTCW                Mnemonic = 231
-	MNEMONIC_FNSTENV               Mnemonic = 232
-	MNEMONIC_FNSTSW                Mnemonic = 233
-	MNEMONIC_FPATAN                Mnemonic = 234
-	MNEMONIC_FPREM                 Mnemonic = 235
-	MNEMONIC_FPREM_1               Mnemonic = 236
-	MNEMONIC_FPTAN                 Mnemonic = 237
-	MNEMONIC_FRNDINT               Mnemonic = 238
-	MNEMONIC_FRSTOR                Mnemonic = 239
-	MNEMONIC_FSCALE                Mnemonic = 240
-	MNEMONIC_FSETPM_287_NOP        Mnemonic = 241
-	MNEMONIC_FSIN                  Mnemonic = 242
-	MNEMONIC_FSINCOS               Mnemonic = 243
-	MNEMONIC_FSQRT                 Mnemonic = 244
-	MNEMONIC_FST                   Mnemonic = 245
-	MNEMONIC_FSTP                  Mnemonic = 246
-	MNEMONIC_FSTPNCE               Mnemonic = 247
-	MNEMONIC_FSUB                  Mnemonic = 248
-	MNEMONIC_FSUBP                 Mnemonic = 249
-	MNEMONIC_FSUBR                 Mnemonic = 250
-	MNEMONIC_FSUBRP                Mnemonic = 251
-	MNEMONIC_FTST                  Mnemonic = 252
-	MNEMONIC_FUCOM                 Mnemonic = 253
-	MNEMONIC_FUCOMI                Mnemonic = 254
-	MNEMONIC_FUCOMIP               Mnemonic = 255
-	MNEMONIC_FUCOMP                Mnemonic = 256
-	MNEMONIC_FUCOMPP               Mnemonic = 257
-	MNEMONIC_FWAIT                 Mnemonic = 258
-	MNEMONIC_FXAM                  Mnemonic = 259
-	MNEMONIC_FXCH                  Mnemonic = 260
-	MNEMONIC_FXRSTOR               Mnemonic = 261
-	MNEMONIC_FXRSTOR_64            Mnemonic = 262
-	MNEMONIC_FXSAVE                Mnemonic = 263
-	MNEMONIC_FXSAVE_64             Mnemonic = 264
-	MNEMONIC_FXTRACT               Mnemonic = 265
-	MNEMONIC_FYL_2_X               Mnemonic = 266
-	MNEMONIC_FYL_2_XP_1            Mnemonic = 267
-	MNEMONIC_GETSEC                Mnemonic = 268
-	MNEMONIC_GF_2_P_8_AFFINEINVQB  Mnemonic = 269
-	MNEMONIC_GF_2_P_8_AFFINEQB     Mnemonic = 270
-	MNEMONIC_GF_2_P_8_MULB         Mnemonic = 271
-	MNEMONIC_HADDPD                Mnemonic = 272
-	MNEMONIC_HADDPS                Mnemonic = 273
-	MNEMONIC_HLT                   Mnemonic = 274
-	MNEMONIC_HRESET                Mnemonic = 275
-	MNEMONIC_HSUBPD                Mnemonic = 276
-	MNEMONIC_HSUBPS                Mnemonic = 277
-	MNEMONIC_IDIV                  Mnemonic = 278
-	MNEMONIC_IMUL                  Mnemonic = 279
-	MNEMONIC_IN                    Mnemonic = 280
-	MNEMONIC_INC                   Mnemonic = 281
-	MNEMONIC_INCSSPD               Mnemonic = 282
-	MNEMONIC_INCSSPQ               Mnemonic = 283
-	MNEMONIC_INSB                  Mnemonic = 284
-	MNEMONIC_INSD                  Mnemonic = 285
-	MNEMONIC_INSERTPS              Mnemonic = 286
-	MNEMONIC_INSERTQ               Mnemonic = 287
-	MNEMONIC_INSW                  Mnemonic = 288
-	MNEMONIC_INT                   Mnemonic = 289
-	MNEMONIC_INT_1                 Mnemonic = 290
-	MNEMONIC_INT_3                 Mnemonic = 291
-	MNEMONIC_INTO                  Mnemonic = 292
-	MNEMONIC_INVD                  Mnemonic = 293
-	MNEMONIC_INVEPT                Mnemonic = 294
-	MNEMONIC_INVLPG                Mnemonic = 295
-	MNEMONIC_INVLPGA               Mnemonic = 296
-	MNEMONIC_INVLPGB               Mnemonic = 297
-	MNEMONIC_INVPCID               Mnemonic = 298
-	MNEMONIC_INVVPID               Mnemonic = 299
-	MNEMONIC_IRET                  Mnemonic = 300
-	MNEMONIC_IRETD                 Mnemonic = 301
-	MNEMONIC_IRETQ                 Mnemonic = 302
-	MNEMONIC_JB                    Mnemonic = 303
-	MNEMONIC_JBE                   Mnemonic = 304
-	MNEMONIC_JCXZ                  Mnemonic = 305
-	MNEMONIC_JECXZ                 Mnemonic = 306
-	MNEMONIC_JKNZD                 Mnemonic = 307
-	MNEMONIC_JKZD                  Mnemonic = 308
-	MNEMONIC_JL                    Mnemonic = 309
-	MNEMONIC_JLE                   Mnemonic = 310
-	MNEMONIC_JMP                   Mnemonic = 311
-	MNEMONIC_JNB                   Mnemonic = 312
-	MNEMONIC_JNBE                  Mnemonic = 313
-	MNEMONIC_JNL                   Mnemonic = 314
-	MNEMONIC_JNLE                  Mnemonic = 315
-	MNEMONIC_JNO                   Mnemonic = 316
-	MNEMONIC_JNP                   Mnemonic = 317
-	MNEMONIC_JNS                   Mnemonic = 318
-	MNEMONIC_JNZ                   Mnemonic = 319
-	MNEMONIC_JO                    Mnemonic = 320
-	MNEMONIC_JP                    Mnemonic = 321
-	MNEMONIC_JRCXZ                 Mnemonic = 322
-	MNEMONIC_JS                    Mnemonic = 323
-	MNEMONIC_JZ                    Mnemonic = 324
-	MNEMONIC_KADDB                 Mnemonic = 325
-	MNEMONIC_KADDD                 Mnemonic = 326
-	MNEMONIC_KADDQ                 Mnemonic = 327
-	MNEMONIC_KADDW                 Mnemonic = 328
-	MNEMONIC_KAND                  Mnemonic = 329
-	MNEMONIC_KANDB                 Mnemonic = 330
-	MNEMONIC_KANDD                 Mnemonic = 331
-	MNEMONIC_KANDN                 Mnemonic = 332
-	MNEMONIC_KANDNB                Mnemonic = 333
-	MNEMONIC_KANDND                Mnemonic = 334
-	MNEMONIC_KANDNQ                Mnemonic = 335
-	MNEMONIC_KANDNR                Mnemonic = 336
-	MNEMONIC_KANDNW                Mnemonic = 337
-	MNEMONIC_KANDQ                 Mnemonic = 338
-	MNEMONIC_KANDW                 Mnemonic = 339
-	MNEMONIC_KCONCATH              Mnemonic = 340
-	MNEMONIC_KCONCATL              Mnemonic = 341
-	MNEMONIC_KEXTRACT              Mnemonic = 342
-	MNEMONIC_KMERGE_2_L_1_H        Mnemonic = 343
-	MNEMONIC_KMERGE_2_L_1_L        Mnemonic = 344
-	MNEMONIC_KMOV                  Mnemonic = 345
-	MNEMONIC_KMOVB                 Mnemonic = 346
-	MNEMONIC_KMOVD                 Mnemonic = 347
-	MNEMONIC_KMOVQ                 Mnemonic = 348
-	MNEMONIC_KMOVW                 Mnemonic = 349
-	MNEMONIC_KNOT                  Mnemonic = 350
-	MNEMONIC_KNOTB                 Mnemonic = 351
-	MNEMONIC_KNOTD                 Mnemonic = 352
-	MNEMONIC_KNOTQ                 Mnemonic = 353
-	MNEMONIC_KNOTW                 Mnemonic = 354
-	MNEMONIC_KOR                   Mnemonic = 355
-	MNEMONIC_KORB                  Mnemonic = 356
-	MNEMONIC_KORD                  Mnemonic = 357
-	MNEMONIC_KORQ                  Mnemonic = 358
-	MNEMONIC_KORTEST               Mnemonic = 359
-	MNEMONIC_KORTESTB              Mnemonic = 360
-	MNEMONIC_KORTESTD              Mnemonic = 361
-	MNEMONIC_KORTESTQ              Mnemonic = 362
-	MNEMONIC_KORTESTW              Mnemonic = 363
-	MNEMONIC_KORW                  Mnemonic = 364
-	MNEMONIC_KSHIFTLB              Mnemonic = 365
-	MNEMONIC_KSHIFTLD              Mnemonic = 366
-	MNEMONIC_KSHIFTLQ              Mnemonic = 367
-	MNEMONIC_KSHIFTLW              Mnemonic = 368
-	MNEMONIC_KSHIFTRB              Mnemonic = 369
-	MNEMONIC_KSHIFTRD              Mnemonic = 370
-	MNEMONIC_KSHIFTRQ              Mnemonic = 371
-	MNEMONIC_KSHIFTRW              Mnemonic = 372
-	MNEMONIC_KTESTB                Mnemonic = 373
-	MNEMONIC_KTESTD                Mnemonic = 374
-	MNEMONIC_KTESTQ                Mnemonic = 375
-	MNEMONIC_KTESTW                Mnemonic = 376
-	MNEMONIC_KUNPCKBW              Mnemonic = 377
-	MNEMONIC_KUNPCKDQ              Mnemonic = 378
-	MNEMONIC_KUNPCKWD              Mnemonic = 379
-	MNEMONIC_KXNOR                 Mnemonic = 380
-	MNEMONIC_KXNORB                Mnemonic = 381
-	MNEMONIC_KXNORD                Mnemonic = 382
-	MNEMONIC_KXNORQ                Mnemonic = 383
-	MNEMONIC_KXNORW                Mnemonic = 384
-	MNEMONIC_KXOR                  Mnemonic = 385
-	MNEMONIC_KXORB                 Mnemonic = 386
-	MNEMONIC_KXORD                 Mnemonic = 387
-	MNEMONIC_KXORQ                 Mnemonic = 388
-	MNEMONIC_KXORW                 Mnemonic = 389
-	MNEMONIC_LAHF                  Mnemonic = 390
-	MNEMONIC_LAR                   Mnemonic = 391
-	MNEMONIC_LDDQU                 Mnemonic = 392
-	MNEMONIC_LDMXCSR               Mnemonic = 393
-	MNEMONIC_LDS                   Mnemonic = 394
-	MNEMONIC_LDTILECFG             Mnemonic = 395
-	MNEMONIC_LEA                   Mnemonic = 396
-	MNEMONIC_LEAVE                 Mnemonic = 397
-	MNEMONIC_LES                   Mnemonic = 398
-	MNEMONIC_LFENCE                Mnemonic = 399
-	MNEMONIC_LFS                   Mnemonic = 400
-	MNEMONIC_LGDT                  Mnemonic = 401
-	MNEMONIC_LGS                   Mnemonic = 402
-	MNEMONIC_LIDT                  Mnemonic = 403
-	MNEMONIC_LLDT                  Mnemonic = 404
-	MNEMONIC_LLWPCB                Mnemonic = 405
-	MNEMONIC_LMSW                  Mnemonic = 406
-	MNEMONIC_LOADIWKEY             Mnemonic = 407
-	MNEMONIC_LODSB                 Mnemonic = 408
-	MNEMONIC_LODSD                 Mnemonic = 409
-	MNEMONIC_LODSQ                 Mnemonic = 410
-	MNEMONIC_LODSW                 Mnemonic = 411
-	MNEMONIC_LOOP                  Mnemonic = 412
-	MNEMONIC_LOOPE                 Mnemonic = 413
-	MNEMONIC_LOOPNE                Mnemonic = 414
-	MNEMONIC_LSL                   Mnemonic = 415
-	MNEMONIC_LSS                   Mnemonic = 416
-	MNEMONIC_LTR                   Mnemonic = 417
-	MNEMONIC_LWPINS                Mnemonic = 418
-	MNEMONIC_LWPVAL                Mnemonic = 419
-	MNEMONIC_LZCNT                 Mnemonic = 420
-	MNEMONIC_MASKMOVDQU            Mnemonic = 421
-	MNEMONIC_MASKMOVQ              Mnemonic = 422
-	MNEMONIC_MAXPD                 Mnemonic = 423
-	MNEMONIC_MAXPS                 Mnemonic = 424
-	MNEMONIC_MAXSD                 Mnemonic = 425
-	MNEMONIC_MAXSS                 Mnemonic = 426
-	MNEMONIC_MCOMMIT               Mnemonic = 427
-	MNEMONIC_MFENCE                Mnemonic = 428
-	MNEMONIC_MINPD                 Mnemonic = 429
-	MNEMONIC_MINPS                 Mnemonic = 430
-	MNEMONIC_MINSD                 Mnemonic = 431
-	MNEMONIC_MINSS                 Mnemonic = 432
-	MNEMONIC_MONITOR               Mnemonic = 433
-	MNEMONIC_MONITORX              Mnemonic = 434
-	MNEMONIC_MONTMUL               Mnemonic = 435
-	MNEMONIC_MOV                   Mnemonic = 436
-	MNEMONIC_MOVAPD                Mnemonic = 437
-	MNEMONIC_MOVAPS                Mnemonic = 438
-	MNEMONIC_MOVBE                 Mnemonic = 439
-	MNEMONIC_MOVD                  Mnemonic = 440
-	MNEMONIC_MOVDDUP               Mnemonic = 441
-	MNEMONIC_MOVDIR_64_B           Mnemonic = 442
-	MNEMONIC_MOVDIRI               Mnemonic = 443
-	MNEMONIC_MOVDQ_2_Q             Mnemonic = 444
-	MNEMONIC_MOVDQA                Mnemonic = 445
-	MNEMONIC_MOVDQU                Mnemonic = 446
-	MNEMONIC_MOVHLPS               Mnemonic = 447
-	MNEMONIC_MOVHPD                Mnemonic = 448
-	MNEMONIC_MOVHPS                Mnemonic = 449
-	MNEMONIC_MOVLHPS               Mnemonic = 450
-	MNEMONIC_MOVLPD                Mnemonic = 451
-	MNEMONIC_MOVLPS                Mnemonic = 452
-	MNEMONIC_MOVMSKPD              Mnemonic = 453
-	MNEMONIC_MOVMSKPS              Mnemonic = 454
-	MNEMONIC_MOVNTDQ               Mnemonic = 455
-	MNEMONIC_MOVNTDQA              Mnemonic = 456
-	MNEMONIC_MOVNTI                Mnemonic = 457
-	MNEMONIC_MOVNTPD               Mnemonic = 458
-	MNEMONIC_MOVNTPS               Mnemonic = 459
-	MNEMONIC_MOVNTQ                Mnemonic = 460
-	MNEMONIC_MOVNTSD               Mnemonic = 461
-	MNEMONIC_MOVNTSS               Mnemonic = 462
-	MNEMONIC_MOVQ                  Mnemonic = 463
-	MNEMONIC_MOVQ_2_DQ             Mnemonic = 464
-	MNEMONIC_MOVSB                 Mnemonic = 465
-	MNEMONIC_MOVSD                 Mnemonic = 466
-	MNEMONIC_MOVSHDUP              Mnemonic = 467
-	MNEMONIC_MOVSLDUP              Mnemonic = 468
-	MNEMONIC_MOVSQ                 Mnemonic = 469
-	MNEMONIC_MOVSS                 Mnemonic = 470
-	MNEMONIC_MOVSW                 Mnemonic = 471
-	MNEMONIC_MOVSX                 Mnemonic = 472
-	MNEMONIC_MOVSXD                Mnemonic = 473
-	MNEMONIC_MOVUPD                Mnemonic = 474
-	MNEMONIC_MOVUPS                Mnemonic = 475
-	MNEMONIC_MOVZX                 Mnemonic = 476
-	MNEMONIC_MPSADBW               Mnemonic = 477
-	MNEMONIC_MUL                   Mnemonic = 478
-	MNEMONIC_MULPD                 Mnemonic = 479
-	MNEMONIC_MULPS                 Mnemonic = 480
-	MNEMONIC_MULSD                 Mnemonic = 481
-	MNEMONIC_MULSS                 Mnemonic = 482
-	MNEMONIC_MULX                  Mnemonic = 483
-	MNEMONIC_MWAIT                 Mnemonic = 484
-	MNEMONIC_MWAITX                Mnemonic = 485
-	MNEMONIC_NEG                   Mnemonic = 486
-	MNEMONIC_NOP                   Mnemonic = 487
-	MNEMONIC_NOT                   Mnemonic = 488
-	MNEMONIC_OR                    Mnemonic = 489
-	MNEMONIC_ORPD                  Mnemonic = 490
-	MNEMONIC_ORPS                  Mnemonic = 491
-	MNEMONIC_OUT                   Mnemonic = 492
-	MNEMONIC_OUTSB                 Mnemonic = 493
-	MNEMONIC_OUTSD                 Mnemonic = 494
-	MNEMONIC_OUTSW                 Mnemonic = 495
-	MNEMONIC_PABSB                 Mnemonic = 496
-	MNEMONIC_PABSD                 Mnemonic = 497
-	MNEMONIC_PABSW                 Mnemonic = 498
-	MNEMONIC_PACKSSDW              Mnemonic = 499
-	MNEMONIC_PACKSSWB              Mnemonic = 500
-	MNEMONIC_PACKUSDW              Mnemonic = 501
-	MNEMONIC_PACKUSWB              Mnemonic = 502
-	MNEMONIC_PADDB                 Mnemonic = 503
-	MNEMONIC_PADDD                 Mnemonic = 504
-	MNEMONIC_PADDQ                 Mnemonic = 505
-	MNEMONIC_PADDSB                Mnemonic = 506
-	MNEMONIC_PADDSW                Mnemonic = 507
-	MNEMONIC_PADDUSB               Mnemonic = 508
-	MNEMONIC_PADDUSW               Mnemonic = 509
-	MNEMONIC_PADDW                 Mnemonic = 510
-	MNEMONIC_PALIGNR               Mnemonic = 511
-	MNEMONIC_PAND                  Mnemonic = 512
-	MNEMONIC_PANDN                 Mnemonic = 513
-	MNEMONIC_PAUSE                 Mnemonic = 514
-	MNEMONIC_PAVGB                 Mnemonic = 515
-	MNEMONIC_PAVGUSB               Mnemonic = 516
-	MNEMONIC_PAVGW                 Mnemonic = 517
-	MNEMONIC_PBLENDVB              Mnemonic = 518
-	MNEMONIC_PBLENDW               Mnemonic = 519
-	MNEMONIC_PCLMULQDQ             Mnemonic = 520
-	MNEMONIC_PCMPEQB               Mnemonic = 521
-	MNEMONIC_PCMPEQD               Mnemonic = 522
-	MNEMONIC_PCMPEQQ               Mnemonic = 523
-	MNEMONIC_PCMPEQW               Mnemonic = 524
-	MNEMONIC_PCMPESTRI             Mnemonic = 525
-	MNEMONIC_PCMPESTRM             Mnemonic = 526
-	MNEMONIC_PCMPGTB               Mnemonic = 527
-	MNEMONIC_PCMPGTD               Mnemonic = 528
-	MNEMONIC_PCMPGTQ               Mnemonic = 529
-	MNEMONIC_PCMPGTW               Mnemonic = 530
-	MNEMONIC_PCMPISTRI             Mnemonic = 531
-	MNEMONIC_PCMPISTRM             Mnemonic = 532
-	MNEMONIC_PCOMMIT               Mnemonic = 533
-	MNEMONIC_PCONFIG               Mnemonic = 534
-	MNEMONIC_PDEP                  Mnemonic = 535
-	MNEMONIC_PEXT                  Mnemonic = 536
-	MNEMONIC_PEXTRB                Mnemonic = 537
-	MNEMONIC_PEXTRD                Mnemonic = 538
-	MNEMONIC_PEXTRQ                Mnemonic = 539
-	MNEMONIC_PEXTRW                Mnemonic = 540
-	MNEMONIC_PF_2_ID               Mnemonic = 541
-	MNEMONIC_PF_2_IW               Mnemonic = 542
-	MNEMONIC_PFACC                 Mnemonic = 543
-	MNEMONIC_PFADD                 Mnemonic = 544
-	MNEMONIC_PFCMPEQ               Mnemonic = 545
-	MNEMONIC_PFCMPGE               Mnemonic = 546
-	MNEMONIC_PFCMPGT               Mnemonic = 547
-	MNEMONIC_PFCPIT_1              Mnemonic = 548
-	MNEMONIC_PFMAX                 Mnemonic = 549
-	MNEMONIC_PFMIN                 Mnemonic = 550
-	MNEMONIC_PFMUL                 Mnemonic = 551
-	MNEMONIC_PFNACC                Mnemonic = 552
-	MNEMONIC_PFPNACC               Mnemonic = 553
-	MNEMONIC_PFRCP                 Mnemonic = 554
-	MNEMONIC_PFRCPIT_2             Mnemonic = 555
-	MNEMONIC_PFRSQIT_1             Mnemonic = 556
-	MNEMONIC_PFSQRT                Mnemonic = 557
-	MNEMONIC_PFSUB                 Mnemonic = 558
-	MNEMONIC_PFSUBR                Mnemonic = 559
-	MNEMONIC_PHADDD                Mnemonic = 560
-	MNEMONIC_PHADDSW               Mnemonic = 561
-	MNEMONIC_PHADDW                Mnemonic = 562
-	MNEMONIC_PHMINPOSUW            Mnemonic = 563
-	MNEMONIC_PHSUBD                Mnemonic = 564
-	MNEMONIC_PHSUBSW               Mnemonic = 565
-	MNEMONIC_PHSUBW                Mnemonic = 566
-	MNEMONIC_PI_2_FD               Mnemonic = 567
-	MNEMONIC_PI_2_FW               Mnemonic = 568
-	MNEMONIC_PINSRB                Mnemonic = 569
-	MNEMONIC_PINSRD                Mnemonic = 570
-	MNEMONIC_PINSRQ                Mnemonic = 571
-	MNEMONIC_PINSRW                Mnemonic = 572
-	MNEMONIC_PMADDUBSW             Mnemonic = 573
-	MNEMONIC_PMADDWD               Mnemonic = 574
-	MNEMONIC_PMAXSB                Mnemonic = 575
-	MNEMONIC_PMAXSD                Mnemonic = 576
-	MNEMONIC_PMAXSW                Mnemonic = 577
-	MNEMONIC_PMAXUB                Mnemonic = 578
-	MNEMONIC_PMAXUD                Mnemonic = 579
-	MNEMONIC_PMAXUW                Mnemonic = 580
-	MNEMONIC_PMINSB                Mnemonic = 581
-	MNEMONIC_PMINSD                Mnemonic = 582
-	MNEMONIC_PMINSW                Mnemonic = 583
-	MNEMONIC_PMINUB                Mnemonic = 584
-	MNEMONIC_PMINUD                Mnemonic = 585
-	MNEMONIC_PMINUW                Mnemonic = 586
-	MNEMONIC_PMOVMSKB              Mnemonic = 587
-	MNEMONIC_PMOVSXBD              Mnemonic = 588
-	MNEMONIC_PMOVSXBQ              Mnemonic = 589
-	MNEMONIC_PMOVSXBW              Mnemonic = 590
-	MNEMONIC_PMOVSXDQ              Mnemonic = 591
-	MNEMONIC_PMOVSXWD              Mnemonic = 592
-	MNEMONIC_PMOVSXWQ              Mnemonic = 593
-	MNEMONIC_PMOVZXBD              Mnemonic = 594
-	MNEMONIC_PMOVZXBQ              Mnemonic = 595
-	MNEMONIC_PMOVZXBW              Mnemonic = 596
-	MNEMONIC_PMOVZXDQ              Mnemonic = 597
-	MNEMONIC_PMOVZXWD              Mnemonic = 598
-	MNEMONIC_PMOVZXWQ              Mnemonic = 599
-	MNEMONIC_PMULDQ                Mnemonic = 600
-	MNEMONIC_PMULHRSW              Mnemonic = 601
-	MNEMONIC_PMULHRW               Mnemonic = 602
-	MNEMONIC_PMULHUW               Mnemonic = 603
-	MNEMONIC_PMULHW                Mnemonic = 604
-	MNEMONIC_PMULLD                Mnemonic = 605
-	MNEMONIC_PMULLW                Mnemonic = 606
-	MNEMONIC_PMULUDQ               Mnemonic = 607
-	MNEMONIC_POP                   Mnemonic = 608
-	MNEMONIC_POPA                  Mnemonic = 609
-	MNEMONIC_POPAD                 Mnemonic = 610
-	MNEMONIC_POPCNT                Mnemonic = 611
-	MNEMONIC_POPF                  Mnemonic = 612
-	MNEMONIC_POPFD                 Mnemonic = 613
-	MNEMONIC_POPFQ                 Mnemonic = 614
-	MNEMONIC_POR                   Mnemonic = 615
-	MNEMONIC_PREFETCH              Mnemonic = 616
-	MNEMONIC_PREFETCHIT_0          Mnemonic = 617
-	MNEMONIC_PREFETCHIT_1          Mnemonic = 618
-	MNEMONIC_PREFETCHNTA           Mnemonic = 619
-	MNEMONIC_PREFETCHT_0           Mnemonic = 620
-	MNEMONIC_PREFETCHT_1           Mnemonic = 621
-	MNEMONIC_PREFETCHT_2           Mnemonic = 622
-	MNEMONIC_PREFETCHW             Mnemonic = 623
-	MNEMONIC_PREFETCHWT_1          Mnemonic = 624
-	MNEMONIC_PSADBW                Mnemonic = 625
-	MNEMONIC_PSHUFB                Mnemonic = 626
-	MNEMONIC_PSHUFD                Mnemonic = 627
-	MNEMONIC_PSHUFHW               Mnemonic = 628
-	MNEMONIC_PSHUFLW               Mnemonic = 629
-	MNEMONIC_PSHUFW                Mnemonic = 630
-	MNEMONIC_PSIGNB                Mnemonic = 631
-	MNEMONIC_PSIGND                Mnemonic = 632
-	MNEMONIC_PSIGNW                Mnemonic = 633
-	MNEMONIC_PSLLD                 Mnemonic = 634
-	MNEMONIC_PSLLDQ                Mnemonic = 635
-	MNEMONIC_PSLLQ                 Mnemonic = 636
-	MNEMONIC_PSLLW                 Mnemonic = 637
-	MNEMONIC_PSMASH                Mnemonic = 638
-	MNEMONIC_PSRAD                 Mnemonic = 639
-	MNEMONIC_PSRAW                 Mnemonic = 640
-	MNEMONIC_PSRLD                 Mnemonic = 641
-	MNEMONIC_PSRLDQ                Mnemonic = 642
-	MNEMONIC_PSRLQ                 Mnemonic = 643
-	MNEMONIC_PSRLW                 Mnemonic = 644
-	MNEMONIC_PSUBB                 Mnemonic = 645
-	MNEMONIC_PSUBD                 Mnemonic = 646
-	MNEMONIC_PSUBQ                 Mnemonic = 647
-	MNEMONIC_PSUBSB                Mnemonic = 648
-	MNEMONIC_PSUBSW                Mnemonic = 649
-	MNEMONIC_PSUBUSB               Mnemonic = 650
-	MNEMONIC_PSUBUSW               Mnemonic = 651
-	MNEMONIC_PSUBW                 Mnemonic = 652
-	MNEMONIC_PSWAPD                Mnemonic = 653
-	MNEMONIC_PTEST                 Mnemonic = 654
-	MNEMONIC_PTWRITE               Mnemonic = 655
-	MNEMONIC_PUNPCKHBW             Mnemonic = 656
-	MNEMONIC_PUNPCKHDQ             Mnemonic = 657
-	MNEMONIC_PUNPCKHQDQ            Mnemonic = 658
-	MNEMONIC_PUNPCKHWD             Mnemonic = 659
-	MNEMONIC_PUNPCKLBW             Mnemonic = 660
-	MNEMONIC_PUNPCKLDQ             Mnemonic = 661
-	MNEMONIC_PUNPCKLQDQ            Mnemonic = 662
-	MNEMONIC_PUNPCKLWD             Mnemonic = 663
-	MNEMONIC_PUSH                  Mnemonic = 664
-	MNEMONIC_PUSHA                 Mnemonic = 665
-	MNEMONIC_PUSHAD                Mnemonic = 666
-	MNEMONIC_PUSHF                 Mnemonic = 667
-	MNEMONIC_PUSHFD                Mnemonic = 668
-	MNEMONIC_PUSHFQ                Mnemonic = 669
-	MNEMONIC_PVALIDATE             Mnemonic = 670
-	MNEMONIC_PXOR                  Mnemonic = 671
-	MNEMONIC_RCL                   Mnemonic = 672
-	MNEMONIC_RCPPS                 Mnemonic = 673
-	MNEMONIC_RCPSS                 Mnemonic = 674
-	MNEMONIC_RCR                   Mnemonic = 675
-	MNEMONIC_RDFSBASE              Mnemonic = 676
-	MNEMONIC_RDGSBASE              Mnemonic = 677
-	MNEMONIC_RDMSR                 Mnemonic = 678
-	MNEMONIC_RDMSRLIST             Mnemonic = 679
-	MNEMONIC_RDPID                 Mnemonic = 680
-	MNEMONIC_RDPKRU                Mnemonic = 681
-	MNEMONIC_RDPMC                 Mnemonic = 682
-	MNEMONIC_RDPRU                 Mnemonic = 683
-	MNEMONIC_RDRAND                Mnemonic = 684
-	MNEMONIC_RDSEED                Mnemonic = 685
-	MNEMONIC_RDSSPD                Mnemonic = 686
-	MNEMONIC_RDSSPQ                Mnemonic = 687
-	MNEMONIC_RDTSC                 Mnemonic = 688
-	MNEMONIC_RDTSCP                Mnemonic = 689
-	MNEMONIC_RET                   Mnemonic = 690
-	MNEMONIC_RMPADJUST             Mnemonic = 691
-	MNEMONIC_RMPUPDATE             Mnemonic = 692
-	MNEMONIC_ROL                   Mnemonic = 693
-	MNEMONIC_ROR                   Mnemonic = 694
-	MNEMONIC_RORX                  Mnemonic = 695
-	MNEMONIC_ROUNDPD               Mnemonic = 696
-	MNEMONIC_ROUNDPS               Mnemonic = 697
-	MNEMONIC_ROUNDSD               Mnemonic = 698
-	MNEMONIC_ROUNDSS               Mnemonic = 699
-	MNEMONIC_RSM                   Mnemonic = 700
-	MNEMONIC_RSQRTPS               Mnemonic = 701
-	MNEMONIC_RSQRTSS               Mnemonic = 702
-	MNEMONIC_RSTORSSP              Mnemonic = 703
-	MNEMONIC_SAHF                  Mnemonic = 704
-	MNEMONIC_SALC                  Mnemonic = 705
-	MNEMONIC_SAR                   Mnemonic = 706
-	MNEMONIC_SARX                  Mnemonic = 707
-	MNEMONIC_SAVEPREVSSP           Mnemonic = 708
-	MNEMONIC_SBB                   Mnemonic = 709
-	MNEMONIC_SCASB                 Mnemonic = 710
-	MNEMONIC_SCASD                 Mnemonic = 711
-	MNEMONIC_SCASQ                 Mnemonic = 712
-	MNEMONIC_SCASW                 Mnemonic = 713
-	MNEMONIC_SEAMCALL              Mnemonic = 714
-	MNEMONIC_SEAMOPS               Mnemonic = 715
-	MNEMONIC_SEAMRET               Mnemonic = 716
-	MNEMONIC_SENDUIPI              Mnemonic = 717
-	MNEMONIC_SERIALIZE             Mnemonic = 718
-	MNEMONIC_SETB                  Mnemonic = 719
-	MNEMONIC_SETBE                 Mnemonic = 720
-	MNEMONIC_SETL                  Mnemonic = 721
-	MNEMONIC_SETLE                 Mnemonic = 722
-	MNEMONIC_SETNB                 Mnemonic = 723
-	MNEMONIC_SETNBE                Mnemonic = 724
-	MNEMONIC_SETNL                 Mnemonic = 725
-	MNEMONIC_SETNLE                Mnemonic = 726
-	MNEMONIC_SETNO                 Mnemonic = 727
-	MNEMONIC_SETNP                 Mnemonic = 728
-	MNEMONIC_SETNS                 Mnemonic = 729
-	MNEMONIC_SETNZ                 Mnemonic = 730
-	MNEMONIC_SETO                  Mnemonic = 731
-	MNEMONIC_SETP                  Mnemonic = 732
-	MNEMONIC_SETS                  Mnemonic = 733
-	MNEMONIC_SETSSBSY              Mnemonic = 734
-	MNEMONIC_SETZ                  Mnemonic = 735
-	MNEMONIC_SFENCE                Mnemonic = 736
-	MNEMONIC_SGDT                  Mnemonic = 737
-	MNEMONIC_SHA_1_MSG_1           Mnemonic = 738
-	MNEMONIC_SHA_1_MSG_2           Mnemonic = 739
-	MNEMONIC_SHA_1_NEXTE           Mnemonic = 740
-	MNEMONIC_SHA_1_RNDS_4          Mnemonic = 741
-	MNEMONIC_SHA_256_MSG_1         Mnemonic = 742
-	MNEMONIC_SHA_256_MSG_2         Mnemonic = 743
-	MNEMONIC_SHA_256_RNDS_2        Mnemonic = 744
-	MNEMONIC_SHL                   Mnemonic = 745
-	MNEMONIC_SHLD                  Mnemonic = 746
-	MNEMONIC_SHLX                  Mnemonic = 747
-	MNEMONIC_SHR                   Mnemonic = 748
-	MNEMONIC_SHRD                  Mnemonic = 749
-	MNEMONIC_SHRX                  Mnemonic = 750
-	MNEMONIC_SHUFPD                Mnemonic = 751
-	MNEMONIC_SHUFPS                Mnemonic = 752
-	MNEMONIC_SIDT                  Mnemonic = 753
-	MNEMONIC_SKINIT                Mnemonic = 754
-	MNEMONIC_SLDT                  Mnemonic = 755
-	MNEMONIC_SLWPCB                Mnemonic = 756
-	MNEMONIC_SMSW                  Mnemonic = 757
-	MNEMONIC_SPFLT                 Mnemonic = 758
-	MNEMONIC_SQRTPD                Mnemonic = 759
-	MNEMONIC_SQRTPS                Mnemonic = 760
-	MNEMONIC_SQRTSD                Mnemonic = 761
-	MNEMONIC_SQRTSS                Mnemonic = 762
-	MNEMONIC_STAC                  Mnemonic = 763
-	MNEMONIC_STC                   Mnemonic = 764
-	MNEMONIC_STD                   Mnemonic = 765
-	MNEMONIC_STGI                  Mnemonic = 766
-	MNEMONIC_STI                   Mnemonic = 767
-	MNEMONIC_STMXCSR               Mnemonic = 768
-	MNEMONIC_STOSB                 Mnemonic = 769
-	MNEMONIC_STOSD                 Mnemonic = 770
-	MNEMONIC_STOSQ                 Mnemonic = 771
-	MNEMONIC_STOSW                 Mnemonic = 772
-	MNEMONIC_STR                   Mnemonic = 773
-	MNEMONIC_STTILECFG             Mnemonic = 774
-	MNEMONIC_STUI                  Mnemonic = 775
-	MNEMONIC_SUB                   Mnemonic = 776
-	MNEMONIC_SUBPD                 Mnemonic = 777
-	MNEMONIC_SUBPS                 Mnemonic = 778
-	MNEMONIC_SUBSD                 Mnemonic = 779
-	MNEMONIC_SUBSS                 Mnemonic = 780
-	MNEMONIC_SWAPGS                Mnemonic = 781
-	MNEMONIC_SYSCALL               Mnemonic = 782
-	MNEMONIC_SYSENTER              Mnemonic = 783
-	MNEMONIC_SYSEXIT               Mnemonic = 784
-	MNEMONIC_SYSRET                Mnemonic = 785
-	MNEMONIC_T_1_MSKC              Mnemonic = 786
-	MNEMONIC_TDCALL                Mnemonic = 787
-	MNEMONIC_TDPBF_16_PS           Mnemonic = 788
-	MNEMONIC_TDPBSSD               Mnemonic = 789
-	MNEMONIC_TDPBSUD               Mnemonic = 790
-	MNEMONIC_TDPBUSD               Mnemonic = 791
-	MNEMONIC_TDPBUUD               Mnemonic = 792
-	MNEMONIC_TDPFP_16_PS           Mnemonic = 793
-	MNEMONIC_TEST                  Mnemonic = 794
-	MNEMONIC_TESTUI                Mnemonic = 795
-	MNEMONIC_TILELOADD             Mnemonic = 796
-	MNEMONIC_TILELOADDT_1          Mnemonic = 797
-	MNEMONIC_TILERELEASE           Mnemonic = 798
-	MNEMONIC_TILESTORED            Mnemonic = 799
-	MNEMONIC_TILEZERO              Mnemonic = 800
-	MNEMONIC_TLBSYNC               Mnemonic = 801
-	MNEMONIC_TPAUSE                Mnemonic = 802
-	MNEMONIC_TZCNT                 Mnemonic = 803
-	MNEMONIC_TZCNTI                Mnemonic = 804
-	MNEMONIC_TZMSK                 Mnemonic = 805
-	MNEMONIC_UCOMISD               Mnemonic = 806
-	MNEMONIC_UCOMISS               Mnemonic = 807
-	MNEMONIC_UD_0                  Mnemonic = 808
-	MNEMONIC_UD_1                  Mnemonic = 809
-	MNEMONIC_UD_2                  Mnemonic = 810
-	MNEMONIC_UIRET                 Mnemonic = 811
-	MNEMONIC_UMONITOR              Mnemonic = 812
-	MNEMONIC_UMWAIT                Mnemonic = 813
-	MNEMONIC_UNPCKHPD              Mnemonic = 814
-	MNEMONIC_UNPCKHPS              Mnemonic = 815
-	MNEMONIC_UNPCKLPD              Mnemonic = 816
-	MNEMONIC_UNPCKLPS              Mnemonic = 817
-	MNEMONIC_V_4_FMADDPS           Mnemonic = 818
-	MNEMONIC_V_4_FMADDSS           Mnemonic = 819
-	MNEMONIC_V_4_FNMADDPS          Mnemonic = 820
-	MNEMONIC_V_4_FNMADDSS          Mnemonic = 821
-	MNEMONIC_VADDNPD               Mnemonic = 822
-	MNEMONIC_VADDNPS               Mnemonic = 823
-	MNEMONIC_VADDPD                Mnemonic = 824
-	MNEMONIC_VADDPH                Mnemonic = 825
-	MNEMONIC_VADDPS                Mnemonic = 826
-	MNEMONIC_VADDSD                Mnemonic = 827
-	MNEMONIC_VADDSETSPS            Mnemonic = 828
-	MNEMONIC_VADDSH                Mnemonic = 829
-	MNEMONIC_VADDSS                Mnemonic = 830
-	MNEMONIC_VADDSUBPD             Mnemonic = 831
-	MNEMONIC_VADDSUBPS             Mnemonic = 832
-	MNEMONIC_VAESDEC               Mnemonic = 833
-	MNEMONIC_VAESDECLAST           Mnemonic = 834
-	MNEMONIC_VAESENC               Mnemonic = 835
-	MNEMONIC_VAESENCLAST           Mnemonic = 836
-	MNEMONIC_VAESIMC               Mnemonic = 837
-	MNEMONIC_VAESKEYGENASSIST      Mnemonic = 838
-	MNEMONIC_VALIGND               Mnemonic = 839
-	MNEMONIC_VALIGNQ               Mnemonic = 840
-	MNEMONIC_VANDNPD               Mnemonic = 841
-	MNEMONIC_VANDNPS               Mnemonic = 842
-	MNEMONIC_VANDPD                Mnemonic = 843
-	MNEMONIC_VANDPS                Mnemonic = 844
-	MNEMONIC_VBCSTNEBF_162_PS      Mnemonic = 845
-	MNEMONIC_VBCSTNESH_2_PS        Mnemonic = 846
-	MNEMONIC_VBLENDMPD             Mnemonic = 847
-	MNEMONIC_VBLENDMPS             Mnemonic = 848
-	MNEMONIC_VBLENDPD              Mnemonic = 849
-	MNEMONIC_VBLENDPS              Mnemonic = 850
-	MNEMONIC_VBLENDVPD             Mnemonic = 851
-	MNEMONIC_VBLENDVPS             Mnemonic = 852
-	MNEMONIC_VBROADCASTF_128       Mnemonic = 853
-	MNEMONIC_VBROADCASTF_32_X_2    Mnemonic = 854
-	MNEMONIC_VBROADCASTF_32_X_4    Mnemonic = 855
-	MNEMONIC_VBROADCASTF_32_X_8    Mnemonic = 856
-	MNEMONIC_VBROADCASTF_64_X_2    Mnemonic = 857
-	MNEMONIC_VBROADCASTF_64_X_4    Mnemonic = 858
-	MNEMONIC_VBROADCASTI_128       Mnemonic = 859
-	MNEMONIC_VBROADCASTI_32_X_2    Mnemonic = 860
-	MNEMONIC_VBROADCASTI_32_X_4    Mnemonic = 861
-	MNEMONIC_VBROADCASTI_32_X_8    Mnemonic = 862
-	MNEMONIC_VBROADCASTI_64_X_2    Mnemonic = 863
-	MNEMONIC_VBROADCASTI_64_X_4    Mnemonic = 864
-	MNEMONIC_VBROADCASTSD          Mnemonic = 865
-	MNEMONIC_VBROADCASTSS          Mnemonic = 866
-	MNEMONIC_VCMPPD                Mnemonic = 867
-	MNEMONIC_VCMPPH                Mnemonic = 868
-	MNEMONIC_VCMPPS                Mnemonic = 869
-	MNEMONIC_VCMPSD                Mnemonic = 870
-	MNEMONIC_VCMPSH                Mnemonic = 871
-	MNEMONIC_VCMPSS                Mnemonic = 872
-	MNEMONIC_VCOMISD               Mnemonic = 873
-	MNEMONIC_VCOMISH               Mnemonic = 874
-	MNEMONIC_VCOMISS               Mnemonic = 875
-	MNEMONIC_VCOMPRESSPD           Mnemonic = 876
-	MNEMONIC_VCOMPRESSPS           Mnemonic = 877
-	MNEMONIC_VCVTDQ_2_PD           Mnemonic = 878
-	MNEMONIC_VCVTDQ_2_PH           Mnemonic = 879
-	MNEMONIC_VCVTDQ_2_PS           Mnemonic = 880
-	MNEMONIC_VCVTFXPNTDQ_2_PS      Mnemonic = 881
-	MNEMONIC_VCVTFXPNTPD_2_DQ      Mnemonic = 882
-	MNEMONIC_VCVTFXPNTPD_2_UDQ     Mnemonic = 883
-	MNEMONIC_VCVTFXPNTPS_2_DQ      Mnemonic = 884
-	MNEMONIC_VCVTFXPNTPS_2_UDQ     Mnemonic = 885
-	MNEMONIC_VCVTFXPNTUDQ_2_PS     Mnemonic = 886
-	MNEMONIC_VCVTNE_2_PS_2_BF_16   Mnemonic = 887
-	MNEMONIC_VCVTNEEBF_162_PS      Mnemonic = 888
-	MNEMONIC_VCVTNEEPH_2_PS        Mnemonic = 889
-	MNEMONIC_VCVTNEOBF_162_PS      Mnemonic = 890
-	MNEMONIC_VCVTNEOPH_2_PS        Mnemonic = 891
-	MNEMONIC_VCVTNEPS_2_BF_16      Mnemonic = 892
-	MNEMONIC_VCVTPD_2_DQ           Mnemonic = 893
-	MNEMONIC_VCVTPD_2_PH           Mnemonic = 894
-	MNEMONIC_VCVTPD_2_PS           Mnemonic = 895
-	MNEMONIC_VCVTPD_2_QQ           Mnemonic = 896
-	MNEMONIC_VCVTPD_2_UDQ          Mnemonic = 897
-	MNEMONIC_VCVTPD_2_UQQ          Mnemonic = 898
-	MNEMONIC_VCVTPH_2_DQ           Mnemonic = 899
-	MNEMONIC_VCVTPH_2_PD           Mnemonic = 900
-	MNEMONIC_VCVTPH_2_PS           Mnemonic = 901
-	MNEMONIC_VCVTPH_2_PSX          Mnemonic = 902
-	MNEMONIC_VCVTPH_2_QQ           Mnemonic = 903
-	MNEMONIC_VCVTPH_2_UDQ          Mnemonic = 904
-	MNEMONIC_VCVTPH_2_UQQ          Mnemonic = 905
-	MNEMONIC_VCVTPH_2_UW           Mnemonic = 906
-	MNEMONIC_VCVTPH_2_W            Mnemonic = 907
-	MNEMONIC_VCVTPS_2_DQ           Mnemonic = 908
-	MNEMONIC_VCVTPS_2_PD           Mnemonic = 909
-	MNEMONIC_VCVTPS_2_PH           Mnemonic = 910
-	MNEMONIC_VCVTPS_2_PHX          Mnemonic = 911
-	MNEMONIC_VCVTPS_2_QQ           Mnemonic = 912
-	MNEMONIC_VCVTPS_2_UDQ          Mnemonic = 913
-	MNEMONIC_VCVTPS_2_UQQ          Mnemonic = 914
-	MNEMONIC_VCVTQQ_2_PD           Mnemonic = 915
-	MNEMONIC_VCVTQQ_2_PH           Mnemonic = 916
-	MNEMONIC_VCVTQQ_2_PS           Mnemonic = 917
-	MNEMONIC_VCVTSD_2_SH           Mnemonic = 918
-	MNEMONIC_VCVTSD_2_SI           Mnemonic = 919
-	MNEMONIC_VCVTSD_2_SS           Mnemonic = 920
-	MNEMONIC_VCVTSD_2_USI          Mnemonic = 921
-	MNEMONIC_VCVTSH_2_SD           Mnemonic = 922
-	MNEMONIC_VCVTSH_2_SI           Mnemonic = 923
-	MNEMONIC_VCVTSH_2_SS           Mnemonic = 924
-	MNEMONIC_VCVTSH_2_USI          Mnemonic = 925
-	MNEMONIC_VCVTSI_2_SD           Mnemonic = 926
-	MNEMONIC_VCVTSI_2_SH           Mnemonic = 927
-	MNEMONIC_VCVTSI_2_SS           Mnemonic = 928
-	MNEMONIC_VCVTSS_2_SD           Mnemonic = 929
-	MNEMONIC_VCVTSS_2_SH           Mnemonic = 930
-	MNEMONIC_VCVTSS_2_SI           Mnemonic = 931
-	MNEMONIC_VCVTSS_2_USI          Mnemonic = 932
-	MNEMONIC_VCVTTPD_2_DQ          Mnemonic = 933
-	MNEMONIC_VCVTTPD_2_QQ          Mnemonic = 934
-	MNEMONIC_VCVTTPD_2_UDQ         Mnemonic = 935
-	MNEMONIC_VCVTTPD_2_UQQ         Mnemonic = 936
-	MNEMONIC_VCVTTPH_2_DQ          Mnemonic = 937
-	MNEMONIC_VCVTTPH_2_QQ          Mnemonic = 938
-	MNEMONIC_VCVTTPH_2_UDQ         Mnemonic = 939
-	MNEMONIC_VCVTTPH_2_UQQ         Mnemonic = 940
-	MNEMONIC_VCVTTPH_2_UW          Mnemonic = 941
-	MNEMONIC_VCVTTPH_2_W           Mnemonic = 942
-	MNEMONIC_VCVTTPS_2_DQ          Mnemonic = 943
-	MNEMONIC_VCVTTPS_2_QQ          Mnemonic = 944
-	MNEMONIC_VCVTTPS_2_UDQ         Mnemonic = 945
-	MNEMONIC_VCVTTPS_2_UQQ         Mnemonic = 946
-	MNEMONIC_VCVTTSD_2_SI          Mnemonic = 947
-	MNEMONIC_VCVTTSD_2_USI         Mnemonic = 948
-	MNEMONIC_VCVTTSH_2_SI          Mnemonic = 949
-	MNEMONIC_VCVTTSH_2_USI         Mnemonic = 950
-	MNEMONIC_VCVTTSS_2_SI          Mnemonic = 951
-	MNEMONIC_VCVTTSS_2_USI         Mnemonic = 952
-	MNEMONIC_VCVTUDQ_2_PD          Mnemonic = 953
-	MNEMONIC_VCVTUDQ_2_PH          Mnemonic = 954
-	MNEMONIC_VCVTUDQ_2_PS          Mnemonic = 955
-	MNEMONIC_VCVTUQQ_2_PD          Mnemonic = 956
-	MNEMONIC_VCVTUQQ_2_PH          Mnemonic = 957
-	MNEMONIC_VCVTUQQ_2_PS          Mnemonic = 958
-	MNEMONIC_VCVTUSI_2_SD          Mnemonic = 959
-	MNEMONIC_VCVTUSI_2_SH          Mnemonic = 960
-	MNEMONIC_VCVTUSI_2_SS          Mnemonic = 961
-	MNEMONIC_VCVTUW_2_PH           Mnemonic = 962
-	MNEMONIC_VCVTW_2_PH            Mnemonic = 963
-	MNEMONIC_VDBPSADBW             Mnemonic = 964
-	MNEMONIC_VDIVPD                Mnemonic = 965
-	MNEMONIC_VDIVPH                Mnemonic = 966
-	MNEMONIC_VDIVPS                Mnemonic = 967
-	MNEMONIC_VDIVSD                Mnemonic = 968
-	MNEMONIC_VDIVSH                Mnemonic = 969
-	MNEMONIC_VDIVSS                Mnemonic = 970
-	MNEMONIC_VDPBF_16_PS           Mnemonic = 971
-	MNEMONIC_VDPPD                 Mnemonic = 972
-	MNEMONIC_VDPPS                 Mnemonic = 973
-	MNEMONIC_VERR                  Mnemonic = 974
-	MNEMONIC_VERW                  Mnemonic = 975
-	MNEMONIC_VEXP_223_PS           Mnemonic = 976
-	MNEMONIC_VEXP_2_PD             Mnemonic = 977
-	MNEMONIC_VEXP_2_PS             Mnemonic = 978
-	MNEMONIC_VEXPANDPD             Mnemonic = 979
-	MNEMONIC_VEXPANDPS             Mnemonic = 980
-	MNEMONIC_VEXTRACTF_128         Mnemonic = 981
-	MNEMONIC_VEXTRACTF_32_X_4      Mnemonic = 982
-	MNEMONIC_VEXTRACTF_32_X_8      Mnemonic = 983
-	MNEMONIC_VEXTRACTF_64_X_2      Mnemonic = 984
-	MNEMONIC_VEXTRACTF_64_X_4      Mnemonic = 985
-	MNEMONIC_VEXTRACTI_128         Mnemonic = 986
-	MNEMONIC_VEXTRACTI_32_X_4      Mnemonic = 987
-	MNEMONIC_VEXTRACTI_32_X_8      Mnemonic = 988
-	MNEMONIC_VEXTRACTI_64_X_2      Mnemonic = 989
-	MNEMONIC_VEXTRACTI_64_X_4      Mnemonic = 990
-	MNEMONIC_VEXTRACTPS            Mnemonic = 991
-	MNEMONIC_VFCMADDCPH            Mnemonic = 992
-	MNEMONIC_VFCMADDCSH            Mnemonic = 993
-	MNEMONIC_VFCMULCPH             Mnemonic = 994
-	MNEMONIC_VFCMULCSH             Mnemonic = 995
-	MNEMONIC_VFIXUPIMMPD           Mnemonic = 996
-	MNEMONIC_VFIXUPIMMPS           Mnemonic = 997
-	MNEMONIC_VFIXUPIMMSD           Mnemonic = 998
-	MNEMONIC_VFIXUPIMMSS           Mnemonic = 999
-	MNEMONIC_VFIXUPNANPD           Mnemonic = 1000
-	MNEMONIC_VFIXUPNANPS           Mnemonic = 1001
-	MNEMONIC_VFMADD_132_PD         Mnemonic = 1002
-	MNEMONIC_VFMADD_132_PH         Mnemonic = 1003
-	MNEMONIC_VFMADD_132_PS         Mnemonic = 1004
-	MNEMONIC_VFMADD_132_SD         Mnemonic = 1005
-	MNEMONIC_VFMADD_132_SH         Mnemonic = 1006
-	MNEMONIC_VFMADD_132_SS         Mnemonic = 1007
-	MNEMONIC_VFMADD_213_PD         Mnemonic = 1008
-	MNEMONIC_VFMADD_213_PH         Mnemonic = 1009
-	MNEMONIC_VFMADD_213_PS         Mnemonic = 1010
-	MNEMONIC_VFMADD_213_SD         Mnemonic = 1011
-	MNEMONIC_VFMADD_213_SH         Mnemonic = 1012
-	MNEMONIC_VFMADD_213_SS         Mnemonic = 1013
-	MNEMONIC_VFMADD_231_PD         Mnemonic = 1014
-	MNEMONIC_VFMADD_231_PH         Mnemonic = 1015
-	MNEMONIC_VFMADD_231_PS         Mnemonic = 1016
-	MNEMONIC_VFMADD_231_SD         Mnemonic = 1017
-	MNEMONIC_VFMADD_231_SH         Mnemonic = 1018
-	MNEMONIC_VFMADD_231_SS         Mnemonic = 1019
-	MNEMONIC_VFMADD_233_PS         Mnemonic = 1020
-	MNEMONIC_VFMADDCPH             Mnemonic = 1021
-	MNEMONIC_VFMADDCSH             Mnemonic = 1022
-	MNEMONIC_VFMADDPD              Mnemonic = 1023
-	MNEMONIC_VFMADDPS              Mnemonic = 1024
-	MNEMONIC_VFMADDSD              Mnemonic = 1025
-	MNEMONIC_VFMADDSS              Mnemonic = 1026
-	MNEMONIC_VFMADDSUB_132_PD      Mnemonic = 1027
-	MNEMONIC_VFMADDSUB_132_PH      Mnemonic = 1028
-	MNEMONIC_VFMADDSUB_132_PS      Mnemonic = 1029
-	MNEMONIC_VFMADDSUB_213_PD      Mnemonic = 1030
-	MNEMONIC_VFMADDSUB_213_PH      Mnemonic = 1031
-	MNEMONIC_VFMADDSUB_213_PS      Mnemonic = 1032
-	MNEMONIC_VFMADDSUB_231_PD      Mnemonic = 1033
-	MNEMONIC_VFMADDSUB_231_PH      Mnemonic = 1034
-	MNEMONIC_VFMADDSUB_231_PS      Mnemonic = 1035
-	MNEMONIC_VFMADDSUBPD           Mnemonic = 1036
-	MNEMONIC_VFMADDSUBPS           Mnemonic = 1037
-	MNEMONIC_VFMSUB_132_PD         Mnemonic = 1038
-	MNEMONIC_VFMSUB_132_PH         Mnemonic = 1039
-	MNEMONIC_VFMSUB_132_PS         Mnemonic = 1040
-	MNEMONIC_VFMSUB_132_SD         Mnemonic = 1041
-	MNEMONIC_VFMSUB_132_SH         Mnemonic = 1042
-	MNEMONIC_VFMSUB_132_SS         Mnemonic = 1043
-	MNEMONIC_VFMSUB_213_PD         Mnemonic = 1044
-	MNEMONIC_VFMSUB_213_PH         Mnemonic = 1045
-	MNEMONIC_VFMSUB_213_PS         Mnemonic = 1046
-	MNEMONIC_VFMSUB_213_SD         Mnemonic = 1047
-	MNEMONIC_VFMSUB_213_SH         Mnemonic = 1048
-	MNEMONIC_VFMSUB_213_SS         Mnemonic = 1049
-	MNEMONIC_VFMSUB_231_PD         Mnemonic = 1050
-	MNEMONIC_VFMSUB_231_PH         Mnemonic = 1051
-	MNEMONIC_VFMSUB_231_PS         Mnemonic = 1052
-	MNEMONIC_VFMSUB_231_SD         Mnemonic = 1053
-	MNEMONIC_VFMSUB_231_SH         Mnemonic = 1054
-	MNEMONIC_VFMSUB_231_SS         Mnemonic = 1055
-	MNEMONIC_VFMSUBADD_132_PD      Mnemonic = 1056
-	MNEMONIC_VFMSUBADD_132_PH      Mnemonic = 1057
-	MNEMONIC_VFMSUBADD_132_PS      Mnemonic = 1058
-	MNEMONIC_VFMSUBADD_213_PD      Mnemonic = 1059
-	MNEMONIC_VFMSUBADD_213_PH      Mnemonic = 1060
-	MNEMONIC_VFMSUBADD_213_PS      Mnemonic = 1061
-	MNEMONIC_VFMSUBADD_231_PD      Mnemonic = 1062
-	MNEMONIC_VFMSUBADD_231_PH      Mnemonic = 1063
-	MNEMONIC_VFMSUBADD_231_PS      Mnemonic = 1064
-	MNEMONIC_VFMSUBADDPD           Mnemonic = 1065
-	MNEMONIC_VFMSUBADDPS           Mnemonic = 1066
-	MNEMONIC_VFMSUBPD              Mnemonic = 1067
-	MNEMONIC_VFMSUBPS              Mnemonic = 1068
-	MNEMONIC_VFMSUBSD              Mnemonic = 1069
-	MNEMONIC_VFMSUBSS              Mnemonic = 1070
-	MNEMONIC_VFMULCPH              Mnemonic = 1071
-	MNEMONIC_VFMULCSH              Mnemonic = 1072
-	MNEMONIC_VFNMADD_132_PD        Mnemonic = 1073
-	MNEMONIC_VFNMADD_132_PH        Mnemonic = 1074
-	MNEMONIC_VFNMADD_132_PS        Mnemonic = 1075
-	MNEMONIC_VFNMADD_132_SD        Mnemonic = 1076
-	MNEMONIC_VFNMADD_132_SH        Mnemonic = 1077
-	MNEMONIC_VFNMADD_132_SS        Mnemonic = 1078
-	MNEMONIC_VFNMADD_213_PD        Mnemonic = 1079
-	MNEMONIC_VFNMADD_213_PH        Mnemonic = 1080
-	MNEMONIC_VFNMADD_213_PS        Mnemonic = 1081
-	MNEMONIC_VFNMADD_213_SD        Mnemonic = 1082
-	MNEMONIC_VFNMADD_213_SH        Mnemonic = 1083
-	MNEMONIC_VFNMADD_213_SS        Mnemonic = 1084
-	MNEMONIC_VFNMADD_231_PD        Mnemonic = 1085
-	MNEMONIC_VFNMADD_231_PH        Mnemonic = 1086
-	MNEMONIC_VFNMADD_231_PS        Mnemonic = 1087
-	MNEMONIC_VFNMADD_231_SD        Mnemonic = 1088
-	MNEMONIC_VFNMADD_231_SH        Mnemonic = 1089
-	MNEMONIC_VFNMADD_231_SS        Mnemonic = 1090
-	MNEMONIC_VFNMADDPD             Mnemonic = 1091
-	MNEMONIC_VFNMADDPS             Mnemonic = 1092
-	MNEMONIC_VFNMADDSD             Mnemonic = 1093
-	MNEMONIC_VFNMADDSS             Mnemonic = 1094
-	MNEMONIC_VFNMSUB_132_PD        Mnemonic = 1095
-	MNEMONIC_VFNMSUB_132_PH        Mnemonic = 1096
-	MNEMONIC_VFNMSUB_132_PS        Mnemonic = 1097
-	MNEMONIC_VFNMSUB_132_SD        Mnemonic = 1098
-	MNEMONIC_VFNMSUB_132_SH        Mnemonic = 1099
-	MNEMONIC_VFNMSUB_132_SS        Mnemonic = 1100
-	MNEMONIC_VFNMSUB_213_PD        Mnemonic = 1101
-	MNEMONIC_VFNMSUB_213_PH        Mnemonic = 1102
-	MNEMONIC_VFNMSUB_213_PS        Mnemonic = 1103
-	MNEMONIC_VFNMSUB_213_SD        Mnemonic = 1104
-	MNEMONIC_VFNMSUB_213_SH        Mnemonic = 1105
-	MNEMONIC_VFNMSUB_213_SS        Mnemonic = 1106
-	MNEMONIC_VFNMSUB_231_PD        Mnemonic = 1107
-	MNEMONIC_VFNMSUB_231_PH        Mnemonic = 1108
-	MNEMONIC_VFNMSUB_231_PS        Mnemonic = 1109
-	MNEMONIC_VFNMSUB_231_SD        Mnemonic = 1110
-	MNEMONIC_VFNMSUB_231_SH        Mnemonic = 1111
-	MNEMONIC_VFNMSUB_231_SS        Mnemonic = 1112
-	MNEMONIC_VFNMSUBPD             Mnemonic = 1113
-	MNEMONIC_VFNMSUBPS             Mnemonic = 1114
-	MNEMONIC_VFNMSUBSD             Mnemonic = 1115
-	MNEMONIC_VFNMSUBSS             Mnemonic = 1116
-	MNEMONIC_VFPCLASSPD            Mnemonic = 1117
-	MNEMONIC_VFPCLASSPH            Mnemonic = 1118
-	MNEMONIC_VFPCLASSPS            Mnemonic = 1119
-	MNEMONIC_VFPCLASSSD            Mnemonic = 1120
-	MNEMONIC_VFPCLASSSH            Mnemonic = 1121
-	MNEMONIC_VFPCLASSSS            Mnemonic = 1122
-	MNEMONIC_VFRCZPD               Mnemonic = 1123
-	MNEMONIC_VFRCZPS               Mnemonic = 1124
-	MNEMONIC_VFRCZSD               Mnemonic = 1125
-	MNEMONIC_VFRCZSS               Mnemonic = 1126
-	MNEMONIC_VGATHERDPD            Mnemonic = 1127
-	MNEMONIC_VGATHERDPS            Mnemonic = 1128
-	MNEMONIC_VGATHERPF_0_DPD       Mnemonic = 1129
-	MNEMONIC_VGATHERPF_0_DPS       Mnemonic = 1130
-	MNEMONIC_VGATHERPF_0_HINTDPD   Mnemonic = 1131
-	MNEMONIC_VGATHERPF_0_HINTDPS   Mnemonic = 1132
-	MNEMONIC_VGATHERPF_0_QPD       Mnemonic = 1133
-	MNEMONIC_VGATHERPF_0_QPS       Mnemonic = 1134
-	MNEMONIC_VGATHERPF_1_DPD       Mnemonic = 1135
-	MNEMONIC_VGATHERPF_1_DPS       Mnemonic = 1136
-	MNEMONIC_VGATHERPF_1_QPD       Mnemonic = 1137
-	MNEMONIC_VGATHERPF_1_QPS       Mnemonic = 1138
-	MNEMONIC_VGATHERQPD            Mnemonic = 1139
-	MNEMONIC_VGATHERQPS            Mnemonic = 1140
-	MNEMONIC_VGETEXPPD             Mnemonic = 1141
-	MNEMONIC_VGETEXPPH             Mnemonic = 1142
-	MNEMONIC_VGETEXPPS             Mnemonic = 1143
-	MNEMONIC_VGETEXPSD             Mnemonic = 1144
-	MNEMONIC_VGETEXPSH             Mnemonic = 1145
-	MNEMONIC_VGETEXPSS             Mnemonic = 1146
-	MNEMONIC_VGETMANTPD            Mnemonic = 1147
-	MNEMONIC_VGETMANTPH            Mnemonic = 1148
-	MNEMONIC_VGETMANTPS            Mnemonic = 1149
-	MNEMONIC_VGETMANTSD            Mnemonic = 1150
-	MNEMONIC_VGETMANTSH            Mnemonic = 1151
-	MNEMONIC_VGETMANTSS            Mnemonic = 1152
-	MNEMONIC_VGF_2_P_8_AFFINEINVQB Mnemonic = 1153
-	MNEMONIC_VGF_2_P_8_AFFINEQB    Mnemonic = 1154
-	MNEMONIC_VGF_2_P_8_MULB        Mnemonic = 1155
-	MNEMONIC_VGMAXABSPS            Mnemonic = 1156
-	MNEMONIC_VGMAXPD               Mnemonic = 1157
-	MNEMONIC_VGMAXPS               Mnemonic = 1158
-	MNEMONIC_VGMINPD               Mnemonic = 1159
-	MNEMONIC_VGMINPS               Mnemonic = 1160
-	MNEMONIC_VHADDPD               Mnemonic = 1161
-	MNEMONIC_VHADDPS               Mnemonic = 1162
-	MNEMONIC_VHSUBPD               Mnemonic = 1163
-	MNEMONIC_VHSUBPS               Mnemonic = 1164
-	MNEMONIC_VINSERTF_128          Mnemonic = 1165
-	MNEMONIC_VINSERTF_32_X_4       Mnemonic = 1166
-	MNEMONIC_VINSERTF_32_X_8       Mnemonic = 1167
-	MNEMONIC_VINSERTF_64_X_2       Mnemonic = 1168
-	MNEMONIC_VINSERTF_64_X_4       Mnemonic = 1169
-	MNEMONIC_VINSERTI_128          Mnemonic = 1170
-	MNEMONIC_VINSERTI_32_X_4       Mnemonic = 1171
-	MNEMONIC_VINSERTI_32_X_8       Mnemonic = 1172
-	MNEMONIC_VINSERTI_64_X_2       Mnemonic = 1173
-	MNEMONIC_VINSERTI_64_X_4       Mnemonic = 1174
-	MNEMONIC_VINSERTPS             Mnemonic = 1175
-	MNEMONIC_VLDDQU                Mnemonic = 1176
-	MNEMONIC_VLDMXCSR              Mnemonic = 1177
-	MNEMONIC_VLOADUNPACKHD         Mnemonic = 1178
-	MNEMONIC_VLOADUNPACKHPD        Mnemonic = 1179
-	MNEMONIC_VLOADUNPACKHPS        Mnemonic = 1180
-	MNEMONIC_VLOADUNPACKHQ         Mnemonic = 1181
-	MNEMONIC_VLOADUNPACKLD         Mnemonic = 1182
-	MNEMONIC_VLOADUNPACKLPD        Mnemonic = 1183
-	MNEMONIC_VLOADUNPACKLPS        Mnemonic = 1184
-	MNEMONIC_VLOADUNPACKLQ         Mnemonic = 1185
-	MNEMONIC_VLOG_2_PS             Mnemonic = 1186
-	MNEMONIC_VMASKMOVDQU           Mnemonic = 1187
-	MNEMONIC_VMASKMOVPD            Mnemonic = 1188
-	MNEMONIC_VMASKMOVPS            Mnemonic = 1189
-	MNEMONIC_VMAXPD                Mnemonic = 1190
-	MNEMONIC_VMAXPH                Mnemonic = 1191
-	MNEMONIC_VMAXPS                Mnemonic = 1192
-	MNEMONIC_VMAXSD                Mnemonic = 1193
-	MNEMONIC_VMAXSH                Mnemonic = 1194
-	MNEMONIC_VMAXSS                Mnemonic = 1195
-	MNEMONIC_VMCALL                Mnemonic = 1196
-	MNEMONIC_VMCLEAR               Mnemonic = 1197
-	MNEMONIC_VMFUNC                Mnemonic = 1198
-	MNEMONIC_VMINPD                Mnemonic = 1199
-	MNEMONIC_VMINPH                Mnemonic = 1200
-	MNEMONIC_VMINPS                Mnemonic = 1201
-	MNEMONIC_VMINSD                Mnemonic = 1202
-	MNEMONIC_VMINSH                Mnemonic = 1203
-	MNEMONIC_VMINSS                Mnemonic = 1204
-	MNEMONIC_VMLAUNCH              Mnemonic = 1205
-	MNEMONIC_VMLOAD                Mnemonic = 1206
-	MNEMONIC_VMMCALL               Mnemonic = 1207
-	MNEMONIC_VMOVAPD               Mnemonic = 1208
-	MNEMONIC_VMOVAPS               Mnemonic = 1209
-	MNEMONIC_VMOVD                 Mnemonic = 1210
-	MNEMONIC_VMOVDDUP              Mnemonic = 1211
-	MNEMONIC_VMOVDQA               Mnemonic = 1212
-	MNEMONIC_VMOVDQA_32            Mnemonic = 1213
-	MNEMONIC_VMOVDQA_64            Mnemonic = 1214
-	MNEMONIC_VMOVDQU               Mnemonic = 1215
-	MNEMONIC_VMOVDQU_16            Mnemonic = 1216
-	MNEMONIC_VMOVDQU_32            Mnemonic = 1217
-	MNEMONIC_VMOVDQU_64            Mnemonic = 1218
-	MNEMONIC_VMOVDQU_8             Mnemonic = 1219
-	MNEMONIC_VMOVHLPS              Mnemonic = 1220
-	MNEMONIC_VMOVHPD               Mnemonic = 1221
-	MNEMONIC_VMOVHPS               Mnemonic = 1222
-	MNEMONIC_VMOVLHPS              Mnemonic = 1223
-	MNEMONIC_VMOVLPD               Mnemonic = 1224
-	MNEMONIC_VMOVLPS               Mnemonic = 1225
-	MNEMONIC_VMOVMSKPD             Mnemonic = 1226
-	MNEMONIC_VMOVMSKPS             Mnemonic = 1227
-	MNEMONIC_VMOVNRAPD             Mnemonic = 1228
-	MNEMONIC_VMOVNRAPS             Mnemonic = 1229
-	MNEMONIC_VMOVNRNGOAPD          Mnemonic = 1230
-	MNEMONIC_VMOVNRNGOAPS          Mnemonic = 1231
-	MNEMONIC_VMOVNTDQ              Mnemonic = 1232
-	MNEMONIC_VMOVNTDQA             Mnemonic = 1233
-	MNEMONIC_VMOVNTPD              Mnemonic = 1234
-	MNEMONIC_VMOVNTPS              Mnemonic = 1235
-	MNEMONIC_VMOVQ                 Mnemonic = 1236
-	MNEMONIC_VMOVSD                Mnemonic = 1237
-	MNEMONIC_VMOVSH                Mnemonic = 1238
-	MNEMONIC_VMOVSHDUP             Mnemonic = 1239
-	MNEMONIC_VMOVSLDUP             Mnemonic = 1240
-	MNEMONIC_VMOVSS                Mnemonic = 1241
-	MNEMONIC_VMOVUPD               Mnemonic = 1242
-	MNEMONIC_VMOVUPS               Mnemonic = 1243
-	MNEMONIC_VMOVW                 Mnemonic = 1244
-	MNEMONIC_VMPSADBW              Mnemonic = 1245
-	MNEMONIC_VMPTRLD               Mnemonic = 1246
-	MNEMONIC_VMPTRST               Mnemonic = 1247
-	MNEMONIC_VMREAD                Mnemonic = 1248
-	MNEMONIC_VMRESUME              Mnemonic = 1249
-	MNEMONIC_VMRUN                 Mnemonic = 1250
-	MNEMONIC_VMSAVE                Mnemonic = 1251
-	MNEMONIC_VMULPD                Mnemonic = 1252
-	MNEMONIC_VMULPH                Mnemonic = 1253
-	MNEMONIC_VMULPS                Mnemonic = 1254
-	MNEMONIC_VMULSD                Mnemonic = 1255
-	MNEMONIC_VMULSH                Mnemonic = 1256
-	MNEMONIC_VMULSS                Mnemonic = 1257
-	MNEMONIC_VMWRITE               Mnemonic = 1258
-	MNEMONIC_VMXOFF                Mnemonic = 1259
-	MNEMONIC_VMXON                 Mnemonic = 1260
-	MNEMONIC_VORPD                 Mnemonic = 1261
-	MNEMONIC_VORPS                 Mnemonic = 1262
-	MNEMONIC_VP_2_INTERSECTD       Mnemonic = 1263
-	MNEMONIC_VP_2_INTERSECTQ       Mnemonic = 1264
-	MNEMONIC_VP_4_DPWSSD           Mnemonic = 1265
-	MNEMONIC_VP_4_DPWSSDS          Mnemonic = 1266
-	MNEMONIC_VPABSB                Mnemonic = 1267
-	MNEMONIC_VPABSD                Mnemonic = 1268
-	MNEMONIC_VPABSQ                Mnemonic = 1269
-	MNEMONIC_VPABSW                Mnemonic = 1270
-	MNEMONIC_VPACKSSDW             Mnemonic = 1271
-	MNEMONIC_VPACKSSWB             Mnemonic = 1272
-	MNEMONIC_VPACKSTOREHD          Mnemonic = 1273
-	MNEMONIC_VPACKSTOREHPD         Mnemonic = 1274
-	MNEMONIC_VPACKSTOREHPS         Mnemonic = 1275
-	MNEMONIC_VPACKSTOREHQ          Mnemonic = 1276
-	MNEMONIC_VPACKSTORELD          Mnemonic = 1277
-	MNEMONIC_VPACKSTORELPD         Mnemonic = 1278
-	MNEMONIC_VPACKSTORELPS         Mnemonic = 1279
-	MNEMONIC_VPACKSTORELQ          Mnemonic = 1280
-	MNEMONIC_VPACKUSDW             Mnemonic = 1281
-	MNEMONIC_VPACKUSWB             Mnemonic = 1282
-	MNEMONIC_VPADCD                Mnemonic = 1283
-	MNEMONIC_VPADDB                Mnemonic = 1284
-	MNEMONIC_VPADDD                Mnemonic = 1285
-	MNEMONIC_VPADDQ                Mnemonic = 1286
-	MNEMONIC_VPADDSB               Mnemonic = 1287
-	MNEMONIC_VPADDSETCD            Mnemonic = 1288
-	MNEMONIC_VPADDSETSD            Mnemonic = 1289
-	MNEMONIC_VPADDSW               Mnemonic = 1290
-	MNEMONIC_VPADDUSB              Mnemonic = 1291
-	MNEMONIC_VPADDUSW              Mnemonic = 1292
-	MNEMONIC_VPADDW                Mnemonic = 1293
-	MNEMONIC_VPALIGNR              Mnemonic = 1294
-	MNEMONIC_VPAND                 Mnemonic = 1295
-	MNEMONIC_VPANDD                Mnemonic = 1296
-	MNEMONIC_VPANDN                Mnemonic = 1297
-	MNEMONIC_VPANDND               Mnemonic = 1298
-	MNEMONIC_VPANDNQ               Mnemonic = 1299
-	MNEMONIC_VPANDQ                Mnemonic = 1300
-	MNEMONIC_VPAVGB                Mnemonic = 1301
-	MNEMONIC_VPAVGW                Mnemonic = 1302
-	MNEMONIC_VPBLENDD              Mnemonic = 1303
-	MNEMONIC_VPBLENDMB             Mnemonic = 1304
-	MNEMONIC_VPBLENDMD             Mnemonic = 1305
-	MNEMONIC_VPBLENDMQ             Mnemonic = 1306
-	MNEMONIC_VPBLENDMW             Mnemonic = 1307
-	MNEMONIC_VPBLENDVB             Mnemonic = 1308
-	MNEMONIC_VPBLENDW              Mnemonic = 1309
-	MNEMONIC_VPBROADCASTB          Mnemonic = 1310
-	MNEMONIC_VPBROADCASTD          Mnemonic = 1311
-	MNEMONIC_VPBROADCASTMB_2_Q     Mnemonic = 1312
-	MNEMONIC_VPBROADCASTMW_2_D     Mnemonic = 1313
-	MNEMONIC_VPBROADCASTQ          Mnemonic = 1314
-	MNEMONIC_VPBROADCASTW          Mnemonic = 1315
-	MNEMONIC_VPCLMULQDQ            Mnemonic = 1316
-	MNEMONIC_VPCMOV                Mnemonic = 1317
-	MNEMONIC_VPCMPB                Mnemonic = 1318
-	MNEMONIC_VPCMPD                Mnemonic = 1319
-	MNEMONIC_VPCMPEQB              Mnemonic = 1320
-	MNEMONIC_VPCMPEQD              Mnemonic = 1321
-	MNEMONIC_VPCMPEQQ              Mnemonic = 1322
-	MNEMONIC_VPCMPEQW              Mnemonic = 1323
-	MNEMONIC_VPCMPESTRI            Mnemonic = 1324
-	MNEMONIC_VPCMPESTRM            Mnemonic = 1325
-	MNEMONIC_VPCMPGTB              Mnemonic = 1326
-	MNEMONIC_VPCMPGTD              Mnemonic = 1327
-	MNEMONIC_VPCMPGTQ              Mnemonic = 1328
-	MNEMONIC_VPCMPGTW              Mnemonic = 1329
-	MNEMONIC_VPCMPISTRI            Mnemonic = 1330
-	MNEMONIC_VPCMPISTRM            Mnemonic = 1331
-	MNEMONIC_VPCMPLTD              Mnemonic = 1332
-	MNEMONIC_VPCMPQ                Mnemonic = 1333
-	MNEMONIC_VPCMPUB               Mnemonic = 1334
-	MNEMONIC_VPCMPUD               Mnemonic = 1335
-	MNEMONIC_VPCMPUQ               Mnemonic = 1336
-	MNEMONIC_VPCMPUW               Mnemonic = 1337
-	MNEMONIC_VPCMPW                Mnemonic = 1338
-	MNEMONIC_VPCOMB                Mnemonic = 1339
-	MNEMONIC_VPCOMD                Mnemonic = 1340
-	MNEMONIC_VPCOMPRESSB           Mnemonic = 1341
-	MNEMONIC_VPCOMPRESSD           Mnemonic = 1342
-	MNEMONIC_VPCOMPRESSQ           Mnemonic = 1343
-	MNEMONIC_VPCOMPRESSW           Mnemonic = 1344
-	MNEMONIC_VPCOMQ                Mnemonic = 1345
-	MNEMONIC_VPCOMUB               Mnemonic = 1346
-	MNEMONIC_VPCOMUD               Mnemonic = 1347
-	MNEMONIC_VPCOMUQ               Mnemonic = 1348
-	MNEMONIC_VPCOMUW               Mnemonic = 1349
-	MNEMONIC_VPCOMW                Mnemonic = 1350
-	MNEMONIC_VPCONFLICTD           Mnemonic = 1351
-	MNEMONIC_VPCONFLICTQ           Mnemonic = 1352
-	MNEMONIC_VPDPBSSD              Mnemonic = 1353
-	MNEMONIC_VPDPBSSDS             Mnemonic = 1354
-	MNEMONIC_VPDPBSUD              Mnemonic = 1355
-	MNEMONIC_VPDPBSUDS             Mnemonic = 1356
-	MNEMONIC_VPDPBUSD              Mnemonic = 1357
-	MNEMONIC_VPDPBUSDS             Mnemonic = 1358
-	MNEMONIC_VPDPBUUD              Mnemonic = 1359
-	MNEMONIC_VPDPBUUDS             Mnemonic = 1360
-	MNEMONIC_VPDPWSSD              Mnemonic = 1361
-	MNEMONIC_VPDPWSSDS             Mnemonic = 1362
-	MNEMONIC_VPERM_2_F_128         Mnemonic = 1363
-	MNEMONIC_VPERM_2_I_128         Mnemonic = 1364
-	MNEMONIC_VPERMB                Mnemonic = 1365
-	MNEMONIC_VPERMD                Mnemonic = 1366
-	MNEMONIC_VPERMF_32_X_4         Mnemonic = 1367
-	MNEMONIC_VPERMI_2_B            Mnemonic = 1368
-	MNEMONIC_VPERMI_2_D            Mnemonic = 1369
-	MNEMONIC_VPERMI_2_PD           Mnemonic = 1370
-	MNEMONIC_VPERMI_2_PS           Mnemonic = 1371
-	MNEMONIC_VPERMI_2_Q            Mnemonic = 1372
-	MNEMONIC_VPERMI_2_W            Mnemonic = 1373
-	MNEMONIC_VPERMIL_2_PD          Mnemonic = 1374
-	MNEMONIC_VPERMIL_2_PS          Mnemonic = 1375
-	MNEMONIC_VPERMILPD             Mnemonic = 1376
-	MNEMONIC_VPERMILPS             Mnemonic = 1377
-	MNEMONIC_VPERMPD               Mnemonic = 1378
-	MNEMONIC_VPERMPS               Mnemonic = 1379
-	MNEMONIC_VPERMQ                Mnemonic = 1380
-	MNEMONIC_VPERMT_2_B            Mnemonic = 1381
-	MNEMONIC_VPERMT_2_D            Mnemonic = 1382
-	MNEMONIC_VPERMT_2_PD           Mnemonic = 1383
-	MNEMONIC_VPERMT_2_PS           Mnemonic = 1384
-	MNEMONIC_VPERMT_2_Q            Mnemonic = 1385
-	MNEMONIC_VPERMT_2_W            Mnemonic = 1386
-	MNEMONIC_VPERMW                Mnemonic = 1387
-	MNEMONIC_VPEXPANDB             Mnemonic = 1388
-	MNEMONIC_VPEXPANDD             Mnemonic = 1389
-	MNEMONIC_VPEXPANDQ             Mnemonic = 1390
-	MNEMONIC_VPEXPANDW             Mnemonic = 1391
-	MNEMONIC_VPEXTRB               Mnemonic = 1392
-	MNEMONIC_VPEXTRD               Mnemonic = 1393
-	MNEMONIC_VPEXTRQ               Mnemonic = 1394
-	MNEMONIC_VPEXTRW               Mnemonic = 1395
-	MNEMONIC_VPGATHERDD            Mnemonic = 1396
-	MNEMONIC_VPGATHERDQ            Mnemonic = 1397
-	MNEMONIC_VPGATHERQD            Mnemonic = 1398
-	MNEMONIC_VPGATHERQQ            Mnemonic = 1399
-	MNEMONIC_VPHADDBD              Mnemonic = 1400
-	MNEMONIC_VPHADDBQ              Mnemonic = 1401
-	MNEMONIC_VPHADDBW              Mnemonic = 1402
-	MNEMONIC_VPHADDD               Mnemonic = 1403
-	MNEMONIC_VPHADDDQ              Mnemonic = 1404
-	MNEMONIC_VPHADDSW              Mnemonic = 1405
-	MNEMONIC_VPHADDUBD             Mnemonic = 1406
-	MNEMONIC_VPHADDUBQ             Mnemonic = 1407
-	MNEMONIC_VPHADDUBW             Mnemonic = 1408
-	MNEMONIC_VPHADDUDQ             Mnemonic = 1409
-	MNEMONIC_VPHADDUWD             Mnemonic = 1410
-	MNEMONIC_VPHADDUWQ             Mnemonic = 1411
-	MNEMONIC_VPHADDW               Mnemonic = 1412
-	MNEMONIC_VPHADDWD              Mnemonic = 1413
-	MNEMONIC_VPHADDWQ              Mnemonic = 1414
-	MNEMONIC_VPHMINPOSUW           Mnemonic = 1415
-	MNEMONIC_VPHSUBBW              Mnemonic = 1416
-	MNEMONIC_VPHSUBD               Mnemonic = 1417
-	MNEMONIC_VPHSUBDQ              Mnemonic = 1418
-	MNEMONIC_VPHSUBSW              Mnemonic = 1419
-	MNEMONIC_VPHSUBW               Mnemonic = 1420
-	MNEMONIC_VPHSUBWD              Mnemonic = 1421
-	MNEMONIC_VPINSRB               Mnemonic = 1422
-	MNEMONIC_VPINSRD               Mnemonic = 1423
-	MNEMONIC_VPINSRQ               Mnemonic = 1424
-	MNEMONIC_VPINSRW               Mnemonic = 1425
-	MNEMONIC_VPLZCNTD              Mnemonic = 1426
-	MNEMONIC_VPLZCNTQ              Mnemonic = 1427
-	MNEMONIC_VPMACSDD              Mnemonic = 1428
-	MNEMONIC_VPMACSDQH             Mnemonic = 1429
-	MNEMONIC_VPMACSDQL             Mnemonic = 1430
-	MNEMONIC_VPMACSSDD             Mnemonic = 1431
-	MNEMONIC_VPMACSSDQH            Mnemonic = 1432
-	MNEMONIC_VPMACSSDQL            Mnemonic = 1433
-	MNEMONIC_VPMACSSWD             Mnemonic = 1434
-	MNEMONIC_VPMACSSWW             Mnemonic = 1435
-	MNEMONIC_VPMACSWD              Mnemonic = 1436
-	MNEMONIC_VPMACSWW              Mnemonic = 1437
-	MNEMONIC_VPMADCSSWD            Mnemonic = 1438
-	MNEMONIC_VPMADCSWD             Mnemonic = 1439
-	MNEMONIC_VPMADD_231_D          Mnemonic = 1440
-	MNEMONIC_VPMADD_233_D          Mnemonic = 1441
-	MNEMONIC_VPMADD_52_HUQ         Mnemonic = 1442
-	MNEMONIC_VPMADD_52_LUQ         Mnemonic = 1443
-	MNEMONIC_VPMADDUBSW            Mnemonic = 1444
-	MNEMONIC_VPMADDWD              Mnemonic = 1445
-	MNEMONIC_VPMASKMOVD            Mnemonic = 1446
-	MNEMONIC_VPMASKMOVQ            Mnemonic = 1447
-	MNEMONIC_VPMAXSB               Mnemonic = 1448
-	MNEMONIC_VPMAXSD               Mnemonic = 1449
-	MNEMONIC_VPMAXSQ               Mnemonic = 1450
-	MNEMONIC_VPMAXSW               Mnemonic = 1451
-	MNEMONIC_VPMAXUB               Mnemonic = 1452
-	MNEMONIC_VPMAXUD               Mnemonic = 1453
-	MNEMONIC_VPMAXUQ               Mnemonic = 1454
-	MNEMONIC_VPMAXUW               Mnemonic = 1455
-	MNEMONIC_VPMINSB               Mnemonic = 1456
-	MNEMONIC_VPMINSD               Mnemonic = 1457
-	MNEMONIC_VPMINSQ               Mnemonic = 1458
-	MNEMONIC_VPMINSW               Mnemonic = 1459
-	MNEMONIC_VPMINUB               Mnemonic = 1460
-	MNEMONIC_VPMINUD               Mnemonic = 1461
-	MNEMONIC_VPMINUQ               Mnemonic = 1462
-	MNEMONIC_VPMINUW               Mnemonic = 1463
-	MNEMONIC_VPMOVB_2_M            Mnemonic = 1464
-	MNEMONIC_VPMOVD_2_M            Mnemonic = 1465
-	MNEMONIC_VPMOVDB               Mnemonic = 1466
-	MNEMONIC_VPMOVDW               Mnemonic = 1467
-	MNEMONIC_VPMOVM_2_B            Mnemonic = 1468
-	MNEMONIC_VPMOVM_2_D            Mnemonic = 1469
-	MNEMONIC_VPMOVM_2_Q            Mnemonic = 1470
-	MNEMONIC_VPMOVM_2_W            Mnemonic = 1471
-	MNEMONIC_VPMOVMSKB             Mnemonic = 1472
-	MNEMONIC_VPMOVQ_2_M            Mnemonic = 1473
-	MNEMONIC_VPMOVQB               Mnemonic = 1474
-	MNEMONIC_VPMOVQD               Mnemonic = 1475
-	MNEMONIC_VPMOVQW               Mnemonic = 1476
-	MNEMONIC_VPMOVSDB              Mnemonic = 1477
-	MNEMONIC_VPMOVSDW              Mnemonic = 1478
-	MNEMONIC_VPMOVSQB              Mnemonic = 1479
-	MNEMONIC_VPMOVSQD              Mnemonic = 1480
-	MNEMONIC_VPMOVSQW              Mnemonic = 1481
-	MNEMONIC_VPMOVSWB              Mnemonic = 1482
-	MNEMONIC_VPMOVSXBD             Mnemonic = 1483
-	MNEMONIC_VPMOVSXBQ             Mnemonic = 1484
-	MNEMONIC_VPMOVSXBW             Mnemonic = 1485
-	MNEMONIC_VPMOVSXDQ             Mnemonic = 1486
-	MNEMONIC_VPMOVSXWD             Mnemonic = 1487
-	MNEMONIC_VPMOVSXWQ             Mnemonic = 1488
-	MNEMONIC_VPMOVUSDB             Mnemonic = 1489
-	MNEMONIC_VPMOVUSDW             Mnemonic = 1490
-	MNEMONIC_VPMOVUSQB             Mnemonic = 1491
-	MNEMONIC_VPMOVUSQD             Mnemonic = 1492
-	MNEMONIC_VPMOVUSQW             Mnemonic = 1493
-	MNEMONIC_VPMOVUSWB             Mnemonic = 1494
-	MNEMONIC_VPMOVW_2_M            Mnemonic = 1495
-	MNEMONIC_VPMOVWB               Mnemonic = 1496
-	MNEMONIC_VPMOVZXBD             Mnemonic = 1497
-	MNEMONIC_VPMOVZXBQ             Mnemonic = 1498
-	MNEMONIC_VPMOVZXBW             Mnemonic = 1499
-	MNEMONIC_VPMOVZXDQ             Mnemonic = 1500
-	MNEMONIC_VPMOVZXWD             Mnemonic = 1501
-	MNEMONIC_VPMOVZXWQ             Mnemonic = 1502
-	MNEMONIC_VPMULDQ               Mnemonic = 1503
-	MNEMONIC_VPMULHD               Mnemonic = 1504
-	MNEMONIC_VPMULHRSW             Mnemonic = 1505
-	MNEMONIC_VPMULHUD              Mnemonic = 1506
-	MNEMONIC_VPMULHUW              Mnemonic = 1507
-	MNEMONIC_VPMULHW               Mnemonic = 1508
-	MNEMONIC_VPMULLD               Mnemonic = 1509
-	MNEMONIC_VPMULLQ               Mnemonic = 1510
-	MNEMONIC_VPMULLW               Mnemonic = 1511
-	MNEMONIC_VPMULTISHIFTQB        Mnemonic = 1512
-	MNEMONIC_VPMULUDQ              Mnemonic = 1513
-	MNEMONIC_VPOPCNTB              Mnemonic = 1514
-	MNEMONIC_VPOPCNTD              Mnemonic = 1515
-	MNEMONIC_VPOPCNTQ              Mnemonic = 1516
-	MNEMONIC_VPOPCNTW              Mnemonic = 1517
-	MNEMONIC_VPOR                  Mnemonic = 1518
-	MNEMONIC_VPORD                 Mnemonic = 1519
-	MNEMONIC_VPORQ                 Mnemonic = 1520
-	MNEMONIC_VPPERM                Mnemonic = 1521
-	MNEMONIC_VPREFETCH_0           Mnemonic = 1522
-	MNEMONIC_VPREFETCH_1           Mnemonic = 1523
-	MNEMONIC_VPREFETCH_2           Mnemonic = 1524
-	MNEMONIC_VPREFETCHE_0          Mnemonic = 1525
-	MNEMONIC_VPREFETCHE_1          Mnemonic = 1526
-	MNEMONIC_VPREFETCHE_2          Mnemonic = 1527
-	MNEMONIC_VPREFETCHENTA         Mnemonic = 1528
-	MNEMONIC_VPREFETCHNTA          Mnemonic = 1529
-	MNEMONIC_VPROLD                Mnemonic = 1530
-	MNEMONIC_VPROLQ                Mnemonic = 1531
-	MNEMONIC_VPROLVD               Mnemonic = 1532
-	MNEMONIC_VPROLVQ               Mnemonic = 1533
-	MNEMONIC_VPRORD                Mnemonic = 1534
-	MNEMONIC_VPRORQ                Mnemonic = 1535
-	MNEMONIC_VPRORVD               Mnemonic = 1536
-	MNEMONIC_VPRORVQ               Mnemonic = 1537
-	MNEMONIC_VPROTB                Mnemonic = 1538
-	MNEMONIC_VPROTD                Mnemonic = 1539
-	MNEMONIC_VPROTQ                Mnemonic = 1540
-	MNEMONIC_VPROTW                Mnemonic = 1541
-	MNEMONIC_VPSADBW               Mnemonic = 1542
-	MNEMONIC_VPSBBD                Mnemonic = 1543
-	MNEMONIC_VPSBBRD               Mnemonic = 1544
-	MNEMONIC_VPSCATTERDD           Mnemonic = 1545
-	MNEMONIC_VPSCATTERDQ           Mnemonic = 1546
-	MNEMONIC_VPSCATTERQD           Mnemonic = 1547
-	MNEMONIC_VPSCATTERQQ           Mnemonic = 1548
-	MNEMONIC_VPSHAB                Mnemonic = 1549
-	MNEMONIC_VPSHAD                Mnemonic = 1550
-	MNEMONIC_VPSHAQ                Mnemonic = 1551
-	MNEMONIC_VPSHAW                Mnemonic = 1552
-	MNEMONIC_VPSHLB                Mnemonic = 1553
-	MNEMONIC_VPSHLD                Mnemonic = 1554
-	MNEMONIC_VPSHLDD               Mnemonic = 1555
-	MNEMONIC_VPSHLDQ               Mnemonic = 1556
-	MNEMONIC_VPSHLDVD              Mnemonic = 1557
-	MNEMONIC_VPSHLDVQ              Mnemonic = 1558
-	MNEMONIC_VPSHLDVW              Mnemonic = 1559
-	MNEMONIC_VPSHLDW               Mnemonic = 1560
-	MNEMONIC_VPSHLQ                Mnemonic = 1561
-	MNEMONIC_VPSHLW                Mnemonic = 1562
-	MNEMONIC_VPSHRDD               Mnemonic = 1563
-	MNEMONIC_VPSHRDQ               Mnemonic = 1564
-	MNEMONIC_VPSHRDVD              Mnemonic = 1565
-	MNEMONIC_VPSHRDVQ              Mnemonic = 1566
-	MNEMONIC_VPSHRDVW              Mnemonic = 1567
-	MNEMONIC_VPSHRDW               Mnemonic = 1568
-	MNEMONIC_VPSHUFB               Mnemonic = 1569
-	MNEMONIC_VPSHUFBITQMB          Mnemonic = 1570
-	MNEMONIC_VPSHUFD               Mnemonic = 1571
-	MNEMONIC_VPSHUFHW              Mnemonic = 1572
-	MNEMONIC_VPSHUFLW              Mnemonic = 1573
-	MNEMONIC_VPSIGNB               Mnemonic = 1574
-	MNEMONIC_VPSIGND               Mnemonic = 1575
-	MNEMONIC_VPSIGNW               Mnemonic = 1576
-	MNEMONIC_VPSLLD                Mnemonic = 1577
-	MNEMONIC_VPSLLDQ               Mnemonic = 1578
-	MNEMONIC_VPSLLQ                Mnemonic = 1579
-	MNEMONIC_VPSLLVD               Mnemonic = 1580
-	MNEMONIC_VPSLLVQ               Mnemonic = 1581
-	MNEMONIC_VPSLLVW               Mnemonic = 1582
-	MNEMONIC_VPSLLW                Mnemonic = 1583
-	MNEMONIC_VPSRAD                Mnemonic = 1584
-	MNEMONIC_VPSRAQ                Mnemonic = 1585
-	MNEMONIC_VPSRAVD               Mnemonic = 1586
-	MNEMONIC_VPSRAVQ               Mnemonic = 1587
-	MNEMONIC_VPSRAVW               Mnemonic = 1588
-	MNEMONIC_VPSRAW                Mnemonic = 1589
-	MNEMONIC_VPSRLD                Mnemonic = 1590
-	MNEMONIC_VPSRLDQ               Mnemonic = 1591
-	MNEMONIC_VPSRLQ                Mnemonic = 1592
-	MNEMONIC_VPSRLVD               Mnemonic = 1593
-	MNEMONIC_VPSRLVQ               Mnemonic = 1594
-	MNEMONIC_VPSRLVW               Mnemonic = 1595
-	MNEMONIC_VPSRLW                Mnemonic = 1596
-	MNEMONIC_VPSUBB                Mnemonic = 1597
-	MNEMONIC_VPSUBD                Mnemonic = 1598
-	MNEMONIC_VPSUBQ                Mnemonic = 1599
-	MNEMONIC_VPSUBRD               Mnemonic = 1600
-	MNEMONIC_VPSUBRSETBD           Mnemonic = 1601
-	MNEMONIC_VPSUBSB               Mnemonic = 1602
-	MNEMONIC_VPSUBSETBD            Mnemonic = 1603
-	MNEMONIC_VPSUBSW               Mnemonic = 1604
-	MNEMONIC_VPSUBUSB              Mnemonic = 1605
-	MNEMONIC_VPSUBUSW              Mnemonic = 1606
-	MNEMONIC_VPSUBW                Mnemonic = 1607
-	MNEMONIC_VPTERNLOGD            Mnemonic = 1608
-	MNEMONIC_VPTERNLOGQ            Mnemonic = 1609
-	MNEMONIC_VPTEST                Mnemonic = 1610
-	MNEMONIC_VPTESTMB              Mnemonic = 1611
-	MNEMONIC_VPTESTMD              Mnemonic = 1612
-	MNEMONIC_VPTESTMQ              Mnemonic = 1613
-	MNEMONIC_VPTESTMW              Mnemonic = 1614
-	MNEMONIC_VPTESTNMB             Mnemonic = 1615
-	MNEMONIC_VPTESTNMD             Mnemonic = 1616
-	MNEMONIC_VPTESTNMQ             Mnemonic = 1617
-	MNEMONIC_VPTESTNMW             Mnemonic = 1618
-	MNEMONIC_VPUNPCKHBW            Mnemonic = 1619
-	MNEMONIC_VPUNPCKHDQ            Mnemonic = 1620
-	MNEMONIC_VPUNPCKHQDQ           Mnemonic = 1621
-	MNEMONIC_VPUNPCKHWD            Mnemonic = 1622
-	MNEMONIC_VPUNPCKLBW            Mnemonic = 1623
-	MNEMONIC_VPUNPCKLDQ            Mnemonic = 1624
-	MNEMONIC_VPUNPCKLQDQ           Mnemonic = 1625
-	MNEMONIC_VPUNPCKLWD            Mnemonic = 1626
-	MNEMONIC_VPXOR                 Mnemonic = 1627
-	MNEMONIC_VPXORD                Mnemonic = 1628
-	MNEMONIC_VPXORQ                Mnemonic = 1629
-	MNEMONIC_VRANGEPD              Mnemonic = 1630
-	MNEMONIC_VRANGEPS              Mnemonic = 1631
-	MNEMONIC_VRANGESD              Mnemonic = 1632
-	MNEMONIC_VRANGESS              Mnemonic = 1633
-	MNEMONIC_VRCP_14_PD            Mnemonic = 1634
-	MNEMONIC_VRCP_14_PS            Mnemonic = 1635
-	MNEMONIC_VRCP_14_SD            Mnemonic = 1636
-	MNEMONIC_VRCP_14_SS            Mnemonic = 1637
-	MNEMONIC_VRCP_23_PS            Mnemonic = 1638
-	MNEMONIC_VRCP_28_PD            Mnemonic = 1639
-	MNEMONIC_VRCP_28_PS            Mnemonic = 1640
-	MNEMONIC_VRCP_28_SD            Mnemonic = 1641
-	MNEMONIC_VRCP_28_SS            Mnemonic = 1642
-	MNEMONIC_VRCPPH                Mnemonic = 1643
-	MNEMONIC_VRCPPS                Mnemonic = 1644
-	MNEMONIC_VRCPSH                Mnemonic = 1645
-	MNEMONIC_VRCPSS                Mnemonic = 1646
-	MNEMONIC_VREDUCEPD             Mnemonic = 1647
-	MNEMONIC_VREDUCEPH             Mnemonic = 1648
-	MNEMONIC_VREDUCEPS             Mnemonic = 1649
-	MNEMONIC_VREDUCESD             Mnemonic = 1650
-	MNEMONIC_VREDUCESH             Mnemonic = 1651
-	MNEMONIC_VREDUCESS             Mnemonic = 1652
-	MNEMONIC_VRNDFXPNTPD           Mnemonic = 1653
-	MNEMONIC_VRNDFXPNTPS           Mnemonic = 1654
-	MNEMONIC_VRNDSCALEPD           Mnemonic = 1655
-	MNEMONIC_VRNDSCALEPH           Mnemonic = 1656
-	MNEMONIC_VRNDSCALEPS           Mnemonic = 1657
-	MNEMONIC_VRNDSCALESD           Mnemonic = 1658
-	MNEMONIC_VRNDSCALESH           Mnemonic = 1659
-	MNEMONIC_VRNDSCALESS           Mnemonic = 1660
-	MNEMONIC_VROUNDPD              Mnemonic = 1661
-	MNEMONIC_VROUNDPS              Mnemonic = 1662
-	MNEMONIC_VROUNDSD              Mnemonic = 1663
-	MNEMONIC_VROUNDSS              Mnemonic = 1664
-	MNEMONIC_VRSQRT_14_PD          Mnemonic = 1665
-	MNEMONIC_VRSQRT_14_PS          Mnemonic = 1666
-	MNEMONIC_VRSQRT_14_SD          Mnemonic = 1667
-	MNEMONIC_VRSQRT_14_SS          Mnemonic = 1668
-	MNEMONIC_VRSQRT_23_PS          Mnemonic = 1669
-	MNEMONIC_VRSQRT_28_PD          Mnemonic = 1670
-	MNEMONIC_VRSQRT_28_PS          Mnemonic = 1671
-	MNEMONIC_VRSQRT_28_SD          Mnemonic = 1672
-	MNEMONIC_VRSQRT_28_SS          Mnemonic = 1673
-	MNEMONIC_VRSQRTPH              Mnemonic = 1674
-	MNEMONIC_VRSQRTPS              Mnemonic = 1675
-	MNEMONIC_VRSQRTSH              Mnemonic = 1676
-	MNEMONIC_VRSQRTSS              Mnemonic = 1677
-	MNEMONIC_VSCALEFPD             Mnemonic = 1678
-	MNEMONIC_VSCALEFPH             Mnemonic = 1679
-	MNEMONIC_VSCALEFPS             Mnemonic = 1680
-	MNEMONIC_VSCALEFSD             Mnemonic = 1681
-	MNEMONIC_VSCALEFSH             Mnemonic = 1682
-	MNEMONIC_VSCALEFSS             Mnemonic = 1683
-	MNEMONIC_VSCALEPS              Mnemonic = 1684
-	MNEMONIC_VSCATTERDPD           Mnemonic = 1685
-	MNEMONIC_VSCATTERDPS           Mnemonic = 1686
-	MNEMONIC_VSCATTERPF_0_DPD      Mnemonic = 1687
-	MNEMONIC_VSCATTERPF_0_DPS      Mnemonic = 1688
-	MNEMONIC_VSCATTERPF_0_HINTDPD  Mnemonic = 1689
-	MNEMONIC_VSCATTERPF_0_HINTDPS  Mnemonic = 1690
-	MNEMONIC_VSCATTERPF_0_QPD      Mnemonic = 1691
-	MNEMONIC_VSCATTERPF_0_QPS      Mnemonic = 1692
-	MNEMONIC_VSCATTERPF_1_DPD      Mnemonic = 1693
-	MNEMONIC_VSCATTERPF_1_DPS      Mnemonic = 1694
-	MNEMONIC_VSCATTERPF_1_QPD      Mnemonic = 1695
-	MNEMONIC_VSCATTERPF_1_QPS      Mnemonic = 1696
-	MNEMONIC_VSCATTERQPD           Mnemonic = 1697
-	MNEMONIC_VSCATTERQPS           Mnemonic = 1698
-	MNEMONIC_VSHUFF_32_X_4         Mnemonic = 1699
-	MNEMONIC_VSHUFF_64_X_2         Mnemonic = 1700
-	MNEMONIC_VSHUFI_32_X_4         Mnemonic = 1701
-	MNEMONIC_VSHUFI_64_X_2         Mnemonic = 1702
-	MNEMONIC_VSHUFPD               Mnemonic = 1703
-	MNEMONIC_VSHUFPS               Mnemonic = 1704
-	MNEMONIC_VSQRTPD               Mnemonic = 1705
-	MNEMONIC_VSQRTPH               Mnemonic = 1706
-	MNEMONIC_VSQRTPS               Mnemonic = 1707
-	MNEMONIC_VSQRTSD               Mnemonic = 1708
-	MNEMONIC_VSQRTSH               Mnemonic = 1709
-	MNEMONIC_VSQRTSS               Mnemonic = 1710
-	MNEMONIC_VSTMXCSR              Mnemonic = 1711
-	MNEMONIC_VSUBPD                Mnemonic = 1712
-	MNEMONIC_VSUBPH                Mnemonic = 1713
-	MNEMONIC_VSUBPS                Mnemonic = 1714
-	MNEMONIC_VSUBRPD               Mnemonic = 1715
-	MNEMONIC_VSUBRPS               Mnemonic = 1716
-	MNEMONIC_VSUBSD                Mnemonic = 1717
-	MNEMONIC_VSUBSH                Mnemonic = 1718
-	MNEMONIC_VSUBSS                Mnemonic = 1719
-	MNEMONIC_VTESTPD               Mnemonic = 1720
-	MNEMONIC_VTESTPS               Mnemonic = 1721
-	MNEMONIC_VUCOMISD              Mnemonic = 1722
-	MNEMONIC_VUCOMISH              Mnemonic = 1723
-	MNEMONIC_VUCOMISS              Mnemonic = 1724
-	MNEMONIC_VUNPCKHPD             Mnemonic = 1725
-	MNEMONIC_VUNPCKHPS             Mnemonic = 1726
-	MNEMONIC_VUNPCKLPD             Mnemonic = 1727
-	MNEMONIC_VUNPCKLPS             Mnemonic = 1728
-	MNEMONIC_VXORPD                Mnemonic = 1729
-	MNEMONIC_VXORPS                Mnemonic = 1730
-	MNEMONIC_VZEROALL              Mnemonic = 1731
-	MNEMONIC_VZEROUPPER            Mnemonic = 1732
-	MNEMONIC_WBINVD                Mnemonic = 1733
-	MNEMONIC_WRFSBASE              Mnemonic = 1734
-	MNEMONIC_WRGSBASE              Mnemonic = 1735
-	MNEMONIC_WRMSR                 Mnemonic = 1736
-	MNEMONIC_WRMSRLIST             Mnemonic = 1737
-	MNEMONIC_WRMSRNS               Mnemonic = 1738
-	MNEMONIC_WRPKRU                Mnemonic = 1739
-	MNEMONIC_WRSSD                 Mnemonic = 1740
-	MNEMONIC_WRSSQ                 Mnemonic = 1741
-	MNEMONIC_WRUSSD                Mnemonic = 1742
-	MNEMONIC_WRUSSQ                Mnemonic = 1743
-	MNEMONIC_XABORT                Mnemonic = 1744
-	MNEMONIC_XADD                  Mnemonic = 1745
-	MNEMONIC_XBEGIN                Mnemonic = 1746
-	MNEMONIC_XCHG                  Mnemonic = 1747
-	MNEMONIC_XCRYPT_CBC            Mnemonic = 1748
-	MNEMONIC_XCRYPT_CFB            Mnemonic = 1749
-	MNEMONIC_XCRYPT_CTR            Mnemonic = 1750
-	MNEMONIC_XCRYPT_ECB            Mnemonic = 1751
-	MNEMONIC_XCRYPT_OFB            Mnemonic = 1752
-	MNEMONIC_XEND                  Mnemonic = 1753
-	MNEMONIC_XGETBV                Mnemonic = 1754
-	MNEMONIC_XLAT                  Mnemonic = 1755
-	MNEMONIC_XOR                   Mnemonic = 1756
-	MNEMONIC_XORPD                 Mnemonic = 1757
-	MNEMONIC_XORPS                 Mnemonic = 1758
-	MNEMONIC_XRESLDTRK             Mnemonic = 1759
-	MNEMONIC_XRSTOR                Mnemonic = 1760
-	MNEMONIC_XRSTOR_64             Mnemonic = 1761
-	MNEMONIC_XRSTORS               Mnemonic = 1762
-	MNEMONIC_XRSTORS_64            Mnemonic = 1763
-	MNEMONIC_XSAVE                 Mnemonic = 1764
-	MNEMONIC_XSAVE_64              Mnemonic = 1765
-	MNEMONIC_XSAVEC                Mnemonic = 1766
-	MNEMONIC_XSAVEC_64             Mnemonic = 1767
-	MNEMONIC_XSAVEOPT              Mnemonic = 1768
-	MNEMONIC_XSAVEOPT_64           Mnemonic = 1769
-	MNEMONIC_XSAVES                Mnemonic = 1770
-	MNEMONIC_XSAVES_64             Mnemonic = 1771
-	MNEMONIC_XSETBV                Mnemonic = 1772
-	MNEMONIC_XSHA_1                Mnemonic = 1773
-	MNEMONIC_XSHA_256              Mnemonic = 1774
-	MNEMONIC_XSTORE                Mnemonic = 1775
-	MNEMONIC_XSUSLDTRK             Mnemonic = 1776
-	MNEMONIC_XTEST                 Mnemonic = 1777
+	MNEMONIC_INVALID            Mnemonic = 0
+	MNEMONIC_AAA                Mnemonic = 1
+	MNEMONIC_AAD                Mnemonic = 2
+	MNEMONIC_AADD               Mnemonic = 3
+	MNEMONIC_AAM                Mnemonic = 4
+	MNEMONIC_AAND               Mnemonic = 5
+	MNEMONIC_AAS                Mnemonic = 6
+	MNEMONIC_ADC                Mnemonic = 7
+	MNEMONIC_ADCX               Mnemonic = 8
+	MNEMONIC_ADD                Mnemonic = 9
+	MNEMONIC_ADDPD              Mnemonic = 10
+	MNEMONIC_ADDPS              Mnemonic = 11
+	MNEMONIC_ADDSD              Mnemonic = 12
+	MNEMONIC_ADDSS              Mnemonic = 13
+	MNEMONIC_ADDSUBPD           Mnemonic = 14
+	MNEMONIC_ADDSUBPS           Mnemonic = 15
+	MNEMONIC_ADOX               Mnemonic = 16
+	MNEMONIC_AESDEC             Mnemonic = 17
+	MNEMONIC_AESDEC128KL        Mnemonic = 18
+	MNEMONIC_AESDEC256KL        Mnemonic = 19
+	MNEMONIC_AESDECLAST         Mnemonic = 20
+	MNEMONIC_AESDECWIDE128KL    Mnemonic = 21
+	MNEMONIC_AESDECWIDE256KL    Mnemonic = 22
+	MNEMONIC_AESENC             Mnemonic = 23
+	MNEMONIC_AESENC128KL        Mnemonic = 24
+	MNEMONIC_AESENC256KL        Mnemonic = 25
+	MNEMONIC_AESENCLAST         Mnemonic = 26
+	MNEMONIC_AESENCWIDE128KL    Mnemonic = 27
+	MNEMONIC_AESENCWIDE256KL    Mnemonic = 28
+	MNEMONIC_AESIMC             Mnemonic = 29
+	MNEMONIC_AESKEYGENASSIST    Mnemonic = 30
+	MNEMONIC_AND                Mnemonic = 31
+	MNEMONIC_ANDN               Mnemonic = 32
+	MNEMONIC_ANDNPD             Mnemonic = 33
+	MNEMONIC_ANDNPS             Mnemonic = 34
+	MNEMONIC_ANDPD              Mnemonic = 35
+	MNEMONIC_ANDPS              Mnemonic = 36
+	MNEMONIC_AOR                Mnemonic = 37
+	MNEMONIC_ARPL               Mnemonic = 38
+	MNEMONIC_AXOR               Mnemonic = 39
+	MNEMONIC_BEXTR              Mnemonic = 40
+	MNEMONIC_BLCFILL            Mnemonic = 41
+	MNEMONIC_BLCI               Mnemonic = 42
+	MNEMONIC_BLCIC              Mnemonic = 43
+	MNEMONIC_BLCMSK             Mnemonic = 44
+	MNEMONIC_BLCS               Mnemonic = 45
+	MNEMONIC_BLENDPD            Mnemonic = 46
+	MNEMONIC_BLENDPS            Mnemonic = 47
+	MNEMONIC_BLENDVPD           Mnemonic = 48
+	MNEMONIC_BLENDVPS           Mnemonic = 49
+	MNEMONIC_BLSFILL            Mnemonic = 50
+	MNEMONIC_BLSI               Mnemonic = 51
+	MNEMONIC_BLSIC              Mnemonic = 52
+	MNEMONIC_BLSMSK             Mnemonic = 53
+	MNEMONIC_BLSR               Mnemonic = 54
+	MNEMONIC_BNDCL              Mnemonic = 55
+	MNEMONIC_BNDCN              Mnemonic = 56
+	MNEMONIC_BNDCU              Mnemonic = 57
+	MNEMONIC_BNDLDX             Mnemonic = 58
+	MNEMONIC_BNDMK              Mnemonic = 59
+	MNEMONIC_BNDMOV             Mnemonic = 60
+	MNEMONIC_BNDSTX             Mnemonic = 61
+	MNEMONIC_BOUND              Mnemonic = 62
+	MNEMONIC_BSF                Mnemonic = 63
+	MNEMONIC_BSR                Mnemonic = 64
+	MNEMONIC_BSWAP              Mnemonic = 65
+	MNEMONIC_BT                 Mnemonic = 66
+	MNEMONIC_BTC                Mnemonic = 67
+	MNEMONIC_BTR                Mnemonic = 68
+	MNEMONIC_BTS                Mnemonic = 69
+	MNEMONIC_BZHI               Mnemonic = 70
+	MNEMONIC_CALL               Mnemonic = 71
+	MNEMONIC_CBW                Mnemonic = 72
+	MNEMONIC_CDQ                Mnemonic = 73
+	MNEMONIC_CDQE               Mnemonic = 74
+	MNEMONIC_CLAC               Mnemonic = 75
+	MNEMONIC_CLC                Mnemonic = 76
+	MNEMONIC_CLD                Mnemonic = 77
+	MNEMONIC_CLDEMOTE           Mnemonic = 78
+	MNEMONIC_CLEVICT0           Mnemonic = 79
+	MNEMONIC_CLEVICT1           Mnemonic = 80
+	MNEMONIC_CLFLUSH            Mnemonic = 81
+	MNEMONIC_CLFLUSHOPT         Mnemonic = 82
+	MNEMONIC_CLGI               Mnemonic = 83
+	MNEMONIC_CLI                Mnemonic = 84
+	MNEMONIC_CLRSSBSY           Mnemonic = 85
+	MNEMONIC_CLTS               Mnemonic = 86
+	MNEMONIC_CLUI               Mnemonic = 87
+	MNEMONIC_CLWB               Mnemonic = 88
+	MNEMONIC_CLZERO             Mnemonic = 89
+	MNEMONIC_CMC                Mnemonic = 90
+	MNEMONIC_CMOVB              Mnemonic = 91
+	MNEMONIC_CMOVBE             Mnemonic = 92
+	MNEMONIC_CMOVL              Mnemonic = 93
+	MNEMONIC_CMOVLE             Mnemonic = 94
+	MNEMONIC_CMOVNB             Mnemonic = 95
+	MNEMONIC_CMOVNBE            Mnemonic = 96
+	MNEMONIC_CMOVNL             Mnemonic = 97
+	MNEMONIC_CMOVNLE            Mnemonic = 98
+	MNEMONIC_CMOVNO             Mnemonic = 99
+	MNEMONIC_CMOVNP             Mnemonic = 100
+	MNEMONIC_CMOVNS             Mnemonic = 101
+	MNEMONIC_CMOVNZ             Mnemonic = 102
+	MNEMONIC_CMOVO              Mnemonic = 103
+	MNEMONIC_CMOVP              Mnemonic = 104
+	MNEMONIC_CMOVS              Mnemonic = 105
+	MNEMONIC_CMOVZ              Mnemonic = 106
+	MNEMONIC_CMP                Mnemonic = 107
+	MNEMONIC_CMPPD              Mnemonic = 108
+	MNEMONIC_CMPPS              Mnemonic = 109
+	MNEMONIC_CMPSB              Mnemonic = 110
+	MNEMONIC_CMPSD              Mnemonic = 111
+	MNEMONIC_CMPSQ              Mnemonic = 112
+	MNEMONIC_CMPSS              Mnemonic = 113
+	MNEMONIC_CMPSW              Mnemonic = 114
+	MNEMONIC_CMPXCHG            Mnemonic = 115
+	MNEMONIC_CMPXCHG16B         Mnemonic = 116
+	MNEMONIC_CMPXCHG8B          Mnemonic = 117
+	MNEMONIC_COMISD             Mnemonic = 118
+	MNEMONIC_COMISS             Mnemonic = 119
+	MNEMONIC_CPUID              Mnemonic = 120
+	MNEMONIC_CQO                Mnemonic = 121
+	MNEMONIC_CRC32              Mnemonic = 122
+	MNEMONIC_CVTDQ2PD           Mnemonic = 123
+	MNEMONIC_CVTDQ2PS           Mnemonic = 124
+	MNEMONIC_CVTPD2DQ           Mnemonic = 125
+	MNEMONIC_CVTPD2PI           Mnemonic = 126
+	MNEMONIC_CVTPD2PS           Mnemonic = 127
+	MNEMONIC_CVTPI2PD           Mnemonic = 128
+	MNEMONIC_CVTPI2PS           Mnemonic = 129
+	MNEMONIC_CVTPS2DQ           Mnemonic = 130
+	MNEMONIC_CVTPS2PD           Mnemonic = 131
+	MNEMONIC_CVTPS2PI           Mnemonic = 132
+	MNEMONIC_CVTSD2SI           Mnemonic = 133
+	MNEMONIC_CVTSD2SS           Mnemonic = 134
+	MNEMONIC_CVTSI2SD           Mnemonic = 135
+	MNEMONIC_CVTSI2SS           Mnemonic = 136
+	MNEMONIC_CVTSS2SD           Mnemonic = 137
+	MNEMONIC_CVTSS2SI           Mnemonic = 138
+	MNEMONIC_CVTTPD2DQ          Mnemonic = 139
+	MNEMONIC_CVTTPD2PI          Mnemonic = 140
+	MNEMONIC_CVTTPS2DQ          Mnemonic = 141
+	MNEMONIC_CVTTPS2PI          Mnemonic = 142
+	MNEMONIC_CVTTSD2SI          Mnemonic = 143
+	MNEMONIC_CVTTSS2SI          Mnemonic = 144
+	MNEMONIC_CWD                Mnemonic = 145
+	MNEMONIC_CWDE               Mnemonic = 146
+	MNEMONIC_DAA                Mnemonic = 147
+	MNEMONIC_DAS                Mnemonic = 148
+	MNEMONIC_DEC                Mnemonic = 149
+	MNEMONIC_DELAY              Mnemonic = 150
+	MNEMONIC_DIV                Mnemonic = 151
+	MNEMONIC_DIVPD              Mnemonic = 152
+	MNEMONIC_DIVPS              Mnemonic = 153
+	MNEMONIC_DIVSD              Mnemonic = 154
+	MNEMONIC_DIVSS              Mnemonic = 155
+	MNEMONIC_DPPD               Mnemonic = 156
+	MNEMONIC_DPPS               Mnemonic = 157
+	MNEMONIC_EMMS               Mnemonic = 158
+	MNEMONIC_ENCLS              Mnemonic = 159
+	MNEMONIC_ENCLU              Mnemonic = 160
+	MNEMONIC_ENCLV              Mnemonic = 161
+	MNEMONIC_ENCODEKEY128       Mnemonic = 162
+	MNEMONIC_ENCODEKEY256       Mnemonic = 163
+	MNEMONIC_ENDBR32            Mnemonic = 164
+	MNEMONIC_ENDBR64            Mnemonic = 165
+	MNEMONIC_ENQCMD             Mnemonic = 166
+	MNEMONIC_ENQCMDS            Mnemonic = 167
+	MNEMONIC_ENTER              Mnemonic = 168
+	MNEMONIC_EXTRACTPS          Mnemonic = 169
+	MNEMONIC_EXTRQ              Mnemonic = 170
+	MNEMONIC_F2XM1              Mnemonic = 171
+	MNEMONIC_FABS               Mnemonic = 172
+	MNEMONIC_FADD               Mnemonic = 173
+	MNEMONIC_FADDP              Mnemonic = 174
+	MNEMONIC_FBLD               Mnemonic = 175
+	MNEMONIC_FBSTP              Mnemonic = 176
+	MNEMONIC_FCHS               Mnemonic = 177
+	MNEMONIC_FCMOVB             Mnemonic = 178
+	MNEMONIC_FCMOVBE            Mnemonic = 179
+	MNEMONIC_FCMOVE             Mnemonic = 180
+	MNEMONIC_FCMOVNB            Mnemonic = 181
+	MNEMONIC_FCMOVNBE           Mnemonic = 182
+	MNEMONIC_FCMOVNE            Mnemonic = 183
+	MNEMONIC_FCMOVNU            Mnemonic = 184
+	MNEMONIC_FCMOVU             Mnemonic = 185
+	MNEMONIC_FCOM               Mnemonic = 186
+	MNEMONIC_FCOMI              Mnemonic = 187
+	MNEMONIC_FCOMIP             Mnemonic = 188
+	MNEMONIC_FCOMP              Mnemonic = 189
+	MNEMONIC_FCOMPP             Mnemonic = 190
+	MNEMONIC_FCOS               Mnemonic = 191
+	MNEMONIC_FDECSTP            Mnemonic = 192
+	MNEMONIC_FDISI8087_NOP      Mnemonic = 193
+	MNEMONIC_FDIV               Mnemonic = 194
+	MNEMONIC_FDIVP              Mnemonic = 195
+	MNEMONIC_FDIVR              Mnemonic = 196
+	MNEMONIC_FDIVRP             Mnemonic = 197
+	MNEMONIC_FEMMS              Mnemonic = 198
+	MNEMONIC_FENI8087_NOP       Mnemonic = 199
+	MNEMONIC_FFREE              Mnemonic = 200
+	MNEMONIC_FFREEP             Mnemonic = 201
+	MNEMONIC_FIADD              Mnemonic = 202
+	MNEMONIC_FICOM              Mnemonic = 203
+	MNEMONIC_FICOMP             Mnemonic = 204
+	MNEMONIC_FIDIV              Mnemonic = 205
+	MNEMONIC_FIDIVR             Mnemonic = 206
+	MNEMONIC_FILD               Mnemonic = 207
+	MNEMONIC_FIMUL              Mnemonic = 208
+	MNEMONIC_FINCSTP            Mnemonic = 209
+	MNEMONIC_FIST               Mnemonic = 210
+	MNEMONIC_FISTP              Mnemonic = 211
+	MNEMONIC_FISTTP             Mnemonic = 212
+	MNEMONIC_FISUB              Mnemonic = 213
+	MNEMONIC_FISUBR             Mnemonic = 214
+	MNEMONIC_FLD                Mnemonic = 215
+	MNEMONIC_FLD1               Mnemonic = 216
+	MNEMONIC_FLDCW              Mnemonic = 217
+	MNEMONIC_FLDENV             Mnemonic = 218
+	MNEMONIC_FLDL2E             Mnemonic = 219
+	MNEMONIC_FLDL2T             Mnemonic = 220
+	MNEMONIC_FLDLG2             Mnemonic = 221
+	MNEMONIC_FLDLN2             Mnemonic = 222
+	MNEMONIC_FLDPI              Mnemonic = 223
+	MNEMONIC_FLDZ               Mnemonic = 224
+	MNEMONIC_FMUL               Mnemonic = 225
+	MNEMONIC_FMULP              Mnemonic = 226
+	MNEMONIC_FNCLEX             Mnemonic = 227
+	MNEMONIC_FNINIT             Mnemonic = 228
+	MNEMONIC_FNOP               Mnemonic = 229
+	MNEMONIC_FNSAVE             Mnemonic = 230
+	MNEMONIC_FNSTCW             Mnemonic = 231
+	MNEMONIC_FNSTENV            Mnemonic = 232
+	MNEMONIC_FNSTSW             Mnemonic = 233
+	MNEMONIC_FPATAN             Mnemonic = 234
+	MNEMONIC_FPREM              Mnemonic = 235
+	MNEMONIC_FPREM1             Mnemonic = 236
+	MNEMONIC_FPTAN              Mnemonic = 237
+	MNEMONIC_FRNDINT            Mnemonic = 238
+	MNEMONIC_FRSTOR             Mnemonic = 239
+	MNEMONIC_FSCALE             Mnemonic = 240
+	MNEMONIC_FSETPM287_NOP      Mnemonic = 241
+	MNEMONIC_FSIN               Mnemonic = 242
+	MNEMONIC_FSINCOS            Mnemonic = 243
+	MNEMONIC_FSQRT              Mnemonic = 244
+	MNEMONIC_FST                Mnemonic = 245
+	MNEMONIC_FSTP               Mnemonic = 246
+	MNEMONIC_FSTPNCE            Mnemonic = 247
+	MNEMONIC_FSUB               Mnemonic = 248
+	MNEMONIC_FSUBP              Mnemonic = 249
+	MNEMONIC_FSUBR              Mnemonic = 250
+	MNEMONIC_FSUBRP             Mnemonic = 251
+	MNEMONIC_FTST               Mnemonic = 252
+	MNEMONIC_FUCOM              Mnemonic = 253
+	MNEMONIC_FUCOMI             Mnemonic = 254
+	MNEMONIC_FUCOMIP            Mnemonic = 255
+	MNEMONIC_FUCOMP             Mnemonic = 256
+	MNEMONIC_FUCOMPP            Mnemonic = 257
+	MNEMONIC_FWAIT              Mnemonic = 258
+	MNEMONIC_FXAM               Mnemonic = 259
+	MNEMONIC_FXCH               Mnemonic = 260
+	MNEMONIC_FXRSTOR            Mnemonic = 261
+	MNEMONIC_FXRSTOR64          Mnemonic = 262
+	MNEMONIC_FXSAVE             Mnemonic = 263
+	MNEMONIC_FXSAVE64           Mnemonic = 264
+	MNEMONIC_FXTRACT            Mnemonic = 265
+	MNEMONIC_FYL2X              Mnemonic = 266
+	MNEMONIC_FYL2XP1            Mnemonic = 267
+	MNEMONIC_GETSEC             Mnemonic = 268
+	MNEMONIC_GF2P8AFFINEINVQB   Mnemonic = 269
+	MNEMONIC_GF2P8AFFINEQB      Mnemonic = 270
+	MNEMONIC_GF2P8MULB          Mnemonic = 271
+	MNEMONIC_HADDPD             Mnemonic = 272
+	MNEMONIC_HADDPS             Mnemonic = 273
+	MNEMONIC_HLT                Mnemonic = 274
+	MNEMONIC_HRESET             Mnemonic = 275
+	MNEMONIC_HSUBPD             Mnemonic = 276
+	MNEMONIC_HSUBPS             Mnemonic = 277
+	MNEMONIC_IDIV               Mnemonic = 278
+	MNEMONIC_IMUL               Mnemonic = 279
+	MNEMONIC_IN                 Mnemonic = 280
+	MNEMONIC_INC                Mnemonic = 281
+	MNEMONIC_INCSSPD            Mnemonic = 282
+	MNEMONIC_INCSSPQ            Mnemonic = 283
+	MNEMONIC_INSB               Mnemonic = 284
+	MNEMONIC_INSD               Mnemonic = 285
+	MNEMONIC_INSERTPS           Mnemonic = 286
+	MNEMONIC_INSERTQ            Mnemonic = 287
+	MNEMONIC_INSW               Mnemonic = 288
+	MNEMONIC_INT                Mnemonic = 289
+	MNEMONIC_INT1               Mnemonic = 290
+	MNEMONIC_INT3               Mnemonic = 291
+	MNEMONIC_INTO               Mnemonic = 292
+	MNEMONIC_INVD               Mnemonic = 293
+	MNEMONIC_INVEPT             Mnemonic = 294
+	MNEMONIC_INVLPG             Mnemonic = 295
+	MNEMONIC_INVLPGA            Mnemonic = 296
+	MNEMONIC_INVLPGB            Mnemonic = 297
+	MNEMONIC_INVPCID            Mnemonic = 298
+	MNEMONIC_INVVPID            Mnemonic = 299
+	MNEMONIC_IRET               Mnemonic = 300
+	MNEMONIC_IRETD              Mnemonic = 301
+	MNEMONIC_IRETQ              Mnemonic = 302
+	MNEMONIC_JB                 Mnemonic = 303
+	MNEMONIC_JBE                Mnemonic = 304
+	MNEMONIC_JCXZ               Mnemonic = 305
+	MNEMONIC_JECXZ              Mnemonic = 306
+	MNEMONIC_JKNZD              Mnemonic = 307
+	MNEMONIC_JKZD               Mnemonic = 308
+	MNEMONIC_JL                 Mnemonic = 309
+	MNEMONIC_JLE                Mnemonic = 310
+	MNEMONIC_JMP                Mnemonic = 311
+	MNEMONIC_JNB                Mnemonic = 312
+	MNEMONIC_JNBE               Mnemonic = 313
+	MNEMONIC_JNL                Mnemonic = 314
+	MNEMONIC_JNLE               Mnemonic = 315
+	MNEMONIC_JNO                Mnemonic = 316
+	MNEMONIC_JNP                Mnemonic = 317
+	MNEMONIC_JNS                Mnemonic = 318
+	MNEMONIC_JNZ                Mnemonic = 319
+	MNEMONIC_JO                 Mnemonic = 320
+	MNEMONIC_JP                 Mnemonic = 321
+	MNEMONIC_JRCXZ              Mnemonic = 322
+	MNEMONIC_JS                 Mnemonic = 323
+	MNEMONIC_JZ                 Mnemonic = 324
+	MNEMONIC_KADDB              Mnemonic = 325
+	MNEMONIC_KADDD              Mnemonic = 326
+	MNEMONIC_KADDQ              Mnemonic = 327
+	MNEMONIC_KADDW              Mnemonic = 328
+	MNEMONIC_KAND               Mnemonic = 329
+	MNEMONIC_KANDB              Mnemonic = 330
+	MNEMONIC_KANDD              Mnemonic = 331
+	MNEMONIC_KANDN              Mnemonic = 332
+	MNEMONIC_KANDNB             Mnemonic = 333
+	MNEMONIC_KANDND             Mnemonic = 334
+	MNEMONIC_KANDNQ             Mnemonic = 335
+	MNEMONIC_KANDNR             Mnemonic = 336
+	MNEMONIC_KANDNW             Mnemonic = 337
+	MNEMONIC_KANDQ              Mnemonic = 338
+	MNEMONIC_KANDW              Mnemonic = 339
+	MNEMONIC_KCONCATH           Mnemonic = 340
+	MNEMONIC_KCONCATL           Mnemonic = 341
+	MNEMONIC_KEXTRACT           Mnemonic = 342
+	MNEMONIC_KMERGE2L1H         Mnemonic = 343
+	MNEMONIC_KMERGE2L1L         Mnemonic = 344
+	MNEMONIC_KMOV               Mnemonic = 345
+	MNEMONIC_KMOVB              Mnemonic = 346
+	MNEMONIC_KMOVD              Mnemonic = 347
+	MNEMONIC_KMOVQ              Mnemonic = 348
+	MNEMONIC_KMOVW              Mnemonic = 349
+	MNEMONIC_KNOT               Mnemonic = 350
+	MNEMONIC_KNOTB              Mnemonic = 351
+	MNEMONIC_KNOTD              Mnemonic = 352
+	MNEMONIC_KNOTQ              Mnemonic = 353
+	MNEMONIC_KNOTW              Mnemonic = 354
+	MNEMONIC_KOR                Mnemonic = 355
+	MNEMONIC_KORB               Mnemonic = 356
+	MNEMONIC_KORD               Mnemonic = 357
+	MNEMONIC_KORQ               Mnemonic = 358
+	MNEMONIC_KORTEST            Mnemonic = 359
+	MNEMONIC_KORTESTB           Mnemonic = 360
+	MNEMONIC_KORTESTD           Mnemonic = 361
+	MNEMONIC_KORTESTQ           Mnemonic = 362
+	MNEMONIC_KORTESTW           Mnemonic = 363
+	MNEMONIC_KORW               Mnemonic = 364
+	MNEMONIC_KSHIFTLB           Mnemonic = 365
+	MNEMONIC_KSHIFTLD           Mnemonic = 366
+	MNEMONIC_KSHIFTLQ           Mnemonic = 367
+	MNEMONIC_KSHIFTLW           Mnemonic = 368
+	MNEMONIC_KSHIFTRB           Mnemonic = 369
+	MNEMONIC_KSHIFTRD           Mnemonic = 370
+	MNEMONIC_KSHIFTRQ           Mnemonic = 371
+	MNEMONIC_KSHIFTRW           Mnemonic = 372
+	MNEMONIC_KTESTB             Mnemonic = 373
+	MNEMONIC_KTESTD             Mnemonic = 374
+	MNEMONIC_KTESTQ             Mnemonic = 375
+	MNEMONIC_KTESTW             Mnemonic = 376
+	MNEMONIC_KUNPCKBW           Mnemonic = 377
+	MNEMONIC_KUNPCKDQ           Mnemonic = 378
+	MNEMONIC_KUNPCKWD           Mnemonic = 379
+	MNEMONIC_KXNOR              Mnemonic = 380
+	MNEMONIC_KXNORB             Mnemonic = 381
+	MNEMONIC_KXNORD             Mnemonic = 382
+	MNEMONIC_KXNORQ             Mnemonic = 383
+	MNEMONIC_KXNORW             Mnemonic = 384
+	MNEMONIC_KXOR               Mnemonic = 385
+	MNEMONIC_KXORB              Mnemonic = 386
+	MNEMONIC_KXORD              Mnemonic = 387
+	MNEMONIC_KXORQ              Mnemonic = 388
+	MNEMONIC_KXORW              Mnemonic = 389
+	MNEMONIC_LAHF               Mnemonic = 390
+	MNEMONIC_LAR                Mnemonic = 391
+	MNEMONIC_LDDQU              Mnemonic = 392
+	MNEMONIC_LDMXCSR            Mnemonic = 393
+	MNEMONIC_LDS                Mnemonic = 394
+	MNEMONIC_LDTILECFG          Mnemonic = 395
+	MNEMONIC_LEA                Mnemonic = 396
+	MNEMONIC_LEAVE              Mnemonic = 397
+	MNEMONIC_LES                Mnemonic = 398
+	MNEMONIC_LFENCE             Mnemonic = 399
+	MNEMONIC_LFS                Mnemonic = 400
+	MNEMONIC_LGDT               Mnemonic = 401
+	MNEMONIC_LGS                Mnemonic = 402
+	MNEMONIC_LIDT               Mnemonic = 403
+	MNEMONIC_LLDT               Mnemonic = 404
+	MNEMONIC_LLWPCB             Mnemonic = 405
+	MNEMONIC_LMSW               Mnemonic = 406
+	MNEMONIC_LOADIWKEY          Mnemonic = 407
+	MNEMONIC_LODSB              Mnemonic = 408
+	MNEMONIC_LODSD              Mnemonic = 409
+	MNEMONIC_LODSQ              Mnemonic = 410
+	MNEMONIC_LODSW              Mnemonic = 411
+	MNEMONIC_LOOP               Mnemonic = 412
+	MNEMONIC_LOOPE              Mnemonic = 413
+	MNEMONIC_LOOPNE             Mnemonic = 414
+	MNEMONIC_LSL                Mnemonic = 415
+	MNEMONIC_LSS                Mnemonic = 416
+	MNEMONIC_LTR                Mnemonic = 417
+	MNEMONIC_LWPINS             Mnemonic = 418
+	MNEMONIC_LWPVAL             Mnemonic = 419
+	MNEMONIC_LZCNT              Mnemonic = 420
+	MNEMONIC_MASKMOVDQU         Mnemonic = 421
+	MNEMONIC_MASKMOVQ           Mnemonic = 422
+	MNEMONIC_MAXPD              Mnemonic = 423
+	MNEMONIC_MAXPS              Mnemonic = 424
+	MNEMONIC_MAXSD              Mnemonic = 425
+	MNEMONIC_MAXSS              Mnemonic = 426
+	MNEMONIC_MCOMMIT            Mnemonic = 427
+	MNEMONIC_MFENCE             Mnemonic = 428
+	MNEMONIC_MINPD              Mnemonic = 429
+	MNEMONIC_MINPS              Mnemonic = 430
+	MNEMONIC_MINSD              Mnemonic = 431
+	MNEMONIC_MINSS              Mnemonic = 432
+	MNEMONIC_MONITOR            Mnemonic = 433
+	MNEMONIC_MONITORX           Mnemonic = 434
+	MNEMONIC_MONTMUL            Mnemonic = 435
+	MNEMONIC_MOV                Mnemonic = 436
+	MNEMONIC_MOVAPD             Mnemonic = 437
+	MNEMONIC_MOVAPS             Mnemonic = 438
+	MNEMONIC_MOVBE              Mnemonic = 439
+	MNEMONIC_MOVD               Mnemonic = 440
+	MNEMONIC_MOVDDUP            Mnemonic = 441
+	MNEMONIC_MOVDIR64B          Mnemonic = 442
+	MNEMONIC_MOVDIRI            Mnemonic = 443
+	MNEMONIC_MOVDQ2Q            Mnemonic = 444
+	MNEMONIC_MOVDQA             Mnemonic = 445
+	MNEMONIC_MOVDQU             Mnemonic = 446
+	MNEMONIC_MOVHLPS            Mnemonic = 447
+	MNEMONIC_MOVHPD             Mnemonic = 448
+	MNEMONIC_MOVHPS             Mnemonic = 449
+	MNEMONIC_MOVLHPS            Mnemonic = 450
+	MNEMONIC_MOVLPD             Mnemonic = 451
+	MNEMONIC_MOVLPS             Mnemonic = 452
+	MNEMONIC_MOVMSKPD           Mnemonic = 453
+	MNEMONIC_MOVMSKPS           Mnemonic = 454
+	MNEMONIC_MOVNTDQ            Mnemonic = 455
+	MNEMONIC_MOVNTDQA           Mnemonic = 456
+	MNEMONIC_MOVNTI             Mnemonic = 457
+	MNEMONIC_MOVNTPD            Mnemonic = 458
+	MNEMONIC_MOVNTPS            Mnemonic = 459
+	MNEMONIC_MOVNTQ             Mnemonic = 460
+	MNEMONIC_MOVNTSD            Mnemonic = 461
+	MNEMONIC_MOVNTSS            Mnemonic = 462
+	MNEMONIC_MOVQ               Mnemonic = 463
+	MNEMONIC_MOVQ2DQ            Mnemonic = 464
+	MNEMONIC_MOVSB              Mnemonic = 465
+	MNEMONIC_MOVSD              Mnemonic = 466
+	MNEMONIC_MOVSHDUP           Mnemonic = 467
+	MNEMONIC_MOVSLDUP           Mnemonic = 468
+	MNEMONIC_MOVSQ              Mnemonic = 469
+	MNEMONIC_MOVSS              Mnemonic = 470
+	MNEMONIC_MOVSW              Mnemonic = 471
+	MNEMONIC_MOVSX              Mnemonic = 472
+	MNEMONIC_MOVSXD             Mnemonic = 473
+	MNEMONIC_MOVUPD             Mnemonic = 474
+	MNEMONIC_MOVUPS             Mnemonic = 475
+	MNEMONIC_MOVZX              Mnemonic = 476
+	MNEMONIC_MPSADBW            Mnemonic = 477
+	MNEMONIC_MUL                Mnemonic = 478
+	MNEMONIC_MULPD              Mnemonic = 479
+	MNEMONIC_MULPS              Mnemonic = 480
+	MNEMONIC_MULSD              Mnemonic = 481
+	MNEMONIC_MULSS              Mnemonic = 482
+	MNEMONIC_MULX               Mnemonic = 483
+	MNEMONIC_MWAIT              Mnemonic = 484
+	MNEMONIC_MWAITX             Mnemonic = 485
+	MNEMONIC_NEG                Mnemonic = 486
+	MNEMONIC_NOP                Mnemonic = 487
+	MNEMONIC_NOT                Mnemonic = 488
+	MNEMONIC_OR                 Mnemonic = 489
+	MNEMONIC_ORPD               Mnemonic = 490
+	MNEMONIC_ORPS               Mnemonic = 491
+	MNEMONIC_OUT                Mnemonic = 492
+	MNEMONIC_OUTSB              Mnemonic = 493
+	MNEMONIC_OUTSD              Mnemonic = 494
+	MNEMONIC_OUTSW              Mnemonic = 495
+	MNEMONIC_PABSB              Mnemonic = 496
+	MNEMONIC_PABSD              Mnemonic = 497
+	MNEMONIC_PABSW              Mnemonic = 498
+	MNEMONIC_PACKSSDW           Mnemonic = 499
+	MNEMONIC_PACKSSWB           Mnemonic = 500
+	MNEMONIC_PACKUSDW           Mnemonic = 501
+	MNEMONIC_PACKUSWB           Mnemonic = 502
+	MNEMONIC_PADDB              Mnemonic = 503
+	MNEMONIC_PADDD              Mnemonic = 504
+	MNEMONIC_PADDQ              Mnemonic = 505
+	MNEMONIC_PADDSB             Mnemonic = 506
+	MNEMONIC_PADDSW             Mnemonic = 507
+	MNEMONIC_PADDUSB            Mnemonic = 508
+	MNEMONIC_PADDUSW            Mnemonic = 509
+	MNEMONIC_PADDW              Mnemonic = 510
+	MNEMONIC_PALIGNR            Mnemonic = 511
+	MNEMONIC_PAND               Mnemonic = 512
+	MNEMONIC_PANDN              Mnemonic = 513
+	MNEMONIC_PAUSE              Mnemonic = 514
+	MNEMONIC_PAVGB              Mnemonic = 515
+	MNEMONIC_PAVGUSB            Mnemonic = 516
+	MNEMONIC_PAVGW              Mnemonic = 517
+	MNEMONIC_PBLENDVB           Mnemonic = 518
+	MNEMONIC_PBLENDW            Mnemonic = 519
+	MNEMONIC_PCLMULQDQ          Mnemonic = 520
+	MNEMONIC_PCMPEQB            Mnemonic = 521
+	MNEMONIC_PCMPEQD            Mnemonic = 522
+	MNEMONIC_PCMPEQQ            Mnemonic = 523
+	MNEMONIC_PCMPEQW            Mnemonic = 524
+	MNEMONIC_PCMPESTRI          Mnemonic = 525
+	MNEMONIC_PCMPESTRM          Mnemonic = 526
+	MNEMONIC_PCMPGTB            Mnemonic = 527
+	MNEMONIC_PCMPGTD            Mnemonic = 528
+	MNEMONIC_PCMPGTQ            Mnemonic = 529
+	MNEMONIC_PCMPGTW            Mnemonic = 530
+	MNEMONIC_PCMPISTRI          Mnemonic = 531
+	MNEMONIC_PCMPISTRM          Mnemonic = 532
+	MNEMONIC_PCOMMIT            Mnemonic = 533
+	MNEMONIC_PCONFIG            Mnemonic = 534
+	MNEMONIC_PDEP               Mnemonic = 535
+	MNEMONIC_PEXT               Mnemonic = 536
+	MNEMONIC_PEXTRB             Mnemonic = 537
+	MNEMONIC_PEXTRD             Mnemonic = 538
+	MNEMONIC_PEXTRQ             Mnemonic = 539
+	MNEMONIC_PEXTRW             Mnemonic = 540
+	MNEMONIC_PF2ID              Mnemonic = 541
+	MNEMONIC_PF2IW              Mnemonic = 542
+	MNEMONIC_PFACC              Mnemonic = 543
+	MNEMONIC_PFADD              Mnemonic = 544
+	MNEMONIC_PFCMPEQ            Mnemonic = 545
+	MNEMONIC_PFCMPGE            Mnemonic = 546
+	MNEMONIC_PFCMPGT            Mnemonic = 547
+	MNEMONIC_PFCPIT1            Mnemonic = 548
+	MNEMONIC_PFMAX              Mnemonic = 549
+	MNEMONIC_PFMIN              Mnemonic = 550
+	MNEMONIC_PFMUL              Mnemonic = 551
+	MNEMONIC_PFNACC             Mnemonic = 552
+	MNEMONIC_PFPNACC            Mnemonic = 553
+	MNEMONIC_PFRCP              Mnemonic = 554
+	MNEMONIC_PFRCPIT2           Mnemonic = 555
+	MNEMONIC_PFRSQIT1           Mnemonic = 556
+	MNEMONIC_PFSQRT             Mnemonic = 557
+	MNEMONIC_PFSUB              Mnemonic = 558
+	MNEMONIC_PFSUBR             Mnemonic = 559
+	MNEMONIC_PHADDD             Mnemonic = 560
+	MNEMONIC_PHADDSW            Mnemonic = 561
+	MNEMONIC_PHADDW             Mnemonic = 562
+	MNEMONIC_PHMINPOSUW         Mnemonic = 563
+	MNEMONIC_PHSUBD             Mnemonic = 564
+	MNEMONIC_PHSUBSW            Mnemonic = 565
+	MNEMONIC_PHSUBW             Mnemonic = 566
+	MNEMONIC_PI2FD              Mnemonic = 567
+	MNEMONIC_PI2FW              Mnemonic = 568
+	MNEMONIC_PINSRB             Mnemonic = 569
+	MNEMONIC_PINSRD             Mnemonic = 570
+	MNEMONIC_PINSRQ             Mnemonic = 571
+	MNEMONIC_PINSRW             Mnemonic = 572
+	MNEMONIC_PMADDUBSW          Mnemonic = 573
+	MNEMONIC_PMADDWD            Mnemonic = 574
+	MNEMONIC_PMAXSB             Mnemonic = 575
+	MNEMONIC_PMAXSD             Mnemonic = 576
+	MNEMONIC_PMAXSW             Mnemonic = 577
+	MNEMONIC_PMAXUB             Mnemonic = 578
+	MNEMONIC_PMAXUD             Mnemonic = 579
+	MNEMONIC_PMAXUW             Mnemonic = 580
+	MNEMONIC_PMINSB             Mnemonic = 581
+	MNEMONIC_PMINSD             Mnemonic = 582
+	MNEMONIC_PMINSW             Mnemonic = 583
+	MNEMONIC_PMINUB             Mnemonic = 584
+	MNEMONIC_PMINUD             Mnemonic = 585
+	MNEMONIC_PMINUW             Mnemonic = 586
+	MNEMONIC_PMOVMSKB           Mnemonic = 587
+	MNEMONIC_PMOVSXBD           Mnemonic = 588
+	MNEMONIC_PMOVSXBQ           Mnemonic = 589
+	MNEMONIC_PMOVSXBW           Mnemonic = 590
+	MNEMONIC_PMOVSXDQ           Mnemonic = 591
+	MNEMONIC_PMOVSXWD           Mnemonic = 592
+	MNEMONIC_PMOVSXWQ           Mnemonic = 593
+	MNEMONIC_PMOVZXBD           Mnemonic = 594
+	MNEMONIC_PMOVZXBQ           Mnemonic = 595
+	MNEMONIC_PMOVZXBW           Mnemonic = 596
+	MNEMONIC_PMOVZXDQ           Mnemonic = 597
+	MNEMONIC_PMOVZXWD           Mnemonic = 598
+	MNEMONIC_PMOVZXWQ           Mnemonic = 599
+	MNEMONIC_PMULDQ             Mnemonic = 600
+	MNEMONIC_PMULHRSW           Mnemonic = 601
+	MNEMONIC_PMULHRW            Mnemonic = 602
+	MNEMONIC_PMULHUW            Mnemonic = 603
+	MNEMONIC_PMULHW             Mnemonic = 604
+	MNEMONIC_PMULLD             Mnemonic = 605
+	MNEMONIC_PMULLW             Mnemonic = 606
+	MNEMONIC_PMULUDQ            Mnemonic = 607
+	MNEMONIC_POP                Mnemonic = 608
+	MNEMONIC_POPA               Mnemonic = 609
+	MNEMONIC_POPAD              Mnemonic = 610
+	MNEMONIC_POPCNT             Mnemonic = 611
+	MNEMONIC_POPF               Mnemonic = 612
+	MNEMONIC_POPFD              Mnemonic = 613
+	MNEMONIC_POPFQ              Mnemonic = 614
+	MNEMONIC_POR                Mnemonic = 615
+	MNEMONIC_PREFETCH           Mnemonic = 616
+	MNEMONIC_PREFETCHIT0        Mnemonic = 617
+	MNEMONIC_PREFETCHIT1        Mnemonic = 618
+	MNEMONIC_PREFETCHNTA        Mnemonic = 619
+	MNEMONIC_PREFETCHT0         Mnemonic = 620
+	MNEMONIC_PREFETCHT1         Mnemonic = 621
+	MNEMONIC_PREFETCHT2         Mnemonic = 622
+	MNEMONIC_PREFETCHW          Mnemonic = 623
+	MNEMONIC_PREFETCHWT1        Mnemonic = 624
+	MNEMONIC_PSADBW             Mnemonic = 625
+	MNEMONIC_PSHUFB             Mnemonic = 626
+	MNEMONIC_PSHUFD             Mnemonic = 627
+	MNEMONIC_PSHUFHW            Mnemonic = 628
+	MNEMONIC_PSHUFLW            Mnemonic = 629
+	MNEMONIC_PSHUFW             Mnemonic = 630
+	MNEMONIC_PSIGNB             Mnemonic = 631
+	MNEMONIC_PSIGND             Mnemonic = 632
+	MNEMONIC_PSIGNW             Mnemonic = 633
+	MNEMONIC_PSLLD              Mnemonic = 634
+	MNEMONIC_PSLLDQ             Mnemonic = 635
+	MNEMONIC_PSLLQ              Mnemonic = 636
+	MNEMONIC_PSLLW              Mnemonic = 637
+	MNEMONIC_PSMASH             Mnemonic = 638
+	MNEMONIC_PSRAD              Mnemonic = 639
+	MNEMONIC_PSRAW              Mnemonic = 640
+	MNEMONIC_PSRLD              Mnemonic = 641
+	MNEMONIC_PSRLDQ             Mnemonic = 642
+	MNEMONIC_PSRLQ              Mnemonic = 643
+	MNEMONIC_PSRLW              Mnemonic = 644
+	MNEMONIC_PSUBB              Mnemonic = 645
+	MNEMONIC_PSUBD              Mnemonic = 646
+	MNEMONIC_PSUBQ              Mnemonic = 647
+	MNEMONIC_PSUBSB             Mnemonic = 648
+	MNEMONIC_PSUBSW             Mnemonic = 649
+	MNEMONIC_PSUBUSB            Mnemonic = 650
+	MNEMONIC_PSUBUSW            Mnemonic = 651
+	MNEMONIC_PSUBW              Mnemonic = 652
+	MNEMONIC_PSWAPD             Mnemonic = 653
+	MNEMONIC_PTEST              Mnemonic = 654
+	MNEMONIC_PTWRITE            Mnemonic = 655
+	MNEMONIC_PUNPCKHBW          Mnemonic = 656
+	MNEMONIC_PUNPCKHDQ          Mnemonic = 657
+	MNEMONIC_PUNPCKHQDQ         Mnemonic = 658
+	MNEMONIC_PUNPCKHWD          Mnemonic = 659
+	MNEMONIC_PUNPCKLBW          Mnemonic = 660
+	MNEMONIC_PUNPCKLDQ          Mnemonic = 661
+	MNEMONIC_PUNPCKLQDQ         Mnemonic = 662
+	MNEMONIC_PUNPCKLWD          Mnemonic = 663
+	MNEMONIC_PUSH               Mnemonic = 664
+	MNEMONIC_PUSHA              Mnemonic = 665
+	MNEMONIC_PUSHAD             Mnemonic = 666
+	MNEMONIC_PUSHF              Mnemonic = 667
+	MNEMONIC_PUSHFD             Mnemonic = 668
+	MNEMONIC_PUSHFQ             Mnemonic = 669
+	MNEMONIC_PVALIDATE          Mnemonic = 670
+	MNEMONIC_PXOR               Mnemonic = 671
+	MNEMONIC_RCL                Mnemonic = 672
+	MNEMONIC_RCPPS              Mnemonic = 673
+	MNEMONIC_RCPSS              Mnemonic = 674
+	MNEMONIC_RCR                Mnemonic = 675
+	MNEMONIC_RDFSBASE           Mnemonic = 676
+	MNEMONIC_RDGSBASE           Mnemonic = 677
+	MNEMONIC_RDMSR              Mnemonic = 678
+	MNEMONIC_RDMSRLIST          Mnemonic = 679
+	MNEMONIC_RDPID              Mnemonic = 680
+	MNEMONIC_RDPKRU             Mnemonic = 681
+	MNEMONIC_RDPMC              Mnemonic = 682
+	MNEMONIC_RDPRU              Mnemonic = 683
+	MNEMONIC_RDRAND             Mnemonic = 684
+	MNEMONIC_RDSEED             Mnemonic = 685
+	MNEMONIC_RDSSPD             Mnemonic = 686
+	MNEMONIC_RDSSPQ             Mnemonic = 687
+	MNEMONIC_RDTSC              Mnemonic = 688
+	MNEMONIC_RDTSCP             Mnemonic = 689
+	MNEMONIC_RET                Mnemonic = 690
+	MNEMONIC_RMPADJUST          Mnemonic = 691
+	MNEMONIC_RMPUPDATE          Mnemonic = 692
+	MNEMONIC_ROL                Mnemonic = 693
+	MNEMONIC_ROR                Mnemonic = 694
+	MNEMONIC_RORX               Mnemonic = 695
+	MNEMONIC_ROUNDPD            Mnemonic = 696
+	MNEMONIC_ROUNDPS            Mnemonic = 697
+	MNEMONIC_ROUNDSD            Mnemonic = 698
+	MNEMONIC_ROUNDSS            Mnemonic = 699
+	MNEMONIC_RSM                Mnemonic = 700
+	MNEMONIC_RSQRTPS            Mnemonic = 701
+	MNEMONIC_RSQRTSS            Mnemonic = 702
+	MNEMONIC_RSTORSSP           Mnemonic = 703
+	MNEMONIC_SAHF               Mnemonic = 704
+	MNEMONIC_SALC               Mnemonic = 705
+	MNEMONIC_SAR                Mnemonic = 706
+	MNEMONIC_SARX               Mnemonic = 707
+	MNEMONIC_SAVEPREVSSP        Mnemonic = 708
+	MNEMONIC_SBB                Mnemonic = 709
+	MNEMONIC_SCASB              Mnemonic = 710
+	MNEMONIC_SCASD              Mnemonic = 711
+	MNEMONIC_SCASQ              Mnemonic = 712
+	MNEMONIC_SCASW              Mnemonic = 713
+	MNEMONIC_SEAMCALL           Mnemonic = 714
+	MNEMONIC_SEAMOPS            Mnemonic = 715
+	MNEMONIC_SEAMRET            Mnemonic = 716
+	MNEMONIC_SENDUIPI           Mnemonic = 717
+	MNEMONIC_SERIALIZE          Mnemonic = 718
+	MNEMONIC_SETB               Mnemonic = 719
+	MNEMONIC_SETBE              Mnemonic = 720
+	MNEMONIC_SETL               Mnemonic = 721
+	MNEMONIC_SETLE              Mnemonic = 722
+	MNEMONIC_SETNB              Mnemonic = 723
+	MNEMONIC_SETNBE             Mnemonic = 724
+	MNEMONIC_SETNL              Mnemonic = 725
+	MNEMONIC_SETNLE             Mnemonic = 726
+	MNEMONIC_SETNO              Mnemonic = 727
+	MNEMONIC_SETNP              Mnemonic = 728
+	MNEMONIC_SETNS              Mnemonic = 729
+	MNEMONIC_SETNZ              Mnemonic = 730
+	MNEMONIC_SETO               Mnemonic = 731
+	MNEMONIC_SETP               Mnemonic = 732
+	MNEMONIC_SETS               Mnemonic = 733
+	MNEMONIC_SETSSBSY           Mnemonic = 734
+	MNEMONIC_SETZ               Mnemonic = 735
+	MNEMONIC_SFENCE             Mnemonic = 736
+	MNEMONIC_SGDT               Mnemonic = 737
+	MNEMONIC_SHA1MSG1           Mnemonic = 738
+	MNEMONIC_SHA1MSG2           Mnemonic = 739
+	MNEMONIC_SHA1NEXTE          Mnemonic = 740
+	MNEMONIC_SHA1RNDS4          Mnemonic = 741
+	MNEMONIC_SHA256MSG1         Mnemonic = 742
+	MNEMONIC_SHA256MSG2         Mnemonic = 743
+	MNEMONIC_SHA256RNDS2        Mnemonic = 744
+	MNEMONIC_SHL                Mnemonic = 745
+	MNEMONIC_SHLD               Mnemonic = 746
+	MNEMONIC_SHLX               Mnemonic = 747
+	MNEMONIC_SHR                Mnemonic = 748
+	MNEMONIC_SHRD               Mnemonic = 749
+	MNEMONIC_SHRX               Mnemonic = 750
+	MNEMONIC_SHUFPD             Mnemonic = 751
+	MNEMONIC_SHUFPS             Mnemonic = 752
+	MNEMONIC_SIDT               Mnemonic = 753
+	MNEMONIC_SKINIT             Mnemonic = 754
+	MNEMONIC_SLDT               Mnemonic = 755
+	MNEMONIC_SLWPCB             Mnemonic = 756
+	MNEMONIC_SMSW               Mnemonic = 757
+	MNEMONIC_SPFLT              Mnemonic = 758
+	MNEMONIC_SQRTPD             Mnemonic = 759
+	MNEMONIC_SQRTPS             Mnemonic = 760
+	MNEMONIC_SQRTSD             Mnemonic = 761
+	MNEMONIC_SQRTSS             Mnemonic = 762
+	MNEMONIC_STAC               Mnemonic = 763
+	MNEMONIC_STC                Mnemonic = 764
+	MNEMONIC_STD                Mnemonic = 765
+	MNEMONIC_STGI               Mnemonic = 766
+	MNEMONIC_STI                Mnemonic = 767
+	MNEMONIC_STMXCSR            Mnemonic = 768
+	MNEMONIC_STOSB              Mnemonic = 769
+	MNEMONIC_STOSD              Mnemonic = 770
+	MNEMONIC_STOSQ              Mnemonic = 771
+	MNEMONIC_STOSW              Mnemonic = 772
+	MNEMONIC_STR                Mnemonic = 773
+	MNEMONIC_STTILECFG          Mnemonic = 774
+	MNEMONIC_STUI               Mnemonic = 775
+	MNEMONIC_SUB                Mnemonic = 776
+	MNEMONIC_SUBPD              Mnemonic = 777
+	MNEMONIC_SUBPS              Mnemonic = 778
+	MNEMONIC_SUBSD              Mnemonic = 779
+	MNEMONIC_SUBSS              Mnemonic = 780
+	MNEMONIC_SWAPGS             Mnemonic = 781
+	MNEMONIC_SYSCALL            Mnemonic = 782
+	MNEMONIC_SYSENTER           Mnemonic = 783
+	MNEMONIC_SYSEXIT            Mnemonic = 784
+	MNEMONIC_SYSRET             Mnemonic = 785
+	MNEMONIC_T1MSKC             Mnemonic = 786
+	MNEMONIC_TDCALL             Mnemonic = 787
+	MNEMONIC_TDPBF16PS          Mnemonic = 788
+	MNEMONIC_TDPBSSD            Mnemonic = 789
+	MNEMONIC_TDPBSUD            Mnemonic = 790
+	MNEMONIC_TDPBUSD            Mnemonic = 791
+	MNEMONIC_TDPBUUD            Mnemonic = 792
+	MNEMONIC_TDPFP16PS          Mnemonic = 793
+	MNEMONIC_TEST               Mnemonic = 794
+	MNEMONIC_TESTUI             Mnemonic = 795
+	MNEMONIC_TILELOADD          Mnemonic = 796
+	MNEMONIC_TILELOADDT1        Mnemonic = 797
+	MNEMONIC_TILERELEASE        Mnemonic = 798
+	MNEMONIC_TILESTORED         Mnemonic = 799
+	MNEMONIC_TILEZERO           Mnemonic = 800
+	MNEMONIC_TLBSYNC            Mnemonic = 801
+	MNEMONIC_TPAUSE             Mnemonic = 802
+	MNEMONIC_TZCNT              Mnemonic = 803
+	MNEMONIC_TZCNTI             Mnemonic = 804
+	MNEMONIC_TZMSK              Mnemonic = 805
+	MNEMONIC_UCOMISD            Mnemonic = 806
+	MNEMONIC_UCOMISS            Mnemonic = 807
+	MNEMONIC_UD0                Mnemonic = 808
+	MNEMONIC_UD1                Mnemonic = 809
+	MNEMONIC_UD2                Mnemonic = 810
+	MNEMONIC_UIRET              Mnemonic = 811
+	MNEMONIC_UMONITOR           Mnemonic = 812
+	MNEMONIC_UMWAIT             Mnemonic = 813
+	MNEMONIC_UNPCKHPD           Mnemonic = 814
+	MNEMONIC_UNPCKHPS           Mnemonic = 815
+	MNEMONIC_UNPCKLPD           Mnemonic = 816
+	MNEMONIC_UNPCKLPS           Mnemonic = 817
+	MNEMONIC_V4FMADDPS          Mnemonic = 818
+	MNEMONIC_V4FMADDSS          Mnemonic = 819
+	MNEMONIC_V4FNMADDPS         Mnemonic = 820
+	MNEMONIC_V4FNMADDSS         Mnemonic = 821
+	MNEMONIC_VADDNPD            Mnemonic = 822
+	MNEMONIC_VADDNPS            Mnemonic = 823
+	MNEMONIC_VADDPD             Mnemonic = 824
+	MNEMONIC_VADDPH             Mnemonic = 825
+	MNEMONIC_VADDPS             Mnemonic = 826
+	MNEMONIC_VADDSD             Mnemonic = 827
+	MNEMONIC_VADDSETSPS         Mnemonic = 828
+	MNEMONIC_VADDSH             Mnemonic = 829
+	MNEMONIC_VADDSS             Mnemonic = 830
+	MNEMONIC_VADDSUBPD          Mnemonic = 831
+	MNEMONIC_VADDSUBPS          Mnemonic = 832
+	MNEMONIC_VAESDEC            Mnemonic = 833
+	MNEMONIC_VAESDECLAST        Mnemonic = 834
+	MNEMONIC_VAESENC            Mnemonic = 835
+	MNEMONIC_VAESENCLAST        Mnemonic = 836
+	MNEMONIC_VAESIMC            Mnemonic = 837
+	MNEMONIC_VAESKEYGENASSIST   Mnemonic = 838
+	MNEMONIC_VALIGND            Mnemonic = 839
+	MNEMONIC_VALIGNQ            Mnemonic = 840
+	MNEMONIC_VANDNPD            Mnemonic = 841
+	MNEMONIC_VANDNPS            Mnemonic = 842
+	MNEMONIC_VANDPD             Mnemonic = 843
+	MNEMONIC_VANDPS             Mnemonic = 844
+	MNEMONIC_VBCSTNEBF162PS     Mnemonic = 845
+	MNEMONIC_VBCSTNESH2PS       Mnemonic = 846
+	MNEMONIC_VBLENDMPD          Mnemonic = 847
+	MNEMONIC_VBLENDMPS          Mnemonic = 848
+	MNEMONIC_VBLENDPD           Mnemonic = 849
+	MNEMONIC_VBLENDPS           Mnemonic = 850
+	MNEMONIC_VBLENDVPD          Mnemonic = 851
+	MNEMONIC_VBLENDVPS          Mnemonic = 852
+	MNEMONIC_VBROADCASTF128     Mnemonic = 853
+	MNEMONIC_VBROADCASTF32X2    Mnemonic = 854
+	MNEMONIC_VBROADCASTF32X4    Mnemonic = 855
+	MNEMONIC_VBROADCASTF32X8    Mnemonic = 856
+	MNEMONIC_VBROADCASTF64X2    Mnemonic = 857
+	MNEMONIC_VBROADCASTF64X4    Mnemonic = 858
+	MNEMONIC_VBROADCASTI128     Mnemonic = 859
+	MNEMONIC_VBROADCASTI32X2    Mnemonic = 860
+	MNEMONIC_VBROADCASTI32X4    Mnemonic = 861
+	MNEMONIC_VBROADCASTI32X8    Mnemonic = 862
+	MNEMONIC_VBROADCASTI64X2    Mnemonic = 863
+	MNEMONIC_VBROADCASTI64X4    Mnemonic = 864
+	MNEMONIC_VBROADCASTSD       Mnemonic = 865
+	MNEMONIC_VBROADCASTSS       Mnemonic = 866
+	MNEMONIC_VCMPPD             Mnemonic = 867
+	MNEMONIC_VCMPPH             Mnemonic = 868
+	MNEMONIC_VCMPPS             Mnemonic = 869
+	MNEMONIC_VCMPSD             Mnemonic = 870
+	MNEMONIC_VCMPSH             Mnemonic = 871
+	MNEMONIC_VCMPSS             Mnemonic = 872
+	MNEMONIC_VCOMISD            Mnemonic = 873
+	MNEMONIC_VCOMISH            Mnemonic = 874
+	MNEMONIC_VCOMISS            Mnemonic = 875
+	MNEMONIC_VCOMPRESSPD        Mnemonic = 876
+	MNEMONIC_VCOMPRESSPS        Mnemonic = 877
+	MNEMONIC_VCVTDQ2PD          Mnemonic = 878
+	MNEMONIC_VCVTDQ2PH          Mnemonic = 879
+	MNEMONIC_VCVTDQ2PS          Mnemonic = 880
+	MNEMONIC_VCVTFXPNTDQ2PS     Mnemonic = 881
+	MNEMONIC_VCVTFXPNTPD2DQ     Mnemonic = 882
+	MNEMONIC_VCVTFXPNTPD2UDQ    Mnemonic = 883
+	MNEMONIC_VCVTFXPNTPS2DQ     Mnemonic = 884
+	MNEMONIC_VCVTFXPNTPS2UDQ    Mnemonic = 885
+	MNEMONIC_VCVTFXPNTUDQ2PS    Mnemonic = 886
+	MNEMONIC_VCVTNE2PS2BF16     Mnemonic = 887
+	MNEMONIC_VCVTNEEBF162PS     Mnemonic = 888
+	MNEMONIC_VCVTNEEPH2PS       Mnemonic = 889
+	MNEMONIC_VCVTNEOBF162PS     Mnemonic = 890
+	MNEMONIC_VCVTNEOPH2PS       Mnemonic = 891
+	MNEMONIC_VCVTNEPS2BF16      Mnemonic = 892
+	MNEMONIC_VCVTPD2DQ          Mnemonic = 893
+	MNEMONIC_VCVTPD2PH          Mnemonic = 894
+	MNEMONIC_VCVTPD2PS          Mnemonic = 895
+	MNEMONIC_VCVTPD2QQ          Mnemonic = 896
+	MNEMONIC_VCVTPD2UDQ         Mnemonic = 897
+	MNEMONIC_VCVTPD2UQQ         Mnemonic = 898
+	MNEMONIC_VCVTPH2DQ          Mnemonic = 899
+	MNEMONIC_VCVTPH2PD          Mnemonic = 900
+	MNEMONIC_VCVTPH2PS          Mnemonic = 901
+	MNEMONIC_VCVTPH2PSX         Mnemonic = 902
+	MNEMONIC_VCVTPH2QQ          Mnemonic = 903
+	MNEMONIC_VCVTPH2UDQ         Mnemonic = 904
+	MNEMONIC_VCVTPH2UQQ         Mnemonic = 905
+	MNEMONIC_VCVTPH2UW          Mnemonic = 906
+	MNEMONIC_VCVTPH2W           Mnemonic = 907
+	MNEMONIC_VCVTPS2DQ          Mnemonic = 908
+	MNEMONIC_VCVTPS2PD          Mnemonic = 909
+	MNEMONIC_VCVTPS2PH          Mnemonic = 910
+	MNEMONIC_VCVTPS2PHX         Mnemonic = 911
+	MNEMONIC_VCVTPS2QQ          Mnemonic = 912
+	MNEMONIC_VCVTPS2UDQ         Mnemonic = 913
+	MNEMONIC_VCVTPS2UQQ         Mnemonic = 914
+	MNEMONIC_VCVTQQ2PD          Mnemonic = 915
+	MNEMONIC_VCVTQQ2PH          Mnemonic = 916
+	MNEMONIC_VCVTQQ2PS          Mnemonic = 917
+	MNEMONIC_VCVTSD2SH          Mnemonic = 918
+	MNEMONIC_VCVTSD2SI          Mnemonic = 919
+	MNEMONIC_VCVTSD2SS          Mnemonic = 920
+	MNEMONIC_VCVTSD2USI         Mnemonic = 921
+	MNEMONIC_VCVTSH2SD          Mnemonic = 922
+	MNEMONIC_VCVTSH2SI          Mnemonic = 923
+	MNEMONIC_VCVTSH2SS          Mnemonic = 924
+	MNEMONIC_VCVTSH2USI         Mnemonic = 925
+	MNEMONIC_VCVTSI2SD          Mnemonic = 926
+	MNEMONIC_VCVTSI2SH          Mnemonic = 927
+	MNEMONIC_VCVTSI2SS          Mnemonic = 928
+	MNEMONIC_VCVTSS2SD          Mnemonic = 929
+	MNEMONIC_VCVTSS2SH          Mnemonic = 930
+	MNEMONIC_VCVTSS2SI          Mnemonic = 931
+	MNEMONIC_VCVTSS2USI         Mnemonic = 932
+	MNEMONIC_VCVTTPD2DQ         Mnemonic = 933
+	MNEMONIC_VCVTTPD2QQ         Mnemonic = 934
+	MNEMONIC_VCVTTPD2UDQ        Mnemonic = 935
+	MNEMONIC_VCVTTPD2UQQ        Mnemonic = 936
+	MNEMONIC_VCVTTPH2DQ         Mnemonic = 937
+	MNEMONIC_VCVTTPH2QQ         Mnemonic = 938
+	MNEMONIC_VCVTTPH2UDQ        Mnemonic = 939
+	MNEMONIC_VCVTTPH2UQQ        Mnemonic = 940
+	MNEMONIC_VCVTTPH2UW         Mnemonic = 941
+	MNEMONIC_VCVTTPH2W          Mnemonic = 942
+	MNEMONIC_VCVTTPS2DQ         Mnemonic = 943
+	MNEMONIC_VCVTTPS2QQ         Mnemonic = 944
+	MNEMONIC_VCVTTPS2UDQ        Mnemonic = 945
+	MNEMONIC_VCVTTPS2UQQ        Mnemonic = 946
+	MNEMONIC_VCVTTSD2SI         Mnemonic = 947
+	MNEMONIC_VCVTTSD2USI        Mnemonic = 948
+	MNEMONIC_VCVTTSH2SI         Mnemonic = 949
+	MNEMONIC_VCVTTSH2USI        Mnemonic = 950
+	MNEMONIC_VCVTTSS2SI         Mnemonic = 951
+	MNEMONIC_VCVTTSS2USI        Mnemonic = 952
+	MNEMONIC_VCVTUDQ2PD         Mnemonic = 953
+	MNEMONIC_VCVTUDQ2PH         Mnemonic = 954
+	MNEMONIC_VCVTUDQ2PS         Mnemonic = 955
+	MNEMONIC_VCVTUQQ2PD         Mnemonic = 956
+	MNEMONIC_VCVTUQQ2PH         Mnemonic = 957
+	MNEMONIC_VCVTUQQ2PS         Mnemonic = 958
+	MNEMONIC_VCVTUSI2SD         Mnemonic = 959
+	MNEMONIC_VCVTUSI2SH         Mnemonic = 960
+	MNEMONIC_VCVTUSI2SS         Mnemonic = 961
+	MNEMONIC_VCVTUW2PH          Mnemonic = 962
+	MNEMONIC_VCVTW2PH           Mnemonic = 963
+	MNEMONIC_VDBPSADBW          Mnemonic = 964
+	MNEMONIC_VDIVPD             Mnemonic = 965
+	MNEMONIC_VDIVPH             Mnemonic = 966
+	MNEMONIC_VDIVPS             Mnemonic = 967
+	MNEMONIC_VDIVSD             Mnemonic = 968
+	MNEMONIC_VDIVSH             Mnemonic = 969
+	MNEMONIC_VDIVSS             Mnemonic = 970
+	MNEMONIC_VDPBF16PS          Mnemonic = 971
+	MNEMONIC_VDPPD              Mnemonic = 972
+	MNEMONIC_VDPPS              Mnemonic = 973
+	MNEMONIC_VERR               Mnemonic = 974
+	MNEMONIC_VERW               Mnemonic = 975
+	MNEMONIC_VEXP223PS          Mnemonic = 976
+	MNEMONIC_VEXP2PD            Mnemonic = 977
+	MNEMONIC_VEXP2PS            Mnemonic = 978
+	MNEMONIC_VEXPANDPD          Mnemonic = 979
+	MNEMONIC_VEXPANDPS          Mnemonic = 980
+	MNEMONIC_VEXTRACTF128       Mnemonic = 981
+	MNEMONIC_VEXTRACTF32X4      Mnemonic = 982
+	MNEMONIC_VEXTRACTF32X8      Mnemonic = 983
+	MNEMONIC_VEXTRACTF64X2      Mnemonic = 984
+	MNEMONIC_VEXTRACTF64X4      Mnemonic = 985
+	MNEMONIC_VEXTRACTI128       Mnemonic = 986
+	MNEMONIC_VEXTRACTI32X4      Mnemonic = 987
+	MNEMONIC_VEXTRACTI32X8      Mnemonic = 988
+	MNEMONIC_VEXTRACTI64X2      Mnemonic = 989
+	MNEMONIC_VEXTRACTI64X4      Mnemonic = 990
+	MNEMONIC_VEXTRACTPS         Mnemonic = 991
+	MNEMONIC_VFCMADDCPH         Mnemonic = 992
+	MNEMONIC_VFCMADDCSH         Mnemonic = 993
+	MNEMONIC_VFCMULCPH          Mnemonic = 994
+	MNEMONIC_VFCMULCSH          Mnemonic = 995
+	MNEMONIC_VFIXUPIMMPD        Mnemonic = 996
+	MNEMONIC_VFIXUPIMMPS        Mnemonic = 997
+	MNEMONIC_VFIXUPIMMSD        Mnemonic = 998
+	MNEMONIC_VFIXUPIMMSS        Mnemonic = 999
+	MNEMONIC_VFIXUPNANPD        Mnemonic = 1000
+	MNEMONIC_VFIXUPNANPS        Mnemonic = 1001
+	MNEMONIC_VFMADD132PD        Mnemonic = 1002
+	MNEMONIC_VFMADD132PH        Mnemonic = 1003
+	MNEMONIC_VFMADD132PS        Mnemonic = 1004
+	MNEMONIC_VFMADD132SD        Mnemonic = 1005
+	MNEMONIC_VFMADD132SH        Mnemonic = 1006
+	MNEMONIC_VFMADD132SS        Mnemonic = 1007
+	MNEMONIC_VFMADD213PD        Mnemonic = 1008
+	MNEMONIC_VFMADD213PH        Mnemonic = 1009
+	MNEMONIC_VFMADD213PS        Mnemonic = 1010
+	MNEMONIC_VFMADD213SD        Mnemonic = 1011
+	MNEMONIC_VFMADD213SH        Mnemonic = 1012
+	MNEMONIC_VFMADD213SS        Mnemonic = 1013
+	MNEMONIC_VFMADD231PD        Mnemonic = 1014
+	MNEMONIC_VFMADD231PH        Mnemonic = 1015
+	MNEMONIC_VFMADD231PS        Mnemonic = 1016
+	MNEMONIC_VFMADD231SD        Mnemonic = 1017
+	MNEMONIC_VFMADD231SH        Mnemonic = 1018
+	MNEMONIC_VFMADD231SS        Mnemonic = 1019
+	MNEMONIC_VFMADD233PS        Mnemonic = 1020
+	MNEMONIC_VFMADDCPH          Mnemonic = 1021
+	MNEMONIC_VFMADDCSH          Mnemonic = 1022
+	MNEMONIC_VFMADDPD           Mnemonic = 1023
+	MNEMONIC_VFMADDPS           Mnemonic = 1024
+	MNEMONIC_VFMADDSD           Mnemonic = 1025
+	MNEMONIC_VFMADDSS           Mnemonic = 1026
+	MNEMONIC_VFMADDSUB132PD     Mnemonic = 1027
+	MNEMONIC_VFMADDSUB132PH     Mnemonic = 1028
+	MNEMONIC_VFMADDSUB132PS     Mnemonic = 1029
+	MNEMONIC_VFMADDSUB213PD     Mnemonic = 1030
+	MNEMONIC_VFMADDSUB213PH     Mnemonic = 1031
+	MNEMONIC_VFMADDSUB213PS     Mnemonic = 1032
+	MNEMONIC_VFMADDSUB231PD     Mnemonic = 1033
+	MNEMONIC_VFMADDSUB231PH     Mnemonic = 1034
+	MNEMONIC_VFMADDSUB231PS     Mnemonic = 1035
+	MNEMONIC_VFMADDSUBPD        Mnemonic = 1036
+	MNEMONIC_VFMADDSUBPS        Mnemonic = 1037
+	MNEMONIC_VFMSUB132PD        Mnemonic = 1038
+	MNEMONIC_VFMSUB132PH        Mnemonic = 1039
+	MNEMONIC_VFMSUB132PS        Mnemonic = 1040
+	MNEMONIC_VFMSUB132SD        Mnemonic = 1041
+	MNEMONIC_VFMSUB132SH        Mnemonic = 1042
+	MNEMONIC_VFMSUB132SS        Mnemonic = 1043
+	MNEMONIC_VFMSUB213PD        Mnemonic = 1044
+	MNEMONIC_VFMSUB213PH        Mnemonic = 1045
+	MNEMONIC_VFMSUB213PS        Mnemonic = 1046
+	MNEMONIC_VFMSUB213SD        Mnemonic = 1047
+	MNEMONIC_VFMSUB213SH        Mnemonic = 1048
+	MNEMONIC_VFMSUB213SS        Mnemonic = 1049
+	MNEMONIC_VFMSUB231PD        Mnemonic = 1050
+	MNEMONIC_VFMSUB231PH        Mnemonic = 1051
+	MNEMONIC_VFMSUB231PS        Mnemonic = 1052
+	MNEMONIC_VFMSUB231SD        Mnemonic = 1053
+	MNEMONIC_VFMSUB231SH        Mnemonic = 1054
+	MNEMONIC_VFMSUB231SS        Mnemonic = 1055
+	MNEMONIC_VFMSUBADD132PD     Mnemonic = 1056
+	MNEMONIC_VFMSUBADD132PH     Mnemonic = 1057
+	MNEMONIC_VFMSUBADD132PS     Mnemonic = 1058
+	MNEMONIC_VFMSUBADD213PD     Mnemonic = 1059
+	MNEMONIC_VFMSUBADD213PH     Mnemonic = 1060
+	MNEMONIC_VFMSUBADD213PS     Mnemonic = 1061
+	MNEMONIC_VFMSUBADD231PD     Mnemonic = 1062
+	MNEMONIC_VFMSUBADD231PH     Mnemonic = 1063
+	MNEMONIC_VFMSUBADD231PS     Mnemonic = 1064
+	MNEMONIC_VFMSUBADDPD        Mnemonic = 1065
+	MNEMONIC_VFMSUBADDPS        Mnemonic = 1066
+	MNEMONIC_VFMSUBPD           Mnemonic = 1067
+	MNEMONIC_VFMSUBPS           Mnemonic = 1068
+	MNEMONIC_VFMSUBSD           Mnemonic = 1069
+	MNEMONIC_VFMSUBSS           Mnemonic = 1070
+	MNEMONIC_VFMULCPH           Mnemonic = 1071
+	MNEMONIC_VFMULCSH           Mnemonic = 1072
+	MNEMONIC_VFNMADD132PD       Mnemonic = 1073
+	MNEMONIC_VFNMADD132PH       Mnemonic = 1074
+	MNEMONIC_VFNMADD132PS       Mnemonic = 1075
+	MNEMONIC_VFNMADD132SD       Mnemonic = 1076
+	MNEMONIC_VFNMADD132SH       Mnemonic = 1077
+	MNEMONIC_VFNMADD132SS       Mnemonic = 1078
+	MNEMONIC_VFNMADD213PD       Mnemonic = 1079
+	MNEMONIC_VFNMADD213PH       Mnemonic = 1080
+	MNEMONIC_VFNMADD213PS       Mnemonic = 1081
+	MNEMONIC_VFNMADD213SD       Mnemonic = 1082
+	MNEMONIC_VFNMADD213SH       Mnemonic = 1083
+	MNEMONIC_VFNMADD213SS       Mnemonic = 1084
+	MNEMONIC_VFNMADD231PD       Mnemonic = 1085
+	MNEMONIC_VFNMADD231PH       Mnemonic = 1086
+	MNEMONIC_VFNMADD231PS       Mnemonic = 1087
+	MNEMONIC_VFNMADD231SD       Mnemonic = 1088
+	MNEMONIC_VFNMADD231SH       Mnemonic = 1089
+	MNEMONIC_VFNMADD231SS       Mnemonic = 1090
+	MNEMONIC_VFNMADDPD          Mnemonic = 1091
+	MNEMONIC_VFNMADDPS          Mnemonic = 1092
+	MNEMONIC_VFNMADDSD          Mnemonic = 1093
+	MNEMONIC_VFNMADDSS          Mnemonic = 1094
+	MNEMONIC_VFNMSUB132PD       Mnemonic = 1095
+	MNEMONIC_VFNMSUB132PH       Mnemonic = 1096
+	MNEMONIC_VFNMSUB132PS       Mnemonic = 1097
+	MNEMONIC_VFNMSUB132SD       Mnemonic = 1098
+	MNEMONIC_VFNMSUB132SH       Mnemonic = 1099
+	MNEMONIC_VFNMSUB132SS       Mnemonic = 1100
+	MNEMONIC_VFNMSUB213PD       Mnemonic = 1101
+	MNEMONIC_VFNMSUB213PH       Mnemonic = 1102
+	MNEMONIC_VFNMSUB213PS       Mnemonic = 1103
+	MNEMONIC_VFNMSUB213SD       Mnemonic = 1104
+	MNEMONIC_VFNMSUB213SH       Mnemonic = 1105
+	MNEMONIC_VFNMSUB213SS       Mnemonic = 1106
+	MNEMONIC_VFNMSUB231PD       Mnemonic = 1107
+	MNEMONIC_VFNMSUB231PH       Mnemonic = 1108
+	MNEMONIC_VFNMSUB231PS       Mnemonic = 1109
+	MNEMONIC_VFNMSUB231SD       Mnemonic = 1110
+	MNEMONIC_VFNMSUB231SH       Mnemonic = 1111
+	MNEMONIC_VFNMSUB231SS       Mnemonic = 1112
+	MNEMONIC_VFNMSUBPD          Mnemonic = 1113
+	MNEMONIC_VFNMSUBPS          Mnemonic = 1114
+	MNEMONIC_VFNMSUBSD          Mnemonic = 1115
+	MNEMONIC_VFNMSUBSS          Mnemonic = 1116
+	MNEMONIC_VFPCLASSPD         Mnemonic = 1117
+	MNEMONIC_VFPCLASSPH         Mnemonic = 1118
+	MNEMONIC_VFPCLASSPS         Mnemonic = 1119
+	MNEMONIC_VFPCLASSSD         Mnemonic = 1120
+	MNEMONIC_VFPCLASSSH         Mnemonic = 1121
+	MNEMONIC_VFPCLASSSS         Mnemonic = 1122
+	MNEMONIC_VFRCZPD            Mnemonic = 1123
+	MNEMONIC_VFRCZPS            Mnemonic = 1124
+	MNEMONIC_VFRCZSD            Mnemonic = 1125
+	MNEMONIC_VFRCZSS            Mnemonic = 1126
+	MNEMONIC_VGATHERDPD         Mnemonic = 1127
+	MNEMONIC_VGATHERDPS         Mnemonic = 1128
+	MNEMONIC_VGATHERPF0DPD      Mnemonic = 1129
+	MNEMONIC_VGATHERPF0DPS      Mnemonic = 1130
+	MNEMONIC_VGATHERPF0HINTDPD  Mnemonic = 1131
+	MNEMONIC_VGATHERPF0HINTDPS  Mnemonic = 1132
+	MNEMONIC_VGATHERPF0QPD      Mnemonic = 1133
+	MNEMONIC_VGATHERPF0QPS      Mnemonic = 1134
+	MNEMONIC_VGATHERPF1DPD      Mnemonic = 1135
+	MNEMONIC_VGATHERPF1DPS      Mnemonic = 1136
+	MNEMONIC_VGATHERPF1QPD      Mnemonic = 1137
+	MNEMONIC_VGATHERPF1QPS      Mnemonic = 1138
+	MNEMONIC_VGATHERQPD         Mnemonic = 1139
+	MNEMONIC_VGATHERQPS         Mnemonic = 1140
+	MNEMONIC_VGETEXPPD          Mnemonic = 1141
+	MNEMONIC_VGETEXPPH          Mnemonic = 1142
+	MNEMONIC_VGETEXPPS          Mnemonic = 1143
+	MNEMONIC_VGETEXPSD          Mnemonic = 1144
+	MNEMONIC_VGETEXPSH          Mnemonic = 1145
+	MNEMONIC_VGETEXPSS          Mnemonic = 1146
+	MNEMONIC_VGETMANTPD         Mnemonic = 1147
+	MNEMONIC_VGETMANTPH         Mnemonic = 1148
+	MNEMONIC_VGETMANTPS         Mnemonic = 1149
+	MNEMONIC_VGETMANTSD         Mnemonic = 1150
+	MNEMONIC_VGETMANTSH         Mnemonic = 1151
+	MNEMONIC_VGETMANTSS         Mnemonic = 1152
+	MNEMONIC_VGF2P8AFFINEINVQB  Mnemonic = 1153
+	MNEMONIC_VGF2P8AFFINEQB     Mnemonic = 1154
+	MNEMONIC_VGF2P8MULB         Mnemonic = 1155
+	MNEMONIC_VGMAXABSPS         Mnemonic = 1156
+	MNEMONIC_VGMAXPD            Mnemonic = 1157
+	MNEMONIC_VGMAXPS            Mnemonic = 1158
+	MNEMONIC_VGMINPD            Mnemonic = 1159
+	MNEMONIC_VGMINPS            Mnemonic = 1160
+	MNEMONIC_VHADDPD            Mnemonic = 1161
+	MNEMONIC_VHADDPS            Mnemonic = 1162
+	MNEMONIC_VHSUBPD            Mnemonic = 1163
+	MNEMONIC_VHSUBPS            Mnemonic = 1164
+	MNEMONIC_VINSERTF128        Mnemonic = 1165
+	MNEMONIC_VINSERTF32X4       Mnemonic = 1166
+	MNEMONIC_VINSERTF32X8       Mnemonic = 1167
+	MNEMONIC_VINSERTF64X2       Mnemonic = 1168
+	MNEMONIC_VINSERTF64X4       Mnemonic = 1169
+	MNEMONIC_VINSERTI128        Mnemonic = 1170
+	MNEMONIC_VINSERTI32X4       Mnemonic = 1171
+	MNEMONIC_VINSERTI32X8       Mnemonic = 1172
+	MNEMONIC_VINSERTI64X2       Mnemonic = 1173
+	MNEMONIC_VINSERTI64X4       Mnemonic = 1174
+	MNEMONIC_VINSERTPS          Mnemonic = 1175
+	MNEMONIC_VLDDQU             Mnemonic = 1176
+	MNEMONIC_VLDMXCSR           Mnemonic = 1177
+	MNEMONIC_VLOADUNPACKHD      Mnemonic = 1178
+	MNEMONIC_VLOADUNPACKHPD     Mnemonic = 1179
+	MNEMONIC_VLOADUNPACKHPS     Mnemonic = 1180
+	MNEMONIC_VLOADUNPACKHQ      Mnemonic = 1181
+	MNEMONIC_VLOADUNPACKLD      Mnemonic = 1182
+	MNEMONIC_VLOADUNPACKLPD     Mnemonic = 1183
+	MNEMONIC_VLOADUNPACKLPS     Mnemonic = 1184
+	MNEMONIC_VLOADUNPACKLQ      Mnemonic = 1185
+	MNEMONIC_VLOG2PS            Mnemonic = 1186
+	MNEMONIC_VMASKMOVDQU        Mnemonic = 1187
+	MNEMONIC_VMASKMOVPD         Mnemonic = 1188
+	MNEMONIC_VMASKMOVPS         Mnemonic = 1189
+	MNEMONIC_VMAXPD             Mnemonic = 1190
+	MNEMONIC_VMAXPH             Mnemonic = 1191
+	MNEMONIC_VMAXPS             Mnemonic = 1192
+	MNEMONIC_VMAXSD             Mnemonic = 1193
+	MNEMONIC_VMAXSH             Mnemonic = 1194
+	MNEMONIC_VMAXSS             Mnemonic = 1195
+	MNEMONIC_VMCALL             Mnemonic = 1196
+	MNEMONIC_VMCLEAR            Mnemonic = 1197
+	MNEMONIC_VMFUNC             Mnemonic = 1198
+	MNEMONIC_VMINPD             Mnemonic = 1199
+	MNEMONIC_VMINPH             Mnemonic = 1200
+	MNEMONIC_VMINPS             Mnemonic = 1201
+	MNEMONIC_VMINSD             Mnemonic = 1202
+	MNEMONIC_VMINSH             Mnemonic = 1203
+	MNEMONIC_VMINSS             Mnemonic = 1204
+	MNEMONIC_VMLAUNCH           Mnemonic = 1205
+	MNEMONIC_VMLOAD             Mnemonic = 1206
+	MNEMONIC_VMMCALL            Mnemonic = 1207
+	MNEMONIC_VMOVAPD            Mnemonic = 1208
+	MNEMONIC_VMOVAPS            Mnemonic = 1209
+	MNEMONIC_VMOVD              Mnemonic = 1210
+	MNEMONIC_VMOVDDUP           Mnemonic = 1211
+	MNEMONIC_VMOVDQA            Mnemonic = 1212
+	MNEMONIC_VMOVDQA32          Mnemonic = 1213
+	MNEMONIC_VMOVDQA64          Mnemonic = 1214
+	MNEMONIC_VMOVDQU            Mnemonic = 1215
+	MNEMONIC_VMOVDQU16          Mnemonic = 1216
+	MNEMONIC_VMOVDQU32          Mnemonic = 1217
+	MNEMONIC_VMOVDQU64          Mnemonic = 1218
+	MNEMONIC_VMOVDQU8           Mnemonic = 1219
+	MNEMONIC_VMOVHLPS           Mnemonic = 1220
+	MNEMONIC_VMOVHPD            Mnemonic = 1221
+	MNEMONIC_VMOVHPS            Mnemonic = 1222
+	MNEMONIC_VMOVLHPS           Mnemonic = 1223
+	MNEMONIC_VMOVLPD            Mnemonic = 1224
+	MNEMONIC_VMOVLPS            Mnemonic = 1225
+	MNEMONIC_VMOVMSKPD          Mnemonic = 1226
+	MNEMONIC_VMOVMSKPS          Mnemonic = 1227
+	MNEMONIC_VMOVNRAPD          Mnemonic = 1228
+	MNEMONIC_VMOVNRAPS          Mnemonic = 1229
+	MNEMONIC_VMOVNRNGOAPD       Mnemonic = 1230
+	MNEMONIC_VMOVNRNGOAPS       Mnemonic = 1231
+	MNEMONIC_VMOVNTDQ           Mnemonic = 1232
+	MNEMONIC_VMOVNTDQA          Mnemonic = 1233
+	MNEMONIC_VMOVNTPD           Mnemonic = 1234
+	MNEMONIC_VMOVNTPS           Mnemonic = 1235
+	MNEMONIC_VMOVQ              Mnemonic = 1236
+	MNEMONIC_VMOVSD             Mnemonic = 1237
+	MNEMONIC_VMOVSH             Mnemonic = 1238
+	MNEMONIC_VMOVSHDUP          Mnemonic = 1239
+	MNEMONIC_VMOVSLDUP          Mnemonic = 1240
+	MNEMONIC_VMOVSS             Mnemonic = 1241
+	MNEMONIC_VMOVUPD            Mnemonic = 1242
+	MNEMONIC_VMOVUPS            Mnemonic = 1243
+	MNEMONIC_VMOVW              Mnemonic = 1244
+	MNEMONIC_VMPSADBW           Mnemonic = 1245
+	MNEMONIC_VMPTRLD            Mnemonic = 1246
+	MNEMONIC_VMPTRST            Mnemonic = 1247
+	MNEMONIC_VMREAD             Mnemonic = 1248
+	MNEMONIC_VMRESUME           Mnemonic = 1249
+	MNEMONIC_VMRUN              Mnemonic = 1250
+	MNEMONIC_VMSAVE             Mnemonic = 1251
+	MNEMONIC_VMULPD             Mnemonic = 1252
+	MNEMONIC_VMULPH             Mnemonic = 1253
+	MNEMONIC_VMULPS             Mnemonic = 1254
+	MNEMONIC_VMULSD             Mnemonic = 1255
+	MNEMONIC_VMULSH             Mnemonic = 1256
+	MNEMONIC_VMULSS             Mnemonic = 1257
+	MNEMONIC_VMWRITE            Mnemonic = 1258
+	MNEMONIC_VMXOFF             Mnemonic = 1259
+	MNEMONIC_VMXON              Mnemonic = 1260
+	MNEMONIC_VORPD              Mnemonic = 1261
+	MNEMONIC_VORPS              Mnemonic = 1262
+	MNEMONIC_VP2INTERSECTD      Mnemonic = 1263
+	MNEMONIC_VP2INTERSECTQ      Mnemonic = 1264
+	MNEMONIC_VP4DPWSSD          Mnemonic = 1265
+	MNEMONIC_VP4DPWSSDS         Mnemonic = 1266
+	MNEMONIC_VPABSB             Mnemonic = 1267
+	MNEMONIC_VPABSD             Mnemonic = 1268
+	MNEMONIC_VPABSQ             Mnemonic = 1269
+	MNEMONIC_VPABSW             Mnemonic = 1270
+	MNEMONIC_VPACKSSDW          Mnemonic = 1271
+	MNEMONIC_VPACKSSWB          Mnemonic = 1272
+	MNEMONIC_VPACKSTOREHD       Mnemonic = 1273
+	MNEMONIC_VPACKSTOREHPD      Mnemonic = 1274
+	MNEMONIC_VPACKSTOREHPS      Mnemonic = 1275
+	MNEMONIC_VPACKSTOREHQ       Mnemonic = 1276
+	MNEMONIC_VPACKSTORELD       Mnemonic = 1277
+	MNEMONIC_VPACKSTORELPD      Mnemonic = 1278
+	MNEMONIC_VPACKSTORELPS      Mnemonic = 1279
+	MNEMONIC_VPACKSTORELQ       Mnemonic = 1280
+	MNEMONIC_VPACKUSDW          Mnemonic = 1281
+	MNEMONIC_VPACKUSWB          Mnemonic = 1282
+	MNEMONIC_VPADCD             Mnemonic = 1283
+	MNEMONIC_VPADDB             Mnemonic = 1284
+	MNEMONIC_VPADDD             Mnemonic = 1285
+	MNEMONIC_VPADDQ             Mnemonic = 1286
+	MNEMONIC_VPADDSB            Mnemonic = 1287
+	MNEMONIC_VPADDSETCD         Mnemonic = 1288
+	MNEMONIC_VPADDSETSD         Mnemonic = 1289
+	MNEMONIC_VPADDSW            Mnemonic = 1290
+	MNEMONIC_VPADDUSB           Mnemonic = 1291
+	MNEMONIC_VPADDUSW           Mnemonic = 1292
+	MNEMONIC_VPADDW             Mnemonic = 1293
+	MNEMONIC_VPALIGNR           Mnemonic = 1294
+	MNEMONIC_VPAND              Mnemonic = 1295
+	MNEMONIC_VPANDD             Mnemonic = 1296
+	MNEMONIC_VPANDN             Mnemonic = 1297
+	MNEMONIC_VPANDND            Mnemonic = 1298
+	MNEMONIC_VPANDNQ            Mnemonic = 1299
+	MNEMONIC_VPANDQ             Mnemonic = 1300
+	MNEMONIC_VPAVGB             Mnemonic = 1301
+	MNEMONIC_VPAVGW             Mnemonic = 1302
+	MNEMONIC_VPBLENDD           Mnemonic = 1303
+	MNEMONIC_VPBLENDMB          Mnemonic = 1304
+	MNEMONIC_VPBLENDMD          Mnemonic = 1305
+	MNEMONIC_VPBLENDMQ          Mnemonic = 1306
+	MNEMONIC_VPBLENDMW          Mnemonic = 1307
+	MNEMONIC_VPBLENDVB          Mnemonic = 1308
+	MNEMONIC_VPBLENDW           Mnemonic = 1309
+	MNEMONIC_VPBROADCASTB       Mnemonic = 1310
+	MNEMONIC_VPBROADCASTD       Mnemonic = 1311
+	MNEMONIC_VPBROADCASTMB2Q    Mnemonic = 1312
+	MNEMONIC_VPBROADCASTMW2D    Mnemonic = 1313
+	MNEMONIC_VPBROADCASTQ       Mnemonic = 1314
+	MNEMONIC_VPBROADCASTW       Mnemonic = 1315
+	MNEMONIC_VPCLMULQDQ         Mnemonic = 1316
+	MNEMONIC_VPCMOV             Mnemonic = 1317
+	MNEMONIC_VPCMPB             Mnemonic = 1318
+	MNEMONIC_VPCMPD             Mnemonic = 1319
+	MNEMONIC_VPCMPEQB           Mnemonic = 1320
+	MNEMONIC_VPCMPEQD           Mnemonic = 1321
+	MNEMONIC_VPCMPEQQ           Mnemonic = 1322
+	MNEMONIC_VPCMPEQW           Mnemonic = 1323
+	MNEMONIC_VPCMPESTRI         Mnemonic = 1324
+	MNEMONIC_VPCMPESTRM         Mnemonic = 1325
+	MNEMONIC_VPCMPGTB           Mnemonic = 1326
+	MNEMONIC_VPCMPGTD           Mnemonic = 1327
+	MNEMONIC_VPCMPGTQ           Mnemonic = 1328
+	MNEMONIC_VPCMPGTW           Mnemonic = 1329
+	MNEMONIC_VPCMPISTRI         Mnemonic = 1330
+	MNEMONIC_VPCMPISTRM         Mnemonic = 1331
+	MNEMONIC_VPCMPLTD           Mnemonic = 1332
+	MNEMONIC_VPCMPQ             Mnemonic = 1333
+	MNEMONIC_VPCMPUB            Mnemonic = 1334
+	MNEMONIC_VPCMPUD            Mnemonic = 1335
+	MNEMONIC_VPCMPUQ            Mnemonic = 1336
+	MNEMONIC_VPCMPUW            Mnemonic = 1337
+	MNEMONIC_VPCMPW             Mnemonic = 1338
+	MNEMONIC_VPCOMB             Mnemonic = 1339
+	MNEMONIC_VPCOMD             Mnemonic = 1340
+	MNEMONIC_VPCOMPRESSB        Mnemonic = 1341
+	MNEMONIC_VPCOMPRESSD        Mnemonic = 1342
+	MNEMONIC_VPCOMPRESSQ        Mnemonic = 1343
+	MNEMONIC_VPCOMPRESSW        Mnemonic = 1344
+	MNEMONIC_VPCOMQ             Mnemonic = 1345
+	MNEMONIC_VPCOMUB            Mnemonic = 1346
+	MNEMONIC_VPCOMUD            Mnemonic = 1347
+	MNEMONIC_VPCOMUQ            Mnemonic = 1348
+	MNEMONIC_VPCOMUW            Mnemonic = 1349
+	MNEMONIC_VPCOMW             Mnemonic = 1350
+	MNEMONIC_VPCONFLICTD        Mnemonic = 1351
+	MNEMONIC_VPCONFLICTQ        Mnemonic = 1352
+	MNEMONIC_VPDPBSSD           Mnemonic = 1353
+	MNEMONIC_VPDPBSSDS          Mnemonic = 1354
+	MNEMONIC_VPDPBSUD           Mnemonic = 1355
+	MNEMONIC_VPDPBSUDS          Mnemonic = 1356
+	MNEMONIC_VPDPBUSD           Mnemonic = 1357
+	MNEMONIC_VPDPBUSDS          Mnemonic = 1358
+	MNEMONIC_VPDPBUUD           Mnemonic = 1359
+	MNEMONIC_VPDPBUUDS          Mnemonic = 1360
+	MNEMONIC_VPDPWSSD           Mnemonic = 1361
+	MNEMONIC_VPDPWSSDS          Mnemonic = 1362
+	MNEMONIC_VPERM2F128         Mnemonic = 1363
+	MNEMONIC_VPERM2I128         Mnemonic = 1364
+	MNEMONIC_VPERMB             Mnemonic = 1365
+	MNEMONIC_VPERMD             Mnemonic = 1366
+	MNEMONIC_VPERMF32X4         Mnemonic = 1367
+	MNEMONIC_VPERMI2B           Mnemonic = 1368
+	MNEMONIC_VPERMI2D           Mnemonic = 1369
+	MNEMONIC_VPERMI2PD          Mnemonic = 1370
+	MNEMONIC_VPERMI2PS          Mnemonic = 1371
+	MNEMONIC_VPERMI2Q           Mnemonic = 1372
+	MNEMONIC_VPERMI2W           Mnemonic = 1373
+	MNEMONIC_VPERMIL2PD         Mnemonic = 1374
+	MNEMONIC_VPERMIL2PS         Mnemonic = 1375
+	MNEMONIC_VPERMILPD          Mnemonic = 1376
+	MNEMONIC_VPERMILPS          Mnemonic = 1377
+	MNEMONIC_VPERMPD            Mnemonic = 1378
+	MNEMONIC_VPERMPS            Mnemonic = 1379
+	MNEMONIC_VPERMQ             Mnemonic = 1380
+	MNEMONIC_VPERMT2B           Mnemonic = 1381
+	MNEMONIC_VPERMT2D           Mnemonic = 1382
+	MNEMONIC_VPERMT2PD          Mnemonic = 1383
+	MNEMONIC_VPERMT2PS          Mnemonic = 1384
+	MNEMONIC_VPERMT2Q           Mnemonic = 1385
+	MNEMONIC_VPERMT2W           Mnemonic = 1386
+	MNEMONIC_VPERMW             Mnemonic = 1387
+	MNEMONIC_VPEXPANDB          Mnemonic = 1388
+	MNEMONIC_VPEXPANDD          Mnemonic = 1389
+	MNEMONIC_VPEXPANDQ          Mnemonic = 1390
+	MNEMONIC_VPEXPANDW          Mnemonic = 1391
+	MNEMONIC_VPEXTRB            Mnemonic = 1392
+	MNEMONIC_VPEXTRD            Mnemonic = 1393
+	MNEMONIC_VPEXTRQ            Mnemonic = 1394
+	MNEMONIC_VPEXTRW            Mnemonic = 1395
+	MNEMONIC_VPGATHERDD         Mnemonic = 1396
+	MNEMONIC_VPGATHERDQ         Mnemonic = 1397
+	MNEMONIC_VPGATHERQD         Mnemonic = 1398
+	MNEMONIC_VPGATHERQQ         Mnemonic = 1399
+	MNEMONIC_VPHADDBD           Mnemonic = 1400
+	MNEMONIC_VPHADDBQ           Mnemonic = 1401
+	MNEMONIC_VPHADDBW           Mnemonic = 1402
+	MNEMONIC_VPHADDD            Mnemonic = 1403
+	MNEMONIC_VPHADDDQ           Mnemonic = 1404
+	MNEMONIC_VPHADDSW           Mnemonic = 1405
+	MNEMONIC_VPHADDUBD          Mnemonic = 1406
+	MNEMONIC_VPHADDUBQ          Mnemonic = 1407
+	MNEMONIC_VPHADDUBW          Mnemonic = 1408
+	MNEMONIC_VPHADDUDQ          Mnemonic = 1409
+	MNEMONIC_VPHADDUWD          Mnemonic = 1410
+	MNEMONIC_VPHADDUWQ          Mnemonic = 1411
+	MNEMONIC_VPHADDW            Mnemonic = 1412
+	MNEMONIC_VPHADDWD           Mnemonic = 1413
+	MNEMONIC_VPHADDWQ           Mnemonic = 1414
+	MNEMONIC_VPHMINPOSUW        Mnemonic = 1415
+	MNEMONIC_VPHSUBBW           Mnemonic = 1416
+	MNEMONIC_VPHSUBD            Mnemonic = 1417
+	MNEMONIC_VPHSUBDQ           Mnemonic = 1418
+	MNEMONIC_VPHSUBSW           Mnemonic = 1419
+	MNEMONIC_VPHSUBW            Mnemonic = 1420
+	MNEMONIC_VPHSUBWD           Mnemonic = 1421
+	MNEMONIC_VPINSRB            Mnemonic = 1422
+	MNEMONIC_VPINSRD            Mnemonic = 1423
+	MNEMONIC_VPINSRQ            Mnemonic = 1424
+	MNEMONIC_VPINSRW            Mnemonic = 1425
+	MNEMONIC_VPLZCNTD           Mnemonic = 1426
+	MNEMONIC_VPLZCNTQ           Mnemonic = 1427
+	MNEMONIC_VPMACSDD           Mnemonic = 1428
+	MNEMONIC_VPMACSDQH          Mnemonic = 1429
+	MNEMONIC_VPMACSDQL          Mnemonic = 1430
+	MNEMONIC_VPMACSSDD          Mnemonic = 1431
+	MNEMONIC_VPMACSSDQH         Mnemonic = 1432
+	MNEMONIC_VPMACSSDQL         Mnemonic = 1433
+	MNEMONIC_VPMACSSWD          Mnemonic = 1434
+	MNEMONIC_VPMACSSWW          Mnemonic = 1435
+	MNEMONIC_VPMACSWD           Mnemonic = 1436
+	MNEMONIC_VPMACSWW           Mnemonic = 1437
+	MNEMONIC_VPMADCSSWD         Mnemonic = 1438
+	MNEMONIC_VPMADCSWD          Mnemonic = 1439
+	MNEMONIC_VPMADD231D         Mnemonic = 1440
+	MNEMONIC_VPMADD233D         Mnemonic = 1441
+	MNEMONIC_VPMADD52HUQ        Mnemonic = 1442
+	MNEMONIC_VPMADD52LUQ        Mnemonic = 1443
+	MNEMONIC_VPMADDUBSW         Mnemonic = 1444
+	MNEMONIC_VPMADDWD           Mnemonic = 1445
+	MNEMONIC_VPMASKMOVD         Mnemonic = 1446
+	MNEMONIC_VPMASKMOVQ         Mnemonic = 1447
+	MNEMONIC_VPMAXSB            Mnemonic = 1448
+	MNEMONIC_VPMAXSD            Mnemonic = 1449
+	MNEMONIC_VPMAXSQ            Mnemonic = 1450
+	MNEMONIC_VPMAXSW            Mnemonic = 1451
+	MNEMONIC_VPMAXUB            Mnemonic = 1452
+	MNEMONIC_VPMAXUD            Mnemonic = 1453
+	MNEMONIC_VPMAXUQ            Mnemonic = 1454
+	MNEMONIC_VPMAXUW            Mnemonic = 1455
+	MNEMONIC_VPMINSB            Mnemonic = 1456
+	MNEMONIC_VPMINSD            Mnemonic = 1457
+	MNEMONIC_VPMINSQ            Mnemonic = 1458
+	MNEMONIC_VPMINSW            Mnemonic = 1459
+	MNEMONIC_VPMINUB            Mnemonic = 1460
+	MNEMONIC_VPMINUD            Mnemonic = 1461
+	MNEMONIC_VPMINUQ            Mnemonic = 1462
+	MNEMONIC_VPMINUW            Mnemonic = 1463
+	MNEMONIC_VPMOVB2M           Mnemonic = 1464
+	MNEMONIC_VPMOVD2M           Mnemonic = 1465
+	MNEMONIC_VPMOVDB            Mnemonic = 1466
+	MNEMONIC_VPMOVDW            Mnemonic = 1467
+	MNEMONIC_VPMOVM2B           Mnemonic = 1468
+	MNEMONIC_VPMOVM2D           Mnemonic = 1469
+	MNEMONIC_VPMOVM2Q           Mnemonic = 1470
+	MNEMONIC_VPMOVM2W           Mnemonic = 1471
+	MNEMONIC_VPMOVMSKB          Mnemonic = 1472
+	MNEMONIC_VPMOVQ2M           Mnemonic = 1473
+	MNEMONIC_VPMOVQB            Mnemonic = 1474
+	MNEMONIC_VPMOVQD            Mnemonic = 1475
+	MNEMONIC_VPMOVQW            Mnemonic = 1476
+	MNEMONIC_VPMOVSDB           Mnemonic = 1477
+	MNEMONIC_VPMOVSDW           Mnemonic = 1478
+	MNEMONIC_VPMOVSQB           Mnemonic = 1479
+	MNEMONIC_VPMOVSQD           Mnemonic = 1480
+	MNEMONIC_VPMOVSQW           Mnemonic = 1481
+	MNEMONIC_VPMOVSWB           Mnemonic = 1482
+	MNEMONIC_VPMOVSXBD          Mnemonic = 1483
+	MNEMONIC_VPMOVSXBQ          Mnemonic = 1484
+	MNEMONIC_VPMOVSXBW          Mnemonic = 1485
+	MNEMONIC_VPMOVSXDQ          Mnemonic = 1486
+	MNEMONIC_VPMOVSXWD          Mnemonic = 1487
+	MNEMONIC_VPMOVSXWQ          Mnemonic = 1488
+	MNEMONIC_VPMOVUSDB          Mnemonic = 1489
+	MNEMONIC_VPMOVUSDW          Mnemonic = 1490
+	MNEMONIC_VPMOVUSQB          Mnemonic = 1491
+	MNEMONIC_VPMOVUSQD          Mnemonic = 1492
+	MNEMONIC_VPMOVUSQW          Mnemonic = 1493
+	MNEMONIC_VPMOVUSWB          Mnemonic = 1494
+	MNEMONIC_VPMOVW2M           Mnemonic = 1495
+	MNEMONIC_VPMOVWB            Mnemonic = 1496
+	MNEMONIC_VPMOVZXBD          Mnemonic = 1497
+	MNEMONIC_VPMOVZXBQ          Mnemonic = 1498
+	MNEMONIC_VPMOVZXBW          Mnemonic = 1499
+	MNEMONIC_VPMOVZXDQ          Mnemonic = 1500
+	MNEMONIC_VPMOVZXWD          Mnemonic = 1501
+	MNEMONIC_VPMOVZXWQ          Mnemonic = 1502
+	MNEMONIC_VPMULDQ            Mnemonic = 1503
+	MNEMONIC_VPMULHD            Mnemonic = 1504
+	MNEMONIC_VPMULHRSW          Mnemonic = 1505
+	MNEMONIC_VPMULHUD           Mnemonic = 1506
+	MNEMONIC_VPMULHUW           Mnemonic = 1507
+	MNEMONIC_VPMULHW            Mnemonic = 1508
+	MNEMONIC_VPMULLD            Mnemonic = 1509
+	MNEMONIC_VPMULLQ            Mnemonic = 1510
+	MNEMONIC_VPMULLW            Mnemonic = 1511
+	MNEMONIC_VPMULTISHIFTQB     Mnemonic = 1512
+	MNEMONIC_VPMULUDQ           Mnemonic = 1513
+	MNEMONIC_VPOPCNTB           Mnemonic = 1514
+	MNEMONIC_VPOPCNTD           Mnemonic = 1515
+	MNEMONIC_VPOPCNTQ           Mnemonic = 1516
+	MNEMONIC_VPOPCNTW           Mnemonic = 1517
+	MNEMONIC_VPOR               Mnemonic = 1518
+	MNEMONIC_VPORD              Mnemonic = 1519
+	MNEMONIC_VPORQ              Mnemonic = 1520
+	MNEMONIC_VPPERM             Mnemonic = 1521
+	MNEMONIC_VPREFETCH0         Mnemonic = 1522
+	MNEMONIC_VPREFETCH1         Mnemonic = 1523
+	MNEMONIC_VPREFETCH2         Mnemonic = 1524
+	MNEMONIC_VPREFETCHE0        Mnemonic = 1525
+	MNEMONIC_VPREFETCHE1        Mnemonic = 1526
+	MNEMONIC_VPREFETCHE2        Mnemonic = 1527
+	MNEMONIC_VPREFETCHENTA      Mnemonic = 1528
+	MNEMONIC_VPREFETCHNTA       Mnemonic = 1529
+	MNEMONIC_VPROLD             Mnemonic = 1530
+	MNEMONIC_VPROLQ             Mnemonic = 1531
+	MNEMONIC_VPROLVD            Mnemonic = 1532
+	MNEMONIC_VPROLVQ            Mnemonic = 1533
+	MNEMONIC_VPRORD             Mnemonic = 1534
+	MNEMONIC_VPRORQ             Mnemonic = 1535
+	MNEMONIC_VPRORVD            Mnemonic = 1536
+	MNEMONIC_VPRORVQ            Mnemonic = 1537
+	MNEMONIC_VPROTB             Mnemonic = 1538
+	MNEMONIC_VPROTD             Mnemonic = 1539
+	MNEMONIC_VPROTQ             Mnemonic = 1540
+	MNEMONIC_VPROTW             Mnemonic = 1541
+	MNEMONIC_VPSADBW            Mnemonic = 1542
+	MNEMONIC_VPSBBD             Mnemonic = 1543
+	MNEMONIC_VPSBBRD            Mnemonic = 1544
+	MNEMONIC_VPSCATTERDD        Mnemonic = 1545
+	MNEMONIC_VPSCATTERDQ        Mnemonic = 1546
+	MNEMONIC_VPSCATTERQD        Mnemonic = 1547
+	MNEMONIC_VPSCATTERQQ        Mnemonic = 1548
+	MNEMONIC_VPSHAB             Mnemonic = 1549
+	MNEMONIC_VPSHAD             Mnemonic = 1550
+	MNEMONIC_VPSHAQ             Mnemonic = 1551
+	MNEMONIC_VPSHAW             Mnemonic = 1552
+	MNEMONIC_VPSHLB             Mnemonic = 1553
+	MNEMONIC_VPSHLD             Mnemonic = 1554
+	MNEMONIC_VPSHLDD            Mnemonic = 1555
+	MNEMONIC_VPSHLDQ            Mnemonic = 1556
+	MNEMONIC_VPSHLDVD           Mnemonic = 1557
+	MNEMONIC_VPSHLDVQ           Mnemonic = 1558
+	MNEMONIC_VPSHLDVW           Mnemonic = 1559
+	MNEMONIC_VPSHLDW            Mnemonic = 1560
+	MNEMONIC_VPSHLQ             Mnemonic = 1561
+	MNEMONIC_VPSHLW             Mnemonic = 1562
+	MNEMONIC_VPSHRDD            Mnemonic = 1563
+	MNEMONIC_VPSHRDQ            Mnemonic = 1564
+	MNEMONIC_VPSHRDVD           Mnemonic = 1565
+	MNEMONIC_VPSHRDVQ           Mnemonic = 1566
+	MNEMONIC_VPSHRDVW           Mnemonic = 1567
+	MNEMONIC_VPSHRDW            Mnemonic = 1568
+	MNEMONIC_VPSHUFB            Mnemonic = 1569
+	MNEMONIC_VPSHUFBITQMB       Mnemonic = 1570
+	MNEMONIC_VPSHUFD            Mnemonic = 1571
+	MNEMONIC_VPSHUFHW           Mnemonic = 1572
+	MNEMONIC_VPSHUFLW           Mnemonic = 1573
+	MNEMONIC_VPSIGNB            Mnemonic = 1574
+	MNEMONIC_VPSIGND            Mnemonic = 1575
+	MNEMONIC_VPSIGNW            Mnemonic = 1576
+	MNEMONIC_VPSLLD             Mnemonic = 1577
+	MNEMONIC_VPSLLDQ            Mnemonic = 1578
+	MNEMONIC_VPSLLQ             Mnemonic = 1579
+	MNEMONIC_VPSLLVD            Mnemonic = 1580
+	MNEMONIC_VPSLLVQ            Mnemonic = 1581
+	MNEMONIC_VPSLLVW            Mnemonic = 1582
+	MNEMONIC_VPSLLW             Mnemonic = 1583
+	MNEMONIC_VPSRAD             Mnemonic = 1584
+	MNEMONIC_VPSRAQ             Mnemonic = 1585
+	MNEMONIC_VPSRAVD            Mnemonic = 1586
+	MNEMONIC_VPSRAVQ            Mnemonic = 1587
+	MNEMONIC_VPSRAVW            Mnemonic = 1588
+	MNEMONIC_VPSRAW             Mnemonic = 1589
+	MNEMONIC_VPSRLD             Mnemonic = 1590
+	MNEMONIC_VPSRLDQ            Mnemonic = 1591
+	MNEMONIC_VPSRLQ             Mnemonic = 1592
+	MNEMONIC_VPSRLVD            Mnemonic = 1593
+	MNEMONIC_VPSRLVQ            Mnemonic = 1594
+	MNEMONIC_VPSRLVW            Mnemonic = 1595
+	MNEMONIC_VPSRLW             Mnemonic = 1596
+	MNEMONIC_VPSUBB             Mnemonic = 1597
+	MNEMONIC_VPSUBD             Mnemonic = 1598
+	MNEMONIC_VPSUBQ             Mnemonic = 1599
+	MNEMONIC_VPSUBRD            Mnemonic = 1600
+	MNEMONIC_VPSUBRSETBD        Mnemonic = 1601
+	MNEMONIC_VPSUBSB            Mnemonic = 1602
+	MNEMONIC_VPSUBSETBD         Mnemonic = 1603
+	MNEMONIC_VPSUBSW            Mnemonic = 1604
+	MNEMONIC_VPSUBUSB           Mnemonic = 1605
+	MNEMONIC_VPSUBUSW           Mnemonic = 1606
+	MNEMONIC_VPSUBW             Mnemonic = 1607
+	MNEMONIC_VPTERNLOGD         Mnemonic = 1608
+	MNEMONIC_VPTERNLOGQ         Mnemonic = 1609
+	MNEMONIC_VPTEST             Mnemonic = 1610
+	MNEMONIC_VPTESTMB           Mnemonic = 1611
+	MNEMONIC_VPTESTMD           Mnemonic = 1612
+	MNEMONIC_VPTESTMQ           Mnemonic = 1613
+	MNEMONIC_VPTESTMW           Mnemonic = 1614
+	MNEMONIC_VPTESTNMB          Mnemonic = 1615
+	MNEMONIC_VPTESTNMD          Mnemonic = 1616
+	MNEMONIC_VPTESTNMQ          Mnemonic = 1617
+	MNEMONIC_VPTESTNMW          Mnemonic = 1618
+	MNEMONIC_VPUNPCKHBW         Mnemonic = 1619
+	MNEMONIC_VPUNPCKHDQ         Mnemonic = 1620
+	MNEMONIC_VPUNPCKHQDQ        Mnemonic = 1621
+	MNEMONIC_VPUNPCKHWD         Mnemonic = 1622
+	MNEMONIC_VPUNPCKLBW         Mnemonic = 1623
+	MNEMONIC_VPUNPCKLDQ         Mnemonic = 1624
+	MNEMONIC_VPUNPCKLQDQ        Mnemonic = 1625
+	MNEMONIC_VPUNPCKLWD         Mnemonic = 1626
+	MNEMONIC_VPXOR              Mnemonic = 1627
+	MNEMONIC_VPXORD             Mnemonic = 1628
+	MNEMONIC_VPXORQ             Mnemonic = 1629
+	MNEMONIC_VRANGEPD           Mnemonic = 1630
+	MNEMONIC_VRANGEPS           Mnemonic = 1631
+	MNEMONIC_VRANGESD           Mnemonic = 1632
+	MNEMONIC_VRANGESS           Mnemonic = 1633
+	MNEMONIC_VRCP14PD           Mnemonic = 1634
+	MNEMONIC_VRCP14PS           Mnemonic = 1635
+	MNEMONIC_VRCP14SD           Mnemonic = 1636
+	MNEMONIC_VRCP14SS           Mnemonic = 1637
+	MNEMONIC_VRCP23PS           Mnemonic = 1638
+	MNEMONIC_VRCP28PD           Mnemonic = 1639
+	MNEMONIC_VRCP28PS           Mnemonic = 1640
+	MNEMONIC_VRCP28SD           Mnemonic = 1641
+	MNEMONIC_VRCP28SS           Mnemonic = 1642
+	MNEMONIC_VRCPPH             Mnemonic = 1643
+	MNEMONIC_VRCPPS             Mnemonic = 1644
+	MNEMONIC_VRCPSH             Mnemonic = 1645
+	MNEMONIC_VRCPSS             Mnemonic = 1646
+	MNEMONIC_VREDUCEPD          Mnemonic = 1647
+	MNEMONIC_VREDUCEPH          Mnemonic = 1648
+	MNEMONIC_VREDUCEPS          Mnemonic = 1649
+	MNEMONIC_VREDUCESD          Mnemonic = 1650
+	MNEMONIC_VREDUCESH          Mnemonic = 1651
+	MNEMONIC_VREDUCESS          Mnemonic = 1652
+	MNEMONIC_VRNDFXPNTPD        Mnemonic = 1653
+	MNEMONIC_VRNDFXPNTPS        Mnemonic = 1654
+	MNEMONIC_VRNDSCALEPD        Mnemonic = 1655
+	MNEMONIC_VRNDSCALEPH        Mnemonic = 1656
+	MNEMONIC_VRNDSCALEPS        Mnemonic = 1657
+	MNEMONIC_VRNDSCALESD        Mnemonic = 1658
+	MNEMONIC_VRNDSCALESH        Mnemonic = 1659
+	MNEMONIC_VRNDSCALESS        Mnemonic = 1660
+	MNEMONIC_VROUNDPD           Mnemonic = 1661
+	MNEMONIC_VROUNDPS           Mnemonic = 1662
+	MNEMONIC_VROUNDSD           Mnemonic = 1663
+	MNEMONIC_VROUNDSS           Mnemonic = 1664
+	MNEMONIC_VRSQRT14PD         Mnemonic = 1665
+	MNEMONIC_VRSQRT14PS         Mnemonic = 1666
+	MNEMONIC_VRSQRT14SD         Mnemonic = 1667
+	MNEMONIC_VRSQRT14SS         Mnemonic = 1668
+	MNEMONIC_VRSQRT23PS         Mnemonic = 1669
+	MNEMONIC_VRSQRT28PD         Mnemonic = 1670
+	MNEMONIC_VRSQRT28PS         Mnemonic = 1671
+	MNEMONIC_VRSQRT28SD         Mnemonic = 1672
+	MNEMONIC_VRSQRT28SS         Mnemonic = 1673
+	MNEMONIC_VRSQRTPH           Mnemonic = 1674
+	MNEMONIC_VRSQRTPS           Mnemonic = 1675
+	MNEMONIC_VRSQRTSH           Mnemonic = 1676
+	MNEMONIC_VRSQRTSS           Mnemonic = 1677
+	MNEMONIC_VSCALEFPD          Mnemonic = 1678
+	MNEMONIC_VSCALEFPH          Mnemonic = 1679
+	MNEMONIC_VSCALEFPS          Mnemonic = 1680
+	MNEMONIC_VSCALEFSD          Mnemonic = 1681
+	MNEMONIC_VSCALEFSH          Mnemonic = 1682
+	MNEMONIC_VSCALEFSS          Mnemonic = 1683
+	MNEMONIC_VSCALEPS           Mnemonic = 1684
+	MNEMONIC_VSCATTERDPD        Mnemonic = 1685
+	MNEMONIC_VSCATTERDPS        Mnemonic = 1686
+	MNEMONIC_VSCATTERPF0DPD     Mnemonic = 1687
+	MNEMONIC_VSCATTERPF0DPS     Mnemonic = 1688
+	MNEMONIC_VSCATTERPF0HINTDPD Mnemonic = 1689
+	MNEMONIC_VSCATTERPF0HINTDPS Mnemonic = 1690
+	MNEMONIC_VSCATTERPF0QPD     Mnemonic = 1691
+	MNEMONIC_VSCATTERPF0QPS     Mnemonic = 1692
+	MNEMONIC_VSCATTERPF1DPD     Mnemonic = 1693
+	MNEMONIC_VSCATTERPF1DPS     Mnemonic = 1694
+	MNEMONIC_VSCATTERPF1QPD     Mnemonic = 1695
+	MNEMONIC_VSCATTERPF1QPS     Mnemonic = 1696
+	MNEMONIC_VSCATTERQPD        Mnemonic = 1697
+	MNEMONIC_VSCATTERQPS        Mnemonic = 1698
+	MNEMONIC_VSHUFF32X4         Mnemonic = 1699
+	MNEMONIC_VSHUFF64X2         Mnemonic = 1700
+	MNEMONIC_VSHUFI32X4         Mnemonic = 1701
+	MNEMONIC_VSHUFI64X2         Mnemonic = 1702
+	MNEMONIC_VSHUFPD            Mnemonic = 1703
+	MNEMONIC_VSHUFPS            Mnemonic = 1704
+	MNEMONIC_VSQRTPD            Mnemonic = 1705
+	MNEMONIC_VSQRTPH            Mnemonic = 1706
+	MNEMONIC_VSQRTPS            Mnemonic = 1707
+	MNEMONIC_VSQRTSD            Mnemonic = 1708
+	MNEMONIC_VSQRTSH            Mnemonic = 1709
+	MNEMONIC_VSQRTSS            Mnemonic = 1710
+	MNEMONIC_VSTMXCSR           Mnemonic = 1711
+	MNEMONIC_VSUBPD             Mnemonic = 1712
+	MNEMONIC_VSUBPH             Mnemonic = 1713
+	MNEMONIC_VSUBPS             Mnemonic = 1714
+	MNEMONIC_VSUBRPD            Mnemonic = 1715
+	MNEMONIC_VSUBRPS            Mnemonic = 1716
+	MNEMONIC_VSUBSD             Mnemonic = 1717
+	MNEMONIC_VSUBSH             Mnemonic = 1718
+	MNEMONIC_VSUBSS             Mnemonic = 1719
+	MNEMONIC_VTESTPD            Mnemonic = 1720
+	MNEMONIC_VTESTPS            Mnemonic = 1721
+	MNEMONIC_VUCOMISD           Mnemonic = 1722
+	MNEMONIC_VUCOMISH           Mnemonic = 1723
+	MNEMONIC_VUCOMISS           Mnemonic = 1724
+	MNEMONIC_VUNPCKHPD          Mnemonic = 1725
+	MNEMONIC_VUNPCKHPS          Mnemonic = 1726
+	MNEMONIC_VUNPCKLPD          Mnemonic = 1727
+	MNEMONIC_VUNPCKLPS          Mnemonic = 1728
+	MNEMONIC_VXORPD             Mnemonic = 1729
+	MNEMONIC_VXORPS             Mnemonic = 1730
+	MNEMONIC_VZEROALL           Mnemonic = 1731
+	MNEMONIC_VZEROUPPER         Mnemonic = 1732
+	MNEMONIC_WBINVD             Mnemonic = 1733
+	MNEMONIC_WRFSBASE           Mnemonic = 1734
+	MNEMONIC_WRGSBASE           Mnemonic = 1735
+	MNEMONIC_WRMSR              Mnemonic = 1736
+	MNEMONIC_WRMSRLIST          Mnemonic = 1737
+	MNEMONIC_WRMSRNS            Mnemonic = 1738
+	MNEMONIC_WRPKRU             Mnemonic = 1739
+	MNEMONIC_WRSSD              Mnemonic = 1740
+	MNEMONIC_WRSSQ              Mnemonic = 1741
+	MNEMONIC_WRUSSD             Mnemonic = 1742
+	MNEMONIC_WRUSSQ             Mnemonic = 1743
+	MNEMONIC_XABORT             Mnemonic = 1744
+	MNEMONIC_XADD               Mnemonic = 1745
+	MNEMONIC_XBEGIN             Mnemonic = 1746
+	MNEMONIC_XCHG               Mnemonic = 1747
+	MNEMONIC_XCRYPT_CBC         Mnemonic = 1748
+	MNEMONIC_XCRYPT_CFB         Mnemonic = 1749
+	MNEMONIC_XCRYPT_CTR         Mnemonic = 1750
+	MNEMONIC_XCRYPT_ECB         Mnemonic = 1751
+	MNEMONIC_XCRYPT_OFB         Mnemonic = 1752
+	MNEMONIC_XEND               Mnemonic = 1753
+	MNEMONIC_XGETBV             Mnemonic = 1754
+	MNEMONIC_XLAT               Mnemonic = 1755
+	MNEMONIC_XOR                Mnemonic = 1756
+	MNEMONIC_XORPD              Mnemonic = 1757
+	MNEMONIC_XORPS              Mnemonic = 1758
+	MNEMONIC_XRESLDTRK          Mnemonic = 1759
+	MNEMONIC_XRSTOR             Mnemonic = 1760
+	MNEMONIC_XRSTOR64           Mnemonic = 1761
+	MNEMONIC_XRSTORS            Mnemonic = 1762
+	MNEMONIC_XRSTORS64          Mnemonic = 1763
+	MNEMONIC_XSAVE              Mnemonic = 1764
+	MNEMONIC_XSAVE64            Mnemonic = 1765
+	MNEMONIC_XSAVEC             Mnemonic = 1766
+	MNEMONIC_XSAVEC64           Mnemonic = 1767
+	MNEMONIC_XSAVEOPT           Mnemonic = 1768
+	MNEMONIC_XSAVEOPT64         Mnemonic = 1769
+	MNEMONIC_XSAVES             Mnemonic = 1770
+	MNEMONIC_XSAVES64           Mnemonic = 1771
+	MNEMONIC_XSETBV             Mnemonic = 1772
+	MNEMONIC_XSHA1              Mnemonic = 1773
+	MNEMONIC_XSHA256            Mnemonic = 1774
+	MNEMONIC_XSTORE             Mnemonic = 1775
+	MNEMONIC_XSUSLDTRK          Mnemonic = 1776
+	MNEMONIC_XTEST              Mnemonic = 1777
 	// Maximum value of this enum.
 	MNEMONIC_MAX_VALUE Mnemonic = 1777
 	// The minimum number of bits required to represent all values of this enum.
@@ -2279,15 +2279,15 @@ const (
 	// Signed integer value.
 	ELEMENT_TYPE_INT ElementType = 3
 	// 16-bit floating point value (`half`).
-	ELEMENT_TYPE_FLOAT_16 ElementType = 4
+	ELEMENT_TYPE_FLOAT16 ElementType = 4
 	// 32-bit floating point value (`single`).
-	ELEMENT_TYPE_FLOAT_32 ElementType = 5
+	ELEMENT_TYPE_FLOAT32 ElementType = 5
 	// 64-bit floating point value (`double`).
-	ELEMENT_TYPE_FLOAT_64 ElementType = 6
+	ELEMENT_TYPE_FLOAT64 ElementType = 6
 	// 80-bit floating point value (`extended`).
-	ELEMENT_TYPE_FLOAT_80 ElementType = 7
+	ELEMENT_TYPE_FLOAT80 ElementType = 7
 	// 16-bit brain floating point value.
-	ELEMENT_TYPE_BFLOAT_16 ElementType = 8
+	ELEMENT_TYPE_BFLOAT16 ElementType = 8
 	// Binary coded decimal value.
 	ELEMENT_TYPE_LONGBCD ElementType = 9
 	// A condition code (e.g. used by `CMPPD`, `VCMPPD`, ...).
@@ -2322,41 +2322,41 @@ const (
 type OperandEncoding int32
 
 const (
-	OPERAND_ENCODING_NONE          OperandEncoding = 0
-	OPERAND_ENCODING_MODRM_REG     OperandEncoding = 1
-	OPERAND_ENCODING_MODRM_RM      OperandEncoding = 2
-	OPERAND_ENCODING_OPCODE        OperandEncoding = 3
-	OPERAND_ENCODING_NDSNDD        OperandEncoding = 4
-	OPERAND_ENCODING_IS_4          OperandEncoding = 5
-	OPERAND_ENCODING_MASK          OperandEncoding = 6
-	OPERAND_ENCODING_DISP_8        OperandEncoding = 7
-	OPERAND_ENCODING_DISP_16       OperandEncoding = 8
-	OPERAND_ENCODING_DISP_32       OperandEncoding = 9
-	OPERAND_ENCODING_DISP_64       OperandEncoding = 10
-	OPERAND_ENCODING_DISP_16_32_64 OperandEncoding = 11
-	OPERAND_ENCODING_DISP_32_32_64 OperandEncoding = 12
-	OPERAND_ENCODING_DISP_16_32_32 OperandEncoding = 13
-	OPERAND_ENCODING_UIMM_8        OperandEncoding = 14
-	OPERAND_ENCODING_UIMM_16       OperandEncoding = 15
-	OPERAND_ENCODING_UIMM_32       OperandEncoding = 16
-	OPERAND_ENCODING_UIMM_64       OperandEncoding = 17
-	OPERAND_ENCODING_UIMM_16_32_64 OperandEncoding = 18
-	OPERAND_ENCODING_UIMM_32_32_64 OperandEncoding = 19
-	OPERAND_ENCODING_UIMM_16_32_32 OperandEncoding = 20
-	OPERAND_ENCODING_SIMM_8        OperandEncoding = 21
-	OPERAND_ENCODING_SIMM_16       OperandEncoding = 22
-	OPERAND_ENCODING_SIMM_32       OperandEncoding = 23
-	OPERAND_ENCODING_SIMM_64       OperandEncoding = 24
-	OPERAND_ENCODING_SIMM_16_32_64 OperandEncoding = 25
-	OPERAND_ENCODING_SIMM_32_32_64 OperandEncoding = 26
-	OPERAND_ENCODING_SIMM_16_32_32 OperandEncoding = 27
-	OPERAND_ENCODING_JIMM_8        OperandEncoding = 28
-	OPERAND_ENCODING_JIMM_16       OperandEncoding = 29
-	OPERAND_ENCODING_JIMM_32       OperandEncoding = 30
-	OPERAND_ENCODING_JIMM_64       OperandEncoding = 31
-	OPERAND_ENCODING_JIMM_16_32_64 OperandEncoding = 32
-	OPERAND_ENCODING_JIMM_32_32_64 OperandEncoding = 33
-	OPERAND_ENCODING_JIMM_16_32_32 OperandEncoding = 34
+	OPERAND_ENCODING_NONE         OperandEncoding = 0
+	OPERAND_ENCODING_MODRM_REG    OperandEncoding = 1
+	OPERAND_ENCODING_MODRM_RM     OperandEncoding = 2
+	OPERAND_ENCODING_OPCODE       OperandEncoding = 3
+	OPERAND_ENCODING_NDSNDD       OperandEncoding = 4
+	OPERAND_ENCODING_IS4          OperandEncoding = 5
+	OPERAND_ENCODING_MASK         OperandEncoding = 6
+	OPERAND_ENCODING_DISP8        OperandEncoding = 7
+	OPERAND_ENCODING_DISP16       OperandEncoding = 8
+	OPERAND_ENCODING_DISP32       OperandEncoding = 9
+	OPERAND_ENCODING_DISP64       OperandEncoding = 10
+	OPERAND_ENCODING_DISP16_32_64 OperandEncoding = 11
+	OPERAND_ENCODING_DISP32_32_64 OperandEncoding = 12
+	OPERAND_ENCODING_DISP16_32_32 OperandEncoding = 13
+	OPERAND_ENCODING_UIMM8        OperandEncoding = 14
+	OPERAND_ENCODING_UIMM16       OperandEncoding = 15
+	OPERAND_ENCODING_UIMM32       OperandEncoding = 16
+	OPERAND_ENCODING_UIMM64       OperandEncoding = 17
+	OPERAND_ENCODING_UIMM16_32_64 OperandEncoding = 18
+	OPERAND_ENCODING_UIMM32_32_64 OperandEncoding = 19
+	OPERAND_ENCODING_UIMM16_32_32 OperandEncoding = 20
+	OPERAND_ENCODING_SIMM8        OperandEncoding = 21
+	OPERAND_ENCODING_SIMM16       OperandEncoding = 22
+	OPERAND_ENCODING_SIMM32       OperandEncoding = 23
+	OPERAND_ENCODING_SIMM64       OperandEncoding = 24
+	OPERAND_ENCODING_SIMM16_32_64 OperandEncoding = 25
+	OPERAND_ENCODING_SIMM32_32_64 OperandEncoding = 26
+	OPERAND_ENCODING_SIMM16_32_32 OperandEncoding = 27
+	OPERAND_ENCODING_JIMM8        OperandEncoding = 28
+	OPERAND_ENCODING_JIMM16       OperandEncoding = 29
+	OPERAND_ENCODING_JIMM32       OperandEncoding = 30
+	OPERAND_ENCODING_JIMM64       OperandEncoding = 31
+	OPERAND_ENCODING_JIMM16_32_64 OperandEncoding = 32
+	OPERAND_ENCODING_JIMM32_32_64 OperandEncoding = 33
+	OPERAND_ENCODING_JIMM16_32_32 OperandEncoding = 34
 	// Maximum value of this enum.
 	OPERAND_ENCODING_MAX_VALUE OperandEncoding = 34
 	// The minimum number of bits required to represent all values of this enum.
@@ -2418,7 +2418,7 @@ const (
 	// The instruction uses the legacy encoding.
 	INSTRUCTION_ENCODING_LEGACY InstructionEncoding = 0
 	// The instruction uses the AMD 3DNow-encoding.
-	INSTRUCTION_ENCODING_3_DNOW InstructionEncoding = 1
+	INSTRUCTION_ENCODING_3DNOW InstructionEncoding = 1
 	// The instruction uses the AMD XOP-encoding.
 	INSTRUCTION_ENCODING_XOP InstructionEncoding = 2
 	// The instruction uses the VEX-encoding.
@@ -2438,16 +2438,16 @@ type OpcodeMap int32
 
 const (
 	OPCODE_MAP_DEFAULT OpcodeMap = 0
-	OPCODE_MAP_0_F     OpcodeMap = 1
-	OPCODE_MAP_0_F_38  OpcodeMap = 2
-	OPCODE_MAP_0_F_3_A OpcodeMap = 3
-	OPCODE_MAP_MAP_4   OpcodeMap = 4
-	OPCODE_MAP_MAP_5   OpcodeMap = 5
-	OPCODE_MAP_MAP_6   OpcodeMap = 6
-	OPCODE_MAP_MAP_7   OpcodeMap = 7
-	OPCODE_MAP_0_F_0_F OpcodeMap = 8
-	OPCODE_MAP_XOP_8   OpcodeMap = 9
-	OPCODE_MAP_XOP_9   OpcodeMap = 10
+	OPCODE_MAP_0F      OpcodeMap = 1
+	OPCODE_MAP_0F38    OpcodeMap = 2
+	OPCODE_MAP_0F3A    OpcodeMap = 3
+	OPCODE_MAP_MAP4    OpcodeMap = 4
+	OPCODE_MAP_MAP5    OpcodeMap = 5
+	OPCODE_MAP_MAP6    OpcodeMap = 6
+	OPCODE_MAP_MAP7    OpcodeMap = 7
+	OPCODE_MAP_0F0F    OpcodeMap = 8
+	OPCODE_MAP_XOP8    OpcodeMap = 9
+	OPCODE_MAP_XOP9    OpcodeMap = 10
 	OPCODE_MAP_XOPA    OpcodeMap = 11
 	// Maximum value of this enum.
 	OPCODE_MAP_MAX_VALUE OpcodeMap = 11
@@ -2459,272 +2459,272 @@ const (
 type Register int32
 
 const (
-	REGISTER_NONE         Register = 0
-	REGISTER_AL           Register = 1
-	REGISTER_CL           Register = 2
-	REGISTER_DL           Register = 3
-	REGISTER_BL           Register = 4
-	REGISTER_AH           Register = 5
-	REGISTER_CH           Register = 6
-	REGISTER_DH           Register = 7
-	REGISTER_BH           Register = 8
-	REGISTER_SPL          Register = 9
-	REGISTER_BPL          Register = 10
-	REGISTER_SIL          Register = 11
-	REGISTER_DIL          Register = 12
-	REGISTER_R_8_B        Register = 13
-	REGISTER_R_9_B        Register = 14
-	REGISTER_R_10_B       Register = 15
-	REGISTER_R_11_B       Register = 16
-	REGISTER_R_12_B       Register = 17
-	REGISTER_R_13_B       Register = 18
-	REGISTER_R_14_B       Register = 19
-	REGISTER_R_15_B       Register = 20
-	REGISTER_AX           Register = 21
-	REGISTER_CX           Register = 22
-	REGISTER_DX           Register = 23
-	REGISTER_BX           Register = 24
-	REGISTER_SP           Register = 25
-	REGISTER_BP           Register = 26
-	REGISTER_SI           Register = 27
-	REGISTER_DI           Register = 28
-	REGISTER_R_8_W        Register = 29
-	REGISTER_R_9_W        Register = 30
-	REGISTER_R_10_W       Register = 31
-	REGISTER_R_11_W       Register = 32
-	REGISTER_R_12_W       Register = 33
-	REGISTER_R_13_W       Register = 34
-	REGISTER_R_14_W       Register = 35
-	REGISTER_R_15_W       Register = 36
-	REGISTER_EAX          Register = 37
-	REGISTER_ECX          Register = 38
-	REGISTER_EDX          Register = 39
-	REGISTER_EBX          Register = 40
-	REGISTER_ESP          Register = 41
-	REGISTER_EBP          Register = 42
-	REGISTER_ESI          Register = 43
-	REGISTER_EDI          Register = 44
-	REGISTER_R_8_D        Register = 45
-	REGISTER_R_9_D        Register = 46
-	REGISTER_R_10_D       Register = 47
-	REGISTER_R_11_D       Register = 48
-	REGISTER_R_12_D       Register = 49
-	REGISTER_R_13_D       Register = 50
-	REGISTER_R_14_D       Register = 51
-	REGISTER_R_15_D       Register = 52
-	REGISTER_RAX          Register = 53
-	REGISTER_RCX          Register = 54
-	REGISTER_RDX          Register = 55
-	REGISTER_RBX          Register = 56
-	REGISTER_RSP          Register = 57
-	REGISTER_RBP          Register = 58
-	REGISTER_RSI          Register = 59
-	REGISTER_RDI          Register = 60
-	REGISTER_R_8          Register = 61
-	REGISTER_R_9          Register = 62
-	REGISTER_R_10         Register = 63
-	REGISTER_R_11         Register = 64
-	REGISTER_R_12         Register = 65
-	REGISTER_R_13         Register = 66
-	REGISTER_R_14         Register = 67
-	REGISTER_R_15         Register = 68
-	REGISTER_ST_0         Register = 69
-	REGISTER_ST_1         Register = 70
-	REGISTER_ST_2         Register = 71
-	REGISTER_ST_3         Register = 72
-	REGISTER_ST_4         Register = 73
-	REGISTER_ST_5         Register = 74
-	REGISTER_ST_6         Register = 75
-	REGISTER_ST_7         Register = 76
-	REGISTER_X_87_CONTROL Register = 77
-	REGISTER_X_87_STATUS  Register = 78
-	REGISTER_X_87_TAG     Register = 79
-	REGISTER_MM_0         Register = 80
-	REGISTER_MM_1         Register = 81
-	REGISTER_MM_2         Register = 82
-	REGISTER_MM_3         Register = 83
-	REGISTER_MM_4         Register = 84
-	REGISTER_MM_5         Register = 85
-	REGISTER_MM_6         Register = 86
-	REGISTER_MM_7         Register = 87
-	REGISTER_XMM_0        Register = 88
-	REGISTER_XMM_1        Register = 89
-	REGISTER_XMM_2        Register = 90
-	REGISTER_XMM_3        Register = 91
-	REGISTER_XMM_4        Register = 92
-	REGISTER_XMM_5        Register = 93
-	REGISTER_XMM_6        Register = 94
-	REGISTER_XMM_7        Register = 95
-	REGISTER_XMM_8        Register = 96
-	REGISTER_XMM_9        Register = 97
-	REGISTER_XMM_10       Register = 98
-	REGISTER_XMM_11       Register = 99
-	REGISTER_XMM_12       Register = 100
-	REGISTER_XMM_13       Register = 101
-	REGISTER_XMM_14       Register = 102
-	REGISTER_XMM_15       Register = 103
-	REGISTER_XMM_16       Register = 104
-	REGISTER_XMM_17       Register = 105
-	REGISTER_XMM_18       Register = 106
-	REGISTER_XMM_19       Register = 107
-	REGISTER_XMM_20       Register = 108
-	REGISTER_XMM_21       Register = 109
-	REGISTER_XMM_22       Register = 110
-	REGISTER_XMM_23       Register = 111
-	REGISTER_XMM_24       Register = 112
-	REGISTER_XMM_25       Register = 113
-	REGISTER_XMM_26       Register = 114
-	REGISTER_XMM_27       Register = 115
-	REGISTER_XMM_28       Register = 116
-	REGISTER_XMM_29       Register = 117
-	REGISTER_XMM_30       Register = 118
-	REGISTER_XMM_31       Register = 119
-	REGISTER_YMM_0        Register = 120
-	REGISTER_YMM_1        Register = 121
-	REGISTER_YMM_2        Register = 122
-	REGISTER_YMM_3        Register = 123
-	REGISTER_YMM_4        Register = 124
-	REGISTER_YMM_5        Register = 125
-	REGISTER_YMM_6        Register = 126
-	REGISTER_YMM_7        Register = 127
-	REGISTER_YMM_8        Register = 128
-	REGISTER_YMM_9        Register = 129
-	REGISTER_YMM_10       Register = 130
-	REGISTER_YMM_11       Register = 131
-	REGISTER_YMM_12       Register = 132
-	REGISTER_YMM_13       Register = 133
-	REGISTER_YMM_14       Register = 134
-	REGISTER_YMM_15       Register = 135
-	REGISTER_YMM_16       Register = 136
-	REGISTER_YMM_17       Register = 137
-	REGISTER_YMM_18       Register = 138
-	REGISTER_YMM_19       Register = 139
-	REGISTER_YMM_20       Register = 140
-	REGISTER_YMM_21       Register = 141
-	REGISTER_YMM_22       Register = 142
-	REGISTER_YMM_23       Register = 143
-	REGISTER_YMM_24       Register = 144
-	REGISTER_YMM_25       Register = 145
-	REGISTER_YMM_26       Register = 146
-	REGISTER_YMM_27       Register = 147
-	REGISTER_YMM_28       Register = 148
-	REGISTER_YMM_29       Register = 149
-	REGISTER_YMM_30       Register = 150
-	REGISTER_YMM_31       Register = 151
-	REGISTER_ZMM_0        Register = 152
-	REGISTER_ZMM_1        Register = 153
-	REGISTER_ZMM_2        Register = 154
-	REGISTER_ZMM_3        Register = 155
-	REGISTER_ZMM_4        Register = 156
-	REGISTER_ZMM_5        Register = 157
-	REGISTER_ZMM_6        Register = 158
-	REGISTER_ZMM_7        Register = 159
-	REGISTER_ZMM_8        Register = 160
-	REGISTER_ZMM_9        Register = 161
-	REGISTER_ZMM_10       Register = 162
-	REGISTER_ZMM_11       Register = 163
-	REGISTER_ZMM_12       Register = 164
-	REGISTER_ZMM_13       Register = 165
-	REGISTER_ZMM_14       Register = 166
-	REGISTER_ZMM_15       Register = 167
-	REGISTER_ZMM_16       Register = 168
-	REGISTER_ZMM_17       Register = 169
-	REGISTER_ZMM_18       Register = 170
-	REGISTER_ZMM_19       Register = 171
-	REGISTER_ZMM_20       Register = 172
-	REGISTER_ZMM_21       Register = 173
-	REGISTER_ZMM_22       Register = 174
-	REGISTER_ZMM_23       Register = 175
-	REGISTER_ZMM_24       Register = 176
-	REGISTER_ZMM_25       Register = 177
-	REGISTER_ZMM_26       Register = 178
-	REGISTER_ZMM_27       Register = 179
-	REGISTER_ZMM_28       Register = 180
-	REGISTER_ZMM_29       Register = 181
-	REGISTER_ZMM_30       Register = 182
-	REGISTER_ZMM_31       Register = 183
-	REGISTER_TMM_0        Register = 184
-	REGISTER_TMM_1        Register = 185
-	REGISTER_TMM_2        Register = 186
-	REGISTER_TMM_3        Register = 187
-	REGISTER_TMM_4        Register = 188
-	REGISTER_TMM_5        Register = 189
-	REGISTER_TMM_6        Register = 190
-	REGISTER_TMM_7        Register = 191
-	REGISTER_FLAGS        Register = 192
-	REGISTER_EFLAGS       Register = 193
-	REGISTER_RFLAGS       Register = 194
-	REGISTER_IP           Register = 195
-	REGISTER_EIP          Register = 196
-	REGISTER_RIP          Register = 197
-	REGISTER_ES           Register = 198
-	REGISTER_CS           Register = 199
-	REGISTER_SS           Register = 200
-	REGISTER_DS           Register = 201
-	REGISTER_FS           Register = 202
-	REGISTER_GS           Register = 203
-	REGISTER_GDTR         Register = 204
-	REGISTER_LDTR         Register = 205
-	REGISTER_IDTR         Register = 206
-	REGISTER_TR           Register = 207
-	REGISTER_TR_0         Register = 208
-	REGISTER_TR_1         Register = 209
-	REGISTER_TR_2         Register = 210
-	REGISTER_TR_3         Register = 211
-	REGISTER_TR_4         Register = 212
-	REGISTER_TR_5         Register = 213
-	REGISTER_TR_6         Register = 214
-	REGISTER_TR_7         Register = 215
-	REGISTER_CR_0         Register = 216
-	REGISTER_CR_1         Register = 217
-	REGISTER_CR_2         Register = 218
-	REGISTER_CR_3         Register = 219
-	REGISTER_CR_4         Register = 220
-	REGISTER_CR_5         Register = 221
-	REGISTER_CR_6         Register = 222
-	REGISTER_CR_7         Register = 223
-	REGISTER_CR_8         Register = 224
-	REGISTER_CR_9         Register = 225
-	REGISTER_CR_10        Register = 226
-	REGISTER_CR_11        Register = 227
-	REGISTER_CR_12        Register = 228
-	REGISTER_CR_13        Register = 229
-	REGISTER_CR_14        Register = 230
-	REGISTER_CR_15        Register = 231
-	REGISTER_DR_0         Register = 232
-	REGISTER_DR_1         Register = 233
-	REGISTER_DR_2         Register = 234
-	REGISTER_DR_3         Register = 235
-	REGISTER_DR_4         Register = 236
-	REGISTER_DR_5         Register = 237
-	REGISTER_DR_6         Register = 238
-	REGISTER_DR_7         Register = 239
-	REGISTER_DR_8         Register = 240
-	REGISTER_DR_9         Register = 241
-	REGISTER_DR_10        Register = 242
-	REGISTER_DR_11        Register = 243
-	REGISTER_DR_12        Register = 244
-	REGISTER_DR_13        Register = 245
-	REGISTER_DR_14        Register = 246
-	REGISTER_DR_15        Register = 247
-	REGISTER_K_0          Register = 248
-	REGISTER_K_1          Register = 249
-	REGISTER_K_2          Register = 250
-	REGISTER_K_3          Register = 251
-	REGISTER_K_4          Register = 252
-	REGISTER_K_5          Register = 253
-	REGISTER_K_6          Register = 254
-	REGISTER_K_7          Register = 255
-	REGISTER_BND_0        Register = 256
-	REGISTER_BND_1        Register = 257
-	REGISTER_BND_2        Register = 258
-	REGISTER_BND_3        Register = 259
-	REGISTER_BNDCFG       Register = 260
-	REGISTER_BNDSTATUS    Register = 261
-	REGISTER_MXCSR        Register = 262
-	REGISTER_PKRU         Register = 263
-	REGISTER_XCR_0        Register = 264
-	REGISTER_UIF          Register = 265
+	REGISTER_NONE       Register = 0
+	REGISTER_AL         Register = 1
+	REGISTER_CL         Register = 2
+	REGISTER_DL         Register = 3
+	REGISTER_BL         Register = 4
+	REGISTER_AH         Register = 5
+	REGISTER_CH         Register = 6
+	REGISTER_DH         Register = 7
+	REGISTER_BH         Register = 8
+	REGISTER_SPL        Register = 9
+	REGISTER_BPL        Register = 10
+	REGISTER_SIL        Register = 11
+	REGISTER_DIL        Register = 12
+	REGISTER_R8B        Register = 13
+	REGISTER_R9B        Register = 14
+	REGISTER_R10B       Register = 15
+	REGISTER_R11B       Register = 16
+	REGISTER_R12B       Register = 17
+	REGISTER_R13B       Register = 18
+	REGISTER_R14B       Register = 19
+	REGISTER_R15B       Register = 20
+	REGISTER_AX         Register = 21
+	REGISTER_CX         Register = 22
+	REGISTER_DX         Register = 23
+	REGISTER_BX         Register = 24
+	REGISTER_SP         Register = 25
+	REGISTER_BP         Register = 26
+	REGISTER_SI         Register = 27
+	REGISTER_DI         Register = 28
+	REGISTER_R8W        Register = 29
+	REGISTER_R9W        Register = 30
+	REGISTER_R10W       Register = 31
+	REGISTER_R11W       Register = 32
+	REGISTER_R12W       Register = 33
+	REGISTER_R13W       Register = 34
+	REGISTER_R14W       Register = 35
+	REGISTER_R15W       Register = 36
+	REGISTER_EAX        Register = 37
+	REGISTER_ECX        Register = 38
+	REGISTER_EDX        Register = 39
+	REGISTER_EBX        Register = 40
+	REGISTER_ESP        Register = 41
+	REGISTER_EBP        Register = 42
+	REGISTER_ESI        Register = 43
+	REGISTER_EDI        Register = 44
+	REGISTER_R8D        Register = 45
+	REGISTER_R9D        Register = 46
+	REGISTER_R10D       Register = 47
+	REGISTER_R11D       Register = 48
+	REGISTER_R12D       Register = 49
+	REGISTER_R13D       Register = 50
+	REGISTER_R14D       Register = 51
+	REGISTER_R15D       Register = 52
+	REGISTER_RAX        Register = 53
+	REGISTER_RCX        Register = 54
+	REGISTER_RDX        Register = 55
+	REGISTER_RBX        Register = 56
+	REGISTER_RSP        Register = 57
+	REGISTER_RBP        Register = 58
+	REGISTER_RSI        Register = 59
+	REGISTER_RDI        Register = 60
+	REGISTER_R8         Register = 61
+	REGISTER_R9         Register = 62
+	REGISTER_R10        Register = 63
+	REGISTER_R11        Register = 64
+	REGISTER_R12        Register = 65
+	REGISTER_R13        Register = 66
+	REGISTER_R14        Register = 67
+	REGISTER_R15        Register = 68
+	REGISTER_ST0        Register = 69
+	REGISTER_ST1        Register = 70
+	REGISTER_ST2        Register = 71
+	REGISTER_ST3        Register = 72
+	REGISTER_ST4        Register = 73
+	REGISTER_ST5        Register = 74
+	REGISTER_ST6        Register = 75
+	REGISTER_ST7        Register = 76
+	REGISTER_X87CONTROL Register = 77
+	REGISTER_X87STATUS  Register = 78
+	REGISTER_X87TAG     Register = 79
+	REGISTER_MM0        Register = 80
+	REGISTER_MM1        Register = 81
+	REGISTER_MM2        Register = 82
+	REGISTER_MM3        Register = 83
+	REGISTER_MM4        Register = 84
+	REGISTER_MM5        Register = 85
+	REGISTER_MM6        Register = 86
+	REGISTER_MM7        Register = 87
+	REGISTER_XMM0       Register = 88
+	REGISTER_XMM1       Register = 89
+	REGISTER_XMM2       Register = 90
+	REGISTER_XMM3       Register = 91
+	REGISTER_XMM4       Register = 92
+	REGISTER_XMM5       Register = 93
+	REGISTER_XMM6       Register = 94
+	REGISTER_XMM7       Register = 95
+	REGISTER_XMM8       Register = 96
+	REGISTER_XMM9       Register = 97
+	REGISTER_XMM10      Register = 98
+	REGISTER_XMM11      Register = 99
+	REGISTER_XMM12      Register = 100
+	REGISTER_XMM13      Register = 101
+	REGISTER_XMM14      Register = 102
+	REGISTER_XMM15      Register = 103
+	REGISTER_XMM16      Register = 104
+	REGISTER_XMM17      Register = 105
+	REGISTER_XMM18      Register = 106
+	REGISTER_XMM19      Register = 107
+	REGISTER_XMM20      Register = 108
+	REGISTER_XMM21      Register = 109
+	REGISTER_XMM22      Register = 110
+	REGISTER_XMM23      Register = 111
+	REGISTER_XMM24      Register = 112
+	REGISTER_XMM25      Register = 113
+	REGISTER_XMM26      Register = 114
+	REGISTER_XMM27      Register = 115
+	REGISTER_XMM28      Register = 116
+	REGISTER_XMM29      Register = 117
+	REGISTER_XMM30      Register = 118
+	REGISTER_XMM31      Register = 119
+	REGISTER_YMM0       Register = 120
+	REGISTER_YMM1       Register = 121
+	REGISTER_YMM2       Register = 122
+	REGISTER_YMM3       Register = 123
+	REGISTER_YMM4       Register = 124
+	REGISTER_YMM5       Register = 125
+	REGISTER_YMM6       Register = 126
+	REGISTER_YMM7       Register = 127
+	REGISTER_YMM8       Register = 128
+	REGISTER_YMM9       Register = 129
+	REGISTER_YMM10      Register = 130
+	REGISTER_YMM11      Register = 131
+	REGISTER_YMM12      Register = 132
+	REGISTER_YMM13      Register = 133
+	REGISTER_YMM14      Register = 134
+	REGISTER_YMM15      Register = 135
+	REGISTER_YMM16      Register = 136
+	REGISTER_YMM17      Register = 137
+	REGISTER_YMM18      Register = 138
+	REGISTER_YMM19      Register = 139
+	REGISTER_YMM20      Register = 140
+	REGISTER_YMM21      Register = 141
+	REGISTER_YMM22      Register = 142
+	REGISTER_YMM23      Register = 143
+	REGISTER_YMM24      Register = 144
+	REGISTER_YMM25      Register = 145
+	REGISTER_YMM26      Register = 146
+	REGISTER_YMM27      Register = 147
+	REGISTER_YMM28      Register = 148
+	REGISTER_YMM29      Register = 149
+	REGISTER_YMM30      Register = 150
+	REGISTER_YMM31      Register = 151
+	REGISTER_ZMM0       Register = 152
+	REGISTER_ZMM1       Register = 153
+	REGISTER_ZMM2       Register = 154
+	REGISTER_ZMM3       Register = 155
+	REGISTER_ZMM4       Register = 156
+	REGISTER_ZMM5       Register = 157
+	REGISTER_ZMM6       Register = 158
+	REGISTER_ZMM7       Register = 159
+	REGISTER_ZMM8       Register = 160
+	REGISTER_ZMM9       Register = 161
+	REGISTER_ZMM10      Register = 162
+	REGISTER_ZMM11      Register = 163
+	REGISTER_ZMM12      Register = 164
+	REGISTER_ZMM13      Register = 165
+	REGISTER_ZMM14      Register = 166
+	REGISTER_ZMM15      Register = 167
+	REGISTER_ZMM16      Register = 168
+	REGISTER_ZMM17      Register = 169
+	REGISTER_ZMM18      Register = 170
+	REGISTER_ZMM19      Register = 171
+	REGISTER_ZMM20      Register = 172
+	REGISTER_ZMM21      Register = 173
+	REGISTER_ZMM22      Register = 174
+	REGISTER_ZMM23      Register = 175
+	REGISTER_ZMM24      Register = 176
+	REGISTER_ZMM25      Register = 177
+	REGISTER_ZMM26      Register = 178
+	REGISTER_ZMM27      Register = 179
+	REGISTER_ZMM28      Register = 180
+	REGISTER_ZMM29      Register = 181
+	REGISTER_ZMM30      Register = 182
+	REGISTER_ZMM31      Register = 183
+	REGISTER_TMM0       Register = 184
+	REGISTER_TMM1       Register = 185
+	REGISTER_TMM2       Register = 186
+	REGISTER_TMM3       Register = 187
+	REGISTER_TMM4       Register = 188
+	REGISTER_TMM5       Register = 189
+	REGISTER_TMM6       Register = 190
+	REGISTER_TMM7       Register = 191
+	REGISTER_FLAGS      Register = 192
+	REGISTER_EFLAGS     Register = 193
+	REGISTER_RFLAGS     Register = 194
+	REGISTER_IP         Register = 195
+	REGISTER_EIP        Register = 196
+	REGISTER_RIP        Register = 197
+	REGISTER_ES         Register = 198
+	REGISTER_CS         Register = 199
+	REGISTER_SS         Register = 200
+	REGISTER_DS         Register = 201
+	REGISTER_FS         Register = 202
+	REGISTER_GS         Register = 203
+	REGISTER_GDTR       Register = 204
+	REGISTER_LDTR       Register = 205
+	REGISTER_IDTR       Register = 206
+	REGISTER_TR         Register = 207
+	REGISTER_TR0        Register = 208
+	REGISTER_TR1        Register = 209
+	REGISTER_TR2        Register = 210
+	REGISTER_TR3        Register = 211
+	REGISTER_TR4        Register = 212
+	REGISTER_TR5        Register = 213
+	REGISTER_TR6        Register = 214
+	REGISTER_TR7        Register = 215
+	REGISTER_CR0        Register = 216
+	REGISTER_CR1        Register = 217
+	REGISTER_CR2        Register = 218
+	REGISTER_CR3        Register = 219
+	REGISTER_CR4        Register = 220
+	REGISTER_CR5        Register = 221
+	REGISTER_CR6        Register = 222
+	REGISTER_CR7        Register = 223
+	REGISTER_CR8        Register = 224
+	REGISTER_CR9        Register = 225
+	REGISTER_CR10       Register = 226
+	REGISTER_CR11       Register = 227
+	REGISTER_CR12       Register = 228
+	REGISTER_CR13       Register = 229
+	REGISTER_CR14       Register = 230
+	REGISTER_CR15       Register = 231
+	REGISTER_DR0        Register = 232
+	REGISTER_DR1        Register = 233
+	REGISTER_DR2        Register = 234
+	REGISTER_DR3        Register = 235
+	REGISTER_DR4        Register = 236
+	REGISTER_DR5        Register = 237
+	REGISTER_DR6        Register = 238
+	REGISTER_DR7        Register = 239
+	REGISTER_DR8        Register = 240
+	REGISTER_DR9        Register = 241
+	REGISTER_DR10       Register = 242
+	REGISTER_DR11       Register = 243
+	REGISTER_DR12       Register = 244
+	REGISTER_DR13       Register = 245
+	REGISTER_DR14       Register = 246
+	REGISTER_DR15       Register = 247
+	REGISTER_K0         Register = 248
+	REGISTER_K1         Register = 249
+	REGISTER_K2         Register = 250
+	REGISTER_K3         Register = 251
+	REGISTER_K4         Register = 252
+	REGISTER_K5         Register = 253
+	REGISTER_K6         Register = 254
+	REGISTER_K7         Register = 255
+	REGISTER_BND0       Register = 256
+	REGISTER_BND1       Register = 257
+	REGISTER_BND2       Register = 258
+	REGISTER_BND3       Register = 259
+	REGISTER_BNDCFG     Register = 260
+	REGISTER_BNDSTATUS  Register = 261
+	REGISTER_MXCSR      Register = 262
+	REGISTER_PKRU       Register = 263
+	REGISTER_XCR0       Register = 264
+	REGISTER_UIF        Register = 265
 	// Maximum value of this enum.
 	REGISTER_MAX_VALUE Register = 265
 	// The minimum number of bits required to represent all values of this enum.
@@ -2742,7 +2742,7 @@ type RegisterKind int32
 const (
 	REGKIND_INVALID RegisterKind = 0
 	REGKIND_GPR     RegisterKind = 1
-	REGKIND_X_87    RegisterKind = 2
+	REGKIND_X87     RegisterKind = 2
 	REGKIND_MMX     RegisterKind = 3
 	REGKIND_VR      RegisterKind = 4
 	REGKIND_TMM     RegisterKind = 5
@@ -2769,15 +2769,15 @@ type RegisterClass int32
 const (
 	REGCLASS_INVALID RegisterClass = 0
 	// 8-bit general-purpose registers.
-	REGCLASS_GPR_8 RegisterClass = 1
+	REGCLASS_GPR8 RegisterClass = 1
 	// 16-bit general-purpose registers.
-	REGCLASS_GPR_16 RegisterClass = 2
+	REGCLASS_GPR16 RegisterClass = 2
 	// 32-bit general-purpose registers.
-	REGCLASS_GPR_32 RegisterClass = 3
+	REGCLASS_GPR32 RegisterClass = 3
 	// 64-bit general-purpose registers.
-	REGCLASS_GPR_64 RegisterClass = 4
+	REGCLASS_GPR64 RegisterClass = 4
 	// Floating point legacy registers.
-	REGCLASS_X_87 RegisterClass = 5
+	REGCLASS_X87 RegisterClass = 5
 	// Floating point multimedia registers.
 	REGCLASS_MMX RegisterClass = 6
 	// 128-bit vector registers.
@@ -2855,52 +2855,52 @@ const (
 type ExceptionClass int32
 
 const (
-	EXCEPTION_CLASS_NONE       ExceptionClass = 0
-	EXCEPTION_CLASS_SSE_1      ExceptionClass = 1
-	EXCEPTION_CLASS_SSE_2      ExceptionClass = 2
-	EXCEPTION_CLASS_SSE_3      ExceptionClass = 3
-	EXCEPTION_CLASS_SSE_4      ExceptionClass = 4
-	EXCEPTION_CLASS_SSE_5      ExceptionClass = 5
-	EXCEPTION_CLASS_SSE_7      ExceptionClass = 6
-	EXCEPTION_CLASS_AVX_1      ExceptionClass = 7
-	EXCEPTION_CLASS_AVX_2      ExceptionClass = 8
-	EXCEPTION_CLASS_AVX_3      ExceptionClass = 9
-	EXCEPTION_CLASS_AVX_4      ExceptionClass = 10
-	EXCEPTION_CLASS_AVX_5      ExceptionClass = 11
-	EXCEPTION_CLASS_AVX_6      ExceptionClass = 12
-	EXCEPTION_CLASS_AVX_7      ExceptionClass = 13
-	EXCEPTION_CLASS_AVX_8      ExceptionClass = 14
-	EXCEPTION_CLASS_AVX_11     ExceptionClass = 15
-	EXCEPTION_CLASS_AVX_12     ExceptionClass = 16
-	EXCEPTION_CLASS_E_1        ExceptionClass = 17
-	EXCEPTION_CLASS_E_1_NF     ExceptionClass = 18
-	EXCEPTION_CLASS_E_2        ExceptionClass = 19
-	EXCEPTION_CLASS_E_2_NF     ExceptionClass = 20
-	EXCEPTION_CLASS_E_3        ExceptionClass = 21
-	EXCEPTION_CLASS_E_3_NF     ExceptionClass = 22
-	EXCEPTION_CLASS_E_4        ExceptionClass = 23
-	EXCEPTION_CLASS_E_4_NF     ExceptionClass = 24
-	EXCEPTION_CLASS_E_5        ExceptionClass = 25
-	EXCEPTION_CLASS_E_5_NF     ExceptionClass = 26
-	EXCEPTION_CLASS_E_6        ExceptionClass = 27
-	EXCEPTION_CLASS_E_6_NF     ExceptionClass = 28
-	EXCEPTION_CLASS_E_7_NM     ExceptionClass = 29
-	EXCEPTION_CLASS_E_7_NM_128 ExceptionClass = 30
-	EXCEPTION_CLASS_E_9_NF     ExceptionClass = 31
-	EXCEPTION_CLASS_E_10       ExceptionClass = 32
-	EXCEPTION_CLASS_E_10_NF    ExceptionClass = 33
-	EXCEPTION_CLASS_E_11       ExceptionClass = 34
-	EXCEPTION_CLASS_E_11_NF    ExceptionClass = 35
-	EXCEPTION_CLASS_E_12       ExceptionClass = 36
-	EXCEPTION_CLASS_E_12_NP    ExceptionClass = 37
-	EXCEPTION_CLASS_K_20       ExceptionClass = 38
-	EXCEPTION_CLASS_K_21       ExceptionClass = 39
-	EXCEPTION_CLASS_AMXE_1     ExceptionClass = 40
-	EXCEPTION_CLASS_AMXE_2     ExceptionClass = 41
-	EXCEPTION_CLASS_AMXE_3     ExceptionClass = 42
-	EXCEPTION_CLASS_AMXE_4     ExceptionClass = 43
-	EXCEPTION_CLASS_AMXE_5     ExceptionClass = 44
-	EXCEPTION_CLASS_AMXE_6     ExceptionClass = 45
+	EXCEPTION_CLASS_NONE    ExceptionClass = 0
+	EXCEPTION_CLASS_SSE1    ExceptionClass = 1
+	EXCEPTION_CLASS_SSE2    ExceptionClass = 2
+	EXCEPTION_CLASS_SSE3    ExceptionClass = 3
+	EXCEPTION_CLASS_SSE4    ExceptionClass = 4
+	EXCEPTION_CLASS_SSE5    ExceptionClass = 5
+	EXCEPTION_CLASS_SSE7    ExceptionClass = 6
+	EXCEPTION_CLASS_AVX1    ExceptionClass = 7
+	EXCEPTION_CLASS_AVX2    ExceptionClass = 8
+	EXCEPTION_CLASS_AVX3    ExceptionClass = 9
+	EXCEPTION_CLASS_AVX4    ExceptionClass = 10
+	EXCEPTION_CLASS_AVX5    ExceptionClass = 11
+	EXCEPTION_CLASS_AVX6    ExceptionClass = 12
+	EXCEPTION_CLASS_AVX7    ExceptionClass = 13
+	EXCEPTION_CLASS_AVX8    ExceptionClass = 14
+	EXCEPTION_CLASS_AVX11   ExceptionClass = 15
+	EXCEPTION_CLASS_AVX12   ExceptionClass = 16
+	EXCEPTION_CLASS_E1      ExceptionClass = 17
+	EXCEPTION_CLASS_E1NF    ExceptionClass = 18
+	EXCEPTION_CLASS_E2      ExceptionClass = 19
+	EXCEPTION_CLASS_E2NF    ExceptionClass = 20
+	EXCEPTION_CLASS_E3      ExceptionClass = 21
+	EXCEPTION_CLASS_E3NF    ExceptionClass = 22
+	EXCEPTION_CLASS_E4      ExceptionClass = 23
+	EXCEPTION_CLASS_E4NF    ExceptionClass = 24
+	EXCEPTION_CLASS_E5      ExceptionClass = 25
+	EXCEPTION_CLASS_E5NF    ExceptionClass = 26
+	EXCEPTION_CLASS_E6      ExceptionClass = 27
+	EXCEPTION_CLASS_E6NF    ExceptionClass = 28
+	EXCEPTION_CLASS_E7NM    ExceptionClass = 29
+	EXCEPTION_CLASS_E7NM128 ExceptionClass = 30
+	EXCEPTION_CLASS_E9NF    ExceptionClass = 31
+	EXCEPTION_CLASS_E10     ExceptionClass = 32
+	EXCEPTION_CLASS_E10NF   ExceptionClass = 33
+	EXCEPTION_CLASS_E11     ExceptionClass = 34
+	EXCEPTION_CLASS_E11NF   ExceptionClass = 35
+	EXCEPTION_CLASS_E12     ExceptionClass = 36
+	EXCEPTION_CLASS_E12NP   ExceptionClass = 37
+	EXCEPTION_CLASS_K20     ExceptionClass = 38
+	EXCEPTION_CLASS_K21     ExceptionClass = 39
+	EXCEPTION_CLASS_AMXE1   ExceptionClass = 40
+	EXCEPTION_CLASS_AMXE2   ExceptionClass = 41
+	EXCEPTION_CLASS_AMXE3   ExceptionClass = 42
+	EXCEPTION_CLASS_AMXE4   ExceptionClass = 43
+	EXCEPTION_CLASS_AMXE5   ExceptionClass = 44
+	EXCEPTION_CLASS_AMXE6   ExceptionClass = 45
 	// Maximum value of this enum.
 	EXCEPTION_CLASS_MAX_VALUE ExceptionClass = 45
 	// The minimum number of bits required to represent all values of this enum.
@@ -2993,12 +2993,12 @@ const (
 type ConversionMode int32
 
 const (
-	CONVERSION_MODE_INVALID  ConversionMode = 0
-	CONVERSION_MODE_FLOAT_16 ConversionMode = 1
-	CONVERSION_MODE_SINT_8   ConversionMode = 2
-	CONVERSION_MODE_UINT_8   ConversionMode = 3
-	CONVERSION_MODE_SINT_16  ConversionMode = 4
-	CONVERSION_MODE_UINT_16  ConversionMode = 5
+	CONVERSION_MODE_INVALID ConversionMode = 0
+	CONVERSION_MODE_FLOAT16 ConversionMode = 1
+	CONVERSION_MODE_SINT8   ConversionMode = 2
+	CONVERSION_MODE_UINT8   ConversionMode = 3
+	CONVERSION_MODE_SINT16  ConversionMode = 4
+	CONVERSION_MODE_UINT16  ConversionMode = 5
 	// Maximum value of this enum.
 	CONVERSION_MODE_MAX_VALUE ConversionMode = 5
 	// The minimum number of bits required to represent all values of this enum.
@@ -3091,7 +3091,7 @@ type EncodableEncoding int32
 const (
 	ENCODABLE_ENCODING_DEFAULT EncodableEncoding = 0
 	ENCODABLE_ENCODING_LEGACY  EncodableEncoding = 1
-	ENCODABLE_ENCODING_3_DNOW  EncodableEncoding = 2
+	ENCODABLE_ENCODING_3DNOW   EncodableEncoding = 2
 	ENCODABLE_ENCODING_XOP     EncodableEncoding = 4
 	ENCODABLE_ENCODING_VEX     EncodableEncoding = 8
 	ENCODABLE_ENCODING_EVEX    EncodableEncoding = 16
@@ -3480,7 +3480,7 @@ const (
 	FEATURE_DECODER   Feature = 0
 	FEATURE_ENCODER   Feature = 1
 	FEATURE_FORMATTER Feature = 2
-	FEATURE_AVX_512   Feature = 3
+	FEATURE_AVX512    Feature = 3
 	FEATURE_KNC       Feature = 4
 	FEATURE_SEGMENT   Feature = 5
 	// Maximum value of this enum.
@@ -3554,9 +3554,9 @@ type DecodedOperand struct {
 	Attributes   OperandAttributes
 	// The type of the operand.
 	Type OperandType
-	Anon53065
+	Anon5306_5
 }
-type Anon53065 struct {
+type Anon5306_5 struct {
 	Raw [5]int64
 }
 type AccessedFlags struct {
@@ -3738,9 +3738,9 @@ type DecodedInstructionMeta struct {
 	// The instruction category.
 	Category InstructionCategory
 	// The ISA-set.
-	IsaSet Isaset
+	IsaSet ISASet
 	// The ISA-set extension.
-	IsaExt Isaext
+	IsaExt ISAExt
 	// The branch type.
 	BranchType BranchType
 	// The exception class.
@@ -3751,7 +3751,7 @@ type DecodedInstructionRaw struct {
 	PrefixCount U8
 	Prefixes    [15]DecodedInstructionRawPrefixes_
 	Encoding2   InstructionEncoding
-	Anon61855
+	Anon6185_5
 	Modrm DecodedInstructionModRm_
 	Sib   DecodedInstructionRawSib_
 	Disp  DecodedInstructionRawDisp_
@@ -3763,7 +3763,7 @@ type DecodedInstructionRawPrefixes_ struct {
 	// The prefix byte.
 	Value U8
 }
-type Anon61855 struct {
+type Anon6185_5 struct {
 	Raw [15]byte
 }
 type DecodedInstructionModRm_ struct {
@@ -3870,14 +3870,14 @@ type DecoderContext struct {
 	// Contains the effective address-size index.
 	// 0 = 16 bit, 1 = 32 bit, 2 = 64 bit
 	EaszIndex     U8
-	VectorUnified Anon64195
-	RegInfo       Anon64355
-	Evex          Anon64725
-	Mvex          Anon64865
+	VectorUnified Anon6419_5
+	RegInfo       Anon6435_5
+	Evex          Anon6472_5
+	Mvex          Anon6486_5
 	// The scale factor for EVEX/MVEX compressed 8-bit displacement values.
 	Cd8Scale U8
 }
-type Anon64195 struct {
+type Anon6419_5 struct {
 	W    U8
 	R    U8
 	X    U8
@@ -3889,7 +3889,7 @@ type Anon64195 struct {
 	Vvvv U8
 	Mask U8
 }
-type Anon64355 struct {
+type Anon6435_5 struct {
 	// Signals if the `modrm.mod == 3` or `reg` form is forced for the instruction.
 	IsModReg Bool
 	// The final register id for the `reg` encoded register.
@@ -3907,13 +3907,13 @@ type Anon64355 struct {
 	// is present.
 	IdIndex U8
 }
-type Anon64725 struct {
+type Anon6472_5 struct {
 	// The EVEX tuple-type.
 	TupleType U8
 	// The EVEX element-size.
 	ElementSize U8
 }
-type Anon64865 struct {
+type Anon6486_5 struct {
 	// The MVEX functionality.
 	Functionality U8
 }
@@ -4045,11 +4045,11 @@ type Vector struct {
 	// The shrink threshold.
 	ShrinkThreshold U8
 	// The current number of elements in the vector.
-	Size Usize
+	Size USize
 	// The maximum capacity (number of elements).
-	Capacity Usize
+	Capacity USize
 	// The size of a single element in bytes.
-	ElementSize Usize
+	ElementSize USize
 	// The element destructor callback.
 	Destructor MemberProcedure
 	// The data pointer.
@@ -4078,7 +4078,7 @@ type FormatterBuffer struct {
 	// contains a simple string.
 	IsTokenList Bool
 	// The remaining capacity of the buffer.
-	Capacity Usize
+	Capacity USize
 	// The `ZyanString` instance that refers to the literal value of the most
 	// recently added token.
 	String String
@@ -4151,7 +4151,7 @@ type Formatter struct {
 	HexUppercase Bool
 	// The `ZYDIS_FORMATTER_HEX_FORCE_LEADING_NUMBER` property.
 	HexForceLeadingNumber Bool
-	NumberFormat          [2][2]Anon112225
+	NumberFormat          [2][2]Anon11222_5
 	// The `ZYDIS_FORMATTER_FUNC_PRE_INSTRUCTION` function.
 	FuncPreInstruction FormatterFunc
 	// The `ZYDIS_FORMATTER_FUNC_POST_INSTRUCTION` function.
@@ -4191,7 +4191,7 @@ type Formatter struct {
 	// The `ZYDIS_FORMATTER_FUNC_PRINT_DECORATOR` function.
 	FuncPrintDecorator FormatterDecoratorFunc
 }
-type Anon112225 struct {
+type Anon11222_5 struct {
 	// A pointer to the `ZyanStringView` to use as prefix/suffix.
 	String *StringView
 	// The `ZyanStringView` to use as prefix/suffix
@@ -4202,9 +4202,9 @@ type Anon112225 struct {
 type InstructionSegments struct {
 	// The number of logical instruction segments.
 	Count    U8
-	Segments [9]Anon116335
+	Segments [9]Anon11633_5
 }
-type Anon116335 struct {
+type Anon11633_5 struct {
 	// The type of the segment.
 	Type InstructionSegment
 	// The offset of the segment relative to the start of the instruction (in bytes).
@@ -4228,12 +4228,12 @@ type DisassembledInstruction struct {
 	// Guaranteed to be zero-terminated.
 	Text [96]byte
 }
-type __Int128T = any
-type __Uint128T = any
-type __NsconstantString = any
+type _Int128T = any
+type _Uint128T = any
+type __NSConstantString = any
 type SizeT = uint64
-type __BuiltinMsVaList = *byte
-type __BuiltinVaList = *byte
+type _BuiltinMsVaList = *byte
+type _BuiltinVaList = *byte
 type U8 = uint8
 type U16 = uint16
 type U32 = uint32
@@ -4242,10 +4242,10 @@ type I8 = int8
 type I16 = int16
 type I32 = int32
 type I64 = int64
-type Usize = uint64
-type Isize = int64
-type Upointer = uint64
-type Ipointer = int64
+type USize = uint64
+type ISize = int64
+type UPointer = uint64
+type IPointer = int64
 
 // Defines the `ZyanVoidPointer` data-type.
 type VoidPointer = unsafe.Pointer
@@ -4594,7 +4594,7 @@ func init() {
 	gengort.Validate((*DecodedOperandImm)(nil), 0x10, 0x8, "IsSigned", 0x0, "IsRelative", 0x1, "Value", 0x8)
 	gengort.Validate((*DecodedOperandImmValue_)(nil), 0x8, 0x8)
 	gengort.Validate((*DecodedOperand)(nil), 0x50, 0x8, "Id", 0x0, "Visibility", 0x4, "Actions", 0x8, "Encoding", 0xc, "Size", 0x10, "ElementType", 0x14, "ElementSize", 0x18, "ElementCount", 0x1a, "Attributes", 0x1c, "Type", 0x20)
-	gengort.Validate((*Anon53065)(nil), 0x28, 0x8)
+	gengort.Validate((*Anon5306_5)(nil), 0x28, 0x8)
 	gengort.Validate((*AccessedFlags)(nil), 0x14, 0x4, "Tested", 0x0, "Modified", 0x4, "Set0", 0x8, "Set1", 0xc, "Undefined", 0x10)
 	gengort.Validate((*DecodedInstructionRawRex)(nil), 0x5, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "Offset", 0x4)
 	gengort.Validate((*DecodedInstructionRawXop)(nil), 0x9, 0x1, "R", 0x0, "X", 0x1, "B", 0x2, "MMmmm", 0x3, "W", 0x4, "Vvvv", 0x5, "L", 0x6, "Pp", 0x7, "Offset", 0x8)
@@ -4610,7 +4610,7 @@ func init() {
 	gengort.Validate((*DecodedInstructionMeta)(nil), 0x14, 0x4, "Category", 0x0, "IsaSet", 0x4, "IsaExt", 0x8, "BranchType", 0xc, "ExceptionClass", 0x10)
 	gengort.Validate((*DecodedInstructionRaw)(nil), 0xd8, 0x8, "PrefixCount", 0x0, "Prefixes", 0x4, "Encoding2", 0x7c, "Modrm", 0x8f, "Sib", 0x93, "Disp", 0x98, "Imm", 0xa8)
 	gengort.Validate((*DecodedInstructionRawPrefixes_)(nil), 0x8, 0x4, "Type", 0x0, "Value", 0x4)
-	gengort.Validate((*Anon61855)(nil), 0xf, 0x1)
+	gengort.Validate((*Anon6185_5)(nil), 0xf, 0x1)
 	gengort.Validate((*DecodedInstructionModRm_)(nil), 0x4, 0x1, "Mod", 0x0, "Reg", 0x1, "Rm", 0x2, "Offset", 0x3)
 	gengort.Validate((*DecodedInstructionRawSib_)(nil), 0x4, 0x1, "Scale", 0x0, "Index", 0x1, "Base", 0x2, "Offset", 0x3)
 	gengort.Validate((*DecodedInstructionRawDisp_)(nil), 0x10, 0x8, "Value", 0x0, "Size", 0x8, "Offset", 0x9)
@@ -4618,10 +4618,10 @@ func init() {
 	gengort.Validate((*DecodedInstructionRawImmValue_)(nil), 0x8, 0x8)
 	gengort.Validate((*DecodedInstruction)(nil), 0x148, 0x8, "MachineMode", 0x0, "Mnemonic", 0x4, "Length", 0x8, "Encoding", 0xc, "OpcodeMap", 0x10, "Opcode", 0x14, "StackWidth", 0x15, "OperandWidth", 0x16, "AddressWidth", 0x17, "OperandCount", 0x18, "OperandCountVisible", 0x19, "Attributes", 0x20, "CpuFlags", 0x28, "FpuFlags", 0x30, "Avx", 0x38, "Meta", 0x5c, "Raw", 0x70)
 	gengort.Validate((*DecoderContext)(nil), 0x20, 0x8, "Definition", 0x0, "EoszIndex", 0x8, "EaszIndex", 0x9, "VectorUnified", 0xa, "RegInfo", 0x14, "Evex", 0x1a, "Mvex", 0x1c, "Cd8Scale", 0x1d)
-	gengort.Validate((*Anon64195)(nil), 0xa, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "L", 0x4, "Ll", 0x5, "R2", 0x6, "V2", 0x7, "Vvvv", 0x8, "Mask", 0x9)
-	gengort.Validate((*Anon64355)(nil), 0x6, 0x1, "IsModReg", 0x0, "IdReg", 0x1, "IdRm", 0x2, "IdNdsndd", 0x3, "IdBase", 0x4, "IdIndex", 0x5)
-	gengort.Validate((*Anon64725)(nil), 0x2, 0x1, "TupleType", 0x0, "ElementSize", 0x1)
-	gengort.Validate((*Anon64865)(nil), 0x1, 0x1, "Functionality", 0x0)
+	gengort.Validate((*Anon6419_5)(nil), 0xa, 0x1, "W", 0x0, "R", 0x1, "X", 0x2, "B", 0x3, "L", 0x4, "Ll", 0x5, "R2", 0x6, "V2", 0x7, "Vvvv", 0x8, "Mask", 0x9)
+	gengort.Validate((*Anon6435_5)(nil), 0x6, 0x1, "IsModReg", 0x0, "IdReg", 0x1, "IdRm", 0x2, "IdNdsndd", 0x3, "IdBase", 0x4, "IdIndex", 0x5)
+	gengort.Validate((*Anon6472_5)(nil), 0x2, 0x1, "TupleType", 0x0, "ElementSize", 0x1)
+	gengort.Validate((*Anon6486_5)(nil), 0x1, 0x1, "Functionality", 0x0)
 	gengort.Validate((*Decoder)(nil), 0x14, 0x4, "MachineMode", 0x0, "StackWidth", 0x4, "DecoderMode", 0x8)
 	gengort.Validate((*EncoderOperand)(nil), 0x40, 0x8, "Type", 0x0, "Reg", 0x4, "Mem", 0x10, "Ptr", 0x30, "Imm", 0x38)
 	gengort.Validate((*EncoderOperandReg_)(nil), 0x8, 0x4, "Value", 0x0, "Is4", 0x4)
@@ -4639,9 +4639,9 @@ func init() {
 	gengort.Validate((*FormatterBuffer)(nil), 0x50, 0x8, "IsTokenList", 0x0, "Capacity", 0x8, "String", 0x10)
 	gengort.Validate((*FormatterContext)(nil), 0x28, 0x8, "Instruction", 0x0, "Operands", 0x8, "Operand", 0x10, "RuntimeAddress", 0x18, "UserData", 0x20)
 	gengort.Validate((*Formatter)(nil), 0x248, 0x8, "Style", 0x0, "ForceMemorySize", 0x4, "ForceMemorySegment", 0x5, "ForceMemoryScale", 0x6, "ForceRelativeBranches", 0x7, "ForceRelativeRiprel", 0x8, "PrintBranchSize", 0x9, "DetailedPrefixes", 0xa, "AddrBase", 0xc, "AddrSignedness", 0x10, "AddrPaddingAbsolute", 0x14, "AddrPaddingRelative", 0x18, "DispBase", 0x1c, "DispSignedness", 0x20, "DispPadding", 0x24, "ImmBase", 0x28, "ImmSignedness", 0x2c, "ImmPadding", 0x30, "CasePrefixes", 0x34, "CaseMnemonic", 0x38, "CaseRegisters", 0x3c, "CaseTypecasts", 0x40, "CaseDecorators", 0x44, "HexUppercase", 0x48, "HexForceLeadingNumber", 0x49, "NumberFormat", 0x50, "FuncPreInstruction", 0x1b0, "FuncPostInstruction", 0x1b8, "FuncFormatInstruction", 0x1c0, "FuncPreOperand", 0x1c8, "FuncPostOperand", 0x1d0, "FuncFormatOperandReg", 0x1d8, "FuncFormatOperandMem", 0x1e0, "FuncFormatOperandPtr", 0x1e8, "FuncFormatOperandImm", 0x1f0, "FuncPrintMnemonic", 0x1f8, "FuncPrintRegister", 0x200, "FuncPrintAddressAbs", 0x208, "FuncPrintAddressRel", 0x210, "FuncPrintDisp", 0x218, "FuncPrintImm", 0x220, "FuncPrintTypecast", 0x228, "FuncPrintSegment", 0x230, "FuncPrintPrefixes", 0x238, "FuncPrintDecorator", 0x240)
-	gengort.Validate((*Anon112225)(nil), 0x58, 0x8, "String", 0x0, "StringData", 0x8, "Buffer", 0x48)
+	gengort.Validate((*Anon11222_5)(nil), 0x58, 0x8, "String", 0x0, "StringData", 0x8, "Buffer", 0x48)
 	gengort.Validate((*InstructionSegments)(nil), 0x4c, 0x4, "Count", 0x0, "Segments", 0x4)
-	gengort.Validate((*Anon116335)(nil), 0x8, 0x4, "Type", 0x0, "Offset", 0x4, "Size", 0x5)
+	gengort.Validate((*Anon11633_5)(nil), 0x8, 0x4, "Type", 0x0, "Offset", 0x4, "Size", 0x5)
 	gengort.Validate((*DisassembledInstruction)(nil), 0x4d0, 0x8, "RuntimeAddress", 0x0, "Info", 0x8, "Operands", 0x150, "Text", 0x470)
 }
 
@@ -4662,7 +4662,7 @@ var __imp_ZydisISASetGetString gengort.PreloadProc
 // @param isa_set The isa-set.
 //
 // @return The isa-set string or `ZYAN_NULL`, if an invalid isa-set was passed.
-func (isa_set Isaset) GetString() *byte {
+func (isa_set ISASet) GetString() *byte {
 	__res := gengort.CCall1(__imp_ZydisISASetGetString.Addr(), gengort.MarshallSyscall(isa_set))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
@@ -4674,7 +4674,7 @@ var __imp_ZydisISAExtGetString gengort.PreloadProc
 // @param isa_ext The isa-extension.
 //
 // @return The isa-extension string or `ZYAN_NULL`, if an invalid isa-extension was passed.
-func (isa_ext Isaext) GetString() *byte {
+func (isa_ext ISAExt) GetString() *byte {
 	__res := gengort.CCall1(__imp_ZydisISAExtGetString.Addr(), gengort.MarshallSyscall(isa_ext))
 	return gengort.UnmarshallSyscall[*byte](__res)
 }
@@ -4872,7 +4872,7 @@ var __imp_ZydisDecoderDecodeFull gengort.PreloadProc
 // This function is not available in MINIMAL_MODE.
 //
 // @return A zyan status code.
-func (decoder *Decoder) DecodeFull(buffer unsafe.Pointer, length Usize, instruction *DecodedInstruction, operands *DecodedOperand) Status {
+func (decoder *Decoder) DecodeFull(buffer unsafe.Pointer, length USize, instruction *DecodedInstruction, operands *DecodedOperand) Status {
 	__res := gengort.CCall5(__imp_ZydisDecoderDecodeFull.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -4898,7 +4898,7 @@ var __imp_ZydisDecoderDecodeInstruction gengort.PreloadProc
 // details about the decoded instruction.
 //
 // @return A zyan status code.
-func (decoder *Decoder) DecodeInstruction(context *DecoderContext, buffer unsafe.Pointer, length Usize, instruction *DecodedInstruction) Status {
+func (decoder *Decoder) DecodeInstruction(context *DecoderContext, buffer unsafe.Pointer, length USize, instruction *DecodedInstruction) Status {
 	__res := gengort.CCall5(__imp_ZydisDecoderDecodeInstruction.Addr(), gengort.MarshallSyscall(decoder), gengort.MarshallSyscall(context), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -4948,7 +4948,7 @@ var __imp_ZydisEncoderEncodeInstruction gengort.PreloadProc
 // successful return this variable receives length of the encoded instruction.
 //
 // @return A zyan status code.
-func (request *EncoderRequest) EncodeInstruction(buffer unsafe.Pointer, length *Usize) Status {
+func (request *EncoderRequest) EncodeInstruction(buffer unsafe.Pointer, length *USize) Status {
 	__res := gengort.CCall3(__imp_ZydisEncoderEncodeInstruction.Addr(), gengort.MarshallSyscall(request), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -4971,7 +4971,7 @@ var __imp_ZydisEncoderEncodeInstructionAbsolute gengort.PreloadProc
 // @param runtime_address The runtime address of the instruction.
 //
 // @return A zyan status code.
-func (request *EncoderRequest) EncodeInstructionAbsolute(buffer unsafe.Pointer, length *Usize, runtime_address U64) Status {
+func (request *EncoderRequest) EncodeInstructionAbsolute(buffer unsafe.Pointer, length *USize, runtime_address U64) Status {
 	__res := gengort.CCall4(__imp_ZydisEncoderEncodeInstructionAbsolute.Addr(), gengort.MarshallSyscall(request), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5009,7 +5009,7 @@ var __imp_ZydisEncoderNopFill gengort.PreloadProc
 // @param length Size of the output buffer.
 //
 // @return A zyan status code.
-func EncoderNopFill(buffer unsafe.Pointer, length Usize) Status {
+func EncoderNopFill(buffer unsafe.Pointer, length USize) Status {
 	__res := gengort.CCall2(__imp_ZydisEncoderNopFill.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5140,7 +5140,7 @@ var __imp_ZyanVectorInitEx gengort.PreloadProc
 // A growth factor of `1` disables overallocation and a shrink threshold of `0` disables
 // dynamic shrinking.
 // Finalization with `ZyanVectorDestroy` is required for all instances created by this function.
-func (vector *Vector) InitEx(element_size Usize, capacity Usize, destructor MemberProcedure, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
+func (vector *Vector) InitEx(element_size USize, capacity USize, destructor MemberProcedure, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
 	__res := gengort.CCall7(__imp_ZyanVectorInitEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element_size), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(destructor), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5163,7 +5163,7 @@ var __imp_ZyanVectorInitCustomBuffer gengort.PreloadProc
 //
 // @return A zyan status code.
 // Finalization is not required for instances created by this function.
-func (vector *Vector) InitCustomBuffer(element_size Usize, buffer unsafe.Pointer, capacity Usize, destructor MemberProcedure) Status {
+func (vector *Vector) InitCustomBuffer(element_size USize, buffer unsafe.Pointer, capacity USize, destructor MemberProcedure) Status {
 	__res := gengort.CCall5(__imp_ZyanVectorInitCustomBuffer.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element_size), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(destructor))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5203,7 +5203,7 @@ var __imp_ZyanVectorDuplicateEx gengort.PreloadProc
 // A growth factor of `1` disables overallocation and a shrink threshold of `0` disables
 // dynamic shrinking.
 // Finalization with `ZyanVectorDestroy` is required for all instances created by this function.
-func (destination *Vector) DuplicateEx(source *Vector, capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
+func (destination *Vector) DuplicateEx(source *Vector, capacity USize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
 	__res := gengort.CCall6(__imp_ZyanVectorDuplicateEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5225,7 +5225,7 @@ var __imp_ZyanVectorDuplicateCustomBuffer gengort.PreloadProc
 //
 // @return A zyan status code.
 // Finalization is not required for instances created by this function.
-func (destination *Vector) DuplicateCustomBuffer(source *Vector, buffer unsafe.Pointer, capacity Usize) Status {
+func (destination *Vector) DuplicateCustomBuffer(source *Vector, buffer unsafe.Pointer, capacity USize) Status {
 	__res := gengort.CCall4(__imp_ZyanVectorDuplicateCustomBuffer.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5244,7 +5244,7 @@ var __imp_ZyanVectorGet gengort.PreloadProc
 // call to the memory-management functions or implicitly by inserting or removing elements.
 // Take a look at `ZyanVectorGetPointer` instead, if you need a function that returns a zyan status
 // code.
-func (vector *Vector) Get(index Usize) unsafe.Pointer {
+func (vector *Vector) Get(index USize) unsafe.Pointer {
 	__res := gengort.CCall2(__imp_ZyanVectorGet.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[unsafe.Pointer](__res)
 }
@@ -5263,7 +5263,7 @@ var __imp_ZyanVectorGetMutable gengort.PreloadProc
 // call to the memory-management functions or implicitly by inserting or removing elements.
 // Take a look at `ZyanVectorGetPointerMutable` instead, if you need a function that returns a
 // zyan status code.
-func (vector *Vector) GetMutable(index Usize) unsafe.Pointer {
+func (vector *Vector) GetMutable(index USize) unsafe.Pointer {
 	__res := gengort.CCall2(__imp_ZyanVectorGetMutable.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[unsafe.Pointer](__res)
 }
@@ -5281,7 +5281,7 @@ var __imp_ZyanVectorGetPointer gengort.PreloadProc
 // call to the memory-management functions or implicitly by inserting or removing elements.
 //
 // @return A zyan status code.
-func (vector *Vector) GetPointer(index Usize, value *unsafe.Pointer) Status {
+func (vector *Vector) GetPointer(index USize, value *unsafe.Pointer) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorGetPointer.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5299,7 +5299,7 @@ var __imp_ZyanVectorGetPointerMutable gengort.PreloadProc
 // call to the memory-management functions or implicitly by inserting or removing elements.
 //
 // @return A zyan status code.
-func (vector *Vector) GetPointerMutable(index Usize, value *unsafe.Pointer) Status {
+func (vector *Vector) GetPointerMutable(index USize, value *unsafe.Pointer) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorGetPointerMutable.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5315,7 +5315,7 @@ var __imp_ZyanVectorSet gengort.PreloadProc
 // @param value The value to assign.
 //
 // @return A zyan status code.
-func (vector *Vector) Set(index Usize, value unsafe.Pointer) Status {
+func (vector *Vector) Set(index USize, value unsafe.Pointer) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorSet.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5345,7 +5345,7 @@ var __imp_ZyanVectorInsert gengort.PreloadProc
 // @param element A pointer to the element to insert.
 //
 // @return A zyan status code.
-func (vector *Vector) Insert(index Usize, element unsafe.Pointer) Status {
+func (vector *Vector) Insert(index USize, element unsafe.Pointer) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorInsert.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(element))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5363,7 +5363,7 @@ var __imp_ZyanVectorInsertRange gengort.PreloadProc
 // @param count The number of elements to insert.
 //
 // @return A zyan status code.
-func (vector *Vector) InsertRange(index Usize, elements unsafe.Pointer, count Usize) Status {
+func (vector *Vector) InsertRange(index USize, elements unsafe.Pointer, count USize) Status {
 	__res := gengort.CCall4(__imp_ZyanVectorInsertRange.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(elements), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5399,7 +5399,7 @@ var __imp_ZyanVectorEmplaceEx gengort.PreloadProc
 // undefined state, if no constructor was passed.
 //
 // @return A zyan status code.
-func (vector *Vector) EmplaceEx(index Usize, element *unsafe.Pointer, constructor MemberFunction) Status {
+func (vector *Vector) EmplaceEx(index USize, element *unsafe.Pointer, constructor MemberFunction) Status {
 	__res := gengort.CCall4(__imp_ZyanVectorEmplaceEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(element), gengort.MarshallSyscall(constructor))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5417,7 +5417,7 @@ var __imp_ZyanVectorSwapElements gengort.PreloadProc
 // @return A zyan status code.
 // This function requires the vector to have spare capacity for one temporary element. Call
 // `ZyanVectorReserve` before this function to increase capacity, if needed.
-func (vector *Vector) SwapElements(index_first Usize, index_second Usize) Status {
+func (vector *Vector) SwapElements(index_first USize, index_second USize) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorSwapElements.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index_first), gengort.MarshallSyscall(index_second))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5431,7 +5431,7 @@ var __imp_ZyanVectorDelete gengort.PreloadProc
 // @param index The element index.
 //
 // @return A zyan status code.
-func (vector *Vector) Delete(index Usize) Status {
+func (vector *Vector) Delete(index USize) Status {
 	__res := gengort.CCall2(__imp_ZyanVectorDelete.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5447,7 +5447,7 @@ var __imp_ZyanVectorDeleteRange gengort.PreloadProc
 // @param count The number of elements to delete.
 //
 // @return A zyan status code.
-func (vector *Vector) DeleteRange(index Usize, count Usize) Status {
+func (vector *Vector) DeleteRange(index USize, count USize) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorDeleteRange.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5491,7 +5491,7 @@ var __imp_ZyanVectorFind gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE` if the element was found, `ZYAN_STATUS_FALSE` if not or a generic
 // zyan status code if an error occurred.
 // The `found_index` is set to `-1`, if the element was not found.
-func (vector *Vector) Find(element unsafe.Pointer, found_index *Isize, comparison EqualityComparison) Status {
+func (vector *Vector) Find(element unsafe.Pointer, found_index *ISize, comparison EqualityComparison) Status {
 	__res := gengort.CCall4(__imp_ZyanVectorFind.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5515,7 +5515,7 @@ var __imp_ZyanVectorFindEx gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE` if the element was found, `ZYAN_STATUS_FALSE` if not or a generic
 // zyan status code if an error occurred.
 // The `found_index` is set to `-1`, if the element was not found.
-func (vector *Vector) FindEx(element unsafe.Pointer, found_index *Isize, comparison EqualityComparison, index Usize, count Usize) Status {
+func (vector *Vector) FindEx(element unsafe.Pointer, found_index *ISize, comparison EqualityComparison, index USize, count USize) Status {
 	__res := gengort.CCall6(__imp_ZyanVectorFindEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5538,7 +5538,7 @@ var __imp_ZyanVectorBinarySearch gengort.PreloadProc
 // If found, `found_index` contains the zero-based index of `element`. If not found, `found_index`
 // contains the index of the first entry larger than `element`.
 // This function requires all elements in the vector to be strictly ordered (sorted).
-func (vector *Vector) BinarySearch(element unsafe.Pointer, found_index *Usize, comparison Comparison) Status {
+func (vector *Vector) BinarySearch(element unsafe.Pointer, found_index *USize, comparison Comparison) Status {
 	__res := gengort.CCall4(__imp_ZyanVectorBinarySearch.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5565,7 +5565,7 @@ var __imp_ZyanVectorBinarySearchEx gengort.PreloadProc
 // If found, `found_index` contains the zero-based index of `element`. If not found, `found_index`
 // contains the index of the first entry larger than `element`.
 // This function requires all elements in the vector to be strictly ordered (sorted).
-func (vector *Vector) BinarySearchEx(element unsafe.Pointer, found_index *Usize, comparison Comparison, index Usize, count Usize) Status {
+func (vector *Vector) BinarySearchEx(element unsafe.Pointer, found_index *USize, comparison Comparison, index USize, count USize) Status {
 	__res := gengort.CCall6(__imp_ZyanVectorBinarySearchEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(element), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(comparison), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5579,7 +5579,7 @@ var __imp_ZyanVectorResize gengort.PreloadProc
 // @param size The new size of the vector.
 //
 // @return A zyan status code.
-func (vector *Vector) Resize(size Usize) Status {
+func (vector *Vector) Resize(size USize) Status {
 	__res := gengort.CCall2(__imp_ZyanVectorResize.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5595,7 +5595,7 @@ var __imp_ZyanVectorResizeEx gengort.PreloadProc
 // @param initializer A pointer to a value to be used as initializer for new items.
 //
 // @return A zyan status code.
-func (vector *Vector) ResizeEx(size Usize, initializer unsafe.Pointer) Status {
+func (vector *Vector) ResizeEx(size USize, initializer unsafe.Pointer) Status {
 	__res := gengort.CCall3(__imp_ZyanVectorResizeEx.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size), gengort.MarshallSyscall(initializer))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5609,7 +5609,7 @@ var __imp_ZyanVectorReserve gengort.PreloadProc
 // @param capacity The new minimum capacity of the vector.
 //
 // @return A zyan status code.
-func (vector *Vector) Reserve(capacity Usize) Status {
+func (vector *Vector) Reserve(capacity USize) Status {
 	__res := gengort.CCall2(__imp_ZyanVectorReserve.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5635,7 +5635,7 @@ var __imp_ZyanVectorGetCapacity gengort.PreloadProc
 // @param capacity Receives the size of the vector.
 //
 // @return A zyan status code.
-func (vector *Vector) GetCapacity(capacity *Usize) Status {
+func (vector *Vector) GetCapacity(capacity *USize) Status {
 	__res := gengort.CCall2(__imp_ZyanVectorGetCapacity.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5649,7 +5649,7 @@ var __imp_ZyanVectorGetSize gengort.PreloadProc
 // @param size Receives the size of the vector.
 //
 // @return A zyan status code.
-func (vector *Vector) GetSize(size *Usize) Status {
+func (vector *Vector) GetSize(size *USize) Status {
 	__res := gengort.CCall2(__imp_ZyanVectorGetSize.Addr(), gengort.MarshallSyscall(vector), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5677,7 +5677,7 @@ var __imp_ZyanStringInitEx gengort.PreloadProc
 // \
 // 0'.
 // Finalization with `ZyanStringDestroy` is required for all strings created by this function.
-func (_string *String) InitEx(capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
+func (_string *String) InitEx(capacity USize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
 	__res := gengort.CCall5(__imp_ZyanStringInitEx.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5698,7 +5698,7 @@ var __imp_ZyanStringInitCustomBuffer gengort.PreloadProc
 //
 // @return A zyan status code.
 // Finalization is not required for strings created by this function.
-func (_string *String) InitCustomBuffer(buffer *byte, capacity Usize) Status {
+func (_string *String) InitCustomBuffer(buffer *byte, capacity USize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringInitCustomBuffer.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5744,7 +5744,7 @@ var __imp_ZyanStringDuplicateEx gengort.PreloadProc
 // \
 // 0'.
 // Finalization with `ZyanStringDestroy` is required for all strings created by this function.
-func (destination *String) DuplicateEx(source *StringView, capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
+func (destination *String) DuplicateEx(source *StringView, capacity USize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
 	__res := gengort.CCall6(__imp_ZyanStringDuplicateEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5771,7 +5771,7 @@ var __imp_ZyanStringDuplicateCustomBuffer gengort.PreloadProc
 // The behavior of this function is undefined, if `source` is a view into the `destination`
 // string or `destination` points to an already initialized `ZyanString` instance.
 // Finalization is not required for strings created by this function.
-func (destination *String) DuplicateCustomBuffer(source *StringView, buffer *byte, capacity Usize) Status {
+func (destination *String) DuplicateCustomBuffer(source *StringView, buffer *byte, capacity USize) Status {
 	__res := gengort.CCall4(__imp_ZyanStringDuplicateCustomBuffer.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5809,7 +5809,7 @@ var __imp_ZyanStringConcatEx gengort.PreloadProc
 // \
 // 0'.
 // Finalization with `ZyanStringDestroy` is required for all strings created by this function.
-func (destination *String) ConcatEx(s1 *StringView, s2 *StringView, capacity Usize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
+func (destination *String) ConcatEx(s1 *StringView, s2 *StringView, capacity USize, allocator *Allocator, growth_factor U8, shrink_threshold U8) Status {
 	__res := gengort.CCall7(__imp_ZyanStringConcatEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(capacity), gengort.MarshallSyscall(allocator), gengort.MarshallSyscall(growth_factor), gengort.MarshallSyscall(shrink_threshold))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5837,7 +5837,7 @@ var __imp_ZyanStringConcatCustomBuffer gengort.PreloadProc
 // The behavior of this function is undefined, if `s1` or `s2` are views into the `destination`
 // string or `destination` points to an already initialized `ZyanString` instance.
 // Finalization is not required for strings created by this function.
-func (destination *String) ConcatCustomBuffer(s1 *StringView, s2 *StringView, buffer *byte, capacity Usize) Status {
+func (destination *String) ConcatCustomBuffer(s1 *StringView, s2 *StringView, buffer *byte, capacity USize) Status {
 	__res := gengort.CCall5(__imp_ZyanStringConcatCustomBuffer.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(s1), gengort.MarshallSyscall(s2), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5873,7 +5873,7 @@ var __imp_ZyanStringViewInsideViewEx gengort.PreloadProc
 // @return A zyan status code.
 // The `ZYAN_STRING_TO_VEW` macro can be used to pass any `ZyanString` instance as value for the
 // `source` string.
-func (view *StringView) InsideViewEx(source *StringView, index Usize, count Usize) Status {
+func (view *StringView) InsideViewEx(source *StringView, index USize, count USize) Status {
 	__res := gengort.CCall4(__imp_ZyanStringViewInsideViewEx.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(source), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5903,7 +5903,7 @@ var __imp_ZyanStringViewInsideBufferEx gengort.PreloadProc
 // @param length The length of the string (number of characters).
 //
 // @return A zyan status code.
-func (view *StringView) InsideBufferEx(buffer *byte, length Usize) Status {
+func (view *StringView) InsideBufferEx(buffer *byte, length USize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringViewInsideBufferEx.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5917,7 +5917,7 @@ var __imp_ZyanStringViewGetSize gengort.PreloadProc
 // @param size Receives the size (number of characters) of the view.
 //
 // @return A zyan status code.
-func (view *StringView) GetSize(size *Usize) Status {
+func (view *StringView) GetSize(size *USize) Status {
 	__res := gengort.CCall2(__imp_ZyanStringViewGetSize.Addr(), gengort.MarshallSyscall(view), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5949,7 +5949,7 @@ var __imp_ZyanStringGetChar gengort.PreloadProc
 // @param value Receives the desired character of the string.
 //
 // @return A zyan status code.
-func (_string *StringView) GetChar(index Usize, value *byte) Status {
+func (_string *StringView) GetChar(index USize, value *byte) Status {
 	__res := gengort.CCall3(__imp_ZyanStringGetChar.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5965,7 +5965,7 @@ var __imp_ZyanStringGetCharMutable gengort.PreloadProc
 // @param value Receives a pointer to the desired character in the string.
 //
 // @return A zyan status code.
-func (_string *String) GetCharMutable(index Usize, value **byte) Status {
+func (_string *String) GetCharMutable(index USize, value **byte) Status {
 	__res := gengort.CCall3(__imp_ZyanStringGetCharMutable.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5981,7 +5981,7 @@ var __imp_ZyanStringSetChar gengort.PreloadProc
 // @param value The character to assign.
 //
 // @return A zyan status code.
-func (_string *String) SetChar(index Usize, value byte) Status {
+func (_string *String) SetChar(index USize, value byte) Status {
 	__res := gengort.CCall3(__imp_ZyanStringSetChar.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -5997,7 +5997,7 @@ var __imp_ZyanStringInsert gengort.PreloadProc
 // @param source The source string.
 //
 // @return A zyan status code.
-func (destination *String) Insert(index Usize, source *StringView) Status {
+func (destination *String) Insert(index USize, source *StringView) Status {
 	__res := gengort.CCall3(__imp_ZyanStringInsert.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(index), gengort.MarshallSyscall(source))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6019,7 +6019,7 @@ var __imp_ZyanStringInsertEx gengort.PreloadProc
 // @param count The number of chars to insert from the source string.
 //
 // @return A zyan status code.
-func (destination *String) InsertEx(destination_index Usize, source *StringView, source_index Usize, count Usize) Status {
+func (destination *String) InsertEx(destination_index USize, source *StringView, source_index USize, count USize) Status {
 	__res := gengort.CCall5(__imp_ZyanStringInsertEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(destination_index), gengort.MarshallSyscall(source), gengort.MarshallSyscall(source_index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6051,7 +6051,7 @@ var __imp_ZyanStringAppendEx gengort.PreloadProc
 // @param count The number of chars to append from the source string.
 //
 // @return A zyan status code.
-func (destination *String) AppendEx(source *StringView, source_index Usize, count Usize) Status {
+func (destination *String) AppendEx(source *StringView, source_index USize, count USize) Status {
 	__res := gengort.CCall4(__imp_ZyanStringAppendEx.Addr(), gengort.MarshallSyscall(destination), gengort.MarshallSyscall(source), gengort.MarshallSyscall(source_index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6067,7 +6067,7 @@ var __imp_ZyanStringDelete gengort.PreloadProc
 // @param count The number of characters to delete.
 //
 // @return A zyan status code.
-func (_string *String) Delete(index Usize, count Usize) Status {
+func (_string *String) Delete(index USize, count USize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringDelete.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6081,7 +6081,7 @@ var __imp_ZyanStringTruncate gengort.PreloadProc
 // @param index The index of the first character to delete.
 //
 // @return A zyan status code.
-func (_string *String) Truncate(index Usize) Status {
+func (_string *String) Truncate(index USize) Status {
 	__res := gengort.CCall2(__imp_ZyanStringTruncate.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6113,7 +6113,7 @@ var __imp_ZyanStringLPos gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occured.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) Lpos(needle *StringView, found_index *Isize) Status {
+func (haystack *StringView) LPos(needle *StringView, found_index *ISize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringLPos.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6138,7 +6138,7 @@ var __imp_ZyanStringLPosEx gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occured.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) LposEx(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
+func (haystack *StringView) LPosEx(needle *StringView, found_index *ISize, index USize, count USize) Status {
 	__res := gengort.CCall5(__imp_ZyanStringLPosEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6158,7 +6158,7 @@ var __imp_ZyanStringLPosI gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occured.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) LposI(needle *StringView, found_index *Isize) Status {
+func (haystack *StringView) LPosI(needle *StringView, found_index *ISize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringLPosI.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6183,7 +6183,7 @@ var __imp_ZyanStringLPosIEx gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) LposIex(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
+func (haystack *StringView) LPosIEx(needle *StringView, found_index *ISize, index USize, count USize) Status {
 	__res := gengort.CCall5(__imp_ZyanStringLPosIEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6203,7 +6203,7 @@ var __imp_ZyanStringRPos gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) Rpos(needle *StringView, found_index *Isize) Status {
+func (haystack *StringView) RPos(needle *StringView, found_index *ISize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringRPos.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6228,7 +6228,7 @@ var __imp_ZyanStringRPosEx gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) RposEx(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
+func (haystack *StringView) RPosEx(needle *StringView, found_index *ISize, index USize, count USize) Status {
 	__res := gengort.CCall5(__imp_ZyanStringRPosEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6248,7 +6248,7 @@ var __imp_ZyanStringRPosI gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) RposI(needle *StringView, found_index *Isize) Status {
+func (haystack *StringView) RPosI(needle *StringView, found_index *ISize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringRPosI.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6273,7 +6273,7 @@ var __imp_ZyanStringRPosIEx gengort.PreloadProc
 // @return `ZYAN_STATUS_TRUE`, if the needle was found, `ZYAN_STATUS_FALSE`, if not, or another
 // zyan status code, if an error occurred.
 // The `found_index` is set to `-1`, if the needle was not found.
-func (haystack *StringView) RposIex(needle *StringView, found_index *Isize, index Usize, count Usize) Status {
+func (haystack *StringView) RPosIEx(needle *StringView, found_index *ISize, index USize, count USize) Status {
 	__res := gengort.CCall5(__imp_ZyanStringRPosIEx.Addr(), gengort.MarshallSyscall(haystack), gengort.MarshallSyscall(needle), gengort.MarshallSyscall(found_index), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6355,7 +6355,7 @@ var __imp_ZyanStringToLowerCaseEx gengort.PreloadProc
 // @return A zyan status code.
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
-func (_string *String) ToLowerCaseEx(index Usize, count Usize) Status {
+func (_string *String) ToLowerCaseEx(index USize, count USize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringToLowerCaseEx.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6387,7 +6387,7 @@ var __imp_ZyanStringToUpperCaseEx gengort.PreloadProc
 // @return A zyan status code.
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
-func (_string *String) ToUpperCaseEx(index Usize, count Usize) Status {
+func (_string *String) ToUpperCaseEx(index USize, count USize) Status {
 	__res := gengort.CCall3(__imp_ZyanStringToUpperCaseEx.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(index), gengort.MarshallSyscall(count))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6403,7 +6403,7 @@ var __imp_ZyanStringResize gengort.PreloadProc
 // @return A zyan status code.
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
-func (_string *String) Resize(size Usize) Status {
+func (_string *String) Resize(size USize) Status {
 	__res := gengort.CCall2(__imp_ZyanStringResize.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6419,7 +6419,7 @@ var __imp_ZyanStringReserve gengort.PreloadProc
 // @return A zyan status code.
 // This function will fail, if the `ZYAN_STRING_IS_IMMUTABLE` flag is set for the specified
 // `ZyanString` instance.
-func (_string *String) Reserve(capacity Usize) Status {
+func (_string *String) Reserve(capacity USize) Status {
 	__res := gengort.CCall2(__imp_ZyanStringReserve.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6447,7 +6447,7 @@ var __imp_ZyanStringGetCapacity gengort.PreloadProc
 // @param capacity Receives the size of the string.
 //
 // @return A zyan status code.
-func (_string *String) GetCapacity(capacity *Usize) Status {
+func (_string *String) GetCapacity(capacity *USize) Status {
 	__res := gengort.CCall2(__imp_ZyanStringGetCapacity.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(capacity))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6462,7 +6462,7 @@ var __imp_ZyanStringGetSize gengort.PreloadProc
 // @param size Receives the size (number of characters) of the string.
 //
 // @return A zyan status code.
-func (_string *String) GetSize(size *Usize) Status {
+func (_string *String) GetSize(size *USize) Status {
 	__res := gengort.CCall2(__imp_ZyanStringGetSize.Addr(), gengort.MarshallSyscall(_string), gengort.MarshallSyscall(size))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6572,7 +6572,7 @@ var __imp_ZydisFormatterBufferRemember gengort.PreloadProc
 // @return A zyan status code.
 // Note that the buffer-state is saved inside the buffer itself and thus becomes invalid as soon
 // as the buffer gets overwritten or destroyed.
-func (buffer *FormatterBuffer) Remember(state *Upointer) Status {
+func (buffer *FormatterBuffer) Remember(state *UPointer) Status {
 	__res := gengort.CCall2(__imp_ZydisFormatterBufferRemember.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(state))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6590,7 +6590,7 @@ var __imp_ZydisFormatterBufferRestore gengort.PreloadProc
 // does NOT restore any string content.
 // Note that the `ZyanString` instance returned by `ZydisFormatterBufferGetString` will
 // automatically be updated by calling this function.
-func (buffer *FormatterBuffer) Restore(state Upointer) Status {
+func (buffer *FormatterBuffer) Restore(state UPointer) Status {
 	__res := gengort.CCall2(__imp_ZydisFormatterBufferRestore.Addr(), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(state))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6624,7 +6624,7 @@ var __imp_ZydisFormatterSetProperty gengort.PreloadProc
 // @return A zyan status code.
 // This function returns `ZYAN_STATUS_INVALID_OPERATION` if a property can't be changed for the
 // current formatter-style.
-func (formatter *Formatter) SetProperty(property FormatterProperty, value Upointer) Status {
+func (formatter *Formatter) SetProperty(property FormatterProperty, value UPointer) Status {
 	__res := gengort.CCall3(__imp_ZydisFormatterSetProperty.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(property), gengort.MarshallSyscall(value))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6675,7 +6675,7 @@ var __imp_ZydisFormatterFormatInstruction gengort.PreloadProc
 // callbacks. Can be `ZYAN_NULL`.
 //
 // @return A zyan status code.
-func (formatter *Formatter) FormatInstruction(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8, buffer *byte, length Usize, runtime_address U64, user_data unsafe.Pointer) Status {
+func (formatter *Formatter) FormatInstruction(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8, buffer *byte, length USize, runtime_address U64, user_data unsafe.Pointer) Status {
 	__res := gengort.CCall8(__imp_ZydisFormatterFormatInstruction.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6703,7 +6703,7 @@ var __imp_ZydisFormatterFormatOperand gengort.PreloadProc
 // @return A zyan status code.
 // Use `ZydisFormatterFormatInstruction` or `ZydisFormatterFormatInstructionEx` to format a
 // complete instruction.
-func (formatter *Formatter) FormatOperand(instruction *DecodedInstruction, operand *DecodedOperand, buffer *byte, length Usize, runtime_address U64, user_data unsafe.Pointer) Status {
+func (formatter *Formatter) FormatOperand(instruction *DecodedInstruction, operand *DecodedOperand, buffer *byte, length USize, runtime_address U64, user_data unsafe.Pointer) Status {
 	__res := gengort.CCall7(__imp_ZydisFormatterFormatOperand.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6734,7 +6734,7 @@ var __imp_ZydisFormatterTokenizeInstruction gengort.PreloadProc
 // callbacks. Can be `ZYAN_NULL`.
 //
 // @return A zyan status code.
-func (formatter *Formatter) TokenizeInstruction(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8, buffer unsafe.Pointer, length Usize, runtime_address U64, token **FormatterTokenConst, user_data unsafe.Pointer) Status {
+func (formatter *Formatter) TokenizeInstruction(instruction *DecodedInstruction, operands *DecodedOperand, operand_count U8, buffer unsafe.Pointer, length USize, runtime_address U64, token **FormatterTokenConst, user_data unsafe.Pointer) Status {
 	__res := gengort.CCall9(__imp_ZydisFormatterTokenizeInstruction.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operands), gengort.MarshallSyscall(operand_count), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(token), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6763,7 +6763,7 @@ var __imp_ZydisFormatterTokenizeOperand gengort.PreloadProc
 //
 // @return A zyan status code.
 // Use `ZydisFormatterTokenizeInstruction` to tokenize a complete instruction.
-func (formatter *Formatter) TokenizeOperand(instruction *DecodedInstruction, operand *DecodedOperand, buffer unsafe.Pointer, length Usize, runtime_address U64, token **FormatterTokenConst, user_data unsafe.Pointer) Status {
+func (formatter *Formatter) TokenizeOperand(instruction *DecodedInstruction, operand *DecodedOperand, buffer unsafe.Pointer, length USize, runtime_address U64, token **FormatterTokenConst, user_data unsafe.Pointer) Status {
 	__res := gengort.CCall8(__imp_ZydisFormatterTokenizeOperand.Addr(), gengort.MarshallSyscall(formatter), gengort.MarshallSyscall(instruction), gengort.MarshallSyscall(operand), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(token), gengort.MarshallSyscall(user_data))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6817,7 +6817,7 @@ var __imp_ZydisDisassembleIntel gengort.PreloadProc
 // - `ZydisFormatterFormatInstruction`
 //
 // @return A zyan status code.
-func DisassembleIntel(machine_mode MachineMode, runtime_address U64, buffer unsafe.Pointer, length Usize, instruction *DisassembledInstruction) Status {
+func DisassembleIntel(machine_mode MachineMode, runtime_address U64, buffer unsafe.Pointer, length USize, instruction *DisassembledInstruction) Status {
 	__res := gengort.CCall5(__imp_ZydisDisassembleIntel.Addr(), gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6829,7 +6829,7 @@ var __imp_ZydisDisassembleATT gengort.PreloadProc
 // syntax).
 //
 // @copydetails ZydisDisassembleIntel
-func DisassembleAtt(machine_mode MachineMode, runtime_address U64, buffer unsafe.Pointer, length Usize, instruction *DisassembledInstruction) Status {
+func DisassembleATT(machine_mode MachineMode, runtime_address U64, buffer unsafe.Pointer, length USize, instruction *DisassembledInstruction) Status {
 	__res := gengort.CCall5(__imp_ZydisDisassembleATT.Addr(), gengort.MarshallSyscall(machine_mode), gengort.MarshallSyscall(runtime_address), gengort.MarshallSyscall(buffer), gengort.MarshallSyscall(length), gengort.MarshallSyscall(instruction))
 	return gengort.UnmarshallSyscall[Status](__res)
 }
@@ -6937,58 +6937,58 @@ func (s DecodedOperandImmValue_) S() I64 {
 func (s *DecodedOperandImmValue_) SetS(v I64) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon53065) Reg() DecodedOperandReg {
+func (s Anon5306_5) Reg() DecodedOperandReg {
 	return gengort.ReadBitcast[DecodedOperandReg](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon53065) SetReg(v DecodedOperandReg) {
+func (s *Anon5306_5) SetReg(v DecodedOperandReg) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon53065) Mem() DecodedOperandMem {
+func (s Anon5306_5) Mem() DecodedOperandMem {
 	return gengort.ReadBitcast[DecodedOperandMem](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon53065) SetMem(v DecodedOperandMem) {
+func (s *Anon5306_5) SetMem(v DecodedOperandMem) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon53065) Ptr() DecodedOperandPtr {
+func (s Anon5306_5) Ptr() DecodedOperandPtr {
 	return gengort.ReadBitcast[DecodedOperandPtr](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon53065) SetPtr(v DecodedOperandPtr) {
+func (s *Anon5306_5) SetPtr(v DecodedOperandPtr) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon53065) Imm() DecodedOperandImm {
+func (s Anon5306_5) Imm() DecodedOperandImm {
 	return gengort.ReadBitcast[DecodedOperandImm](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon53065) SetImm(v DecodedOperandImm) {
+func (s *Anon5306_5) SetImm(v DecodedOperandImm) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon61855) Rex() DecodedInstructionRawRex {
+func (s Anon6185_5) Rex() DecodedInstructionRawRex {
 	return gengort.ReadBitcast[DecodedInstructionRawRex](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon61855) SetRex(v DecodedInstructionRawRex) {
+func (s *Anon6185_5) SetRex(v DecodedInstructionRawRex) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon61855) Xop() DecodedInstructionRawXop {
+func (s Anon6185_5) Xop() DecodedInstructionRawXop {
 	return gengort.ReadBitcast[DecodedInstructionRawXop](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon61855) SetXop(v DecodedInstructionRawXop) {
+func (s *Anon6185_5) SetXop(v DecodedInstructionRawXop) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon61855) Vex() DecodedInstructionRawVex {
+func (s Anon6185_5) Vex() DecodedInstructionRawVex {
 	return gengort.ReadBitcast[DecodedInstructionRawVex](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon61855) SetVex(v DecodedInstructionRawVex) {
+func (s *Anon6185_5) SetVex(v DecodedInstructionRawVex) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon61855) Evex() DecodedInstructionRawEvex {
+func (s Anon6185_5) Evex() DecodedInstructionRawEvex {
 	return gengort.ReadBitcast[DecodedInstructionRawEvex](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon61855) SetEvex(v DecodedInstructionRawEvex) {
+func (s *Anon6185_5) SetEvex(v DecodedInstructionRawEvex) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
-func (s Anon61855) Mvex() DecodedInstructionRawMvex {
+func (s Anon6185_5) Mvex() DecodedInstructionRawMvex {
 	return gengort.ReadBitcast[DecodedInstructionRawMvex](unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0))
 }
-func (s *Anon61855) SetMvex(v DecodedInstructionRawMvex) {
+func (s *Anon6185_5) SetMvex(v DecodedInstructionRawMvex) {
 	gengort.WriteBitcast(unsafe.Add(unsafe.Pointer(unsafe.SliceData(s.Raw[:])), 0), v)
 }
 func (s DecodedInstructionRawImmValue_) U() U64 {
