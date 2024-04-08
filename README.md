@@ -11,7 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
-  <a href="https://github.com/can1357/zydis-go/actions"><img src="https://github.com/can1357/zydis-go/actions/workflows/build.yml/badge.svg" alt="GitHub Actions"></a>
+  <a href="https://github.com/zyantific/zydis-go/actions"><img src="https://github.com/zyantific/zydis-go/actions/workflows/build.yml/badge.svg" alt="GitHub Actions"></a>
   <a href="https://gitter.im/zyantific/zydis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/zyantific/zyan-disassembler-engine.svg" alt="Gitter"></a>
   <a href="https://discord.zyantific.com/"><img src="https://img.shields.io/discord/390136917779415060.svg?logo=discord&label=Discord" alt="Discord"></a>
 </p>
@@ -32,7 +32,7 @@
 
 The following example program uses Zydis to disassemble a given memory buffer and prints the output to the console.
 
-https://github.com/can1357/zydis-go/blob/229b8bb7bf0f346f253337eede5962f799111bd3/examples/disasm-simple/main.go#L12-L42
+https://github.com/zyantific/zydis-go/blob/229b8bb7bf0f346f253337eede5962f799111bd3/examples/disasm-simple/main.go#L12-L42
 
 The above example program generates the following output:
 
@@ -49,7 +49,7 @@ The above example program generates the following output:
 
 ### Encoder
 
-https://github.com/can1357/zydis-go/blob/229b8bb7bf0f346f253337eede5962f799111bd3/examples/encode-simple/main.go#L11-L32
+https://github.com/zyantific/zydis-go/blob/229b8bb7bf0f346f253337eede5962f799111bd3/examples/encode-simple/main.go#L11-L32
 
 The above example program generates the following output:
 
@@ -66,7 +66,7 @@ More examples can be found in the [examples](./examples/) directory of this repo
 Simply get the package using `go get`:
 
 ```bash
-go get -u github.com/can1357/zydis-go
+go get -u github.com/zyantific/zydis-go
 ```
 
 If you are not on `Windows AMD64` or `Linux AMD64`, you need to build the Zydis library for your platform and place the shared library nearby your executable. You can find the instructions for building the Zydis library [here](https://github.com/zyantific/zydis#build).
