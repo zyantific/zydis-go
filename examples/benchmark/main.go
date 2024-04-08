@@ -9,7 +9,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/can1357/zydis-go"
+	"github.com/zyantific/zydis-go"
 )
 
 const DISAS_BENCH_NO_FORMAT = true
