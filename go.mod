@@ -1,4 +1,4 @@
-module github.com/can1357/zydis-go
+module github.com/zyantific/zydis-go
 
 go 1.22.1
 

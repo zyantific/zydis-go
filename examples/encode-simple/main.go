@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/can1357/zydis-go"
+	"github.com/zyantific/zydis-go"
 )
 
 func main() {
