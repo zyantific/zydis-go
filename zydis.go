@@ -4231,9 +4231,8 @@ type DisassembledInstruction struct {
 type _Int128T = any
 type _Uint128T = any
 type __NSConstantString = any
-type SizeT = uint64
 type _BuiltinMsVaList = *byte
-type _BuiltinVaList = *byte
+type _BuiltinVaList = [1]any
 type U8 = uint8
 type U16 = uint16
 type U32 = uint32
@@ -5034,6 +5033,14 @@ func AllocatorInit(allocator *Allocator, allocate AllocatorAllocate, reallocate 
 
 var __imp_ZyanEqualsPointer gengort.PreloadProc
 
+// Defines a default equality comparison function for pointer values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `ZYAN_TRUE` if the `left` value equals the `right` one or `ZYAN_FALSE`, if
+// not.
 func EqualsPointer(left *unsafe.Pointer, right *unsafe.Pointer) Bool {
 	__res := gengort.CCall2(__imp_ZyanEqualsPointer.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
@@ -5041,6 +5048,14 @@ func EqualsPointer(left *unsafe.Pointer, right *unsafe.Pointer) Bool {
 
 var __imp_ZyanEqualsBool gengort.PreloadProc
 
+// Defines a default equality comparison function for `ZyanBool` values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `ZYAN_TRUE` if the `left` value equals the `right` one or `ZYAN_FALSE`, if
+// not.
 func EqualsBool(left *Bool, right *Bool) Bool {
 	__res := gengort.CCall2(__imp_ZyanEqualsBool.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
@@ -5048,6 +5063,14 @@ func EqualsBool(left *Bool, right *Bool) Bool {
 
 var __imp_ZyanEqualsNumeric8 gengort.PreloadProc
 
+// Defines a default equality comparison function for 8-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `ZYAN_TRUE` if the `left` value equals the `right` one or `ZYAN_FALSE`, if
+// not.
 func EqualsNumeric8(left *U8, right *U8) Bool {
 	__res := gengort.CCall2(__imp_ZyanEqualsNumeric8.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
@@ -5055,6 +5078,14 @@ func EqualsNumeric8(left *U8, right *U8) Bool {
 
 var __imp_ZyanEqualsNumeric16 gengort.PreloadProc
 
+// Defines a default equality comparison function for 16-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `ZYAN_TRUE` if the `left` value equals the `right` one or `ZYAN_FALSE`, if
+// not.
 func EqualsNumeric16(left *U16, right *U16) Bool {
 	__res := gengort.CCall2(__imp_ZyanEqualsNumeric16.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
@@ -5062,6 +5093,14 @@ func EqualsNumeric16(left *U16, right *U16) Bool {
 
 var __imp_ZyanEqualsNumeric32 gengort.PreloadProc
 
+// Defines a default equality comparison function for 32-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `ZYAN_TRUE` if the `left` value equals the `right` one or `ZYAN_FALSE`, if
+// not.
 func EqualsNumeric32(left *U32, right *U32) Bool {
 	__res := gengort.CCall2(__imp_ZyanEqualsNumeric32.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
@@ -5069,6 +5108,14 @@ func EqualsNumeric32(left *U32, right *U32) Bool {
 
 var __imp_ZyanEqualsNumeric64 gengort.PreloadProc
 
+// Defines a default equality comparison function for 64-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `ZYAN_TRUE` if the `left` value equals the `right` one or `ZYAN_FALSE`, if
+// not.
 func EqualsNumeric64(left *U64, right *U64) Bool {
 	__res := gengort.CCall2(__imp_ZyanEqualsNumeric64.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[Bool](__res)
@@ -5076,6 +5123,14 @@ func EqualsNumeric64(left *U64, right *U64) Bool {
 
 var __imp_ZyanComparePointer gengort.PreloadProc
 
+// Defines a default comparison function for pointer values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `0` if the `left` value equals the `right` one, `-1` if the `left` value is
+// less than the `right` one, or `1` if the `left` value is greater than the `right` one.
 func ComparePointer(left *unsafe.Pointer, right *unsafe.Pointer) I32 {
 	__res := gengort.CCall2(__imp_ZyanComparePointer.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
@@ -5083,6 +5138,14 @@ func ComparePointer(left *unsafe.Pointer, right *unsafe.Pointer) I32 {
 
 var __imp_ZyanCompareBool gengort.PreloadProc
 
+// Defines a default comparison function for `ZyanBool` values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `0` if the `left` value equals the `right` one, `-1` if the `left` value is
+// less than the `right` one, or `1` if the `left` value is greater than the `right` one.
 func CompareBool(left *Bool, right *Bool) I32 {
 	__res := gengort.CCall2(__imp_ZyanCompareBool.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
@@ -5090,6 +5153,14 @@ func CompareBool(left *Bool, right *Bool) I32 {
 
 var __imp_ZyanCompareNumeric8 gengort.PreloadProc
 
+// Defines a default comparison function for 8-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `0` if the `left` value equals the `right` one, `-1` if the `left` value is
+// less than the `right` one, or `1` if the `left` value is greater than the `right` one.
 func CompareNumeric8(left *U8, right *U8) I32 {
 	__res := gengort.CCall2(__imp_ZyanCompareNumeric8.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
@@ -5097,6 +5168,14 @@ func CompareNumeric8(left *U8, right *U8) I32 {
 
 var __imp_ZyanCompareNumeric16 gengort.PreloadProc
 
+// Defines a default comparison function for 16-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `0` if the `left` value equals the `right` one, `-1` if the `left` value is
+// less than the `right` one, or `1` if the `left` value is greater than the `right` one.
 func CompareNumeric16(left *U16, right *U16) I32 {
 	__res := gengort.CCall2(__imp_ZyanCompareNumeric16.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
@@ -5104,6 +5183,14 @@ func CompareNumeric16(left *U16, right *U16) I32 {
 
 var __imp_ZyanCompareNumeric32 gengort.PreloadProc
 
+// Defines a default comparison function for 32-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `0` if the `left` value equals the `right` one, `-1` if the `left` value is
+// less than the `right` one, or `1` if the `left` value is greater than the `right` one.
 func CompareNumeric32(left *U32, right *U32) I32 {
 	__res := gengort.CCall2(__imp_ZyanCompareNumeric32.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
@@ -5111,6 +5198,14 @@ func CompareNumeric32(left *U32, right *U32) I32 {
 
 var __imp_ZyanCompareNumeric64 gengort.PreloadProc
 
+// Defines a default comparison function for 64-bit numeric values.
+//
+// @param left A pointer to the first value.
+//
+// @param right A pointer to the second value.
+//
+// @return Returns `0` if the `left` value equals the `right` one, `-1` if the `left` value is
+// less than the `right` one, or `1` if the `left` value is greater than the `right` one.
 func CompareNumeric64(left *U64, right *U64) I32 {
 	__res := gengort.CCall2(__imp_ZyanCompareNumeric64.Addr(), gengort.MarshallSyscall(left), gengort.MarshallSyscall(right))
 	return gengort.UnmarshallSyscall[I32](__res)
