@@ -21,18 +21,30 @@ func NewEncoder(writer io.Writer) *Encoder {
 }
 
 func (encoder *Encoder) Encode(from *zydis.EncoderRequest) error {
-	buf := make([]byte, zydis.MAX_INSTRUCTION_LENGTH)
-	len := zydis.MAX_INSTRUCTION_LENGTH
+	buffer := [zydis.MAX_INSTRUCTION_LENGTH]byte{}
+	length := uint64(len(buffer))
 
-	status := from.EncodeInstruction(unsafe.Pointer(unsafe.SliceData(buf)), &len)
+	status := from.EncodeInstruction(unsafe.Pointer(&buffer), &length)
 	if !zydis.Ok(status) {
 		return fmt.Errorf("%w: %d", ErrWrongStatus, status)
 	}
 
-	_, err := encoder.writer.Write(buf[:len])
+	_, err := encoder.writer.Write(buffer[:length])
 	if err != nil {
 		return err
 	}
 
 	return nil
+}
+
+func AppendRequest(to []byte, from *zydis.EncoderRequest) ([]byte, error) {
+	buffer := [zydis.MAX_INSTRUCTION_LENGTH]byte{}
+	length := uint64(len(buffer))
+
+	status := from.EncodeInstruction(unsafe.Pointer(&buffer), &length)
+	if !zydis.Ok(status) {
+		return nil, fmt.Errorf("%w: %d", ErrWrongStatus, status)
+	}
+
+	return append(to, buffer[:length]...), nil
 }
