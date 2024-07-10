@@ -38,6 +38,7 @@ const (
 func Ok(status uint32) bool {
 	return int32(status) >= 0
 }
+
 func Failed(status Status) bool {
 	return int32(status) < 0
 }
@@ -75,4 +76,8 @@ const (
 	STATUS_INVALID_MASK             Status = 0x0A | CODE_FAIL | MODULE_ZYDIS
 	STATUS_SKIP_TOKEN               Status = 0x0B | CODE_OKAY | MODULE_ZYDIS
 	STATUS_IMPOSSIBLE_INSTRUCTION   Status = 0x0C | CODE_FAIL | MODULE_ZYDIS
+)
+
+const (
+	MAX_INSTRUCTION_LENGTH uint64 = 15
 )
