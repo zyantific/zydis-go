@@ -1,11 +1,11 @@
-github.com/can1357/gengo v0.2.0 h1:ekg3RWWDKaUCmb2Ib+gAYqT0v6v3xSwZreiI133+DMc=
-github.com/can1357/gengo v0.2.0/go.mod h1:XX6FcockCfPXg1ixiUQiU2Nm7gowrIm3YFO2VANLsMA=
+github.com/can1357/gengo v0.2.1-0.20260520071629-ef9abd7e5269 h1:ItEYnrvWYV29xcwh2qWUgomMVOt927bsAq3v6ijIZLk=
+github.com/can1357/gengo v0.2.1-0.20260520071629-ef9abd7e5269/go.mod h1:9IkEMCwOdru55fKbv+Hc5G9iCCod4li2KXQIdB3QbaQ=
 github.com/dave/dst v0.27.3 h1:P1HPoMza3cMEquVf9kKy8yXsFirry4zEnWOdYPOoIzY=
 github.com/dave/dst v0.27.3/go.mod h1:jHh6EOibnHgcUW3WjKHisiooEkYwqpHLBSX1iOBhEyc=
 github.com/dave/jennifer v1.5.0 h1:HmgPN93bVDpkQyYbqhCHj5QlgvUkvEOzMyEvKLgCRrg=
 github.com/dave/jennifer v1.5.0/go.mod h1:4MnyiFIlZS3l5tSDn8VnzE6ffAhYBMB2SZntBsZGUok=
-github.com/ebitengine/purego v0.7.1 h1:6/55d26lG3o9VCZX8lping+bZcmShseiqlh2bnUDiPA=
-github.com/ebitengine/purego v0.7.1/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
+github.com/ebitengine/purego v0.10.0 h1:QIw4xfpWT6GWTzaW5XEKy3HXoqrJGx1ijYHzTF0/ISU=
+github.com/ebitengine/purego v0.10.0/go.mod h1:iIjxzd6CiRiOG0UyXP+V1+jWqUXVjPKLAI0mRfJZTmQ=
 github.com/sergi/go-diff v1.2.0 h1:XU+rvMAioB0UC3q1MFrIQy4Vo5/4VsRDQQXHsEya6xQ=
 github.com/sergi/go-diff v1.2.0/go.mod h1:STckp+ISIX8hZLjrqAeVduY0gWCT9IjLuqbuNXdaHfM=
 github.com/valyala/fastjson v1.6.4 h1:uAUNq9Z6ymTgGhcm0UynUAB6tlbakBrz6CQFax3BXVQ=
