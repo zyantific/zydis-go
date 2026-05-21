@@ -135,3 +135,9 @@ const (
 	ATTRIB_HAS_ADDRESSSIZE InstructionAttributes = 1 << 44
 	ATTRIB_HAS_EVEX_B      InstructionAttributes = 1 << 45
 )
+
+const (
+	MAX_INSTRUCTION_LENGTH    int = 15
+	MAX_OPERAND_COUNT         int = 10
+	MAX_OPERAND_COUNT_VISIBLE int = 5
+)
