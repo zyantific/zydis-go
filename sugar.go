@@ -76,3 +76,68 @@ const (
 	STATUS_SKIP_TOKEN               Status = 0x0B | CODE_OKAY | MODULE_ZYDIS
 	STATUS_IMPOSSIBLE_INSTRUCTION   Status = 0x0C | CODE_FAIL | MODULE_ZYDIS
 )
+
+const (
+	ATTRIB_HAS_MODRM                InstructionAttributes = 1 << 0
+	ATTRIB_HAS_SIB                  InstructionAttributes = 1 << 1
+	ATTRIB_HAS_REX                  InstructionAttributes = 1 << 2
+	ATTRIB_HAS_XOP                  InstructionAttributes = 1 << 3
+	ATTRIB_HAS_VEX                  InstructionAttributes = 1 << 4
+	ATTRIB_HAS_EVEX                 InstructionAttributes = 1 << 5
+	ATTRIB_HAS_MVEX                 InstructionAttributes = 1 << 6
+	ATTRIB_IS_RELATIVE              InstructionAttributes = 1 << 7
+	ATTRIB_IS_PRIVILEGED            InstructionAttributes = 1 << 8
+	ATTRIB_CPUFLAG_ACCESS           InstructionAttributes = 1 << 9
+	ATTRIB_CPU_STATE_CR             InstructionAttributes = 1 << 10
+	ATTRIB_CPU_STATE_CW             InstructionAttributes = 1 << 11
+	ATTRIB_FPU_STATE_CR             InstructionAttributes = 1 << 12
+	ATTRIB_FPU_STATE_CW             InstructionAttributes = 1 << 13
+	ATTRIB_XMM_STATE_CR             InstructionAttributes = 1 << 14
+	ATTRIB_XMM_STATE_CW             InstructionAttributes = 1 << 15
+	ATTRIB_ACCEPTS_LOCK             InstructionAttributes = 1 << 16
+	ATTRIB_ACCEPTS_REP              InstructionAttributes = 1 << 17
+	ATTRIB_ACCEPTS_REPE             InstructionAttributes = 1 << 18
+	ATTRIB_ACCEPTS_REPZ             InstructionAttributes = ATTRIB_ACCEPTS_REPE
+	ATTRIB_ACCEPTS_REPNE            InstructionAttributes = 1 << 19
+	ATTRIB_ACCEPTS_REPNZ            InstructionAttributes = ATTRIB_ACCEPTS_REPNE
+	ATTRIB_ACCEPTS_BND              InstructionAttributes = 1 << 20
+	ATTRIB_ACCEPTS_XACQUIRE         InstructionAttributes = 1 << 21
+	ATTRIB_ACCEPTS_XRELEASE         InstructionAttributes = 1 << 22
+	ATTRIB_ACCEPTS_HLE_WITHOUT_LOCK InstructionAttributes = 1 << 23
+	ATTRIB_ACCEPTS_BRANCH_HINTS     InstructionAttributes = 1 << 24
+	ATTRIB_ACCEPTS_NOTRACK          InstructionAttributes = 1 << 25
+	ATTRIB_ACCEPTS_SEGMENT          InstructionAttributes = 1 << 26
+	ATTRIB_HAS_LOCK                 InstructionAttributes = 1 << 27
+	ATTRIB_HAS_REP                  InstructionAttributes = 1 << 28
+	ATTRIB_HAS_REPE                 InstructionAttributes = 1 << 29
+	ATTRIB_HAS_REPZ                 InstructionAttributes = ATTRIB_HAS_REPE
+	ATTRIB_HAS_REPNE                InstructionAttributes = 1 << 30
+	ATTRIB_HAS_REPNZ                InstructionAttributes = ATTRIB_HAS_REPNE
+	ATTRIB_HAS_BND                  InstructionAttributes = 1 << 31
+	ATTRIB_HAS_XACQUIRE             InstructionAttributes = 1 << 32
+	ATTRIB_HAS_XRELEASE             InstructionAttributes = 1 << 33
+	ATTRIB_HAS_BRANCH_NOT_TAKEN     InstructionAttributes = 1 << 34
+	ATTRIB_HAS_BRANCH_TAKEN         InstructionAttributes = 1 << 35
+	ATTRIB_HAS_NOTRACK              InstructionAttributes = 1 << 36
+	ATTRIB_HAS_SEGMENT_CS           InstructionAttributes = 1 << 37
+	ATTRIB_HAS_SEGMENT_SS           InstructionAttributes = 1 << 38
+	ATTRIB_HAS_SEGMENT_DS           InstructionAttributes = 1 << 39
+	ATTRIB_HAS_SEGMENT_ES           InstructionAttributes = 1 << 40
+	ATTRIB_HAS_SEGMENT_FS           InstructionAttributes = 1 << 41
+	ATTRIB_HAS_SEGMENT_GS           InstructionAttributes = 1 << 42
+	ATTRIB_HAS_SEGMENT              InstructionAttributes = ATTRIB_HAS_SEGMENT_CS |
+		ATTRIB_HAS_SEGMENT_SS |
+		ATTRIB_HAS_SEGMENT_DS |
+		ATTRIB_HAS_SEGMENT_ES |
+		ATTRIB_HAS_SEGMENT_FS |
+		ATTRIB_HAS_SEGMENT_GS
+	ATTRIB_HAS_OPERANDSIZE InstructionAttributes = 1 << 43
+	ATTRIB_HAS_ADDRESSSIZE InstructionAttributes = 1 << 44
+	ATTRIB_HAS_EVEX_B      InstructionAttributes = 1 << 45
+)
+
+const (
+	MAX_INSTRUCTION_LENGTH    int = 15
+	MAX_OPERAND_COUNT         int = 10
+	MAX_OPERAND_COUNT_VISIBLE int = 5
+)
